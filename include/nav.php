@@ -1,51 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Page || Visanet || HTML Template For Lawyer & Law Firm</title>
-    <!-- favicons Icons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png" />
-    <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
-    <meta name="description" content="VisaNet is a Immigration and Visa Consulting HTML Template. Created especially designed for Immigration & Visa Consulting Agencies, Visa Agents, Study Abroad Consultants, Overseas Job Consultants, IELTS Coaching Centers, and Travel & Tourism Businesses. VisaNet Immigration and Visa Consulting Design and customizable features make it perfect for on various displays and resolutions website. All HTML files are with layers and groups, so they are very easy to modify & expand." />
-
-    <!-- fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-
-    <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/vendors/bootstrap-select/bootstrap-select.min.css" />
-    <link rel="stylesheet" href="assets/vendors/aos/css/aos.css" />
-    <link rel="stylesheet" href="assets/vendors/fontawesome/css/all.min.css" />
-    <link rel="stylesheet" href="assets/vendors/jquery-ui/jquery-ui.css" />
-    <link rel="stylesheet" href="assets/vendors/jarallax/jarallax.css" />
-    <link rel="stylesheet" href="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css" />
-    <link rel="stylesheet" href="assets/vendors/visanet-icons/style.css" />
-    <link rel="stylesheet" href="assets/vendors/daterangepicker-master/daterangepicker.css" />
-    <link rel="stylesheet" href="assets/vendors/slick/slick.css">
-    <link rel="stylesheet" href="assets/vendors/owl-carousel/css/owl.carousel.min.css" />
-    <link rel="stylesheet" href="assets/vendors/owl-carousel/css/owl.theme.default.min.css" />
-
-    <!-- template styles -->
-    <link rel="stylesheet" href="assets/css/visanet.css" />
-</head>
-
-<body class="custom-cursor">
-
-    <div class="custom-cursor__cursor"></div>
-    <div class="custom-cursor__cursor-two"></div>
-
-    <div class="preloader">
-        <div class="preloader__image" style="background-image: url(assets/images/loader.png);"></div>
-    </div>
-    <!-- /.preloader -->
-    <div class="page-wrapper">
+     <div class="page-wrapper">
         <div class="topbar">
             <div class="container">
                 <div class="topbar__inner">
@@ -101,76 +54,7 @@
                 </div><!-- /.topbar__inner -->
             </div><!-- /.container -->
         </div><!-- /.topbar -->
-       <header class="main-header main-header--two sticky-header sticky-header--one-page">
-            <div class="container main-header__container">
-                <div class="main-header__inner">
-                    <div class="main-header__left">
-                        <div class="main-header__logo logo-retina">
-                            <a href="index.html">
-                                <img src="assets/images/logo-light.png" alt="Visanet HTML" width="230">
-                            </a>
-                        </div><!-- /.main-header__logo -->
-                    </div><!-- /.main-header__left -->
-                    <div class="main-header__right">
-                        <div class="main-header__top">
-                            <div class="main-header__info">
-                                <span class="main-header__info__title">News:</span>
-                                <p class="main-header__info__text">I can’t browse the internet live, but this summary <span>reflects</span> the most recent .....</p>
-                            </div><!-- /.main-header__info -->
-                            <a href="contact.html" class="visanet-btn-two">
-                                Appointment <span class="visanet-btn-two__icon"><i class="icon-arrow-right-3"></i></span>
-                            </a><!-- /.visanet-btn-two -->
-                        </div><!-- /.main-header__top -->
-                        <div class="main-header__bottom">
-                            <nav class="main-header__nav main-menu">
-                                <ul class="main-menu__list one-page-scroll-menu">
-                                    <li class="  scrollToLink current">
-                                        <a href="index.html#home">Home</a>
-                                        <ul>
-
-                                        
-
-                                        </ul>
-                                    </li>
-                                    <li class="scrollToLink"><a href=" about.html">About</a></li>
-                                    <li class="scrollToLink"><a href="index.html#visa">Visa</a></li>
-                                    <li class="scrollToLink"><a href="countries.html">Countries</a></li>
-                                    <li class="scrollToLink"><a href="index.html#gallery">Gallery</a></li>
-                                    <li class="scrollToLink"><a href="contact.html">Contact us</a></li>
-                                    <li class="scrollToLink"><a href="index.html#blog">Blog</a></li>
-                                </ul>
-                            </nav><!-- /.main-header__nav -->
-                            
-                            <div class="main-header__right__right">
-                                <div class="mobile-nav__btn mobile-nav__toggler">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                </div><!-- /.mobile-nav__toggler -->
-                                <a href="index.html#" class="main-header__search search-toggler">
-                                    <i class="icon-search" aria-hidden="true"></i>
-                                    <span class="sr-only">Search</span>
-                                </a><!-- /.main-header__search -->
-                                <a href="cart.html" class="main-header__cart">
-                                    <i class="icon-trolley-cart" aria-hidden="true"></i>
-                                    <span class="sr-only">Trolley Cart</span>
-                                    <span class="main-header__cart__quantity">02</span>
-                                </a><!-- /.main-header__cart -->
-                                <div class="main-header__call">
-                                    <span class="main-header__call__icon">
-                                        <i class="icon-phone-call"></i>
-                                    </span><!-- /.main-header__call__icon -->
-                                    <div class="main-header__call__content">
-                                        <p class="main-header__call__title">Call Any Time</p>
-                                        <a href="tel:+55222555255" class="main-header__call__number">+55 222 555 255</a>
-                                    </div><!-- /.main-header__call__content -->
-                                </div><!-- /.main-header__call -->
-                            </div><!-- /.main-header__right__right -->
-                        </div><!-- /.main-header__bottom -->
-                    </div><!-- /.main-header__right -->
-                </div><!-- /.main-header__inner -->
-            </div><!-- /.container -->
-        </header><!-- /.main-header -->
+      <?php include "./include/nav.php" ?>
 
         <section class="page-header">
             <div class="page-header__bg" style="background-image: url(assets/images/backgrounds/page-header-bg.jpg);"></div><!-- /.page-header__bg -->
@@ -180,7 +64,7 @@
                 <div class="page-header__content">
                     <h2 class="page-header__title" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300">About Us</h2>
                     <ul class="visanet-breadcrumb list-unstyled" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="200">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.php">Home</a></li>
                         <li><span>About</span></li>
                     </ul><!-- /.visanet-breadcrumb list-unstyled -->
                 </div><!-- /.page-header__content -->
@@ -220,7 +104,7 @@
                             <div class="about-one__feature__bg"></div>
                             <div class="about-one__feature__icon-box"><span class="about-one__feature__icon"><i class="icon-passport"></i></span></div>
                             <div class="about-one__feature__content">
-                                <h3 class="about-one__feature__title"><a href="about.html">Immigration Resources Visa</a></h3>
+                                <h3 class="about-one__feature__title"><a href="about.php">Immigration Resources Visa</a></h3>
                                 <p class="about-one__feature__text">Immigration visa tailored design, management services building sed do majority.</p>
                             </div>
                         </div><!-- /.about-one__feature__item -->
@@ -228,7 +112,7 @@
                             <div class="about-one__feature__bg"></div>
                             <div class="about-one__feature__icon-box"><span class="about-one__feature__icon"><i class="icon-luggage"></i></span></div>
                             <div class="about-one__feature__content">
-                                <h3 class="about-one__feature__title"><a href="about.html">luggage bag handle location</a></h3>
+                                <h3 class="about-one__feature__title"><a href="about.php">luggage bag handle location</a></h3>
                                 <p class="about-one__feature__text">Immigration visa tailored design, management services building sed do majority.</p>
                             </div>
                         </div><!-- /.about-one__feature__item -->
@@ -236,7 +120,7 @@
                             <div class="about-one__feature__bg"></div>
                             <div class="about-one__feature__icon-box"><span class="about-one__feature__icon"><i class="icon-support"></i></span></div>
                             <div class="about-one__feature__content">
-                                <h3 class="about-one__feature__title"><a href="about.html">24/7 Support Team Solution</a></h3>
+                                <h3 class="about-one__feature__title"><a href="about.php">24/7 Support Team Solution</a></h3>
                                 <p class="about-one__feature__text">Immigration visa tailored design, management services building sed do majority.</p>
                             </div>
                         </div><!-- /.about-one__feature__item -->
@@ -285,10 +169,10 @@
                                 </div><!-- /.visa-card__icon-box -->
                             </div><!-- /.visa-card__image -->
                             <div class="visa-card__content">
-                                <h2 class="visa-card__title"><a href="visa-d-business-visa.html">Business Visa</a></h2>
+                                <h2 class="visa-card__title"><a href="visa-d-business-visa.php">Business Visa</a></h2>
                                 <p class="visa-card__text">Expand your business internationally with expert guidance, helping entrepreneurs establish and achieve success abroad.</p>
                             </div><!-- /.visa-card__content -->
-                            <a href="visa-d-business-visa.html" class="visa-card__btn">
+                            <a href="visa-d-business-visa.php" class="visa-card__btn">
                                 Read More <span class="visa-card__btn__icon"><i class="icon-arrow-right-up"></i></span>
                             </a><!-- /.visa-card__btn -->
                         </div><!-- /.visa-card -->
@@ -302,10 +186,10 @@
                                 </div><!-- /.visa-card__icon-box -->
                             </div><!-- /.visa-card__image -->
                             <div class="visa-card__content">
-                                <h2 class="visa-card__title"><a href="visa-d-visa-processing.html">Quick Visa Processing</a></h2>
+                                <h2 class="visa-card__title"><a href="visa-d-visa-processing.php">Quick Visa Processing</a></h2>
                                 <p class="visa-card__text">Experience faster approval with our efficient visa processing service designed to simplify documentation and deliver results quickly.</p>
                             </div><!-- /.visa-card__content -->
-                            <a href="visa-d-visa-processing.html" class="visa-card__btn">
+                            <a href="visa-d-visa-processing.php" class="visa-card__btn">
                                 Read More <span class="visa-card__btn__icon"><i class="icon-arrow-right-up"></i></span>
                             </a><!-- /.visa-card__btn -->
                         </div><!-- /.visa-card -->
@@ -319,10 +203,10 @@
                                 </div><!-- /.visa-card__icon-box -->
                             </div><!-- /.visa-card__image -->
                             <div class="visa-card__content">
-                                <h2 class="visa-card__title"><a href="visa-d-immigration-visa.html">Immigration Visa</a></h2>
+                                <h2 class="visa-card__title"><a href="visa-d-immigration-visa.php">Immigration Visa</a></h2>
                                 <p class="visa-card__text">Access trusted immigration resources with complete guidance, reliable information, and assistance for your relocation journey.</p>
                             </div><!-- /.visa-card__content -->
-                            <a href="visa-d-immigration-visa.html" class="visa-card__btn">
+                            <a href="visa-d-immigration-visa.php" class="visa-card__btn">
                                 Read More <span class="visa-card__btn__icon"><i class="icon-arrow-right-up"></i></span>
                             </a><!-- /.visa-card__btn -->
                         </div><!-- /.visa-card -->
@@ -336,10 +220,10 @@
                                 </div><!-- /.visa-card__icon-box -->
                             </div><!-- /.visa-card__image -->
                             <div class="visa-card__content">
-                                <h2 class="visa-card__title"><a href="visa-d-family-visa.html">Family Visa</a></h2>
+                                <h2 class="visa-card__title"><a href="visa-d-family-visa.php">Family Visa</a></h2>
                                 <p class="visa-card__text">Reunite with loved ones abroad through our simplified family visa process ensuring smooth documentation and stress-free.</p>
                             </div><!-- /.visa-card__content -->
-                            <a href="visa-d-family-visa.html" class="visa-card__btn">
+                            <a href="visa-d-family-visa.php" class="visa-card__btn">
                                 Read More <span class="visa-card__btn__icon"><i class="icon-arrow-right-up"></i></span>
                             </a><!-- /.visa-card__btn -->
                         </div><!-- /.visa-card -->
@@ -353,10 +237,10 @@
                                 </div><!-- /.visa-card__icon-box -->
                             </div><!-- /.visa-card__image -->
                             <div class="visa-card__content">
-                                <h2 class="visa-card__title"><a href="visa-d-students-visa.html">Students Visa</a></h2>
+                                <h2 class="visa-card__title"><a href="visa-d-students-visa.php">Students Visa</a></h2>
                                 <p class="visa-card__text">Secure your dream education overseas with expert visa guidance, university support, and documentation for global study success.</p>
                             </div><!-- /.visa-card__content -->
-                            <a href="visa-d-students-visa.html" class="visa-card__btn">
+                            <a href="visa-d-students-visa.php" class="visa-card__btn">
                                 Read More <span class="visa-card__btn__icon"><i class="icon-arrow-right-up"></i></span>
                             </a><!-- /.visa-card__btn -->
                         </div><!-- /.visa-card -->
@@ -370,10 +254,10 @@
                                 </div><!-- /.visa-card__icon-box -->
                             </div><!-- /.visa-card__image -->
                             <div class="visa-card__content">
-                                <h2 class="visa-card__title"><a href="visa-d-travel-visa.html">Travel Visa</a></h2>
+                                <h2 class="visa-card__title"><a href="visa-d-travel-visa.php">Travel Visa</a></h2>
                                 <p class="visa-card__text">Enjoy hassle-free travel experiences with our reliable visa services ensuring smooth applications, approvals, and journeys.</p>
                             </div><!-- /.visa-card__content -->
-                            <a href="visa-d-travel-visa.html" class="visa-card__btn">
+                            <a href="visa-d-travel-visa.php" class="visa-card__btn">
                                 Read More <span class="visa-card__btn__icon"><i class="icon-arrow-right-up"></i></span>
                             </a><!-- /.visa-card__btn -->
                         </div><!-- /.visa-card -->
@@ -387,10 +271,10 @@
                                 </div><!-- /.visa-card__icon-box -->
                             </div><!-- /.visa-card__image -->
                             <div class="visa-card__content">
-                                <h2 class="visa-card__title"><a href="visa-d-business-visa.html">Business Visa</a></h2>
+                                <h2 class="visa-card__title"><a href="visa-d-business-visa.php">Business Visa</a></h2>
                                 <p class="visa-card__text">Expand your business internationally with expert guidance, helping entrepreneurs establish and achieve success abroad.</p>
                             </div><!-- /.visa-card__content -->
-                            <a href="visa-d-business-visa.html" class="visa-card__btn">
+                            <a href="visa-d-business-visa.php" class="visa-card__btn">
                                 Read More <span class="visa-card__btn__icon"><i class="icon-arrow-right-up"></i></span>
                             </a><!-- /.visa-card__btn -->
                         </div><!-- /.visa-card -->
@@ -404,10 +288,10 @@
                                 </div><!-- /.visa-card__icon-box -->
                             </div><!-- /.visa-card__image -->
                             <div class="visa-card__content">
-                                <h2 class="visa-card__title"><a href="visa-d-visa-processing.html">Quick Visa Processing</a></h2>
+                                <h2 class="visa-card__title"><a href="visa-d-visa-processing.php">Quick Visa Processing</a></h2>
                                 <p class="visa-card__text">Experience faster approval with our efficient visa processing service designed to simplify documentation and deliver results quickly.</p>
                             </div><!-- /.visa-card__content -->
-                            <a href="visa-d-visa-processing.html" class="visa-card__btn">
+                            <a href="visa-d-visa-processing.php" class="visa-card__btn">
                                 Read More <span class="visa-card__btn__icon"><i class="icon-arrow-right-up"></i></span>
                             </a><!-- /.visa-card__btn -->
                         </div><!-- /.visa-card -->
@@ -421,10 +305,10 @@
                                 </div><!-- /.visa-card__icon-box -->
                             </div><!-- /.visa-card__image -->
                             <div class="visa-card__content">
-                                <h2 class="visa-card__title"><a href="visa-d-immigration-visa.html">Immigration Visa</a></h2>
+                                <h2 class="visa-card__title"><a href="visa-d-immigration-visa.php">Immigration Visa</a></h2>
                                 <p class="visa-card__text">Access trusted immigration resources with complete guidance, reliable information, and assistance for your relocation journey.</p>
                             </div><!-- /.visa-card__content -->
-                            <a href="visa-d-immigration-visa.html" class="visa-card__btn">
+                            <a href="visa-d-immigration-visa.php" class="visa-card__btn">
                                 Read More <span class="visa-card__btn__icon"><i class="icon-arrow-right-up"></i></span>
                             </a><!-- /.visa-card__btn -->
                         </div><!-- /.visa-card -->
@@ -438,10 +322,10 @@
                                 </div><!-- /.visa-card__icon-box -->
                             </div><!-- /.visa-card__image -->
                             <div class="visa-card__content">
-                                <h2 class="visa-card__title"><a href="visa-d-family-visa.html">Family Visa</a></h2>
+                                <h2 class="visa-card__title"><a href="visa-d-family-visa.php">Family Visa</a></h2>
                                 <p class="visa-card__text">Reunite with loved ones abroad through our simplified family visa process ensuring smooth documentation and stress-free.</p>
                             </div><!-- /.visa-card__content -->
-                            <a href="visa-d-family-visa.html" class="visa-card__btn">
+                            <a href="visa-d-family-visa.php" class="visa-card__btn">
                                 Read More <span class="visa-card__btn__icon"><i class="icon-arrow-right-up"></i></span>
                             </a><!-- /.visa-card__btn -->
                         </div><!-- /.visa-card -->
@@ -455,10 +339,10 @@
                                 </div><!-- /.visa-card__icon-box -->
                             </div><!-- /.visa-card__image -->
                             <div class="visa-card__content">
-                                <h2 class="visa-card__title"><a href="visa-d-students-visa.html">Students Visa</a></h2>
+                                <h2 class="visa-card__title"><a href="visa-d-students-visa.php">Students Visa</a></h2>
                                 <p class="visa-card__text">Secure your dream education overseas with expert visa guidance, university support, and documentation for global study success.</p>
                             </div><!-- /.visa-card__content -->
-                            <a href="visa-d-students-visa.html" class="visa-card__btn">
+                            <a href="visa-d-students-visa.php" class="visa-card__btn">
                                 Read More <span class="visa-card__btn__icon"><i class="icon-arrow-right-up"></i></span>
                             </a><!-- /.visa-card__btn -->
                         </div><!-- /.visa-card -->
@@ -472,10 +356,10 @@
                                 </div><!-- /.visa-card__icon-box -->
                             </div><!-- /.visa-card__image -->
                             <div class="visa-card__content">
-                                <h2 class="visa-card__title"><a href="visa-d-travel-visa.html">Travel Visa</a></h2>
+                                <h2 class="visa-card__title"><a href="visa-d-travel-visa.php">Travel Visa</a></h2>
                                 <p class="visa-card__text">Enjoy hassle-free travel experiences with our reliable visa services ensuring smooth applications, approvals, and journeys.</p>
                             </div><!-- /.visa-card__content -->
-                            <a href="visa-d-travel-visa.html" class="visa-card__btn">
+                            <a href="visa-d-travel-visa.php" class="visa-card__btn">
                                 Read More <span class="visa-card__btn__icon"><i class="icon-arrow-right-up"></i></span>
                             </a><!-- /.visa-card__btn -->
                         </div><!-- /.visa-card -->
@@ -529,7 +413,7 @@
                             </div><!-- /.why-choose__list -->
                             <p class="why-choose__text why-choose__text--2" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300">The majority have suffered alteration in some form, <span>by injected this humour,</span> or randomised words visa.</p>
                             <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300">
-                                <a href="about.html" class="visanet-btn">
+                                <a href="about.php" class="visanet-btn">
                                     <span class="visanet-btn__icon-box">
                                         <span class="visanet-btn__icon"><span><i class="icon-arrow-right-3"></i></span></span>
                                     </span>
@@ -579,7 +463,7 @@
                         <div class="fly-one__card__inner">
                             <h3 class="fly-one__card__title">Ready to fly with us your dream country.</h3>
                             <p class="fly-one__card__text">Immigration visa design support this services business agency elit, sed to do eiusmod tempor majority have humour visa solution.</p>
-                            <a href="about.html" class="visanet-btn">
+                            <a href="about.php" class="visanet-btn">
                                 <span class="visanet-btn__icon-box">
                                     <span class="visanet-btn__icon"><span><i class="icon-arrow-right-3"></i></span></span>
                                 </span>
@@ -641,9 +525,9 @@
                             </div>
                         </div>
                         <div class="countries-three__content">
-                            <h3 class="countries-three__name"><a href="countries-details.html">United States</a></h3>
+                            <h3 class="countries-three__name"><a href="countries-details.php">United States</a></h3>
                             <p class="countries-three__text">Most Trusted Immigration and Visa Consultant locations.</p>
-                            <a href="countries-details.html" class="countries-three__link">READ MORE <span class="countries-three__link__icon"><i class="icon-arrow-right-up"></i></span></a>
+                            <a href="countries-details.php" class="countries-three__link">READ MORE <span class="countries-three__link__icon"><i class="icon-arrow-right-up"></i></span></a>
                         </div>
                     </div><!-- /.countries-three__card -->
                     <div class="countries-three__card" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="200">
@@ -654,9 +538,9 @@
                             </div>
                         </div>
                         <div class="countries-three__content">
-                            <h3 class="countries-three__name"><a href="countries-details.html">Germany</a></h3>
+                            <h3 class="countries-three__name"><a href="countries-details.php">Germany</a></h3>
                             <p class="countries-three__text">Most Trusted Immigration and Visa Consultant locations.</p>
-                            <a href="countries-details.html" class="countries-three__link">READ MORE <span class="countries-three__link__icon"><i class="icon-arrow-right-up"></i></span></a>
+                            <a href="countries-details.php" class="countries-three__link">READ MORE <span class="countries-three__link__icon"><i class="icon-arrow-right-up"></i></span></a>
                         </div>
                     </div><!-- /.countries-three__card -->
                     <div class="countries-three__card" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="300">
@@ -667,9 +551,9 @@
                             </div>
                         </div>
                         <div class="countries-three__content">
-                            <h3 class="countries-three__name"><a href="countries-details.html">Portugal</a></h3>
+                            <h3 class="countries-three__name"><a href="countries-details.php">Portugal</a></h3>
                             <p class="countries-three__text">Most Trusted Immigration and Visa Consultant locations.</p>
-                            <a href="countries-details.html" class="countries-three__link">READ MORE <span class="countries-three__link__icon"><i class="icon-arrow-right-up"></i></span></a>
+                            <a href="countries-details.php" class="countries-three__link">READ MORE <span class="countries-three__link__icon"><i class="icon-arrow-right-up"></i></span></a>
                         </div>
                     </div><!-- /.countries-three__card -->
                     <div class="countries-three__card" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="400">
@@ -680,9 +564,9 @@
                             </div>
                         </div>
                         <div class="countries-three__content">
-                            <h3 class="countries-three__name"><a href="countries-details.html">Argentina</a></h3>
+                            <h3 class="countries-three__name"><a href="countries-details.php">Argentina</a></h3>
                             <p class="countries-three__text">Most Trusted Immigration and Visa Consultant locations.</p>
-                            <a href="countries-details.html" class="countries-three__link">READ MORE <span class="countries-three__link__icon"><i class="icon-arrow-right-up"></i></span></a>
+                            <a href="countries-details.php" class="countries-three__link">READ MORE <span class="countries-three__link__icon"><i class="icon-arrow-right-up"></i></span></a>
                         </div>
                     </div><!-- /.countries-three__card -->
                     <div class="countries-three__card" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="500">
@@ -693,9 +577,9 @@
                             </div>
                         </div>
                         <div class="countries-three__content">
-                            <h3 class="countries-three__name"><a href="countries-details.html">United Kingdom</a></h3>
+                            <h3 class="countries-three__name"><a href="countries-details.php">United Kingdom</a></h3>
                             <p class="countries-three__text">Most Trusted Immigration and Visa Consultant locations.</p>
-                            <a href="countries-details.html" class="countries-three__link">READ MORE <span class="countries-three__link__icon"><i class="icon-arrow-right-up"></i></span></a>
+                            <a href="countries-details.php" class="countries-three__link">READ MORE <span class="countries-three__link__icon"><i class="icon-arrow-right-up"></i></span></a>
                         </div>
                     </div><!-- /.countries-three__card -->
                     <div class="countries-three__card" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="100">
@@ -706,9 +590,9 @@
                             </div>
                         </div>
                         <div class="countries-three__content">
-                            <h3 class="countries-three__name"><a href="countries-details.html">United States</a></h3>
+                            <h3 class="countries-three__name"><a href="countries-details.php">United States</a></h3>
                             <p class="countries-three__text">Most Trusted Immigration and Visa Consultant locations.</p>
-                            <a href="countries-details.html" class="countries-three__link">READ MORE <span class="countries-three__link__icon"><i class="icon-arrow-right-up"></i></span></a>
+                            <a href="countries-details.php" class="countries-three__link">READ MORE <span class="countries-three__link__icon"><i class="icon-arrow-right-up"></i></span></a>
                         </div>
                     </div><!-- /.countries-three__card -->
                     <div class="countries-three__card" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="200">
@@ -719,9 +603,9 @@
                             </div>
                         </div>
                         <div class="countries-three__content">
-                            <h3 class="countries-three__name"><a href="countries-details.html">Germany</a></h3>
+                            <h3 class="countries-three__name"><a href="countries-details.php">Germany</a></h3>
                             <p class="countries-three__text">Most Trusted Immigration and Visa Consultant locations.</p>
-                            <a href="countries-details.html" class="countries-three__link">READ MORE <span class="countries-three__link__icon"><i class="icon-arrow-right-up"></i></span></a>
+                            <a href="countries-details.php" class="countries-three__link">READ MORE <span class="countries-three__link__icon"><i class="icon-arrow-right-up"></i></span></a>
                         </div>
                     </div><!-- /.countries-three__card -->
                     <div class="countries-three__card" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="300">
@@ -732,9 +616,9 @@
                             </div>
                         </div>
                         <div class="countries-three__content">
-                            <h3 class="countries-three__name"><a href="countries-details.html">Portugal</a></h3>
+                            <h3 class="countries-three__name"><a href="countries-details.php">Portugal</a></h3>
                             <p class="countries-three__text">Most Trusted Immigration and Visa Consultant locations.</p>
-                            <a href="countries-details.html" class="countries-three__link">READ MORE <span class="countries-three__link__icon"><i class="icon-arrow-right-up"></i></span></a>
+                            <a href="countries-details.php" class="countries-three__link">READ MORE <span class="countries-three__link__icon"><i class="icon-arrow-right-up"></i></span></a>
                         </div>
                     </div><!-- /.countries-three__card -->
                     <div class="countries-three__card" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="400">
@@ -745,9 +629,9 @@
                             </div>
                         </div>
                         <div class="countries-three__content">
-                            <h3 class="countries-three__name"><a href="countries-details.html">Argentina</a></h3>
+                            <h3 class="countries-three__name"><a href="countries-details.php">Argentina</a></h3>
                             <p class="countries-three__text">Most Trusted Immigration and Visa Consultant locations.</p>
-                            <a href="countries-details.html" class="countries-three__link">READ MORE <span class="countries-three__link__icon"><i class="icon-arrow-right-up"></i></span></a>
+                            <a href="countries-details.php" class="countries-three__link">READ MORE <span class="countries-three__link__icon"><i class="icon-arrow-right-up"></i></span></a>
                         </div>
                     </div><!-- /.countries-three__card -->
                     <div class="countries-three__card" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="500">
@@ -758,9 +642,9 @@
                             </div>
                         </div>
                         <div class="countries-three__content">
-                            <h3 class="countries-three__name"><a href="countries-details.html">United Kingdom</a></h3>
+                            <h3 class="countries-three__name"><a href="countries-details.php">United Kingdom</a></h3>
                             <p class="countries-three__text">Most Trusted Immigration and Visa Consultant locations.</p>
-                            <a href="countries-details.html" class="countries-three__link">READ MORE <span class="countries-three__link__icon"><i class="icon-arrow-right-up"></i></span></a>
+                            <a href="countries-details.php" class="countries-three__link">READ MORE <span class="countries-three__link__icon"><i class="icon-arrow-right-up"></i></span></a>
                         </div>
                     </div><!-- /.countries-three__card -->
                 </div><!-- /.countries-three__carousel -->
@@ -969,7 +853,7 @@
                                 <div class="team-card__info__shape"></div>
                                 <div class="team-card__info__inner">
                                     <h3 class="team-card__name">
-                                        <a href="team-details.html">Christine Rose</a>
+                                        <a href="team-details.php">Christine Rose</a>
                                     </h3><!-- /.team-card__name -->
                                     <p class="team-card__designation">Founder</p>
                                 </div><!-- /.team-card__info__inner -->
@@ -1018,7 +902,7 @@
                                 <div class="team-card__info__shape"></div>
                                 <div class="team-card__info__inner">
                                     <h3 class="team-card__name">
-                                        <a href="team-details.html">Thomas Adison</a>
+                                        <a href="team-details.php">Thomas Adison</a>
                                     </h3><!-- /.team-card__name -->
                                     <p class="team-card__designation">Co - Founder</p>
                                 </div><!-- /.team-card__info__inner -->
@@ -1067,7 +951,7 @@
                                 <div class="team-card__info__shape"></div>
                                 <div class="team-card__info__inner">
                                     <h3 class="team-card__name">
-                                        <a href="team-details.html">Jhone Doe</a>
+                                        <a href="team-details.php">Jhone Doe</a>
                                     </h3><!-- /.team-card__name -->
                                     <p class="team-card__designation">Manager</p>
                                 </div><!-- /.team-card__info__inner -->
@@ -1116,7 +1000,7 @@
                                 <div class="team-card__info__shape"></div>
                                 <div class="team-card__info__inner">
                                     <h3 class="team-card__name">
-                                        <a href="team-details.html">Sharon Ratley</a>
+                                        <a href="team-details.php">Sharon Ratley</a>
                                     </h3><!-- /.team-card__name -->
                                     <p class="team-card__designation">Marketer</p>
                                 </div><!-- /.team-card__info__inner -->
@@ -1165,7 +1049,7 @@
                                 <div class="team-card__info__shape"></div>
                                 <div class="team-card__info__inner">
                                     <h3 class="team-card__name">
-                                        <a href="team-details.html">Isabella Leo</a>
+                                        <a href="team-details.php">Isabella Leo</a>
                                     </h3><!-- /.team-card__name -->
                                     <p class="team-card__designation">Business Consultant</p>
                                 </div><!-- /.team-card__info__inner -->
@@ -1214,7 +1098,7 @@
                                 <div class="team-card__info__shape"></div>
                                 <div class="team-card__info__inner">
                                     <h3 class="team-card__name">
-                                        <a href="team-details.html">Adlof Carr</a>
+                                        <a href="team-details.php">Adlof Carr</a>
                                     </h3><!-- /.team-card__name -->
                                     <p class="team-card__designation">Support Engineer</p>
                                 </div><!-- /.team-card__info__inner -->
@@ -1263,7 +1147,7 @@
                                 <div class="team-card__info__shape"></div>
                                 <div class="team-card__info__inner">
                                     <h3 class="team-card__name">
-                                        <a href="team-details.html">Christine Rose</a>
+                                        <a href="team-details.php">Christine Rose</a>
                                     </h3><!-- /.team-card__name -->
                                     <p class="team-card__designation">Founder</p>
                                 </div><!-- /.team-card__info__inner -->
@@ -1312,7 +1196,7 @@
                                 <div class="team-card__info__shape"></div>
                                 <div class="team-card__info__inner">
                                     <h3 class="team-card__name">
-                                        <a href="team-details.html">Thomas Adison</a>
+                                        <a href="team-details.php">Thomas Adison</a>
                                     </h3><!-- /.team-card__name -->
                                     <p class="team-card__designation">Co - Founder</p>
                                 </div><!-- /.team-card__info__inner -->
@@ -1361,7 +1245,7 @@
                                 <div class="team-card__info__shape"></div>
                                 <div class="team-card__info__inner">
                                     <h3 class="team-card__name">
-                                        <a href="team-details.html">Jhone Doe</a>
+                                        <a href="team-details.php">Jhone Doe</a>
                                     </h3><!-- /.team-card__name -->
                                     <p class="team-card__designation">Manager</p>
                                 </div><!-- /.team-card__info__inner -->
@@ -1410,7 +1294,7 @@
                                 <div class="team-card__info__shape"></div>
                                 <div class="team-card__info__inner">
                                     <h3 class="team-card__name">
-                                        <a href="team-details.html">Sharon Ratley</a>
+                                        <a href="team-details.php">Sharon Ratley</a>
                                     </h3><!-- /.team-card__name -->
                                     <p class="team-card__designation">Marketer</p>
                                 </div><!-- /.team-card__info__inner -->
@@ -1459,7 +1343,7 @@
                                 <div class="team-card__info__shape"></div>
                                 <div class="team-card__info__inner">
                                     <h3 class="team-card__name">
-                                        <a href="team-details.html">Isabella Leo</a>
+                                        <a href="team-details.php">Isabella Leo</a>
                                     </h3><!-- /.team-card__name -->
                                     <p class="team-card__designation">Business Consultant</p>
                                 </div><!-- /.team-card__info__inner -->
@@ -1508,7 +1392,7 @@
                                 <div class="team-card__info__shape"></div>
                                 <div class="team-card__info__inner">
                                     <h3 class="team-card__name">
-                                        <a href="team-details.html">Adlof Carr</a>
+                                        <a href="team-details.php">Adlof Carr</a>
                                     </h3><!-- /.team-card__name -->
                                     <p class="team-card__designation">Support Engineer</p>
                                 </div><!-- /.team-card__info__inner -->
@@ -1551,345 +1435,77 @@
             </div><!-- /.container -->
         </section><!-- /.team-one -->
 
-        <footer class="main-footer section-space-t">
-            <div class="main-footer__bg" style="background-image: url(assets/images/backgrounds/footer-bg.jpg);"></div>
-            <div class="main-footer__top">
-                <div class="contact-info">
-                    <div class="container">
-                        <div class="contact-info__carousel visanet-owl__carousel visanet-owl__carousel--basic-nav owl-carousel owl-theme" data-owl-options='{
-        "items": 1,
-        "margin": 30,
-        "loop": false,
-        "smartSpeed": 700,
-        "nav": true,
-        "dots": false,
-        "navText": ["<i class=\"icon-arrow-left\"></i>","<i class=\"icon-arrow-right\"></i>"],
-        "autoplay": true,
-        "responsive": {
-            "0": {
-                "items": 1
-            },
-            "768": {
-                "items": 2
-            },
-            "992": {
-                "items": 2
-            },
-            "1200": {
-                "items": 3
-            }
-        }
-    }'>
-                            <div class="item" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="100">
-                                <div class="contact-info__card">
-                                    <div class="contact-info__card__icon">
-                                        <i class="icon-phone-call"></i>
-                                    </div><!-- /.contact-info__card__icon -->
-                                    <div class="contact-info__card__content">
-                                        <h3 class="contact-info__card__title">Get Contact Phone</h3>
-                                        <a href="tel:+55222555255" class="contact-info__card__link">+55 222 555 255</a>
-                                    </div><!-- /.contact-info__card__content -->
-                                </div><!-- /.contact-info__card -->
-                            </div><!-- /.item -->
-                            <div class="item" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="200">
-                                <div class="contact-info__card">
-                                    <div class="contact-info__card__icon">
-                                        <i class="icon-email-2"></i>
-                                    </div><!-- /.contact-info__card__icon -->
-                                    <div class="contact-info__card__content">
-                                        <h3 class="contact-info__card__title">Your Email Address</h3>
-                                        <a href="mailto:visanet@envato.com" class="contact-info__card__link">visanet@envato.com</a>
-                                    </div><!-- /.contact-info__card__content -->
-                                </div><!-- /.contact-info__card -->
-                            </div><!-- /.item -->
-                            <div class="item" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="300">
-                                <div class="contact-info__card">
-                                    <div class="contact-info__card__icon">
-                                        <i class="icon-location-2"></i>
-                                    </div><!-- /.contact-info__card__icon -->
-                                    <div class="contact-info__card__content">
-                                        <h3 class="contact-info__card__title">Your Location</h3>
-                                        <a href="https://www.google.com/maps" class="contact-info__card__link">15/04 Street Australia</a>
-                                    </div><!-- /.contact-info__card__content -->
-                                </div><!-- /.contact-info__card -->
-                            </div><!-- /.item -->
-                        </div><!-- /.contact-info__carousel -->
-                    </div><!-- /.container -->
-                </div><!-- /.contact-info -->
-            </div><!-- /.main-footer__top -->
-            <div class="container">
-                <div class="row gutter-y-40">
-                    <div class="col-xl-3 col-lg-5 col-md-7" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="100">
-                        <div class="footer-widget footer-widget--about">
-                            <a href="index.html" class="footer-widget__logo logo-retina">
-                                <img src="assets/images/logo-light.png" width="230" alt="Visanet HTML Template">
-                            </a>
-                            <p class="footer-widget__text">
-                                VisaNet is a modern HTML template built for immigration and visa consulting agencies, study abroad consultants, visa agents, and travel or overseas job services.
-                            </p>
-                            <div class="social-links">
-                                <a href="https://facebook.com">
-                                    <span class="social-links__icon">
-                                        <i class="fab fa-facebook-f" aria-hidden="true"></i>
-                                        <span class="sr-only">Facebook</span>
-                                    </span>
-                                </a>
-                                <a href="https://x.com">
-                                    <span class="social-links__icon">
-                                        <i class="fab fa-twitter" aria-hidden="true"></i>
-                                        <span class="sr-only">X</span>
-                                    </span>
-                                </a>
-                                <a href="https://linkedin.com">
-                                    <span class="social-links__icon">
-                                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-                                        <span class="sr-only">Linkedin</span>
-                                    </span>
-                                </a>
-                                <a href="https://instagram.com">
-                                    <span class="social-links__icon">
-                                        <i class="fab fa-instagram" aria-hidden="true"></i>
-                                        <span class="sr-only">Instagram</span>
-                                    </span>
-                                </a>
-                            </div><!-- /.social-links -->
-                        </div><!-- /.footer-widget -->
-                    </div><!-- /.col-xl-3 -->
-                    <div class="col-lg-3 col-md-5 col-sm-6" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="200">
-                        <div class="footer-widget footer-widget--links">
-                            <h2 class="footer-widget__title">Quick Link</h2><!-- /.footer-widget__title -->
-                            <ul class="list-unstyled footer-widget__links">
-                                <li><a href="about.html">What We Do</a></li>
-                                <li><a href="about.html">About Company</a></li>
-                                <li><a href="team.html">Team Member</a></li>
-                                <li><a href="gallery.html">Our Gallery</a></li>
-                                <li><a href="about.html">Watch Video</a></li>
-                                <li><a href="blog-grid-right.html">Latest news</a></li>
-                            </ul><!-- /.footer-widget__links -->
-                        </div><!-- /.footer-widget -->
-                    </div><!-- /.col-lg-3 -->
-                    <div class="col-xl-3 col-lg-4 col-sm-6" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="300">
-                        <div class="footer-widget footer-widget--blog">
-                            <h2 class="footer-widget__title">Recent Blog</h2><!-- /.footer-widget__title -->
-                            <ul class="footer-widget__blog list-unstyled">
-                                <li>
-                                    <a href="blog-details-right.html" class="footer-widget__blog__image">
-                                        <img src="assets/images/blog/footer-blog-1-1.jpg" alt="blog">
-                                    </a>
-                                    <div class="footer-widget__blog__content">
-                                        <span class="footer-widget__blog__date"><span class="footer-widget__blog__icon"><i class="icon-calendar"></i></span> 10 May 2024</span>
-                                        <h3 class="footer-widget__blog__title"><a href="blog-details-right.html">This Specific Issue Network Security</a></h3>
-                                    </div>
-                                </li>
-                                <li>
-                                    <a href="blog-details-right.html" class="footer-widget__blog__image">
-                                        <img src="assets/images/blog/footer-blog-1-2.jpg" alt="blog">
-                                    </a>
-                                    <div class="footer-widget__blog__content">
-                                        <span class="footer-widget__blog__date"><span class="footer-widget__blog__icon"><i class="icon-calendar"></i></span> 23 February 2025</span>
-                                        <h3 class="footer-widget__blog__title"><a href="blog-details-right.html">In up So Discovery my Middleton</a></h3>
-                                    </div>
-                                </li>
-                            </ul><!-- /.footer-widget__blog -->
-                        </div><!-- /.footer-widget -->
-                    </div><!-- /.col-xl-3 -->
-                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="400">
-                        <div class="footer-widget footer-widget--schedule">
-                            <h2 class="footer-widget__title">Flight Schedule</h2><!-- /.footer-widget__title -->
-                            <ul class="list-unstyled footer-widget__schedule">
-                                <li><span>Sunday -------</span> <span>9.00AM – 8.00PM</span></li>
-                                <li><span>Monday ------</span> <span>8.30AM – 7.30PM</span></li>
-                                <li><span>Tuesday ------</span> <span>6.00AM – 5.00PM</span></li>
-                                <li><span>Wednesday ---</span> <span>2.00AM – 3.00PM</span></li>
-                                <li><span>Thursday -----</span> <span>4.00AM – 5.00PM</span></li>
-                            </ul><!-- /.footer-widget__links -->
-                        </div><!-- /.footer-widget -->
-                    </div><!-- /.col-xl-3 -->
-                </div><!-- /.row -->
-            </div><!-- /.container -->
-            <div class="main-footer__bottom">
-                <div class="container">
-                    <div class="main-footer__bottom__inner">
-                        <p class="main-footer__copyright">
-                            &copy; Copyright <span class="dynamic-year"></span> by Visanet HTML Template.
-                        </p>
-                        <ul class="main-footer__page list-unstyled">
-                            <li><a href="about.html">Privacy</a></li>
-                            <li><a href="about.html">Policy</a></li>
-                            <li><a href="contact.html">Contact Us</a></li>
-                        </ul><!-- /.main-footer__page -->
-                    </div><!-- /.main-footer__inner -->
-                </div><!-- /.container -->
-            </div><!-- /.main-footer__bottom -->
-        </footer><!-- /.main-footer -->
-
+        <?php include "./include/footer.php" ?>
     </div><!-- /.page-wrapper -->
 
-    <div class="mobile-nav__wrapper">
-        <div class="mobile-nav__overlay mobile-nav__toggler"></div><!-- /.mobile-nav__overlay -->
-        <div class="mobile-nav__content">
-            <span class="mobile-nav__close mobile-nav__toggler"><i class="icon-close"></i></span>
-            <div class="logo-box">
-                <a href="index.html" aria-label="logo image">
-                    <img src="assets/images/logo-light.png" width="230" alt="Visanet HTML" />
-                </a>
-            </div><!-- /.logo-box -->
-            <div class="mobile-nav__container"></div><!-- /.mobile-nav__container -->
-            <ul class="mobile-nav__contact list-unstyled">
-                <li>
-                    <span class="mobile-nav__contact__icon"><i class="fa fa-envelope"></i></span>
-                    <a href="mailto:findox@envato.com">visanet@envato.com</a>
-                </li>
-                <li>
-                    <span class="mobile-nav__contact__icon"><i class="fa fa-phone-alt"></i></span>
-                    <a href="tel:+9156980036420">+91 5698 0036 420</a>
-                </li>
-            </ul><!-- /.mobile-nav__contact -->
-            <div class="social-links">
-                <a href="https://facebook.com">
-                    <span class="social-links__icon">
-                        <i class="fab fa-facebook-f" aria-hidden="true"></i>
-                        <span class="sr-only">Facebook</span>
-                    </span>
-                </a>
-                <a href="https://x.com">
-                    <span class="social-links__icon">
-                        <i class="fab fa-twitter" aria-hidden="true"></i>
-                        <span class="sr-only">X</span>
-                    </span>
-                </a>
-                <a href="https://linkedin.com">
-                    <span class="social-links__icon">
-                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-                        <span class="sr-only">Linkedin</span>
-                    </span>
-                </a>
-                <a href="https://instagram.com">
-                    <span class="social-links__icon">
-                        <i class="fab fa-instagram" aria-hidden="true"></i>
-                        <span class="sr-only">Instagram</span>
-                    </span>
-                </a>
-            </div><!-- /.social-links -->
-        </div><!-- /.mobile-nav__content -->
-    </div><!-- /.mobile-nav__wrapper -->
-    <div class="search-popup">
-        <div class="search-popup__overlay search-toggler"></div>
-        <div class="search-popup__content">
-            <form role="search" method="get" class="search-popup__form" action="about.html#">
-                <input type="text" id="search" placeholder="Search Here..." />
-                <button type="submit" aria-label="search submit">
-                    <i class="icon-search"></i>
-                </button>
-            </form>
-        </div><!-- /.search-popup__content -->
-    </div><!-- /.search-popup -->
-    <aside class="sidebar-three">
-        <div class="sidebar-three__overlay sidebar-btn__toggler"></div><!-- /.siderbar-ovarlay -->
-        <div class="sidebar-three__content">
-            <span class="sidebar-three__close sidebar-btn__toggler"><i class="icon-close"></i></span>
-            <div class="sidebar-three__logo sidebar-three__item logo-retina">
-                <a href="index.html" aria-label="logo image">
-                    <img src="assets/images/logo-dark.png" width="230" alt="Visanet HTML" />
-                </a>
-            </div><!-- /.sidebar-three__logo -->
-            <div class="sidebar-three__about sidebar-three__item">
-                <p class="sidebar-three__about__text">
-                    VisaNet is a modern HTML template built for immigration and visa consulting agencies, study abroad consultants, visa agents, and travel or overseas job services.
-                </p>
-            </div><!-- /.sidebar-three__about -->
-            <div class="sidebar-three__info sidebar-three__item">
-                <h4 class="sidebar-three__title">Contact Us</h4>
-                <ul class="sidebar-three__info__list">
-                    <li>
-                        <span class="sidebar-three__info__icon">
-                            <i class="icon-location"></i>
-                        </span>
-                        <address>85 Ketch Harbour Road Bensal
-                            PA 19020</address>
-                    </li>
-                    <li>
-                        <span class="sidebar-three__info__icon">
-                            <i class="icon-email"></i>
-                        </span>
-                        <a href="mailto:visanet@envato.com">visanet@envato.com</a>
-                    </li>
-                    <li>
-                        <span class="sidebar-three__info__icon">
-                            <i class="icon-phone-call"></i>
-                        </span>
-                        <a href="tel:+9156980036420">+9156980036420</a>
-                    </li>
-                </ul><!-- /.sidebar-three__info__list -->
-            </div><!-- /.sidebar-three__info -->
-            <div class="sidebar-three__social social-links sidebar-three__item">
-                <a href="https://facebook.com">
-                    <span class="social-links__icon">
-                        <i class="fab fa-facebook-f" aria-hidden="true"></i>
-                        <span class="sr-only">Facebook</span>
-                    </span>
-                </a>
-                <a href="https://x.com">
-                    <span class="social-links__icon">
-                        <i class="fab fa-twitter" aria-hidden="true"></i>
-                        <span class="sr-only">X</span>
-                    </span>
-                </a>
-                <a href="https://linkedin.com">
-                    <span class="social-links__icon">
-                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-                        <span class="sr-only">Linkedin</span>
-                    </span>
-                </a>
-                <a href="https://instagram.com">
-                    <span class="social-links__icon">
-                        <i class="fab fa-instagram" aria-hidden="true"></i>
-                        <span class="sr-only">Instagram</span>
-                    </span>
-                </a>
-            </div><!-- /.sidebar-three__social -->
-            <div class="sidebar-three__newsletter sidebar-three__item">
-                <label class="sidebar-three__title" for="sidebar-three-email">Newsletter</label>
-                <form action="about.html#" class="sidebar-three__newsletter__inner mc-form" data-url="MAILCHIMP_FORM_URL">
-                    <input type="email" name="EMAIL" id="sidebar-three-email" class="sidebar-three__newsletter__input" placeholder="Email Address">
-                    <button type="submit" class="sidebar-three__newsletter__btn"><span class="far fa-envelope" aria-hidden="true"></span></button>
-                </form>
-                <div class="mc-form__response"></div><!-- /.mc-form__response -->
-            </div><!-- /.sidebar-three__form -->
-        </div><!-- /.sidebar-three__content -->
-    </aside><!-- /.sidebar-three -->
+ 
+ <header class="main-header main-header--two sticky-header sticky-header--one-page">
+            <div class="container main-header__container">
+                <div class="main-header__inner">
+                    <div class="main-header__left">
+                        <div class="main-header__logo logo-retina">
+                            <a href="index.php">
+                                <img src="assets/images/logo-light.png" alt="Visanet HTML" width="230">
+                            </a>
+                        </div><!-- /.main-header__logo -->
+                    </div><!-- /.main-header__left -->
+                    <div class="main-header__right">
+                        <div class="main-header__top">
+                            <div class="main-header__info">
+                                <span class="main-header__info__title">News:</span>
+                                <p class="main-header__info__text">I can’t browse the internet live, but this summary <span>reflects</span> the most recent .....</p>
+                            </div><!-- /.main-header__info -->
+                            <a href="<?php echo $domain?>/contact.html" class="visanet-btn-two">
+                                Appointment <span class="visanet-btn-two__icon"><i class="icon-arrow-right-3"></i></span>
+                            </a><!-- /.visanet-btn-two -->
+                        </div><!-- /.main-header__top -->
+                        <div class="main-header__bottom">
+                            <nav class="main-header__nav main-menu">
+                                <ul class="main-menu__list one-page-scroll-menu">
+                                    <li class="  scrollToLink current">
+                                        <a href="index.php#home">Home</a>
+                                        <ul>
 
-    <a href="about.html#" data-target="html" class="scroll-to-target scroll-to-top">
-        <span class="scroll-to-top__text">back top</span>
-        <span class="scroll-to-top__wrapper"><span class="scroll-to-top__inner"></span></span>
-    </a>
 
-    <script src="assets/vendors/jquery/jquery-3.7.1.min.js"></script>
-    <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendors/bootstrap-select/bootstrap-select.min.js"></script>
-    <script src="assets/vendors/jarallax/jarallax.min.js"></script>
-    <script src="assets/vendors/jquery-ui/jquery-ui.js"></script>
-    <script src="assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
-    <script src="assets/vendors/jquery-appear/jquery.appear.min.js"></script>
-    <script src="assets/vendors/jquery-circle-progress/jquery.circle-progress.min.js"></script>
-    <script src="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
-    <script src="assets/vendors/jquery-validate/jquery.validate.min.js"></script>
-    <script src="assets/vendors/wnumb/wNumb.min.js"></script>
-    <script src="assets/vendors/owl-carousel/js/owl.carousel.min.js"></script>
-    <script src="assets/vendors/aos/js/aos.js"></script>
-    <script src="assets/vendors/imagesloaded/imagesloaded.min.js"></script>
-    <script src="assets/vendors/isotope/isotope.js"></script>
-    <script src="assets/vendors/slick/slick.min.js"></script>
-    <script src="assets/vendors/countdown/countdown.min.js"></script>
-    <script src="assets/vendors/daterangepicker-master/moment.min.js"></script>
-    <script src="assets/vendors/daterangepicker-master/daterangepicker.js"></script>
-    <!-- gsap js -->
-    <script src="assets/vendors/gsap/gsap.js"></script>
-    <script src="assets/vendors/gsap/scrolltrigger.min.js"></script>
-    <script src="assets/vendors/gsap/splittext.min.js"></script>
-    <script src="assets/vendors/gsap/visanet-split.js"></script>
-    <!-- template js -->
-    <script src="assets/js/visanet.js"></script>
-</body>
 
-</html>
+                                        </ul>
+                                    </li>
+                                    <li class="scrollToLink"><a href="<?php echo $domain?>/index.php#about">About</a></li>
+                                    <li class="scrollToLink"><a href="<?php echo $domain?>/index.php#visa">Visa</a></li>
+                                    <li class="scrollToLink"><a href="<?php echo $domain?>/countries.html">Countries</a></li>
+                                    <li class="scrollToLink"><a href="<?php echo $domain?>/index.php#gallery">Gallery</a></li>
+                                    <li class="scrollToLink"><a href="<?php echo $domain?>/contact.html">Contact us</a></li>
+                                    <li class="scrollToLink"><a href="<?php echo $domain?>/index.php#blog">Blog</a></li>
+                                </ul>
+                            </nav><!-- /.main-header__nav -->
+
+                            <div class="main-header__right__right">
+                                <div class="mobile-nav__btn mobile-nav__toggler">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div><!-- /.mobile-nav__toggler -->
+                                <a href="<?php echo $domain?>/index.php#" class="main-header__search search-toggler">
+                                    <i class="icon-search" aria-hidden="true"></i>
+                                    <span class="sr-only">Search</span>
+                                </a><!-- /.main-header__search -->
+                                <a href="cart.php" class="main-header__cart">
+                                    <i class="icon-trolley-cart" aria-hidden="true"></i>
+                                    <span class="sr-only">Trolley Cart</span>
+                                    <span class="main-header__cart__quantity">02</span>
+                                </a><!-- /.main-header__cart -->
+                                <div class="main-header__call">
+                                    <span class="main-header__call__icon">
+                                        <i class="icon-phone-call"></i>
+                                    </span><!-- /.main-header__call__icon -->
+                                    <div class="main-header__call__content">
+                                        <p class="main-header__call__title">Call Any Time</p>
+                                        <a href="tel:+55222555255" class="main-header__call__number">+55 222 555 255</a>
+                                    </div><!-- /.main-header__call__content -->
+                                </div><!-- /.main-header__call -->
+                            </div><!-- /.main-header__right__right -->
+                        </div><!-- /.main-header__bottom -->
+                    </div><!-- /.main-header__right -->
+                </div><!-- /.main-header__inner -->
+            </div><!-- /.container -->
+        </header><!-- /.main-header -->

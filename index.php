@@ -1,16 +1,21 @@
+<?php 
+
+include("./server/connection.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home Two || Visanet || HTML Template For Lawyer & Law Firm</title>
+    <title>Home Two || <?php echo $sitename ?></title>
     <!-- favicons Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png" />
     <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
-    <meta name="description" content="VisaNet is a Immigration and Visa Consulting HTML Template. Created especially designed for Immigration & Visa Consulting Agencies, Visa Agents, Study Abroad Consultants, Overseas Job Consultants, IELTS Coaching Centers, and Travel & Tourism Businesses. VisaNet Immigration and Visa Consulting Design and customizable features make it perfect for on various displays and resolutions website. All HTML files are with layers and groups, so they are very easy to modify & expand." />
+    <meta name="description" content="<?php echo $sitename ?> is a Immigration and Visa Consulting HTML Template. Created especially designed for Immigration & Visa Consulting Agencies, Visa Agents, Study Abroad Consultants, Overseas Job Consultants, IELTS Coaching Centers, and Travel & Tourism Businesses. <?php echo $sitename ?> Immigration and Visa Consulting Design and customizable features make it perfect for on various displays and resolutions website. All HTML files are with layers and groups, so they are very easy to modify & expand." />
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,393 +51,12 @@
     </div>
     <!-- /.preloader -->
     <div class="page-wrapper">
-        <header class="main-header main-header--two sticky-header sticky-header--normal">
-            <div class="container">
-                <div class="main-header__inner">
-                    <div class="main-header__left">
-                        <div class="main-header__logo logo-retina">
-                            <a href="index.html">
-                                <img src="assets/images/logo-light.png" alt="Visanet HTML" width="230">
-                            </a>
-                        </div><!-- /.main-header__logo -->
-                    </div><!-- /.main-header__left -->
-                    <div class="main-header__right">
-                        <div class="main-header__top">
-                            <div class="main-header__info">
-                                <span class="main-header__info__title">News:</span>
-                                <p class="main-header__info__text">I can’t browse the internet live, but this summary <span>reflects</span> the most recent .....</p>
-                            </div><!-- /.main-header__info -->
-                            <a href="contact.html" class="visanet-btn-two">
-                                Appointment <span class="visanet-btn-two__icon"><i class="icon-arrow-right-3"></i></span>
-                            </a><!-- /.visanet-btn-two -->
-                        </div><!-- /.main-header__top -->
-                        <div class="main-header__bottom">
-                            <nav class="main-header__nav main-menu">
-                                <ul class="main-menu__list">
+       <!-- header started -->
+     <?php include("./include/nav.php")?>
 
+       <!-- header ended -->
 
-                                    <li class="dropdown megamenu">
-                                        <a href="index.html">Home</a>
-                                        <ul>
-                                            <li>
-                                                <section class="home-showcase">
-                                                    <div class="container-fluid">
-                                                        <div class="home-showcase__inner">
-                                                            <div class="row">
-                                                                <div class="col-md-6 col-lg-3">
-                                                                    <div class="demo-one__card">
-                                                                        <div class="demo-one__image">
-                                                                            <img src="assets/images/visanet-landing/home-1.jpg" alt="visanet">
-                                                                            <div class="demo-one__btns">
-                                                                                <a href="index.html" class="visanet-btn demo-one__btn">
-                                                                                    <span class="visanet-btn__icon-box">
-                                                                                        <span class="visanet-btn__icon"><span><i class="icon-arrow-right-3"></i></span></span>
-                                                                                    </span>
-                                                                                    <span class="visanet-btn__text">Multi Page</span>
-                                                                                </a><!-- /.thm-btn demo-one__btn -->
-                                                                                <a href="index-one-page.html" class="visanet-btn demo-one__btn">
-                                                                                    <span class="visanet-btn__icon-box">
-                                                                                        <span class="visanet-btn__icon"><span><i class="icon-arrow-right-3"></i></span></span>
-                                                                                    </span>
-                                                                                    <span class="visanet-btn__text">One Page</span>
-                                                                                </a><!-- /.thm-btn demo-one__btn -->
-                                                                            </div><!-- /.demo-one__btns -->
-                                                                        </div><!-- /.demo-one__image -->
-                                                                        <div class="demo-one__content">
-                                                                            <h3 class="demo-one__title">
-                                                                                <a href="index.html">Home Page 01</a>
-                                                                            </h3><!-- /.demo-one__title -->
-                                                                        </div><!-- /.demo-one__content -->
-                                                                    </div><!-- /.demo-one__card -->
-                                                                </div><!-- /.col-md-6 col-lg-3 -->
-                                                                <div class="col-md-6 col-lg-3">
-                                                                    <div class="demo-one__card">
-                                                                        <div class="demo-one__image">
-                                                                            <img src="assets/images/visanet-landing/home-2.jpg" alt="visanet">
-                                                                            <div class="demo-one__btns">
-                                                                                <a href="index-2.html" class="visanet-btn demo-one__btn">
-                                                                                    <span class="visanet-btn__icon-box">
-                                                                                        <span class="visanet-btn__icon"><span><i class="icon-arrow-right-3"></i></span></span>
-                                                                                    </span>
-                                                                                    <span class="visanet-btn__text">Multi Page</span>
-                                                                                </a><!-- /.thm-btn demo-one__btn -->
-                                                                                <a href="index-2-one-page.html" class="visanet-btn demo-one__btn">
-                                                                                    <span class="visanet-btn__icon-box">
-                                                                                        <span class="visanet-btn__icon"><span><i class="icon-arrow-right-3"></i></span></span>
-                                                                                    </span>
-                                                                                    <span class="visanet-btn__text">One Page</span>
-                                                                                </a><!-- /.thm-btn demo-one__btn -->
-                                                                            </div><!-- /.demo-one__btns -->
-                                                                        </div><!-- /.demo-one__image -->
-                                                                        <div class="demo-one__content">
-                                                                            <h3 class="demo-one__title">
-                                                                                <a href="index-2.html">Home Page 02</a>
-                                                                            </h3><!-- /.demo-one__title -->
-                                                                        </div><!-- /.demo-one__content -->
-                                                                    </div><!-- /.demo-one__card -->
-                                                                </div><!-- /.col-md-6 col-lg-3 -->
-                                                                <div class="col-md-6 col-lg-3">
-                                                                    <div class="demo-one__card">
-                                                                        <div class="demo-one__image">
-                                                                            <img src="assets/images/visanet-landing/home-3.jpg" alt="visanet">
-                                                                            <div class="demo-one__btns">
-                                                                                <a href="index-3.html" class="visanet-btn demo-one__btn">
-                                                                                    <span class="visanet-btn__icon-box">
-                                                                                        <span class="visanet-btn__icon"><span><i class="icon-arrow-right-3"></i></span></span>
-                                                                                    </span>
-                                                                                    <span class="visanet-btn__text">Multi Page</span>
-                                                                                </a><!-- /.thm-btn demo-one__btn -->
-                                                                                <a href="index-3-one-page.html" class="visanet-btn demo-one__btn">
-                                                                                    <span class="visanet-btn__icon-box">
-                                                                                        <span class="visanet-btn__icon"><span><i class="icon-arrow-right-3"></i></span></span>
-                                                                                    </span>
-                                                                                    <span class="visanet-btn__text">One Page</span>
-                                                                                </a><!-- /.thm-btn demo-one__btn -->
-                                                                            </div><!-- /.demo-one__btns -->
-                                                                        </div><!-- /.demo-one__image -->
-                                                                        <div class="demo-one__content">
-                                                                            <h3 class="demo-one__title">
-                                                                                <a href="index-3.html">Home Page 03</a>
-                                                                            </h3><!-- /.demo-one__title -->
-                                                                        </div><!-- /.demo-one__content -->
-                                                                    </div><!-- /.demo-one__card -->
-                                                                </div><!-- /.col-md-6 col-lg-3 -->
-                                                                <div class="col-md-6 col-lg-3">
-                                                                    <div class="demo-one__card">
-                                                                        <div class="demo-one__image">
-                                                                            <img src="assets/images/visanet-landing/home-4.jpg" alt="visanet">
-                                                                            <div class="demo-one__btns">
-                                                                                <a href="index-4.html" class="visanet-btn demo-one__btn">
-                                                                                    <span class="visanet-btn__icon-box">
-                                                                                        <span class="visanet-btn__icon"><span><i class="icon-arrow-right-3"></i></span></span>
-                                                                                    </span>
-                                                                                    <span class="visanet-btn__text">Multi Page</span>
-                                                                                </a><!-- /.thm-btn demo-one__btn -->
-                                                                                <a href="index-4-one-page.html" class="visanet-btn  demo-one__btn">
-                                                                                    <span class="visanet-btn__icon-box">
-                                                                                        <span class="visanet-btn__icon"><span><i class="icon-arrow-right-3"></i></span></span>
-                                                                                    </span>
-                                                                                    <span class="visanet-btn__text">One Page</span>
-                                                                                </a><!-- /.thm-btn demo-one__btn -->
-                                                                            </div><!-- /.demo-one__btns -->
-                                                                        </div><!-- /.demo-one__image -->
-                                                                        <div class="demo-one__content">
-                                                                            <h3 class="demo-one__title">
-                                                                                <a href="index-4.html">Home Page 04</a>
-                                                                            </h3><!-- /.demo-one__title -->
-                                                                        </div><!-- /.demo-one__content -->
-                                                                    </div><!-- /.demo-one__card -->
-                                                                </div><!-- /.col-md-6 col-lg-3 -->
-                                                                <div class="col-md-6 col-lg-3">
-                                                                    <div class="demo-one__card">
-                                                                        <div class="demo-one__image">
-                                                                            <img src="assets/images/visanet-landing/home-5.jpg" alt="visanet">
-                                                                            <div class="demo-one__btns">
-                                                                                <a href="index-5.html" class="visanet-btn demo-one__btn ">
-                                                                                    <span class="visanet-btn__icon-box">
-                                                                                        <span class="visanet-btn__icon"><span><i class="icon-arrow-right-3"></i></span></span>
-                                                                                    </span>
-                                                                                    <span class="visanet-btn__text">Multi Page</span>
-                                                                                </a><!-- /.thm-btn demo-one__btn -->
-                                                                                <a href="index-5-one-page.html" class="visanet-btn  demo-one__btn ">
-                                                                                    <span class="visanet-btn__icon-box">
-                                                                                        <span class="visanet-btn__icon"><span><i class="icon-arrow-right-3"></i></span></span>
-                                                                                    </span>
-                                                                                    <span class="visanet-btn__text">One Page</span>
-                                                                                </a><!-- /.thm-btn demo-one__btn -->
-                                                                            </div><!-- /.demo-one__btns -->
-                                                                        </div><!-- /.demo-one__image -->
-                                                                        <div class="demo-one__content">
-                                                                            <h3 class="demo-one__title">
-                                                                                <a href="index-5.html">Home Page 05</a>
-                                                                            </h3><!-- /.demo-one__title -->
-                                                                        </div><!-- /.demo-one__content -->
-                                                                    </div><!-- /.demo-one__card -->
-                                                                </div><!-- /.col-md-6 col-lg-3 -->
-                                                                <div class="col-md-6 col-lg-3">
-                                                                    <div class="demo-one__card">
-                                                                        <div class="demo-one__image">
-                                                                            <img src="assets/images/visanet-landing/home-boxed.jpg" alt="visanet">
-                                                                            <div class="demo-one__btns">
-                                                                                <a href="index-boxed.html" class="visanet-btn demo-one__btn">
-                                                                                    <span class="visanet-btn__icon-box">
-                                                                                        <span class="visanet-btn__icon"><span><i class="icon-arrow-right-3"></i></span></span>
-                                                                                    </span>
-                                                                                    <span class="visanet-btn__text">View Page</span>
-                                                                                </a><!-- /.thm-btn demo-one__btn -->
-                                                                            </div><!-- /.demo-one__btns -->
-                                                                        </div><!-- /.demo-one__image -->
-                                                                        <div class="demo-one__content">
-                                                                            <h3 class="demo-one__title">
-                                                                                <a href="index-boxed.html">Home Boxed</a>
-                                                                            </h3><!-- /.demo-one__title -->
-                                                                        </div><!-- /.demo-one__content -->
-                                                                    </div><!-- /.demo-one__card -->
-                                                                </div><!-- /.col-md-6 col-lg-3 -->
-                                                                <div class="col-md-6 col-lg-3">
-                                                                    <div class="demo-one__card">
-                                                                        <div class="demo-one__image">
-                                                                            <img src="assets/images/visanet-landing/home-rtl.jpg" alt="visanet">
-                                                                            <div class="demo-one__btns">
-                                                                                <a href="index-rtl.html#googtrans(en%7car)" class="visanet-btn demo-one__btn">
-                                                                                    <span class="visanet-btn__icon-box">
-                                                                                        <span class="visanet-btn__icon"><span><i class="icon-arrow-right-3"></i></span></span>
-                                                                                    </span>
-                                                                                    <span class="visanet-btn__text">View Page</span>
-                                                                                </a><!-- /.thm-btn demo-one__btn -->
-                                                                            </div><!-- /.demo-one__btns -->
-                                                                        </div><!-- /.demo-one__image -->
-                                                                        <div class="demo-one__content">
-                                                                            <h3 class="demo-one__title">
-                                                                                <a href="index-rtl.html#googtrans(en%7car)">Home RTL</a>
-                                                                            </h3><!-- /.demo-one__title -->
-                                                                        </div><!-- /.demo-one__content -->
-                                                                    </div><!-- /.demo-one__card -->
-                                                                </div><!-- /.col-md-6 col-lg-3 -->
-                                                            </div><!-- /.row -->
-                                                        </div><!-- /.home-showcase__inner -->
-                                                    </div><!-- /.container -->
-                                                </section>
-                                            </li>
-                                        </ul>
-                                    </li>
-
-                                    <li>
-                                        <a href="about.html">About</a>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="index-2.html#">Visa</a>
-                                        <ul>
-                                            <li class="dropdown">
-                                                <a href="index-2.html#">Visa grid</a>
-                                                <ul>
-                                                    <li><a href="visa.html">Visa grid 01</a></li>
-                                                    <li><a href="visa-2.html">Visa grid 02</a></li>
-                                                    <li><a href="visa-3.html">Visa grid 03</a></li>
-                                                    <li><a href="visa-4.html">Visa grid 04</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="dropdown">
-                                                <a href="index-2.html#">Visa Carousel</a>
-                                                <ul>
-                                                    <li><a href="visa-carousel.html">Visa Carousel 01</a></li>
-                                                    <li><a href="visa-carousel-2.html">Visa Carousel 02</a></li>
-                                                    <li><a href="visa-carousel-3.html">Visa Carousel 03</a></li>
-                                                    <li><a href="visa-carousel-4.html">Visa Carousel 04</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="visa-d-business-visa.html">Business Visa</a></li>
-                                            <li><a href="visa-d-visa-processing.html">Quick Visa Processing</a></li>
-                                            <li><a href="visa-d-immigration-visa.html">Immigration Visa</a></li>
-                                            <li><a href="visa-d-family-visa.html">Family Visa</a></li>
-                                            <li><a href="visa-d-students-visa.html">Students Visa</a></li>
-                                            <li><a href="visa-d-travel-visa.html">Travel Visa</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="index-2.html#">Pages</a>
-                                        <ul>
-                                            <li>
-                                                <a href="team.html">Our Team</a>
-                                                <ul>
-                                                    <li><a href="team.html">Our Team</a></li>
-                                                    <li><a href="team-carousel.html">Team Carousel</a></li>
-                                                    <li><a href="team-details.html">Team Details</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a href="training.html">Our Training</a>
-                                                <ul>
-                                                    <li><a href="training.html">Our Training</a></li>
-                                                    <li><a href="training-carousel.html">Training Carousel</a></li>
-                                                    <li><a href="training-details.html">Training Details</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a href="countries.html">Countries</a>
-                                                <ul>
-                                                    <li><a href="countries.html">Countries Page</a></li>
-                                                    <li><a href="countries-details.html">Countries Details</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a href="testimonials.html">Our Testimonials</a>
-                                                <ul>
-                                                    <li><a href="testimonials.html">Testimonials Grid</a></li>
-                                                    <li><a href="testimonials-carousel.html">Testimonials Carousel</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a href="gallery.html">Gallery</a>
-                                                <ul>
-                                                    <li><a href="gallery.html">Gallery masonry</a></li>
-                                                    <li><a href="gallery-filter.html">Gallery filter</a></li>
-                                                    <li><a href="gallery-grid.html">Gallery Grid</a></li>
-                                                    <li><a href="gallery-carousel.html">Gallery Carousel</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="faq.html">Faq’s</a></li>
-                                            <li><a href="404.html">404 Error</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="index-2.html#">Shop</a>
-                                        <ul>
-                                            <li class="dropdown">
-                                                <a href="index-2.html#">Products</a>
-                                                <ul>
-                                                    <li><a href="products.html">No sidebar</a></li>
-                                                    <li><a href="products-left.html">Left sidebar</a></li>
-                                                    <li><a href="products-right.html">Right sidebar</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="products-carousel.html">Products carousel</a></li>
-                                            <li><a href="product-details.html">Product details</a></li>
-                                            <li><a href="cart.html">Cart</a></li>
-                                            <li><a href="checkout.html">Checkout</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="index-2.html#">Blog</a>
-                                        <ul>
-                                            <li class="dropdown">
-                                                <a href="index-2.html#">Blog grid 01</a>
-                                                <ul>
-                                                    <li><a href="blog-grid.html">No sidebar</a></li>
-                                                    <li><a href="blog-grid-left.html">Left sidebar</a></li>
-                                                    <li><a href="blog-grid-right.html">Right sidebar</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="dropdown">
-                                                <a href="index-2.html#">Blog grid 02</a>
-                                                <ul>
-                                                    <li><a href="blog-grid-2.html">No sidebar</a></li>
-                                                    <li><a href="blog-grid-2-left.html">Left sidebar</a></li>
-                                                    <li><a href="blog-grid-2-right.html">Right sidebar</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="dropdown">
-                                                <a href="index-2.html#">Blog list</a>
-                                                <ul>
-                                                    <li><a href="blog-list.html">No sidebar</a></li>
-                                                    <li><a href="blog-list-left.html">Left sidebar</a></li>
-                                                    <li><a href="blog-list-right.html">Right sidebar</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="dropdown">
-                                                <a href="index-2.html#">Blog carousel</a>
-                                                <ul>
-                                                    <li><a href="blog-carousel.html">Blog carousel 01</a></li>
-                                                    <li><a href="blog-carousel-2.html">Blog carousel 02</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="dropdown">
-                                                <a href="index-2.html#">Blog details</a>
-                                                <ul>
-                                                    <li><a href="blog-details.html">No sidebar</a></li>
-                                                    <li><a href="blog-details-left.html">Left sidebar</a></li>
-                                                    <li><a href="blog-details-right.html">Right sidebar</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="contact.html">Contact</a>
-                                    </li>
-                                </ul>
-                            </nav><!-- /.main-header__nav -->
-                            <div class="main-header__right__right">
-                                <div class="mobile-nav__btn mobile-nav__toggler">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                </div><!-- /.mobile-nav__toggler -->
-                                <a href="index-2.html#" class="main-header__search search-toggler">
-                                    <i class="icon-search" aria-hidden="true"></i>
-                                    <span class="sr-only">Search</span>
-                                </a><!-- /.main-header__search -->
-                                <a href="cart.html" class="main-header__cart">
-                                    <i class="icon-trolley-cart" aria-hidden="true"></i>
-                                    <span class="sr-only">Trolley Cart</span>
-                                    <span class="main-header__cart__quantity">02</span>
-                                </a><!-- /.main-header__cart -->
-                                <div class="main-header__call">
-                                    <span class="main-header__call__icon">
-                                        <i class="icon-phone-call"></i>
-                                    </span><!-- /.main-header__call__icon -->
-                                    <div class="main-header__call__content">
-                                        <p class="main-header__call__title">Call Any Time</p>
-                                        <a href="tel:+55222555255" class="main-header__call__number">+55 222 555 255</a>
-                                    </div><!-- /.main-header__call__content -->
-                                </div><!-- /.main-header__call -->
-                            </div><!-- /.main-header__right__right -->
-                        </div><!-- /.main-header__bottom -->
-                    </div><!-- /.main-header__right -->
-                </div><!-- /.main-header__inner -->
-            </div><!-- /.container -->
-        </header><!-- /.main-header -->
-
-        <section class="hero-slider-two">
+        <section class="hero-slider-two" id='home'>
             <div class="hero-slider-two__carousel visanet-owl__carousel visanet-owl__carousel--basic-nav owl-carousel owl-theme" data-owl-options='{
         "items": 1,
         "margin": 0,
@@ -470,7 +94,7 @@
                                         <p class="hero-slider-two__text">Business visa is a conditional permission provided by a region to <br> a foreigner to enter, stay in, or leave that country.</p>
                                     </div>
                                     <div class="hero-slider-two__button">
-                                        <a href="about.html" class="visanet-btn visanet-btn--black">
+                                        <a href="about.php" class="visanet-btn visanet-btn--black">
                                             <span class="visanet-btn__icon-box">
                                                 <span class="visanet-btn__icon"><span><i class="icon-arrow-right-3"></i></span></span>
                                             </span>
@@ -507,7 +131,7 @@
                                         <p class="hero-slider-two__text">There are many variations of passages of Lorem Ipsum available, but <br> majority have suffered alteration in some form, by.</p>
                                     </div>
                                     <div class="hero-slider-two__button">
-                                        <a href="about.html" class="visanet-btn visanet-btn--black">
+                                        <a href="about.php" class="visanet-btn visanet-btn--black">
                                             <span class="visanet-btn__icon-box">
                                                 <span class="visanet-btn__icon"><span><i class="icon-arrow-right-3"></i></span></span>
                                             </span>
@@ -544,7 +168,7 @@
                                         <p class="hero-slider-two__text">If you are going to use a passage of Lorem Ipsum. There are many <br> variations of passages of Lorem Ipsum available.</p>
                                     </div>
                                     <div class="hero-slider-two__button">
-                                        <a href="about.html" class="visanet-btn visanet-btn--black">
+                                        <a href="about.php" class="visanet-btn visanet-btn--black">
                                             <span class="visanet-btn__icon-box">
                                                 <span class="visanet-btn__icon"><span><i class="icon-arrow-right-3"></i></span></span>
                                             </span>
@@ -572,9 +196,9 @@
                                 <div class="features__icon-box">
                                     <span class="features__icon"><i class="icon-passport"></i></span>
                                 </div><!-- /.features__icon-box -->
-                                <h2 class="features__title"><a href="about.html">Passport Application</a></h2>
+                                <h2 class="features__title"><a href="about.php">Passport Application</a></h2>
                                 <p class="features__text">Immigration tailored visa management this randomised words which do services solution sed do majority.</p>
-                                <a href="about.html" class="features__btn">
+                                <a href="about.php" class="features__btn">
                                     Read More <span class="features__btn__icon"><i class="icon-arrow-right-up"></i></span>
                                 </a><!-- /.features__btn -->
                             </div><!-- /.features__content -->
@@ -590,9 +214,9 @@
                                 <div class="features__icon-box">
                                     <span class="features__icon"><i class="icon-visa-processing"></i></span>
                                 </div><!-- /.features__icon-box -->
-                                <h2 class="features__title"><a href="about.html">Quick Visa Processing</a></h2>
+                                <h2 class="features__title"><a href="about.php">Quick Visa Processing</a></h2>
                                 <p class="features__text">Immigration tailored visa management this randomised words which do services solution sed do majority.</p>
-                                <a href="about.html" class="features__btn">
+                                <a href="about.php" class="features__btn">
                                     Read More <span class="features__btn__icon"><i class="icon-arrow-right-up"></i></span>
                                 </a><!-- /.features__btn -->
                             </div><!-- /.features__content -->
@@ -608,11 +232,9 @@
                                 <div class="features__icon-box">
                                     <span class="features__icon"><i class="icon-support"></i></span>
                                 </div><!-- /.features__icon-box -->
-                                <h2 class="features__title"><a href="about.html">Support Team Solution</a></h2>
+                                <h2 class="features__title"><a href="about.php">Support Team Solution</a></h2>
                                 <p class="features__text">Immigration tailored visa management this randomised words which do services solution sed do majority.</p>
-                                <a href="about.html" class="features__btn">
-                                    Read More <span class="features__btn__icon"><i class="icon-arrow-right-up"></i></span>
-                                </a><!-- /.features__btn -->
+                              
                             </div><!-- /.features__content -->
                             <img src="assets/images/shapes/features-shape-1-1.png" alt="shape" class="features__shape">
                         </div><!-- /.features__card -->
@@ -621,7 +243,7 @@
             </div><!-- /.container -->
         </section><!-- /.features -->
 
-        <section class="about-two section-space">
+        <section class="about-two section-space" id='about'>
             <div class="container">
                 <div class="row gutter-y-50 align-items-center">
                     <div class="col-lg-6" data-aos="fade-right" data-aos-anchor-placement="top-bottom" data-aos-duration="1300">
@@ -688,7 +310,7 @@
                                 </li>
                             </ul><!-- /.about-two__list -->
                             <div class="about-two__button" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300">
-                                <a href="about.html" class="visanet-btn">
+                                <a href="about.php" class="visanet-btn">
                                     <span class="visanet-btn__icon-box">
                                         <span class="visanet-btn__icon"><span><i class="icon-arrow-right-3"></i></span></span>
                                     </span>
@@ -761,7 +383,7 @@
             </div><!-- /.container -->
         </section><!-- /.funfact -->
 
-        <section class="visa-two section-space">
+        <section class="visa-two section-space" id='visa'>
             <div class="visa-two__bg visanet-jarallax" data-jarallax data-speed="0.3s" style="background-image: url(assets/images/backgrounds/visa-bg-2-1.jpg);">
                 <img src="assets/images/shapes/visa-shape-2-1.png" alt="shape" class="visa-two__shape">
             </div><!-- /.visa-two__bg -->
@@ -800,62 +422,62 @@
                             <img src="assets/images/shapes/visa-shape-2-2.png" alt="shape" class="visa-two__item__shape">
                             <div class="visa-two__content">
                                 <div class="visa-two__icon"><i class="icon-family-visa"></i></div>
-                                <h3 class="visa-two__title"><a href="visa-d-family-visa.html">Family Visa</a></h3>
+                                <h3 class="visa-two__title"><a href="visa-d-family-visa.php">Family Visa</a></h3>
                                 <span class="visa-two__divider">/</span>
                                 <p class="visa-two__text">Reunite with loved ones abroad <br> through our simplified family visa.</p>
                             </div>
-                            <a href="visa-d-family-visa.html" class="visa-two__btn"><i class="icon-arrow-right-up"></i></a>
+                            <a href="visa-d-family-visa.php" class="visa-two__btn"><i class="icon-arrow-right-up"></i></a>
                         </div><!-- /.visa-two__item -->
                         <div class="visa-two__item" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300">
                             <div class="visa-two__item__overlay"></div>
                             <img src="assets/images/shapes/visa-shape-2-2.png" alt="shape" class="visa-two__item__shape">
                             <div class="visa-two__content">
                                 <div class="visa-two__icon"><i class="icon-students-visa"></i></div>
-                                <h3 class="visa-two__title"><a href="visa-d-students-visa.html">Students Visa</a></h3>
+                                <h3 class="visa-two__title"><a href="visa-d-students-visa.php">Students Visa</a></h3>
                                 <span class="visa-two__divider">/</span>
                                 <p class="visa-two__text">Secure your dream education <br> overseas with expert visa guidance.</p>
                             </div>
-                            <a href="visa-d-students-visa.html" class="visa-two__btn"><i class="icon-arrow-right-up"></i></a>
+                            <a href="visa-d-students-visa.php" class="visa-two__btn"><i class="icon-arrow-right-up"></i></a>
                         </div><!-- /.visa-two__item -->
                         <div class="visa-two__item" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300">
                             <div class="visa-two__item__overlay"></div>
                             <img src="assets/images/shapes/visa-shape-2-2.png" alt="shape" class="visa-two__item__shape">
                             <div class="visa-two__content">
                                 <div class="visa-two__icon"><i class="icon-business-visa"></i></div>
-                                <h3 class="visa-two__title"><a href="visa-d-business-visa.html">Business Visa</a></h3>
+                                <h3 class="visa-two__title"><a href="visa-d-business-visa.php">Business Visa</a></h3>
                                 <span class="visa-two__divider">/</span>
                                 <p class="visa-two__text">Expand your business internationally <br> with expert guidance.</p>
                             </div>
-                            <a href="visa-d-business-visa.html" class="visa-two__btn"><i class="icon-arrow-right-up"></i></a>
+                            <a href="visa-d-business-visa.php" class="visa-two__btn"><i class="icon-arrow-right-up"></i></a>
                         </div><!-- /.visa-two__item -->
                         <div class="visa-two__item" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300">
                             <div class="visa-two__item__overlay"></div>
                             <img src="assets/images/shapes/visa-shape-2-2.png" alt="shape" class="visa-two__item__shape">
                             <div class="visa-two__content">
                                 <div class="visa-two__icon"><i class="icon-travel-visa"></i></div>
-                                <h3 class="visa-two__title"><a href="visa-d-travel-visa.html">Travel Visa</a></h3>
+                                <h3 class="visa-two__title"><a href="visa-d-travel-visa.php">Travel Visa</a></h3>
                                 <span class="visa-two__divider">/</span>
                                 <p class="visa-two__text">Enjoy hassle-free travel experiences <br> with our reliable visa.</p>
                             </div>
-                            <a href="visa-d-travel-visa.html" class="visa-two__btn"><i class="icon-arrow-right-up"></i></a>
+                            <a href="visa-d-travel-visa.php" class="visa-two__btn"><i class="icon-arrow-right-up"></i></a>
                         </div><!-- /.visa-two__item -->
                         <div class="visa-two__item" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300">
                             <div class="visa-two__item__overlay"></div>
                             <img src="assets/images/shapes/visa-shape-2-2.png" alt="shape" class="visa-two__item__shape">
                             <div class="visa-two__content">
                                 <div class="visa-two__icon"><i class="icon-immigration-visa"></i></div>
-                                <h3 class="visa-two__title"><a href="visa-d-immigration-visa.html">Immigration Visa</a></h3>
+                                <h3 class="visa-two__title"><a href="visa-d-immigration-visa.php">Immigration Visa</a></h3>
                                 <span class="visa-two__divider">/</span>
                                 <p class="visa-two__text">Access trusted immigration <br> resources with complete guidance.</p>
                             </div>
-                            <a href="visa-d-immigration-visa.html" class="visa-two__btn"><i class="icon-arrow-right-up"></i></a>
+                            <a href="visa-d-immigration-visa.php" class="visa-two__btn"><i class="icon-arrow-right-up"></i></a>
                         </div><!-- /.visa-two__item -->
                     </div><!-- /.col-xl-7 -->
                 </div><!-- /.row -->
             </div><!-- /.container -->
         </section><!-- /.visa-two -->
 
-        <section class="training-one section-space-t">
+        <section class="training-one section-space-t" id='training'>
             <div class="container">
                 <div class="training-one__top">
                     <div class="row gutter-y-40 align-items-end">
@@ -906,10 +528,10 @@
                             <div class="training-card__content">
                                 <h3 class="training-card__number"></h3>
                                 <div class="training-card__inner">
-                                    <h3 class="training-card__title"><a href="training-details.html">Visa Guidance</a></h3>
+                                    <h3 class="training-card__title"><a href="training-details.php">Visa Guidance</a></h3>
                                     <p class="training-card__text">Expert help for a smooth visa process.</p>
                                 </div><!-- /.training-card__inner -->
-                                <a href="training-details.html" class="training-card__btn">
+                                <a href="training-details.php" class="training-card__btn">
                                     Read More <span class="training-card__btn__icon"><i class="icon-arrow-right-up"></i></span>
                                 </a><!-- /.training-card__btn -->
                             </div><!-- /.training-card__content -->
@@ -923,10 +545,10 @@
                             <div class="training-card__content">
                                 <h3 class="training-card__number"></h3>
                                 <div class="training-card__inner">
-                                    <h3 class="training-card__title"><a href="training-details.html">Study Abroad</a></h3>
+                                    <h3 class="training-card__title"><a href="training-details.php">Study Abroad</a></h3>
                                     <p class="training-card__text">Achieve global education with trusted support.</p>
                                 </div><!-- /.training-card__inner -->
-                                <a href="training-details.html" class="training-card__btn">
+                                <a href="training-details.php" class="training-card__btn">
                                     Read More <span class="training-card__btn__icon"><i class="icon-arrow-right-up"></i></span>
                                 </a><!-- /.training-card__btn -->
                             </div><!-- /.training-card__content -->
@@ -940,10 +562,10 @@
                             <div class="training-card__content">
                                 <h3 class="training-card__number"></h3>
                                 <div class="training-card__inner">
-                                    <h3 class="training-card__title"><a href="training-details.html">Job Placement</a></h3>
+                                    <h3 class="training-card__title"><a href="training-details.php">Job Placement</a></h3>
                                     <p class="training-card__text">Secure overseas jobs with professional guidance.</p>
                                 </div><!-- /.training-card__inner -->
-                                <a href="training-details.html" class="training-card__btn">
+                                <a href="training-details.php" class="training-card__btn">
                                     Read More <span class="training-card__btn__icon"><i class="icon-arrow-right-up"></i></span>
                                 </a><!-- /.training-card__btn -->
                             </div><!-- /.training-card__content -->
@@ -957,10 +579,10 @@
                             <div class="training-card__content">
                                 <h3 class="training-card__number"></h3>
                                 <div class="training-card__inner">
-                                    <h3 class="training-card__title"><a href="training-details.html">Travel Support</a></h3>
+                                    <h3 class="training-card__title"><a href="training-details.php">Travel Support</a></h3>
                                     <p class="training-card__text">Hassle-free travel planning for your journey.</p>
                                 </div><!-- /.training-card__inner -->
-                                <a href="training-details.html" class="training-card__btn">
+                                <a href="training-details.php" class="training-card__btn">
                                     Read More <span class="training-card__btn__icon"><i class="icon-arrow-right-up"></i></span>
                                 </a><!-- /.training-card__btn -->
                             </div><!-- /.training-card__content -->
@@ -974,10 +596,10 @@
                             <div class="training-card__content">
                                 <h3 class="training-card__number"></h3>
                                 <div class="training-card__inner">
-                                    <h3 class="training-card__title"><a href="training-details.html">IELTS Preparation</a></h3>
+                                    <h3 class="training-card__title"><a href="training-details.php">IELTS Preparation</a></h3>
                                     <p class="training-card__text">Improve skills to achieve higher scores.</p>
                                 </div><!-- /.training-card__inner -->
-                                <a href="training-details.html" class="training-card__btn">
+                                <a href="training-details.php" class="training-card__btn">
                                     Read More <span class="training-card__btn__icon"><i class="icon-arrow-right-up"></i></span>
                                 </a><!-- /.training-card__btn -->
                             </div><!-- /.training-card__content -->
@@ -991,10 +613,10 @@
                             <div class="training-card__content">
                                 <h3 class="training-card__number"></h3>
                                 <div class="training-card__inner">
-                                    <h3 class="training-card__title"><a href="training-details.html">Migrat Assistance</a></h3>
+                                    <h3 class="training-card__title"><a href="training-details.php">Migrat Assistance</a></h3>
                                     <p class="training-card__text">Complete help for relocation and settlement.</p>
                                 </div><!-- /.training-card__inner -->
-                                <a href="training-details.html" class="training-card__btn">
+                                <a href="training-details.php" class="training-card__btn">
                                     Read More <span class="training-card__btn__icon"><i class="icon-arrow-right-up"></i></span>
                                 </a><!-- /.training-card__btn -->
                             </div><!-- /.training-card__content -->
@@ -1008,10 +630,10 @@
                             <div class="training-card__content">
                                 <h3 class="training-card__number"></h3>
                                 <div class="training-card__inner">
-                                    <h3 class="training-card__title"><a href="training-details.html">Career Training</a></h3>
+                                    <h3 class="training-card__title"><a href="training-details.php">Career Training</a></h3>
                                     <p class="training-card__text">Build strong professional skills for global success.</p>
                                 </div><!-- /.training-card__inner -->
-                                <a href="training-details.html" class="training-card__btn">
+                                <a href="training-details.php" class="training-card__btn">
                                     Read More <span class="training-card__btn__icon"><i class="icon-arrow-right-up"></i></span>
                                 </a><!-- /.training-card__btn -->
                             </div><!-- /.training-card__content -->
@@ -1025,10 +647,10 @@
                             <div class="training-card__content">
                                 <h3 class="training-card__number"></h3>
                                 <div class="training-card__inner">
-                                    <h3 class="training-card__title"><a href="training-details.html">Document Process</a></h3>
+                                    <h3 class="training-card__title"><a href="training-details.php">Document Process</a></h3>
                                     <p class="training-card__text">Fast and secure paperwork for immigration.</p>
                                 </div><!-- /.training-card__inner -->
-                                <a href="training-details.html" class="training-card__btn">
+                                <a href="training-details.php" class="training-card__btn">
                                     Read More <span class="training-card__btn__icon"><i class="icon-arrow-right-up"></i></span>
                                 </a><!-- /.training-card__btn -->
                             </div><!-- /.training-card__content -->
@@ -1046,7 +668,7 @@
                         </div><!-- /.col-lg-8 -->
                         <div class="col-lg-4">
                             <div class="training-one__button">
-                                <a href="training.html" class="visanet-btn">
+                                <a href="training.php" class="visanet-btn">
                                     <span class="visanet-btn__icon-box">
                                         <span class="visanet-btn__icon"><span><i class="icon-arrow-right-3"></i></span></span>
                                     </span>
@@ -1060,7 +682,7 @@
             <img src="assets/images/shapes/training-shape-1-1.png" alt="shape" class="training-one__shape">
         </section><!-- /.training-one -->
 
-        <section class="gallery-one section-space">
+        <section class="gallery-one section-space" id='gallery'>
             <div class="container-fluid">
                 <div class="sec-title sec-title--center">
                     <div class="sec-title__top" data-aos="fade-down" data-aos-anchor-placement="top-bottom" data-aos-duration="1500">
@@ -1289,7 +911,7 @@
                         <div class="fly-one__card__inner">
                             <h3 class="fly-one__card__title">Ready to fly with us your dream country.</h3>
                             <p class="fly-one__card__text">Immigration visa design support this services business agency elit, sed to do eiusmod tempor majority have humour visa solution.</p>
-                            <a href="about.html" class="visanet-btn">
+                            <a href="about.php" class="visanet-btn">
                                 <span class="visanet-btn__icon-box">
                                     <span class="visanet-btn__icon"><span><i class="icon-arrow-right-3"></i></span></span>
                                 </span>
@@ -1306,7 +928,7 @@
             <div class="fly-one__shape-2"></div>
         </section><!-- /.fly-one -->
 
-        <section class="work-process section-space-b">
+        <section class="work-process section-space-b" id='work-process'>
             <div class="container">
                 <div class="sec-title sec-title--center">
                     <div class="sec-title__top" data-aos="fade-down" data-aos-anchor-placement="top-bottom" data-aos-duration="1500">
@@ -1351,10 +973,10 @@
                                     <span class="work-process__icon"><i class="icon-check"></i></span>
                                 </div><!-- /.work-process__image -->
                                 <div class="work-process__inner">
-                                    <h3 class="work-process__title"><a href="about.html">Initial Consultation</a></h3>
+                                    <h3 class="work-process__title"><a href="about.php">Initial Consultation</a></h3>
                                     <p class="work-process__text">Immigration visa management this words which services.</p>
                                     <div class="work-process__button">
-                                        <a href="about.html" class="work-process__btn"><i class="icon-arrow-right-3"></i></a>
+                                        <a href="about.php" class="work-process__btn"><i class="icon-arrow-right-3"></i></a>
                                     </div>
                                 </div><!-- /.work-process__inner -->
                                 <div class="work-process__bg"></div>
@@ -1372,10 +994,10 @@
                                     <span class="work-process__icon"><i class="icon-check"></i></span>
                                 </div><!-- /.work-process__image -->
                                 <div class="work-process__inner">
-                                    <h3 class="work-process__title"><a href="about.html">Document Evaluation</a></h3>
+                                    <h3 class="work-process__title"><a href="about.php">Document Evaluation</a></h3>
                                     <p class="work-process__text">Immigration visa management this words which services.</p>
                                     <div class="work-process__button">
-                                        <a href="about.html" class="work-process__btn"><i class="icon-arrow-right-3"></i></a>
+                                        <a href="about.php" class="work-process__btn"><i class="icon-arrow-right-3"></i></a>
                                     </div>
                                 </div><!-- /.work-process__inner -->
                                 <div class="work-process__bg"></div>
@@ -1393,10 +1015,10 @@
                                     <span class="work-process__icon"><i class="icon-check"></i></span>
                                 </div><!-- /.work-process__image -->
                                 <div class="work-process__inner">
-                                    <h3 class="work-process__title"><a href="about.html">Visa Processing</a></h3>
+                                    <h3 class="work-process__title"><a href="about.php">Visa Processing</a></h3>
                                     <p class="work-process__text">Immigration visa management this words which services.</p>
                                     <div class="work-process__button">
-                                        <a href="about.html" class="work-process__btn"><i class="icon-arrow-right-3"></i></a>
+                                        <a href="about.php" class="work-process__btn"><i class="icon-arrow-right-3"></i></a>
                                     </div>
                                 </div><!-- /.work-process__inner -->
                                 <div class="work-process__bg"></div>
@@ -1414,10 +1036,10 @@
                                     <span class="work-process__icon"><i class="icon-check"></i></span>
                                 </div><!-- /.work-process__image -->
                                 <div class="work-process__inner">
-                                    <h3 class="work-process__title"><a href="about.html">Complete Visa</a></h3>
+                                    <h3 class="work-process__title"><a href="about.php">Complete Visa</a></h3>
                                     <p class="work-process__text">Immigration visa management this words which services.</p>
                                     <div class="work-process__button">
-                                        <a href="about.html" class="work-process__btn"><i class="icon-arrow-right-3"></i></a>
+                                        <a href="about.php" class="work-process__btn"><i class="icon-arrow-right-3"></i></a>
                                     </div>
                                 </div><!-- /.work-process__inner -->
                                 <div class="work-process__bg"></div>
@@ -1779,7 +1401,7 @@
                                             Official Online Visa Immigration
                                         </li>
                                     </ul><!-- /.online-visa__list -->
-                                    <a href="contact.html" class="visanet-btn visanet-btn--black">
+                                    <a href="contact.php" class="visanet-btn visanet-btn--black">
                                         <span class="visanet-btn__icon-box">
                                             <span class="visanet-btn__icon"><span><i class="icon-arrow-right-3"></i></span></span>
                                         </span>
@@ -1793,7 +1415,7 @@
             </div><!-- /.container -->
         </section><!-- /.online-visa -->
 
-        <section class="blog-two section-space">
+        <section class="blog-two section-space" id='blog'>
             <div class="container">
                 <div class="sec-title sec-title--center">
                     <div class="sec-title__top" data-aos="fade-down" data-aos-anchor-placement="top-bottom" data-aos-duration="1500">
@@ -1817,22 +1439,22 @@
                                 <div class="blog-card-two__content__box">
                                     <div class="blog-card-two__content__inner">
                                         <div class="blog-card-two__content__top">
-                                            <a href="blog-details-right.html" class="blog-card-two__category">Immigration</a>
+                                            <a href="blog-details-right.php" class="blog-card-two__category">Immigration</a>
                                             <img src="assets/images/blog/blog-admin-2-1.png" alt="Admin" class="blog-card-two__admin">
                                         </div><!-- /.blog-card-two__content__top -->
                                         <ul class="blog-card-two__meta list-unstyled">
                                             <li>
                                                 <span class="blog-card-two__meta__icon"><i class="icon-user"></i></span>
-                                                <span>By: <a href="blog-details-right.html">Admin</a></span>
+                                                <span>By: <a href="blog-details-right.php">Admin</a></span>
                                             </li>
                                             <li>
                                                 <span class="blog-card-two__meta__icon"><i class="icon-comment"></i></span>
-                                                <a href="blog-details-right.html">Comments (3)</a>
+                                                <a href="blog-details-right.php">Comments (3)</a>
                                             </li>
                                         </ul><!-- /.blog-card-two__meta -->
-                                        <h3 class="blog-card-two__title"><a href="blog-details-right.html">Member spotlight Blog This Best Events space.</a></h3>
+                                        <h3 class="blog-card-two__title"><a href="blog-details-right.php">Member spotlight Blog This Best Events space.</a></h3>
                                     </div><!-- /.blog-card-two__content__inner -->
-                                    <a href="blog-details-right.html" class="blog-card-two__btn">
+                                    <a href="blog-details-right.php" class="blog-card-two__btn">
                                         Read More <span class="blog-card-two__btn__icon"><i class="icon-arrow-right-up"></i></span>
                                     </a><!-- /.blog-card-two__btn -->
                                 </div><!-- /.blog-card-two__content__box -->
@@ -1852,22 +1474,22 @@
                                 <div class="blog-card-two__content__box">
                                     <div class="blog-card-two__content__inner">
                                         <div class="blog-card-two__content__top">
-                                            <a href="blog-details-right.html" class="blog-card-two__category">Family Tour</a>
+                                            <a href="blog-details-right.php" class="blog-card-two__category">Family Tour</a>
                                             <img src="assets/images/blog/blog-admin-2-2.png" alt="Admin" class="blog-card-two__admin">
                                         </div><!-- /.blog-card-two__content__top -->
                                         <ul class="blog-card-two__meta list-unstyled">
                                             <li>
                                                 <span class="blog-card-two__meta__icon"><i class="icon-user"></i></span>
-                                                <span>By: <a href="blog-details-right.html">Admin</a></span>
+                                                <span>By: <a href="blog-details-right.php">Admin</a></span>
                                             </li>
                                             <li>
                                                 <span class="blog-card-two__meta__icon"><i class="icon-comment"></i></span>
-                                                <a href="blog-details-right.html">Comments (3)</a>
+                                                <a href="blog-details-right.php">Comments (3)</a>
                                             </li>
                                         </ul><!-- /.blog-card-two__meta -->
-                                        <h3 class="blog-card-two__title"><a href="blog-details-right.html">Preparing for Your Firsts Blog Immigration Flight</a></h3>
+                                        <h3 class="blog-card-two__title"><a href="blog-details-right.php">Preparing for Your Firsts Blog Immigration Flight</a></h3>
                                     </div><!-- /.blog-card-two__content__inner -->
-                                    <a href="blog-details-right.html" class="blog-card-two__btn">
+                                    <a href="blog-details-right.php" class="blog-card-two__btn">
                                         Read More <span class="blog-card-two__btn__icon"><i class="icon-arrow-right-up"></i></span>
                                     </a><!-- /.blog-card-two__btn -->
                                 </div><!-- /.blog-card-two__content__box -->
@@ -1891,7 +1513,7 @@
                             </div><!-- /.newsletter-one__content -->
                         </div><!-- /.col-lg-6 -->
                         <div class="col-lg-6">
-                            <form action="index-2.html#" data-url="MAILCHIMP_FORM_URL" class="newsletter-one__form mc-form">
+                            <form action="index.php#" data-url="MAILCHIMP_FORM_URL" class="newsletter-one__form mc-form">
                                 <input type="text" name="EMAIL" placeholder="Your Email">
                                 <button type="submit" class="visanet-btn-two">SEND REQUEST <span class="visanet-btn-two__icon"><i class="icon-paper-plane"></i></span></button>
                             </form><!-- /. mc-form -->
@@ -1902,114 +1524,7 @@
             </div><!-- /.container -->
         </section><!-- /.newsletter-one -->
 
-        <footer class="main-footer main-footer--two">
-            <div class="main-footer__bg" style="background-image: url(assets/images/shapes/footer-bg-2.png);"></div>
-            <div class="container">
-                <div class="row gutter-y-40">
-                    <div class="col-xl-3 col-lg-5 col-md-7" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="100">
-                        <div class="footer-widget footer-widget--about">
-                            <a href="index.html" class="footer-widget__logo logo-retina">
-                                <img src="assets/images/logo-light.png" width="230" alt="Visanet HTML Template">
-                            </a>
-                            <p class="footer-widget__text">
-                                VisaNet is a modern HTML template built for immigration and visa consulting agencies, study abroad consultants, visa agents, and travel or overseas job services.
-                            </p>
-                            <div class="social-links">
-                                <a href="https://facebook.com">
-                                    <span class="social-links__icon">
-                                        <i class="fab fa-facebook-f" aria-hidden="true"></i>
-                                        <span class="sr-only">Facebook</span>
-                                    </span>
-                                </a>
-                                <a href="https://x.com">
-                                    <span class="social-links__icon">
-                                        <i class="fab fa-twitter" aria-hidden="true"></i>
-                                        <span class="sr-only">X</span>
-                                    </span>
-                                </a>
-                                <a href="https://linkedin.com">
-                                    <span class="social-links__icon">
-                                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-                                        <span class="sr-only">Linkedin</span>
-                                    </span>
-                                </a>
-                                <a href="https://instagram.com">
-                                    <span class="social-links__icon">
-                                        <i class="fab fa-instagram" aria-hidden="true"></i>
-                                        <span class="sr-only">Instagram</span>
-                                    </span>
-                                </a>
-                            </div><!-- /.social-links -->
-                        </div><!-- /.footer-widget -->
-                    </div><!-- /.col-xl-3 -->
-                    <div class="col-lg-3 col-md-5 col-sm-6" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="200">
-                        <div class="footer-widget footer-widget--links">
-                            <h2 class="footer-widget__title">Quick Link</h2><!-- /.footer-widget__title -->
-                            <ul class="list-unstyled footer-widget__links">
-                                <li><a href="about.html">What We Do</a></li>
-                                <li><a href="about.html">About Company</a></li>
-                                <li><a href="team.html">Team Member</a></li>
-                                <li><a href="gallery.html">Our Gallery</a></li>
-                                <li><a href="about.html">Watch Video</a></li>
-                                <li><a href="blog-grid-right.html">Latest news</a></li>
-                            </ul><!-- /.footer-widget__links -->
-                        </div><!-- /.footer-widget -->
-                    </div><!-- /.col-lg-3 -->
-                    <div class="col-xl-3 col-lg-4 col-sm-6" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="300">
-                        <div class="footer-widget footer-widget--blog">
-                            <h2 class="footer-widget__title">Recent Blog</h2><!-- /.footer-widget__title -->
-                            <ul class="footer-widget__blog list-unstyled">
-                                <li>
-                                    <a href="blog-details-right.html" class="footer-widget__blog__image">
-                                        <img src="assets/images/blog/footer-blog-1-1.jpg" alt="blog">
-                                    </a>
-                                    <div class="footer-widget__blog__content">
-                                        <span class="footer-widget__blog__date"><span class="footer-widget__blog__icon"><i class="icon-calendar"></i></span> 10 May 2024</span>
-                                        <h3 class="footer-widget__blog__title"><a href="blog-details-right.html">This Specific Issue Network Security</a></h3>
-                                    </div>
-                                </li>
-                                <li>
-                                    <a href="blog-details-right.html" class="footer-widget__blog__image">
-                                        <img src="assets/images/blog/footer-blog-1-2.jpg" alt="blog">
-                                    </a>
-                                    <div class="footer-widget__blog__content">
-                                        <span class="footer-widget__blog__date"><span class="footer-widget__blog__icon"><i class="icon-calendar"></i></span> 23 February 2025</span>
-                                        <h3 class="footer-widget__blog__title"><a href="blog-details-right.html">In up So Discovery my Middleton</a></h3>
-                                    </div>
-                                </li>
-                            </ul><!-- /.footer-widget__blog -->
-                        </div><!-- /.footer-widget -->
-                    </div><!-- /.col-xl-3 -->
-                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="400">
-                        <div class="footer-widget footer-widget--schedule">
-                            <h2 class="footer-widget__title">Flight Schedule</h2><!-- /.footer-widget__title -->
-                            <ul class="list-unstyled footer-widget__schedule">
-                                <li><span>Sunday -------</span> <span>9.00AM – 8.00PM</span></li>
-                                <li><span>Monday ------</span> <span>8.30AM – 7.30PM</span></li>
-                                <li><span>Tuesday ------</span> <span>6.00AM – 5.00PM</span></li>
-                                <li><span>Wednesday ---</span> <span>2.00AM – 3.00PM</span></li>
-                                <li><span>Thursday -----</span> <span>4.00AM – 5.00PM</span></li>
-                            </ul><!-- /.footer-widget__links -->
-                        </div><!-- /.footer-widget -->
-                    </div><!-- /.col-xl-3 -->
-                </div><!-- /.row -->
-            </div><!-- /.container -->
-            <div class="main-footer__bottom">
-                <div class="container">
-                    <div class="main-footer__bottom__inner">
-                        <p class="main-footer__copyright">
-                            &copy; Copyright <span class="dynamic-year"></span> by Visanet HTML Template.
-                        </p>
-                        <ul class="main-footer__page list-unstyled">
-                            <li><a href="about.html">Privacy</a></li>
-                            <li><a href="about.html">Policy</a></li>
-                            <li><a href="contact.html">Contact Us</a></li>
-                        </ul><!-- /.main-footer__page -->
-                    </div><!-- /.main-footer__inner -->
-                </div><!-- /.container -->
-            </div><!-- /.main-footer__bottom -->
-        </footer><!-- /.main-footer -->
-
+      <?php include("./include/footer.php") ?>
     </div><!-- /.page-wrapper -->
 
     <div class="mobile-nav__wrapper">
@@ -2017,15 +1532,15 @@
         <div class="mobile-nav__content">
             <span class="mobile-nav__close mobile-nav__toggler"><i class="icon-close"></i></span>
             <div class="logo-box">
-                <a href="index.html" aria-label="logo image">
-                    <img src="assets/images/logo-light.png" width="230" alt="Visanet HTML" />
+                <a href="index.php" aria-label="logo image">
+                    <img src="assets/images/logo-light.png" width="230" alt="<?php echo $sitename ?> HTML" />
                 </a>
             </div><!-- /.logo-box -->
             <div class="mobile-nav__container"></div><!-- /.mobile-nav__container -->
             <ul class="mobile-nav__contact list-unstyled">
                 <li>
                     <span class="mobile-nav__contact__icon"><i class="fa fa-envelope"></i></span>
-                    <a href="mailto:findox@envato.com">visanet@envato.com</a>
+                    <a href="mailto:findox@envato.com"><?php echo $domain ?>@envato.com</a>
                 </li>
                 <li>
                     <span class="mobile-nav__contact__icon"><i class="fa fa-phone-alt"></i></span>
@@ -2063,7 +1578,7 @@
     <div class="search-popup">
         <div class="search-popup__overlay search-toggler"></div>
         <div class="search-popup__content">
-            <form role="search" method="get" class="search-popup__form" action="index-2.html#">
+            <form role="search" method="get" class="search-popup__form" action="index.php#">
                 <input type="text" id="search" placeholder="Search Here..." />
                 <button type="submit" aria-label="search submit">
                     <i class="icon-search"></i>
@@ -2072,7 +1587,7 @@
         </div><!-- /.search-popup__content -->
     </div><!-- /.search-popup -->
 
-    <a href="index-2.html#" data-target="html" class="scroll-to-target scroll-to-top">
+    <a href="index.php#" data-target="html" class="scroll-to-target scroll-to-top">
         <span class="scroll-to-top__text">back top</span>
         <span class="scroll-to-top__wrapper"><span class="scroll-to-top__inner"></span></span>
     </a>

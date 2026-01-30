@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Visa Grid || Visanet || HTML Template For Lawyer & Law Firm</title>
+    <title>Countries Page || Visanet </title>
     <!-- favicons Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png" />
@@ -101,208 +101,204 @@
                 </div><!-- /.topbar__inner -->
             </div><!-- /.container -->
         </div><!-- /.topbar -->
-         <header class="main-header main-header--two sticky-header sticky-header--one-page">
-            <div class="container main-header__container">
-                <div class="main-header__inner">
-                    <div class="main-header__left">
-                        <div class="main-header__logo logo-retina">
-                            <a href="index.html">
-                                <img src="assets/images/logo-light.png" alt="Visanet HTML" width="230">
-                            </a>
-                        </div><!-- /.main-header__logo -->
-                    </div><!-- /.main-header__left -->
-                    <div class="main-header__right">
-                        <div class="main-header__top">
-                            <div class="main-header__info">
-                                <span class="main-header__info__title">News:</span>
-                                <p class="main-header__info__text">I can’t browse the internet live, but this summary <span>reflects</span> the most recent .....</p>
-                            </div><!-- /.main-header__info -->
-                            <a href="contact.html" class="visanet-btn-two">
-                                Appointment <span class="visanet-btn-two__icon"><i class="icon-arrow-right-3"></i></span>
-                            </a><!-- /.visanet-btn-two -->
-                        </div><!-- /.main-header__top -->
-                        <div class="main-header__bottom">
-                            <nav class="main-header__nav main-menu">
-                                <ul class="main-menu__list one-page-scroll-menu">
-                                    <li class="  scrollToLink current">
-                                        <a href="index.html#home">Home</a>
-                                        <ul>
+        <!-- header started -->
+        <?php include("./include/nav.php") ?>
 
-                                        
-
-                                        </ul>
-                                    </li>
-                                    <li class="scrollToLink"><a href="index.html#about">About</a></li>
-                                    <li class="scrollToLink"><a href="index.html#visa">Visa</a></li>
-                                    <li class="scrollToLink"><a href="countries.html">Countries</a></li>
-                                    <li class="scrollToLink"><a href="index.html#gallery">Gallery</a></li>
-                                    <li class="scrollToLink"><a href="contact.html">Contact us</a></li>
-                                    <li class="scrollToLink"><a href="index.html#blog">Blog</a></li>
-                                </ul>
-                            </nav><!-- /.main-header__nav -->
-
-                            <div class="main-header__right__right">
-                                <div class="mobile-nav__btn mobile-nav__toggler">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                </div><!-- /.mobile-nav__toggler -->
-                                <a href="index.html#" class="main-header__search search-toggler">
-                                    <i class="icon-search" aria-hidden="true"></i>
-                                    <span class="sr-only">Search</span>
-                                </a><!-- /.main-header__search -->
-                                <a href="cart.html" class="main-header__cart">
-                                    <i class="icon-trolley-cart" aria-hidden="true"></i>
-                                    <span class="sr-only">Trolley Cart</span>
-                                    <span class="main-header__cart__quantity">02</span>
-                                </a><!-- /.main-header__cart -->
-                                <div class="main-header__call">
-                                    <span class="main-header__call__icon">
-                                        <i class="icon-phone-call"></i>
-                                    </span><!-- /.main-header__call__icon -->
-                                    <div class="main-header__call__content">
-                                        <p class="main-header__call__title">Call Any Time</p>
-                                        <a href="tel:+55222555255" class="main-header__call__number">+55 222 555 255</a>
-                                    </div><!-- /.main-header__call__content -->
-                                </div><!-- /.main-header__call -->
-                            </div><!-- /.main-header__right__right -->
-                        </div><!-- /.main-header__bottom -->
-                    </div><!-- /.main-header__right -->
-                </div><!-- /.main-header__inner -->
-            </div><!-- /.container -->
-        </header><!-- /.main-header -->
-
+        <!-- header ended -->
         <section class="page-header">
             <div class="page-header__bg" style="background-image: url(assets/images/backgrounds/page-header-bg.jpg);"></div><!-- /.page-header__bg -->
             <div class="page-header__shape page-header__shape--1"></div><!-- /.page-header__shape -->
             <div class="page-header__shape page-header__shape--2"></div><!-- /.page-header__shape -->
             <div class="container">
                 <div class="page-header__content">
-                    <h2 class="page-header__title" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300">Visa Grid 01</h2>
+                    <h2 class="page-header__title" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300">Countries Page</h2>
                     <ul class="visanet-breadcrumb list-unstyled" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="200">
-                        <li><a href="index.html">Home</a></li>
-                        <li><span>Visa Grid</span></li>
+                        <li><a href="index.php">Home</a></li>
+                        <li><span>countries</span></li>
                     </ul><!-- /.visanet-breadcrumb list-unstyled -->
                 </div><!-- /.page-header__content -->
             </div><!-- /.container -->
         </section><!-- /.page-header -->
 
-        <section class="visa-page section-space">
+        <section class="countries-two section-space">
             <div class="container">
                 <div class="sec-title sec-title--center">
                     <div class="sec-title__top" data-aos="fade-down" data-aos-anchor-placement="top-bottom" data-aos-duration="1500">
                         <span class="sec-title__icon sec-title__icon--left"><i class="icon-airplane"></i></span>
-                        <p class="sec-title__tagline">Varieties of visa</p>
+                        <p class="sec-title__tagline">Countries We Offer</p>
                         <span class="sec-title__icon sec-title__icon--right"><i class="icon-airplane-2"></i></span>
                     </div><!-- /.sec-title__top -->
-                    <h2 class="sec-title__title bw-split-in-right">Immigration Systems Are Increasingly <br> Dream Of Citizenship.</h2><!-- /.sec-title__title -->
+                    <h2 class="sec-title__title bw-split-in-right">We Provide Expert Immigration And <br> Visa Consulting Destinations.</h2><!-- /.sec-title__title -->
                 </div><!-- /.sec-title -->
                 <div class="row gutter-y-30">
-                    <div class="col-xl-4 col-lg-4 col-md-6" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="100">
-                        <div class="visa-card">
-                            <div class="visa-card__image bw-img-anim-left">
-                                <img src="assets/images/visa/visa-1-1.jpg" alt="Business Visa">
-                                <div class="visa-card__icon-box">
-                                    <span class="visa-card__icon"><i class="icon-business-visa"></i></span>
-                                </div><!-- /.visa-card__icon-box -->
-                            </div><!-- /.visa-card__image -->
-                            <div class="visa-card__content">
-                                <h2 class="visa-card__title"><a href="visa-d-business-visa.html">Business Visa</a></h2>
-                                <p class="visa-card__text">Expand your business internationally with expert guidance, helping entrepreneurs establish and achieve success abroad.</p>
-                            </div><!-- /.visa-card__content -->
-                            <a href="visa-d-business-visa.html" class="visa-card__btn">
-                                Read More <span class="visa-card__btn__icon"><i class="icon-arrow-right-up"></i></span>
-                            </a><!-- /.visa-card__btn -->
-                        </div><!-- /.visa-card -->
-                    </div><!-- /.col-xl-4 -->
-                    <div class="col-xl-4 col-lg-4 col-md-6" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="200">
-                        <div class="visa-card">
-                            <div class="visa-card__image bw-img-anim-left">
-                                <img src="assets/images/visa/visa-1-2.jpg" alt="Quick Visa Processing">
-                                <div class="visa-card__icon-box">
-                                    <span class="visa-card__icon"><i class="icon-visa-processing"></i></span>
-                                </div><!-- /.visa-card__icon-box -->
-                            </div><!-- /.visa-card__image -->
-                            <div class="visa-card__content">
-                                <h2 class="visa-card__title"><a href="visa-d-visa-processing.html">Quick Visa Processing</a></h2>
-                                <p class="visa-card__text">Experience faster approval with our efficient visa processing service designed to simplify documentation and deliver results quickly.</p>
-                            </div><!-- /.visa-card__content -->
-                            <a href="visa-d-visa-processing.html" class="visa-card__btn">
-                                Read More <span class="visa-card__btn__icon"><i class="icon-arrow-right-up"></i></span>
-                            </a><!-- /.visa-card__btn -->
-                        </div><!-- /.visa-card -->
-                    </div><!-- /.col-xl-4 -->
-                    <div class="col-xl-4 col-lg-4 col-md-6" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="300">
-                        <div class="visa-card">
-                            <div class="visa-card__image bw-img-anim-left">
-                                <img src="assets/images/visa/visa-1-3.jpg" alt="Immigration Visa">
-                                <div class="visa-card__icon-box">
-                                    <span class="visa-card__icon"><i class="icon-immigration-visa"></i></span>
-                                </div><!-- /.visa-card__icon-box -->
-                            </div><!-- /.visa-card__image -->
-                            <div class="visa-card__content">
-                                <h2 class="visa-card__title"><a href="visa-d-immigration-visa.html">Immigration Visa</a></h2>
-                                <p class="visa-card__text">Access trusted immigration resources with complete guidance, reliable information, and assistance for your relocation journey.</p>
-                            </div><!-- /.visa-card__content -->
-                            <a href="visa-d-immigration-visa.html" class="visa-card__btn">
-                                Read More <span class="visa-card__btn__icon"><i class="icon-arrow-right-up"></i></span>
-                            </a><!-- /.visa-card__btn -->
-                        </div><!-- /.visa-card -->
-                    </div><!-- /.col-xl-4 -->
-                    <div class="col-xl-4 col-lg-4 col-md-6" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="100">
-                        <div class="visa-card">
-                            <div class="visa-card__image bw-img-anim-left">
-                                <img src="assets/images/visa/visa-1-4.jpg" alt="Family Visa">
-                                <div class="visa-card__icon-box">
-                                    <span class="visa-card__icon"><i class="icon-family-visa"></i></span>
-                                </div><!-- /.visa-card__icon-box -->
-                            </div><!-- /.visa-card__image -->
-                            <div class="visa-card__content">
-                                <h2 class="visa-card__title"><a href="visa-d-family-visa.html">Family Visa</a></h2>
-                                <p class="visa-card__text">Reunite with loved ones abroad through our simplified family visa process ensuring smooth documentation and stress-free.</p>
-                            </div><!-- /.visa-card__content -->
-                            <a href="visa-d-family-visa.html" class="visa-card__btn">
-                                Read More <span class="visa-card__btn__icon"><i class="icon-arrow-right-up"></i></span>
-                            </a><!-- /.visa-card__btn -->
-                        </div><!-- /.visa-card -->
-                    </div><!-- /.col-xl-4 -->
-                    <div class="col-xl-4 col-lg-4 col-md-6" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="200">
-                        <div class="visa-card">
-                            <div class="visa-card__image bw-img-anim-left">
-                                <img src="assets/images/visa/visa-1-5.jpg" alt="Students Visa">
-                                <div class="visa-card__icon-box">
-                                    <span class="visa-card__icon"><i class="icon-students-visa"></i></span>
-                                </div><!-- /.visa-card__icon-box -->
-                            </div><!-- /.visa-card__image -->
-                            <div class="visa-card__content">
-                                <h2 class="visa-card__title"><a href="visa-d-students-visa.html">Students Visa</a></h2>
-                                <p class="visa-card__text">Secure your dream education overseas with expert visa guidance, university support, and documentation for global study success.</p>
-                            </div><!-- /.visa-card__content -->
-                            <a href="visa-d-students-visa.html" class="visa-card__btn">
-                                Read More <span class="visa-card__btn__icon"><i class="icon-arrow-right-up"></i></span>
-                            </a><!-- /.visa-card__btn -->
-                        </div><!-- /.visa-card -->
-                    </div><!-- /.col-xl-4 -->
-                    <div class="col-xl-4 col-lg-4 col-md-6" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="300">
-                        <div class="visa-card">
-                            <div class="visa-card__image bw-img-anim-left">
-                                <img src="assets/images/visa/visa-1-6.jpg" alt="Travel Visa">
-                                <div class="visa-card__icon-box">
-                                    <span class="visa-card__icon"><i class="icon-travel-visa"></i></span>
-                                </div><!-- /.visa-card__icon-box -->
-                            </div><!-- /.visa-card__image -->
-                            <div class="visa-card__content">
-                                <h2 class="visa-card__title"><a href="visa-d-travel-visa.html">Travel Visa</a></h2>
-                                <p class="visa-card__text">Enjoy hassle-free travel experiences with our reliable visa services ensuring smooth applications, approvals, and journeys.</p>
-                            </div><!-- /.visa-card__content -->
-                            <a href="visa-d-travel-visa.html" class="visa-card__btn">
-                                Read More <span class="visa-card__btn__icon"><i class="icon-arrow-right-up"></i></span>
-                            </a><!-- /.visa-card__btn -->
-                        </div><!-- /.visa-card -->
-                    </div><!-- /.col-xl-4 -->
+                    <div class="col-12" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300">
+                        <div class="countries-two__card">
+                            <div class="row gutter-y-25 align-items-center">
+                                <div class="col-lg-5">
+                                    <div class="countries-two__left">
+                                        <div class="countries-two__left__left">
+                                            <img src="assets/images/countries/us.png" alt="US Flag" class="countries-two__flag">
+                                            <p class="countries-two__label">Immigrate <br> To</p>
+                                        </div><!-- /.countries-two__left__left -->
+                                        <h3 class="countries-two__name"><a href="countries-details.php">United States</a></h3>
+                                    </div><!-- /.countries-two__left -->
+                                </div><!-- /.col-lg-5 -->
+                                <div class="col-lg-7">
+                                    <div class="countries-two__right">
+                                        <ul class="countries-two__feature list-unstyled">
+                                            <li><span class="countries-two__feature__icon"><i class="icon-checked"></i></span> 4 Years Business Visa</li>
+                                            <li><span class="countries-two__feature__icon"><i class="icon-checked"></i></span> Visa Apply Online</li>
+                                            <li><span class="countries-two__feature__icon"><i class="icon-checked"></i></span> Student Admission Visa</li>
+                                            <li><span class="countries-two__feature__icon"><i class="icon-checked"></i></span> 24/7 Support</li>
+                                        </ul><!-- /.countries-two__feature -->
+                                        <div class="countries-two__button">
+                                            <a href="countries-details.php" class="visanet-btn visanet-btn--black">
+                                                <span class="visanet-btn__icon-box">
+                                                    <span class="visanet-btn__icon"><span><i class="icon-arrow-right-3"></i></span></span>
+                                                </span>
+                                                <span class="visanet-btn__text">See More</span>
+                                            </a><!-- /.visanet-btn -->
+                                        </div><!-- /.countries-two__button -->
+                                    </div><!-- /.countries-two__right -->
+                                </div><!-- /.col-lg-7 -->
+                            </div><!-- /.row -->
+                        </div><!-- /.countries-two__card -->
+                    </div><!-- /.col-12 -->
+                    <div class="col-12" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300">
+                        <div class="countries-two__card">
+                            <div class="row gutter-y-25 align-items-center">
+                                <div class="col-lg-5">
+                                    <div class="countries-two__left">
+                                        <div class="countries-two__left__left">
+                                            <img src="assets/images/countries/uk.png" alt="UK Flag" class="countries-two__flag">
+                                            <p class="countries-two__label">Immigrate <br> To</p>
+                                        </div><!-- /.countries-two__left__left -->
+                                        <h3 class="countries-two__name"><a href="countries-details.php">United Kingdom</a></h3>
+                                    </div><!-- /.countries-two__left -->
+                                </div><!-- /.col-lg-5 -->
+                                <div class="col-lg-7">
+                                    <div class="countries-two__right">
+                                        <ul class="countries-two__feature list-unstyled">
+                                            <li><span class="countries-two__feature__icon"><i class="icon-checked"></i></span> 4 Years Business Visa</li>
+                                            <li><span class="countries-two__feature__icon"><i class="icon-checked"></i></span> Visa Apply Online</li>
+                                            <li><span class="countries-two__feature__icon"><i class="icon-checked"></i></span> Student Admission Visa</li>
+                                            <li><span class="countries-two__feature__icon"><i class="icon-checked"></i></span> 24/7 Support</li>
+                                        </ul><!-- /.countries-two__feature -->
+                                        <div class="countries-two__button">
+                                            <a href="countries-details.php" class="visanet-btn visanet-btn--black">
+                                                <span class="visanet-btn__icon-box">
+                                                    <span class="visanet-btn__icon"><span><i class="icon-arrow-right-3"></i></span></span>
+                                                </span>
+                                                <span class="visanet-btn__text">See More</span>
+                                            </a><!-- /.visanet-btn -->
+                                        </div><!-- /.countries-two__button -->
+                                    </div><!-- /.countries-two__right -->
+                                </div><!-- /.col-lg-7 -->
+                            </div><!-- /.row -->
+                        </div><!-- /.countries-two__card -->
+                    </div><!-- /.col-12 -->
+                    <div class="col-12" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300">
+                        <div class="countries-two__card">
+                            <div class="row gutter-y-25 align-items-center">
+                                <div class="col-lg-5">
+                                    <div class="countries-two__left">
+                                        <div class="countries-two__left__left">
+                                            <img src="assets/images/countries/germany.png" alt="Germany Flag" class="countries-two__flag">
+                                            <p class="countries-two__label">Immigrate <br> To</p>
+                                        </div><!-- /.countries-two__left__left -->
+                                        <h3 class="countries-two__name"><a href="countries-details.php">Germany</a></h3>
+                                    </div><!-- /.countries-two__left -->
+                                </div><!-- /.col-lg-5 -->
+                                <div class="col-lg-7">
+                                    <div class="countries-two__right">
+                                        <ul class="countries-two__feature list-unstyled">
+                                            <li><span class="countries-two__feature__icon"><i class="icon-checked"></i></span> 4 Years Business Visa</li>
+                                            <li><span class="countries-two__feature__icon"><i class="icon-checked"></i></span> Visa Apply Online</li>
+                                            <li><span class="countries-two__feature__icon"><i class="icon-checked"></i></span> Student Admission Visa</li>
+                                            <li><span class="countries-two__feature__icon"><i class="icon-checked"></i></span> 24/7 Support</li>
+                                        </ul><!-- /.countries-two__feature -->
+                                        <div class="countries-two__button">
+                                            <a href="countries-details.php" class="visanet-btn visanet-btn--black">
+                                                <span class="visanet-btn__icon-box">
+                                                    <span class="visanet-btn__icon"><span><i class="icon-arrow-right-3"></i></span></span>
+                                                </span>
+                                                <span class="visanet-btn__text">See More</span>
+                                            </a><!-- /.visanet-btn -->
+                                        </div><!-- /.countries-two__button -->
+                                    </div><!-- /.countries-two__right -->
+                                </div><!-- /.col-lg-7 -->
+                            </div><!-- /.row -->
+                        </div><!-- /.countries-two__card -->
+                    </div><!-- /.col-12 -->
+                    <div class="col-12" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300">
+                        <div class="countries-two__card">
+                            <div class="row gutter-y-25 align-items-center">
+                                <div class="col-lg-5">
+                                    <div class="countries-two__left">
+                                        <div class="countries-two__left__left">
+                                            <img src="assets/images/countries/portugal.png" alt="Portugal Flag" class="countries-two__flag">
+                                            <p class="countries-two__label">Immigrate <br> To</p>
+                                        </div><!-- /.countries-two__left__left -->
+                                        <h3 class="countries-two__name"><a href="countries-details.php">Portugal</a></h3>
+                                    </div><!-- /.countries-two__left -->
+                                </div><!-- /.col-lg-5 -->
+                                <div class="col-lg-7">
+                                    <div class="countries-two__right">
+                                        <ul class="countries-two__feature list-unstyled">
+                                            <li><span class="countries-two__feature__icon"><i class="icon-checked"></i></span> 4 Years Business Visa</li>
+                                            <li><span class="countries-two__feature__icon"><i class="icon-checked"></i></span> Visa Apply Online</li>
+                                            <li><span class="countries-two__feature__icon"><i class="icon-checked"></i></span> Student Admission Visa</li>
+                                            <li><span class="countries-two__feature__icon"><i class="icon-checked"></i></span> 24/7 Support</li>
+                                        </ul><!-- /.countries-two__feature -->
+                                        <div class="countries-two__button">
+                                            <a href="countries-details.php" class="visanet-btn visanet-btn--black">
+                                                <span class="visanet-btn__icon-box">
+                                                    <span class="visanet-btn__icon"><span><i class="icon-arrow-right-3"></i></span></span>
+                                                </span>
+                                                <span class="visanet-btn__text">See More</span>
+                                            </a><!-- /.visanet-btn -->
+                                        </div><!-- /.countries-two__button -->
+                                    </div><!-- /.countries-two__right -->
+                                </div><!-- /.col-lg-7 -->
+                            </div><!-- /.row -->
+                        </div><!-- /.countries-two__card -->
+                    </div><!-- /.col-12 -->
+                    <div class="col-12" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300">
+                        <div class="countries-two__card">
+                            <div class="row gutter-y-25 align-items-center">
+                                <div class="col-lg-5">
+                                    <div class="countries-two__left">
+                                        <div class="countries-two__left__left">
+                                            <img src="assets/images/countries/argentina.png" alt="Argentina Flag" class="countries-two__flag">
+                                            <p class="countries-two__label">Immigrate <br> To</p>
+                                        </div><!-- /.countries-two__left__left -->
+                                        <h3 class="countries-two__name"><a href="countries-details.php">Argentina</a></h3>
+                                    </div><!-- /.countries-two__left -->
+                                </div><!-- /.col-lg-5 -->
+                                <div class="col-lg-7">
+                                    <div class="countries-two__right">
+                                        <ul class="countries-two__feature list-unstyled">
+                                            <li><span class="countries-two__feature__icon"><i class="icon-checked"></i></span> 4 Years Business Visa</li>
+                                            <li><span class="countries-two__feature__icon"><i class="icon-checked"></i></span> Visa Apply Online</li>
+                                            <li><span class="countries-two__feature__icon"><i class="icon-checked"></i></span> Student Admission Visa</li>
+                                            <li><span class="countries-two__feature__icon"><i class="icon-checked"></i></span> 24/7 Support</li>
+                                        </ul><!-- /.countries-two__feature -->
+                                        <div class="countries-two__button">
+                                            <a href="countries-details.php" class="visanet-btn visanet-btn--black">
+                                                <span class="visanet-btn__icon-box">
+                                                    <span class="visanet-btn__icon"><span><i class="icon-arrow-right-3"></i></span></span>
+                                                </span>
+                                                <span class="visanet-btn__text">See More</span>
+                                            </a><!-- /.visanet-btn -->
+                                        </div><!-- /.countries-two__button -->
+                                    </div><!-- /.countries-two__right -->
+                                </div><!-- /.col-lg-7 -->
+                            </div><!-- /.row -->
+                        </div><!-- /.countries-two__card -->
+                    </div><!-- /.col-12 -->
                 </div><!-- /.row -->
             </div><!-- /.container -->
-        </section><!-- /.visa-page -->
+        </section><!-- /.countries-two -->
 
         <footer class="main-footer section-space-t">
             <div class="main-footer__bg" style="background-image: url(assets/images/backgrounds/footer-bg.jpg);"></div>
@@ -374,7 +370,7 @@
                 <div class="row gutter-y-40">
                     <div class="col-xl-3 col-lg-5 col-md-7" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="100">
                         <div class="footer-widget footer-widget--about">
-                            <a href="index.html" class="footer-widget__logo logo-retina">
+                            <a href="index.php" class="footer-widget__logo logo-retina">
                                 <img src="assets/images/logo-light.png" width="230" alt="Visanet HTML Template">
                             </a>
                             <p class="footer-widget__text">
@@ -412,12 +408,12 @@
                         <div class="footer-widget footer-widget--links">
                             <h2 class="footer-widget__title">Quick Link</h2><!-- /.footer-widget__title -->
                             <ul class="list-unstyled footer-widget__links">
-                                <li><a href="about.html">What We Do</a></li>
-                                <li><a href="about.html">About Company</a></li>
-                                <li><a href="team.html">Team Member</a></li>
-                                <li><a href="gallery.html">Our Gallery</a></li>
-                                <li><a href="about.html">Watch Video</a></li>
-                                <li><a href="blog-grid-right.html">Latest news</a></li>
+                                <li><a href="about.php">What We Do</a></li>
+                                <li><a href="about.php">About Company</a></li>
+                                <li><a href="team.php">Team Member</a></li>
+                                <li><a href="gallery.php">Our Gallery</a></li>
+                                <li><a href="about.php">Watch Video</a></li>
+                                <li><a href="blog-grid-right.php">Latest news</a></li>
                             </ul><!-- /.footer-widget__links -->
                         </div><!-- /.footer-widget -->
                     </div><!-- /.col-lg-3 -->
@@ -426,21 +422,21 @@
                             <h2 class="footer-widget__title">Recent Blog</h2><!-- /.footer-widget__title -->
                             <ul class="footer-widget__blog list-unstyled">
                                 <li>
-                                    <a href="blog-details-right.html" class="footer-widget__blog__image">
+                                    <a href="blog-details-right.php" class="footer-widget__blog__image">
                                         <img src="assets/images/blog/footer-blog-1-1.jpg" alt="blog">
                                     </a>
                                     <div class="footer-widget__blog__content">
                                         <span class="footer-widget__blog__date"><span class="footer-widget__blog__icon"><i class="icon-calendar"></i></span> 10 May 2024</span>
-                                        <h3 class="footer-widget__blog__title"><a href="blog-details-right.html">This Specific Issue Network Security</a></h3>
+                                        <h3 class="footer-widget__blog__title"><a href="blog-details-right.php">This Specific Issue Network Security</a></h3>
                                     </div>
                                 </li>
                                 <li>
-                                    <a href="blog-details-right.html" class="footer-widget__blog__image">
+                                    <a href="blog-details-right.php" class="footer-widget__blog__image">
                                         <img src="assets/images/blog/footer-blog-1-2.jpg" alt="blog">
                                     </a>
                                     <div class="footer-widget__blog__content">
                                         <span class="footer-widget__blog__date"><span class="footer-widget__blog__icon"><i class="icon-calendar"></i></span> 23 February 2025</span>
-                                        <h3 class="footer-widget__blog__title"><a href="blog-details-right.html">In up So Discovery my Middleton</a></h3>
+                                        <h3 class="footer-widget__blog__title"><a href="blog-details-right.php">In up So Discovery my Middleton</a></h3>
                                     </div>
                                 </li>
                             </ul><!-- /.footer-widget__blog -->
@@ -467,9 +463,9 @@
                             &copy; Copyright <span class="dynamic-year"></span> by Visanet HTML Template.
                         </p>
                         <ul class="main-footer__page list-unstyled">
-                            <li><a href="about.html">Privacy</a></li>
-                            <li><a href="about.html">Policy</a></li>
-                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="about.php">Privacy</a></li>
+                            <li><a href="about.php">Policy</a></li>
+                            <li><a href="contact.php">Contact Us</a></li>
                         </ul><!-- /.main-footer__page -->
                     </div><!-- /.main-footer__inner -->
                 </div><!-- /.container -->
@@ -483,7 +479,7 @@
         <div class="mobile-nav__content">
             <span class="mobile-nav__close mobile-nav__toggler"><i class="icon-close"></i></span>
             <div class="logo-box">
-                <a href="index.html" aria-label="logo image">
+                <a href="index.php" aria-label="logo image">
                     <img src="assets/images/logo-light.png" width="230" alt="Visanet HTML" />
                 </a>
             </div><!-- /.logo-box -->
@@ -529,7 +525,7 @@
     <div class="search-popup">
         <div class="search-popup__overlay search-toggler"></div>
         <div class="search-popup__content">
-            <form role="search" method="get" class="search-popup__form" action="visa.html#">
+            <form role="search" method="get" class="search-popup__form" action="countries.php#">
                 <input type="text" id="search" placeholder="Search Here..." />
                 <button type="submit" aria-label="search submit">
                     <i class="icon-search"></i>
@@ -542,7 +538,7 @@
         <div class="sidebar-three__content">
             <span class="sidebar-three__close sidebar-btn__toggler"><i class="icon-close"></i></span>
             <div class="sidebar-three__logo sidebar-three__item logo-retina">
-                <a href="index.html" aria-label="logo image">
+                <a href="index.php" aria-label="logo image">
                     <img src="assets/images/logo-dark.png" width="230" alt="Visanet HTML" />
                 </a>
             </div><!-- /.sidebar-three__logo -->
@@ -603,7 +599,7 @@
             </div><!-- /.sidebar-three__social -->
             <div class="sidebar-three__newsletter sidebar-three__item">
                 <label class="sidebar-three__title" for="sidebar-three-email">Newsletter</label>
-                <form action="visa.html#" class="sidebar-three__newsletter__inner mc-form" data-url="MAILCHIMP_FORM_URL">
+                <form action="countries.php#" class="sidebar-three__newsletter__inner mc-form" data-url="MAILCHIMP_FORM_URL">
                     <input type="email" name="EMAIL" id="sidebar-three-email" class="sidebar-three__newsletter__input" placeholder="Email Address">
                     <button type="submit" class="sidebar-three__newsletter__btn"><span class="far fa-envelope" aria-hidden="true"></span></button>
                 </form>
@@ -612,7 +608,7 @@
         </div><!-- /.sidebar-three__content -->
     </aside><!-- /.sidebar-three -->
 
-    <a href="visa.html#" data-target="html" class="scroll-to-target scroll-to-top">
+    <a href="countries.php#" data-target="html" class="scroll-to-target scroll-to-top">
         <span class="scroll-to-top__text">back top</span>
         <span class="scroll-to-top__wrapper"><span class="scroll-to-top__inner"></span></span>
     </a>
