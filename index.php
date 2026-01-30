@@ -11,10 +11,10 @@ include("./server/connection.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home Two || <?php echo $sitename ?></title>
     <!-- favicons Icons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png" />
-    <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo $domain ?>/assets/images/favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo $domain ?>/assets/images/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo $domain ?>/assets/images/favicons/favicon-16x16.png" />
+    <link rel="manifest" href="<?php echo $domain ?>/assets/images/favicons/site.webmanifest" />
     <meta name="description" content="<?php echo $sitename ?> is a Immigration and Visa Consulting HTML Template. Created especially designed for Immigration & Visa Consulting Agencies, Visa Agents, Study Abroad Consultants, Overseas Job Consultants, IELTS Coaching Centers, and Travel & Tourism Businesses. <?php echo $sitename ?> Immigration and Visa Consulting Design and customizable features make it perfect for on various displays and resolutions website. All HTML files are with layers and groups, so they are very easy to modify & expand." />
 
     <!-- fonts -->
@@ -24,21 +24,21 @@ include("./server/connection.php");
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
 
-    <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/vendors/bootstrap-select/bootstrap-select.min.css" />
-    <link rel="stylesheet" href="assets/vendors/aos/css/aos.css" />
-    <link rel="stylesheet" href="assets/vendors/fontawesome/css/all.min.css" />
-    <link rel="stylesheet" href="assets/vendors/jquery-ui/jquery-ui.css" />
-    <link rel="stylesheet" href="assets/vendors/jarallax/jarallax.css" />
-    <link rel="stylesheet" href="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css" />
-    <link rel="stylesheet" href="assets/vendors/visanet-icons/style.css" />
-    <link rel="stylesheet" href="assets/vendors/daterangepicker-master/daterangepicker.css" />
-    <link rel="stylesheet" href="assets/vendors/slick/slick.css">
-    <link rel="stylesheet" href="assets/vendors/owl-carousel/css/owl.carousel.min.css" />
-    <link rel="stylesheet" href="assets/vendors/owl-carousel/css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="<?php echo $domain ?>/assets/vendors/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="<?php echo $domain ?>/assets/vendors/bootstrap-select/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="<?php echo $domain ?>/assets/vendors/aos/css/aos.css" />
+    <link rel="stylesheet" href="<?php echo $domain ?>/assets/vendors/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="<?php echo $domain ?>/assets/vendors/jquery-ui/jquery-ui.css" />
+    <link rel="stylesheet" href="<?php echo $domain ?>/assets/vendors/jarallax/jarallax.css" />
+    <link rel="stylesheet" href="<?php echo $domain ?>/assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css" />
+    <link rel="stylesheet" href="<?php echo $domain ?>/assets/vendors/visanet-icons/style.css" />
+    <link rel="stylesheet" href="<?php echo $domain ?>/assets/vendors/daterangepicker-master/daterangepicker.css" />
+    <link rel="stylesheet" href="<?php echo $domain ?>/assets/vendors/slick/slick.css">
+    <link rel="stylesheet" href="<?php echo $domain ?>/assets/vendors/owl-carousel/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="<?php echo $domain ?>/assets/vendors/owl-carousel/css/owl.theme.default.min.css" />
 
     <!-- template styles -->
-    <link rel="stylesheet" href="assets/css/visanet.css" />
+    <link rel="stylesheet" href="<?php echo $domain ?>/assets/css/visanet.css" />
 </head>
 
 <body class="custom-cursor">
@@ -46,9 +46,7 @@ include("./server/connection.php");
     <div class="custom-cursor__cursor"></div>
     <div class="custom-cursor__cursor-two"></div>
 
-    <div class="preloader">
-        <div class="preloader__image" style="background-image: url(assets/images/loader.png);"></div>
-    </div>
+   
     <!-- /.preloader -->
     <div class="page-wrapper">
        <!-- header started -->
@@ -70,25 +68,25 @@ include("./server/connection.php");
         "navText": ["<i class=\"icon-arrow-left\"></i>","<i class=\"icon-arrow-right\"></i>"]
     }'>
                 <div class="hero-slider-two__item">
-                    <div class="hero-slider-two__bg-1" style="background-image: url(assets/images/shapes/hero-slider-bg-shape-2-1.png);">
-                        <img src="assets/images/shapes/hero-slider-shape-2-1.png" alt="shape" class="hero-slider-two__shape-1">
+                    <div class="hero-slider-two__bg-1" style="background-image: url(<?php echo $domain ?>/assets/images/shapes/hero-slider-bg-shape-2-1.png);">
+                        <img src="<?php echo $domain ?>/assets/images/shapes/hero-slider-shape-2-1.png" alt="shape" class="hero-slider-two__shape-1">
                     </div><!-- /.hero-slider-two__bg-1 -->
                     <div class="hero-slider-two__bg-2">
-                        <div class="hero-slider-two__bg-2__inner" style="background-image: url(assets/images/backgrounds/hero-slider-bg-2-1.jpg);"></div>
+                        <div class="hero-slider-two__bg-2__inner" style="background-image: url(<?php echo $domain ?>/assets/images/backgrounds/hero-slider-bg-2-1.jpg);"></div>
                         <div class="hero-slider-two__video">
                             <a href="https://www.youtube.com/watch?v=h9MbznbxlLc" class="video-btn video-popup"><i class="icon-play"></i></a>
                             <h3 class="hero-slider-two__video__title">Watch Video</h3>
                         </div><!-- /.hero-slider-two__video -->
-                        <img src="assets/images/shapes/hero-slider-shape-2-3.png" alt="shape" class="hero-slider-two__shape-2">
-                        <img src="assets/images/shapes/hero-slider-shape-2-4.png" alt="shape" class="hero-slider-two__shape-3">
-                        <img src="assets/images/shapes/hero-slider-shape-2-5.png" alt="shape" class="hero-slider-two__shape-4">
+                        <img src="<?php echo $domain ?>/assets/images/shapes/hero-slider-shape-2-3.png" alt="shape" class="hero-slider-two__shape-2">
+                        <img src="<?php echo $domain ?>/assets/images/shapes/hero-slider-shape-2-4.png" alt="shape" class="hero-slider-two__shape-3">
+                        <img src="<?php echo $domain ?>/assets/images/shapes/hero-slider-shape-2-5.png" alt="shape" class="hero-slider-two__shape-4">
                     </div><!-- /.hero-slider-two__bg-2 -->
                     <div class="container">
                         <div class="row">
                             <div class="col-xl-7 col-lg-10">
                                 <div class="hero-slider-two__content">
                                     <h2 class="hero-slider-two__title">
-                                        Best Solution For <br> <span class="hero-slider-two__title__group"><span class="hero-slider-two__title__shape-1"><img src="assets/images/shapes/hero-slider-shape-2-2.png" alt="shape"></span> <span class="hero-slider-two__title__shape-2"></span> <span class="hero-slider-two__title__highlight">Visa</span></span> Processing <br> Immigration
+                                        Best Solution For <br> <span class="hero-slider-two__title__group"><span class="hero-slider-two__title__shape-1"><img src="<?php echo $domain ?>/assets/images/shapes/hero-slider-shape-2-2.png" alt="shape"></span> <span class="hero-slider-two__title__shape-2"></span> <span class="hero-slider-two__title__highlight">Visa</span></span> Processing <br> Immigration
                                     </h2>
                                     <div class="hero-slider-two__description">
                                         <p class="hero-slider-two__text">Business visa is a conditional permission provided by a region to <br> a foreigner to enter, stay in, or leave that country.</p>
@@ -107,25 +105,25 @@ include("./server/connection.php");
                     </div><!-- /.container -->
                 </div><!-- /.hero-slider-two__item -->
                 <div class="hero-slider-two__item">
-                    <div class="hero-slider-two__bg-1" style="background-image: url(assets/images/shapes/hero-slider-bg-shape-2-1.png);">
-                        <img src="assets/images/shapes/hero-slider-shape-2-1.png" alt="shape" class="hero-slider-two__shape-1">
+                    <div class="hero-slider-two__bg-1" style="background-image: url(<?php echo $domain ?>/assets/images/shapes/hero-slider-bg-shape-2-1.png);">
+                        <img src="<?php echo $domain ?>/assets/images/shapes/hero-slider-shape-2-1.png" alt="shape" class="hero-slider-two__shape-1">
                     </div><!-- /.hero-slider-two__bg-1 -->
                     <div class="hero-slider-two__bg-2">
-                        <div class="hero-slider-two__bg-2__inner" style="background-image: url(assets/images/backgrounds/hero-slider-bg-2-2.jpg);"></div>
+                        <div class="hero-slider-two__bg-2__inner" style="background-image: url(<?php echo $domain ?>/assets/images/backgrounds/hero-slider-bg-2-2.jpg);"></div>
                         <div class="hero-slider-two__video">
                             <a href="https://www.youtube.com/watch?v=h9MbznbxlLc" class="video-btn video-popup"><i class="icon-play"></i></a>
                             <h3 class="hero-slider-two__video__title">Watch Video</h3>
                         </div><!-- /.hero-slider-two__video -->
-                        <img src="assets/images/shapes/hero-slider-shape-2-3.png" alt="shape" class="hero-slider-two__shape-2">
-                        <img src="assets/images/shapes/hero-slider-shape-2-4.png" alt="shape" class="hero-slider-two__shape-3">
-                        <img src="assets/images/shapes/hero-slider-shape-2-5.png" alt="shape" class="hero-slider-two__shape-4">
+                        <img src="<?php echo $domain ?>/assets/images/shapes/hero-slider-shape-2-3.png" alt="shape" class="hero-slider-two__shape-2">
+                        <img src="<?php echo $domain ?>/assets/images/shapes/hero-slider-shape-2-4.png" alt="shape" class="hero-slider-two__shape-3">
+                        <img src="<?php echo $domain ?>/assets/images/shapes/hero-slider-shape-2-5.png" alt="shape" class="hero-slider-two__shape-4">
                     </div><!-- /.hero-slider-two__bg-2 -->
                     <div class="container">
                         <div class="row">
                             <div class="col-xl-7 col-lg-10">
                                 <div class="hero-slider-two__content">
                                     <h2 class="hero-slider-two__title">
-                                        Visa Processing <br> <span class="hero-slider-two__title__group"><span class="hero-slider-two__title__shape-1"><img src="assets/images/shapes/hero-slider-shape-2-2.png" alt="shape"></span> <span class="hero-slider-two__title__shape-2"></span> <span class="hero-slider-two__title__highlight">Immigration</span></span> For <br> Consulting.
+                                        Visa Processing <br> <span class="hero-slider-two__title__group"><span class="hero-slider-two__title__shape-1"><img src="<?php echo $domain ?>/assets/images/shapes/hero-slider-shape-2-2.png" alt="shape"></span> <span class="hero-slider-two__title__shape-2"></span> <span class="hero-slider-two__title__highlight">Immigration</span></span> For <br> Consulting.
                                     </h2>
                                     <div class="hero-slider-two__description">
                                         <p class="hero-slider-two__text">There are many variations of passages of Lorem Ipsum available, but <br> majority have suffered alteration in some form, by.</p>
@@ -144,25 +142,25 @@ include("./server/connection.php");
                     </div><!-- /.container -->
                 </div><!-- /.hero-slider-two__item -->
                 <div class="hero-slider-two__item">
-                    <div class="hero-slider-two__bg-1" style="background-image: url(assets/images/shapes/hero-slider-bg-shape-2-1.png);">
-                        <img src="assets/images/shapes/hero-slider-shape-2-1.png" alt="shape" class="hero-slider-two__shape-1">
+                    <div class="hero-slider-two__bg-1" style="background-image: url(<?php echo $domain ?>/assets/images/shapes/hero-slider-bg-shape-2-1.png);">
+                        <img src="<?php echo $domain ?>/assets/images/shapes/hero-slider-shape-2-1.png" alt="shape" class="hero-slider-two__shape-1">
                     </div><!-- /.hero-slider-two__bg-1 -->
                     <div class="hero-slider-two__bg-2">
-                        <div class="hero-slider-two__bg-2__inner" style="background-image: url(assets/images/backgrounds/hero-slider-bg-2-3.jpg);"></div>
+                        <div class="hero-slider-two__bg-2__inner" style="background-image: url(<?php echo $domain ?>/assets/images/backgrounds/hero-slider-bg-2-3.jpg);"></div>
                         <div class="hero-slider-two__video">
                             <a href="https://www.youtube.com/watch?v=h9MbznbxlLc" class="video-btn video-popup"><i class="icon-play"></i></a>
                             <h3 class="hero-slider-two__video__title">Watch Video</h3>
                         </div><!-- /.hero-slider-two__video -->
-                        <img src="assets/images/shapes/hero-slider-shape-2-3.png" alt="shape" class="hero-slider-two__shape-2">
-                        <img src="assets/images/shapes/hero-slider-shape-2-4.png" alt="shape" class="hero-slider-two__shape-3">
-                        <img src="assets/images/shapes/hero-slider-shape-2-5.png" alt="shape" class="hero-slider-two__shape-4">
+                        <img src="<?php echo $domain ?>/assets/images/shapes/hero-slider-shape-2-3.png" alt="shape" class="hero-slider-two__shape-2">
+                        <img src="<?php echo $domain ?>/assets/images/shapes/hero-slider-shape-2-4.png" alt="shape" class="hero-slider-two__shape-3">
+                        <img src="<?php echo $domain ?>/assets/images/shapes/hero-slider-shape-2-5.png" alt="shape" class="hero-slider-two__shape-4">
                     </div><!-- /.hero-slider-two__bg-2 -->
                     <div class="container">
                         <div class="row">
                             <div class="col-xl-7 col-lg-10">
                                 <div class="hero-slider-two__content">
                                     <h2 class="hero-slider-two__title">
-                                        Immigration and <br> <span class="hero-slider-two__title__group"><span class="hero-slider-two__title__shape-1"><img src="assets/images/shapes/hero-slider-shape-2-2.png" alt="shape"></span> <span class="hero-slider-two__title__shape-2"></span> <span class="hero-slider-two__title__highlight">Visa</span></span> Consulting <br> Service
+                                        Immigration and <br> <span class="hero-slider-two__title__group"><span class="hero-slider-two__title__shape-1"><img src="<?php echo $domain ?>/assets/images/shapes/hero-slider-shape-2-2.png" alt="shape"></span> <span class="hero-slider-two__title__shape-2"></span> <span class="hero-slider-two__title__highlight">Visa</span></span> Consulting <br> Service
                                     </h2>
                                     <div class="hero-slider-two__description">
                                         <p class="hero-slider-two__text">If you are going to use a passage of Lorem Ipsum. There are many <br> variations of passages of Lorem Ipsum available.</p>
@@ -190,7 +188,7 @@ include("./server/connection.php");
                     <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="100">
                         <div class="features__card">
                             <div class="features__image">
-                                <img src="assets/images/resources/features-1-1.jpg" alt="features">
+                                <img src="<?php echo $domain ?>/assets/images/resources/features-1-1.jpg" alt="features">
                             </div><!-- /.features__image -->
                             <div class="features__content">
                                 <div class="features__icon-box">
@@ -202,13 +200,13 @@ include("./server/connection.php");
                                     Read More <span class="features__btn__icon"><i class="icon-arrow-right-up"></i></span>
                                 </a><!-- /.features__btn -->
                             </div><!-- /.features__content -->
-                            <img src="assets/images/shapes/features-shape-1-1.png" alt="shape" class="features__shape">
+                            <img src="<?php echo $domain ?>/assets/images/shapes/features-shape-1-1.png" alt="shape" class="features__shape">
                         </div><!-- /.features__card -->
                     </div><!-- /.col-xl-4 -->
                     <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="200">
                         <div class="features__card">
                             <div class="features__image">
-                                <img src="assets/images/resources/features-1-2.jpg" alt="features">
+                                <img src="<?php echo $domain ?>/assets/images/resources/features-1-2.jpg" alt="features">
                             </div><!-- /.features__image -->
                             <div class="features__content">
                                 <div class="features__icon-box">
@@ -220,13 +218,13 @@ include("./server/connection.php");
                                     Read More <span class="features__btn__icon"><i class="icon-arrow-right-up"></i></span>
                                 </a><!-- /.features__btn -->
                             </div><!-- /.features__content -->
-                            <img src="assets/images/shapes/features-shape-1-1.png" alt="shape" class="features__shape">
+                            <img src="<?php echo $domain ?>/assets/images/shapes/features-shape-1-1.png" alt="shape" class="features__shape">
                         </div><!-- /.features__card -->
                     </div><!-- /.col-xl-4 -->
                     <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="300">
                         <div class="features__card">
                             <div class="features__image">
-                                <img src="assets/images/resources/features-1-3.jpg" alt="features">
+                                <img src="<?php echo $domain ?>/assets/images/resources/features-1-3.jpg" alt="features">
                             </div><!-- /.features__image -->
                             <div class="features__content">
                                 <div class="features__icon-box">
@@ -234,9 +232,11 @@ include("./server/connection.php");
                                 </div><!-- /.features__icon-box -->
                                 <h2 class="features__title"><a href="about.php">Support Team Solution</a></h2>
                                 <p class="features__text">Immigration tailored visa management this randomised words which do services solution sed do majority.</p>
-                              
+                                <a href="about.php" class="features__btn">
+                                    Read More <span class="features__btn__icon"><i class="icon-arrow-right-up"></i></span>
+                                </a><!-- /.features__btn -->
                             </div><!-- /.features__content -->
-                            <img src="assets/images/shapes/features-shape-1-1.png" alt="shape" class="features__shape">
+                            <img src="<?php echo $domain ?>/assets/images/shapes/features-shape-1-1.png" alt="shape" class="features__shape">
                         </div><!-- /.features__card -->
                     </div><!-- /.col-xl-4 -->
                 </div><!-- /.row -->
@@ -249,17 +249,17 @@ include("./server/connection.php");
                     <div class="col-lg-6" data-aos="fade-right" data-aos-anchor-placement="top-bottom" data-aos-duration="1300">
                         <div class="about-two__image">
                             <div class="about-two__image__one">
-                                <img src="assets/images/about/about-2-1.jpg" alt="about">
+                                <img src="<?php echo $domain ?>/assets/images/about/about-2-1.jpg" alt="about">
                             </div><!-- /.about-two__image__one -->
                             <div class="about-two__experience">
                                 <h2 class="about-two__experience__year">36+</h2>
                                 <h3 class="about-two__experience__title">Experience Challenge</h3>
                             </div><!-- /.about-two__experience -->
                             <div class="about-two__image__two">
-                                <img src="assets/images/about/about-2-2.jpg" alt="about">
+                                <img src="<?php echo $domain ?>/assets/images/about/about-2-2.jpg" alt="about">
                                 <a href="https://www.youtube.com/watch?v=h9MbznbxlLc" class="video-btn video-popup"><i class="icon-play"></i></a>
                             </div><!-- /.about-two__image__two -->
-                            <img src="assets/images/shapes/about-shape-2-2.png" alt="shape" class="about-two__image__shape">
+                            <img src="<?php echo $domain ?>/assets/images/shapes/about-shape-2-2.png" alt="shape" class="about-two__image__shape">
                         </div><!-- /.about-two__image -->
                     </div><!-- /.col-lg-6 -->
                     <div class="col-lg-6">
@@ -321,7 +321,7 @@ include("./server/connection.php");
                     </div><!-- /.col-lg-6 -->
                 </div><!-- /.row -->
             </div><!-- /.container -->
-            <img src="assets/images/shapes/about-shape-2-1.png" alt="shape" class="about-two__shape">
+            <img src="<?php echo $domain ?>/assets/images/shapes/about-shape-2-1.png" alt="shape" class="about-two__shape">
         </section><!-- /.about-two -->
 
         <section class="funfact section-space-b">
@@ -335,8 +335,8 @@ include("./server/connection.php");
                                 <p class="funfact__item__title">Successful client <br> collaborations</p>
                             </div><!-- /.funfact__item__content -->
                             <div class="funfact__item__bg">
-                                <div style="background-image: url(assets/images/shapes/funfact-shape-1-1-.png);" class="funfact__item__shape"></div>
-                                <div style="background-image: url(assets/images/resources/funfact-item-bg-1-1.jpg);" class="funfact__item__image"></div>
+                                <div style="background-image: url(<?php echo $domain ?>/assets/images/shapes/funfact-shape-1-1-.png);" class="funfact__item__shape"></div>
+                                <div style="background-image: url(<?php echo $domain ?>/assets/images/resources/funfact-item-bg-1-1.jpg);" class="funfact__item__image"></div>
                             </div><!-- /.funfact__item__bg -->
                         </div><!-- /.funfact__item -->
                     </div><!-- /.col-lg-3 -->
@@ -348,8 +348,8 @@ include("./server/connection.php");
                                 <p class="funfact__item__title">Countries visa <br> Represented</p>
                             </div><!-- /.funfact__item__content -->
                             <div class="funfact__item__bg">
-                                <div style="background-image: url(assets/images/shapes/funfact-shape-1-1-.png);" class="funfact__item__shape"></div>
-                                <div style="background-image: url(assets/images/resources/funfact-item-bg-1-1.jpg);" class="funfact__item__image"></div>
+                                <div style="background-image: url(<?php echo $domain ?>/assets/images/shapes/funfact-shape-1-1-.png);" class="funfact__item__shape"></div>
+                                <div style="background-image: url(<?php echo $domain ?>/assets/images/resources/funfact-item-bg-1-1.jpg);" class="funfact__item__image"></div>
                             </div><!-- /.funfact__item__bg -->
                         </div><!-- /.funfact__item -->
                     </div><!-- /.col-lg-3 -->
@@ -361,8 +361,8 @@ include("./server/connection.php");
                                 <p class="funfact__item__title">Experience officer <br> immigration</p>
                             </div><!-- /.funfact__item__content -->
                             <div class="funfact__item__bg">
-                                <div style="background-image: url(assets/images/shapes/funfact-shape-1-1-.png);" class="funfact__item__shape"></div>
-                                <div style="background-image: url(assets/images/resources/funfact-item-bg-1-1.jpg);" class="funfact__item__image"></div>
+                                <div style="background-image: url(<?php echo $domain ?>/assets/images/shapes/funfact-shape-1-1-.png);" class="funfact__item__shape"></div>
+                                <div style="background-image: url(<?php echo $domain ?>/assets/images/resources/funfact-item-bg-1-1.jpg);" class="funfact__item__image"></div>
                             </div><!-- /.funfact__item__bg -->
                         </div><!-- /.funfact__item -->
                     </div><!-- /.col-lg-3 -->
@@ -374,8 +374,8 @@ include("./server/connection.php");
                                 <p class="funfact__item__title">Perfect record <br> visa approval</p>
                             </div><!-- /.funfact__item__content -->
                             <div class="funfact__item__bg">
-                                <div style="background-image: url(assets/images/shapes/funfact-shape-1-1-.png);" class="funfact__item__shape"></div>
-                                <div style="background-image: url(assets/images/resources/funfact-item-bg-1-1.jpg);" class="funfact__item__image"></div>
+                                <div style="background-image: url(<?php echo $domain ?>/assets/images/shapes/funfact-shape-1-1-.png);" class="funfact__item__shape"></div>
+                                <div style="background-image: url(<?php echo $domain ?>/assets/images/resources/funfact-item-bg-1-1.jpg);" class="funfact__item__image"></div>
                             </div><!-- /.funfact__item__bg -->
                         </div><!-- /.funfact__item -->
                     </div><!-- /.col-lg-3 -->
@@ -384,8 +384,8 @@ include("./server/connection.php");
         </section><!-- /.funfact -->
 
         <section class="visa-two section-space" id='visa'>
-            <div class="visa-two__bg visanet-jarallax" data-jarallax data-speed="0.3s" style="background-image: url(assets/images/backgrounds/visa-bg-2-1.jpg);">
-                <img src="assets/images/shapes/visa-shape-2-1.png" alt="shape" class="visa-two__shape">
+            <div class="visa-two__bg visanet-jarallax" data-jarallax data-speed="0.3s" style="background-image: url(<?php echo $domain ?>/assets/images/backgrounds/visa-bg-2-1.jpg);">
+                <img src="<?php echo $domain ?>/assets/images/shapes/visa-shape-2-1.png" alt="shape" class="visa-two__shape">
             </div><!-- /.visa-two__bg -->
             <div class="container">
                 <div class="sec-title sec-title--dark sec-title--center">
@@ -400,26 +400,26 @@ include("./server/connection.php");
                     <div class="col-xl-5">
                         <div class="visa-two__images">
                             <div class="visa-two__image active">
-                                <img src="assets/images/visa/visa-2-1.jpg" alt="Family Visa">
+                                <img src="<?php echo $domain ?>/assets/images/visa/visa-2-1.jpg" alt="Family Visa">
                             </div><!-- /.visa-two__image -->
                             <div class="visa-two__image">
-                                <img src="assets/images/visa/visa-2-2.jpg" alt="Students Visa">
+                                <img src="<?php echo $domain ?>/assets/images/visa/visa-2-2.jpg" alt="Students Visa">
                             </div><!-- /.visa-two__image -->
                             <div class="visa-two__image">
-                                <img src="assets/images/visa/visa-2-3.jpg" alt="Business Visa">
+                                <img src="<?php echo $domain ?>/assets/images/visa/visa-2-3.jpg" alt="Business Visa">
                             </div><!-- /.visa-two__image -->
                             <div class="visa-two__image">
-                                <img src="assets/images/visa/visa-2-4.jpg" alt="Travel Visa">
+                                <img src="<?php echo $domain ?>/assets/images/visa/visa-2-4.jpg" alt="Travel Visa">
                             </div><!-- /.visa-two__image -->
                             <div class="visa-two__image">
-                                <img src="assets/images/visa/visa-2-5.jpg" alt="Immigration Visa">
+                                <img src="<?php echo $domain ?>/assets/images/visa/visa-2-5.jpg" alt="Immigration Visa">
                             </div><!-- /.visa-two__image -->
                         </div><!-- /.visa-two__images -->
                     </div><!-- /.col-xl-5 -->
                     <div class="col-xl-7">
                         <div class="visa-two__item active" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300">
                             <div class="visa-two__item__overlay"></div>
-                            <img src="assets/images/shapes/visa-shape-2-2.png" alt="shape" class="visa-two__item__shape">
+                            <img src="<?php echo $domain ?>/assets/images/shapes/visa-shape-2-2.png" alt="shape" class="visa-two__item__shape">
                             <div class="visa-two__content">
                                 <div class="visa-two__icon"><i class="icon-family-visa"></i></div>
                                 <h3 class="visa-two__title"><a href="visa-d-family-visa.php">Family Visa</a></h3>
@@ -430,7 +430,7 @@ include("./server/connection.php");
                         </div><!-- /.visa-two__item -->
                         <div class="visa-two__item" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300">
                             <div class="visa-two__item__overlay"></div>
-                            <img src="assets/images/shapes/visa-shape-2-2.png" alt="shape" class="visa-two__item__shape">
+                            <img src="<?php echo $domain ?>/assets/images/shapes/visa-shape-2-2.png" alt="shape" class="visa-two__item__shape">
                             <div class="visa-two__content">
                                 <div class="visa-two__icon"><i class="icon-students-visa"></i></div>
                                 <h3 class="visa-two__title"><a href="visa-d-students-visa.php">Students Visa</a></h3>
@@ -441,7 +441,7 @@ include("./server/connection.php");
                         </div><!-- /.visa-two__item -->
                         <div class="visa-two__item" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300">
                             <div class="visa-two__item__overlay"></div>
-                            <img src="assets/images/shapes/visa-shape-2-2.png" alt="shape" class="visa-two__item__shape">
+                            <img src="<?php echo $domain ?>/assets/images/shapes/visa-shape-2-2.png" alt="shape" class="visa-two__item__shape">
                             <div class="visa-two__content">
                                 <div class="visa-two__icon"><i class="icon-business-visa"></i></div>
                                 <h3 class="visa-two__title"><a href="visa-d-business-visa.php">Business Visa</a></h3>
@@ -452,7 +452,7 @@ include("./server/connection.php");
                         </div><!-- /.visa-two__item -->
                         <div class="visa-two__item" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300">
                             <div class="visa-two__item__overlay"></div>
-                            <img src="assets/images/shapes/visa-shape-2-2.png" alt="shape" class="visa-two__item__shape">
+                            <img src="<?php echo $domain ?>/assets/images/shapes/visa-shape-2-2.png" alt="shape" class="visa-two__item__shape">
                             <div class="visa-two__content">
                                 <div class="visa-two__icon"><i class="icon-travel-visa"></i></div>
                                 <h3 class="visa-two__title"><a href="visa-d-travel-visa.php">Travel Visa</a></h3>
@@ -463,7 +463,7 @@ include("./server/connection.php");
                         </div><!-- /.visa-two__item -->
                         <div class="visa-two__item" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300">
                             <div class="visa-two__item__overlay"></div>
-                            <img src="assets/images/shapes/visa-shape-2-2.png" alt="shape" class="visa-two__item__shape">
+                            <img src="<?php echo $domain ?>/assets/images/shapes/visa-shape-2-2.png" alt="shape" class="visa-two__item__shape">
                             <div class="visa-two__content">
                                 <div class="visa-two__icon"><i class="icon-immigration-visa"></i></div>
                                 <h3 class="visa-two__title"><a href="visa-d-immigration-visa.php">Immigration Visa</a></h3>
@@ -523,7 +523,7 @@ include("./server/connection.php");
                     <div class="item" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="100">
                         <div class="training-card">
                             <div class="training-card__image">
-                                <img src="assets/images/training/training-1-1.jpg" alt="Visa Guidance">
+                                <img src="<?php echo $domain ?>/assets/images/training/training-1-1.jpg" alt="Visa Guidance">
                             </div><!-- /.training-card__image -->
                             <div class="training-card__content">
                                 <h3 class="training-card__number"></h3>
@@ -540,7 +540,7 @@ include("./server/connection.php");
                     <div class="item" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="200">
                         <div class="training-card">
                             <div class="training-card__image">
-                                <img src="assets/images/training/training-1-2.jpg" alt="Study Abroad">
+                                <img src="<?php echo $domain ?>/assets/images/training/training-1-2.jpg" alt="Study Abroad">
                             </div><!-- /.training-card__image -->
                             <div class="training-card__content">
                                 <h3 class="training-card__number"></h3>
@@ -557,7 +557,7 @@ include("./server/connection.php");
                     <div class="item" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="300">
                         <div class="training-card">
                             <div class="training-card__image">
-                                <img src="assets/images/training/training-1-3.jpg" alt="Job Placement">
+                                <img src="<?php echo $domain ?>/assets/images/training/training-1-3.jpg" alt="Job Placement">
                             </div><!-- /.training-card__image -->
                             <div class="training-card__content">
                                 <h3 class="training-card__number"></h3>
@@ -574,7 +574,7 @@ include("./server/connection.php");
                     <div class="item" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="400">
                         <div class="training-card">
                             <div class="training-card__image">
-                                <img src="assets/images/training/training-1-4.jpg" alt="Travel Support">
+                                <img src="<?php echo $domain ?>/assets/images/training/training-1-4.jpg" alt="Travel Support">
                             </div><!-- /.training-card__image -->
                             <div class="training-card__content">
                                 <h3 class="training-card__number"></h3>
@@ -591,7 +591,7 @@ include("./server/connection.php");
                     <div class="item" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="100">
                         <div class="training-card">
                             <div class="training-card__image">
-                                <img src="assets/images/training/training-1-5.jpg" alt="IELTS Preparation">
+                                <img src="<?php echo $domain ?>/assets/images/training/training-1-5.jpg" alt="IELTS Preparation">
                             </div><!-- /.training-card__image -->
                             <div class="training-card__content">
                                 <h3 class="training-card__number"></h3>
@@ -608,7 +608,7 @@ include("./server/connection.php");
                     <div class="item" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="200">
                         <div class="training-card">
                             <div class="training-card__image">
-                                <img src="assets/images/training/training-1-6.jpg" alt="Migrat Assistance">
+                                <img src="<?php echo $domain ?>/assets/images/training/training-1-6.jpg" alt="Migrat Assistance">
                             </div><!-- /.training-card__image -->
                             <div class="training-card__content">
                                 <h3 class="training-card__number"></h3>
@@ -625,7 +625,7 @@ include("./server/connection.php");
                     <div class="item" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="300">
                         <div class="training-card">
                             <div class="training-card__image">
-                                <img src="assets/images/training/training-1-7.jpg" alt="Career Training">
+                                <img src="<?php echo $domain ?>/assets/images/training/training-1-7.jpg" alt="Career Training">
                             </div><!-- /.training-card__image -->
                             <div class="training-card__content">
                                 <h3 class="training-card__number"></h3>
@@ -642,7 +642,7 @@ include("./server/connection.php");
                     <div class="item" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="400">
                         <div class="training-card">
                             <div class="training-card__image">
-                                <img src="assets/images/training/training-1-8.jpg" alt="Document Process">
+                                <img src="<?php echo $domain ?>/assets/images/training/training-1-8.jpg" alt="Document Process">
                             </div><!-- /.training-card__image -->
                             <div class="training-card__content">
                                 <h3 class="training-card__number"></h3>
@@ -658,7 +658,7 @@ include("./server/connection.php");
                     </div><!-- /.item -->
                 </div><!-- /.training-one__carousel -->
                 <div class="training-one__bottom" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300">
-                    <div class="training-one__bottom__bg" style="background-image: url(assets/images/shapes/training-bg-shape-1-1.png);"></div>
+                    <div class="training-one__bottom__bg" style="background-image: url(<?php echo $domain ?>/assets/images/shapes/training-bg-shape-1-1.png);"></div>
                     <div class="row gutter-y-40 align-items-center">
                         <div class="col-lg-8">
                             <div class="training-one__content">
@@ -679,7 +679,7 @@ include("./server/connection.php");
                     </div><!-- /.row -->
                 </div><!-- /.training-one__bottom -->
             </div><!-- /.container -->
-            <img src="assets/images/shapes/training-shape-1-1.png" alt="shape" class="training-one__shape">
+            <img src="<?php echo $domain ?>/assets/images/shapes/training-shape-1-1.png" alt="shape" class="training-one__shape">
         </section><!-- /.training-one -->
 
         <section class="gallery-one section-space" id='gallery'>
@@ -726,93 +726,93 @@ include("./server/connection.php");
 			}
 		}'>
                     <div class="gallery-one__item" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="100">
-                        <img src="assets/images/gallery/gallery-2-1.jpg" alt="Students Visa" class="gallery-one__image">
+                        <img src="<?php echo $domain ?>/assets/images/gallery/gallery-2-1.jpg" alt="Students Visa" class="gallery-one__image">
                         <div class="gallery-one__content">
                             <h3 class="gallery-one__title"><span>Students Visa</span></h3>
                             <p class="gallery-one__text"><span>Secure your dream education overseas with expert visa guidance.</span></p>
                         </div><!-- /.gallery-one__content -->
-                        <a href="assets/images/gallery/gallery-2-1.jpg" class="gallery-one__btn img-popup"><i class="icon-zoom-in"></i></a>
+                        <a href="<?php echo $domain ?>/assets/images/gallery/gallery-2-1.jpg" class="gallery-one__btn img-popup"><i class="icon-zoom-in"></i></a>
                         <div class="gallery-one__border"></div>
                     </div><!-- /.gallery-one__item -->
                     <div class="gallery-one__item" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="200">
-                        <img src="assets/images/gallery/gallery-2-2.jpg" alt="Family Visa" class="gallery-one__image">
+                        <img src="<?php echo $domain ?>/assets/images/gallery/gallery-2-2.jpg" alt="Family Visa" class="gallery-one__image">
                         <div class="gallery-one__content">
                             <h3 class="gallery-one__title"><span>Family Visa</span></h3>
                             <p class="gallery-one__text"><span>Reunite with loved ones abroad through our simplified family visa.</span></p>
                         </div><!-- /.gallery-one__content -->
-                        <a href="assets/images/gallery/gallery-2-2.jpg" class="gallery-one__btn img-popup"><i class="icon-zoom-in"></i></a>
+                        <a href="<?php echo $domain ?>/assets/images/gallery/gallery-2-2.jpg" class="gallery-one__btn img-popup"><i class="icon-zoom-in"></i></a>
                         <div class="gallery-one__border"></div>
                     </div><!-- /.gallery-one__item -->
                     <div class="gallery-one__item" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="300">
-                        <img src="assets/images/gallery/gallery-2-3.jpg" alt="Travel Visa" class="gallery-one__image">
+                        <img src="<?php echo $domain ?>/assets/images/gallery/gallery-2-3.jpg" alt="Travel Visa" class="gallery-one__image">
                         <div class="gallery-one__content">
                             <h3 class="gallery-one__title"><span>Travel Visa</span></h3>
                             <p class="gallery-one__text"><span>Enjoy hassle-free travel experiences with our reliable visa.</span></p>
                         </div><!-- /.gallery-one__content -->
-                        <a href="assets/images/gallery/gallery-2-3.jpg" class="gallery-one__btn img-popup"><i class="icon-zoom-in"></i></a>
+                        <a href="<?php echo $domain ?>/assets/images/gallery/gallery-2-3.jpg" class="gallery-one__btn img-popup"><i class="icon-zoom-in"></i></a>
                         <div class="gallery-one__border"></div>
                     </div><!-- /.gallery-one__item -->
                     <div class="gallery-one__item" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="400">
-                        <img src="assets/images/gallery/gallery-2-4.jpg" alt="Business Visa" class="gallery-one__image">
+                        <img src="<?php echo $domain ?>/assets/images/gallery/gallery-2-4.jpg" alt="Business Visa" class="gallery-one__image">
                         <div class="gallery-one__content">
                             <h3 class="gallery-one__title"><span>Business Visa</span></h3>
                             <p class="gallery-one__text"><span>Expand your business internationally with expert guidance.</span></p>
                         </div><!-- /.gallery-one__content -->
-                        <a href="assets/images/gallery/gallery-2-4.jpg" class="gallery-one__btn img-popup"><i class="icon-zoom-in"></i></a>
+                        <a href="<?php echo $domain ?>/assets/images/gallery/gallery-2-4.jpg" class="gallery-one__btn img-popup"><i class="icon-zoom-in"></i></a>
                         <div class="gallery-one__border"></div>
                     </div><!-- /.gallery-one__item -->
                     <div class="gallery-one__item" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="500">
-                        <img src="assets/images/gallery/gallery-2-5.jpg" alt="Immigration Visa" class="gallery-one__image">
+                        <img src="<?php echo $domain ?>/assets/images/gallery/gallery-2-5.jpg" alt="Immigration Visa" class="gallery-one__image">
                         <div class="gallery-one__content">
                             <h3 class="gallery-one__title"><span>Immigration Visa</span></h3>
                             <p class="gallery-one__text"><span>Access trusted immigration resources with complete guidance.</span></p>
                         </div><!-- /.gallery-one__content -->
-                        <a href="assets/images/gallery/gallery-2-5.jpg" class="gallery-one__btn img-popup"><i class="icon-zoom-in"></i></a>
+                        <a href="<?php echo $domain ?>/assets/images/gallery/gallery-2-5.jpg" class="gallery-one__btn img-popup"><i class="icon-zoom-in"></i></a>
                         <div class="gallery-one__border"></div>
                     </div><!-- /.gallery-one__item -->
                     <div class="gallery-one__item" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="100">
-                        <img src="assets/images/gallery/gallery-2-1.jpg" alt="Students Visa" class="gallery-one__image">
+                        <img src="<?php echo $domain ?>/assets/images/gallery/gallery-2-1.jpg" alt="Students Visa" class="gallery-one__image">
                         <div class="gallery-one__content">
                             <h3 class="gallery-one__title"><span>Students Visa</span></h3>
                             <p class="gallery-one__text"><span>Secure your dream education overseas with expert visa guidance.</span></p>
                         </div><!-- /.gallery-one__content -->
-                        <a href="assets/images/gallery/gallery-2-1.jpg" class="gallery-one__btn img-popup"><i class="icon-zoom-in"></i></a>
+                        <a href="<?php echo $domain ?>/assets/images/gallery/gallery-2-1.jpg" class="gallery-one__btn img-popup"><i class="icon-zoom-in"></i></a>
                         <div class="gallery-one__border"></div>
                     </div><!-- /.gallery-one__item -->
                     <div class="gallery-one__item" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="200">
-                        <img src="assets/images/gallery/gallery-2-2.jpg" alt="Family Visa" class="gallery-one__image">
+                        <img src="<?php echo $domain ?>/assets/images/gallery/gallery-2-2.jpg" alt="Family Visa" class="gallery-one__image">
                         <div class="gallery-one__content">
                             <h3 class="gallery-one__title"><span>Family Visa</span></h3>
                             <p class="gallery-one__text"><span>Reunite with loved ones abroad through our simplified family visa.</span></p>
                         </div><!-- /.gallery-one__content -->
-                        <a href="assets/images/gallery/gallery-2-2.jpg" class="gallery-one__btn img-popup"><i class="icon-zoom-in"></i></a>
+                        <a href="<?php echo $domain ?>/assets/images/gallery/gallery-2-2.jpg" class="gallery-one__btn img-popup"><i class="icon-zoom-in"></i></a>
                         <div class="gallery-one__border"></div>
                     </div><!-- /.gallery-one__item -->
                     <div class="gallery-one__item" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="300">
-                        <img src="assets/images/gallery/gallery-2-3.jpg" alt="Travel Visa" class="gallery-one__image">
+                        <img src="<?php echo $domain ?>/assets/images/gallery/gallery-2-3.jpg" alt="Travel Visa" class="gallery-one__image">
                         <div class="gallery-one__content">
                             <h3 class="gallery-one__title"><span>Travel Visa</span></h3>
                             <p class="gallery-one__text"><span>Enjoy hassle-free travel experiences with our reliable visa.</span></p>
                         </div><!-- /.gallery-one__content -->
-                        <a href="assets/images/gallery/gallery-2-3.jpg" class="gallery-one__btn img-popup"><i class="icon-zoom-in"></i></a>
+                        <a href="<?php echo $domain ?>/assets/images/gallery/gallery-2-3.jpg" class="gallery-one__btn img-popup"><i class="icon-zoom-in"></i></a>
                         <div class="gallery-one__border"></div>
                     </div><!-- /.gallery-one__item -->
                     <div class="gallery-one__item" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="400">
-                        <img src="assets/images/gallery/gallery-2-4.jpg" alt="Business Visa" class="gallery-one__image">
+                        <img src="<?php echo $domain ?>/assets/images/gallery/gallery-2-4.jpg" alt="Business Visa" class="gallery-one__image">
                         <div class="gallery-one__content">
                             <h3 class="gallery-one__title"><span>Business Visa</span></h3>
                             <p class="gallery-one__text"><span>Expand your business internationally with expert guidance.</span></p>
                         </div><!-- /.gallery-one__content -->
-                        <a href="assets/images/gallery/gallery-2-4.jpg" class="gallery-one__btn img-popup"><i class="icon-zoom-in"></i></a>
+                        <a href="<?php echo $domain ?>/assets/images/gallery/gallery-2-4.jpg" class="gallery-one__btn img-popup"><i class="icon-zoom-in"></i></a>
                         <div class="gallery-one__border"></div>
                     </div><!-- /.gallery-one__item -->
                     <div class="gallery-one__item" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="500">
-                        <img src="assets/images/gallery/gallery-2-5.jpg" alt="Immigration Visa" class="gallery-one__image">
+                        <img src="<?php echo $domain ?>/assets/images/gallery/gallery-2-5.jpg" alt="Immigration Visa" class="gallery-one__image">
                         <div class="gallery-one__content">
                             <h3 class="gallery-one__title"><span>Immigration Visa</span></h3>
                             <p class="gallery-one__text"><span>Access trusted immigration resources with complete guidance.</span></p>
                         </div><!-- /.gallery-one__content -->
-                        <a href="assets/images/gallery/gallery-2-5.jpg" class="gallery-one__btn img-popup"><i class="icon-zoom-in"></i></a>
+                        <a href="<?php echo $domain ?>/assets/images/gallery/gallery-2-5.jpg" class="gallery-one__btn img-popup"><i class="icon-zoom-in"></i></a>
                         <div class="gallery-one__border"></div>
                     </div><!-- /.gallery-one__item -->
                 </div><!-- /.gallery-one__carousel -->
@@ -858,27 +858,27 @@ include("./server/connection.php");
             }
             }'>
                     <div class="client-carousel__item">
-                        <img src="assets/images/resources/brand-2-1.png" alt="Visanet" class="client-carousel__image">
+                        <img src="<?php echo $domain ?>/assets/images/resources/brand-2-1.png" alt="Visanet" class="client-carousel__image">
                         <div class="client-carousel__hover">
-                            <img src="assets/images/resources/brand-1-1-hover.png" alt="Visanet" class="client-carousel__hover__image">
+                            <img src="<?php echo $domain ?>/assets/images/resources/brand-1-1-hover.png" alt="Visanet" class="client-carousel__hover__image">
                         </div><!-- /.client-carousel__hover -->
                     </div><!-- /.owl-slide-item-->
                     <div class="client-carousel__item">
-                        <img src="assets/images/resources/brand-2-1.png" alt="Visanet" class="client-carousel__image">
+                        <img src="<?php echo $domain ?>/assets/images/resources/brand-2-1.png" alt="Visanet" class="client-carousel__image">
                         <div class="client-carousel__hover">
-                            <img src="assets/images/resources/brand-1-1-hover.png" alt="Visanet" class="client-carousel__hover__image">
+                            <img src="<?php echo $domain ?>/assets/images/resources/brand-1-1-hover.png" alt="Visanet" class="client-carousel__hover__image">
                         </div><!-- /.client-carousel__hover -->
                     </div><!-- /.owl-slide-item-->
                     <div class="client-carousel__item">
-                        <img src="assets/images/resources/brand-2-1.png" alt="Visanet" class="client-carousel__image">
+                        <img src="<?php echo $domain ?>/assets/images/resources/brand-2-1.png" alt="Visanet" class="client-carousel__image">
                         <div class="client-carousel__hover">
-                            <img src="assets/images/resources/brand-1-1-hover.png" alt="Visanet" class="client-carousel__hover__image">
+                            <img src="<?php echo $domain ?>/assets/images/resources/brand-1-1-hover.png" alt="Visanet" class="client-carousel__hover__image">
                         </div><!-- /.client-carousel__hover -->
                     </div><!-- /.owl-slide-item-->
                     <div class="client-carousel__item">
-                        <img src="assets/images/resources/brand-2-1.png" alt="Visanet" class="client-carousel__image">
+                        <img src="<?php echo $domain ?>/assets/images/resources/brand-2-1.png" alt="Visanet" class="client-carousel__image">
                         <div class="client-carousel__hover">
-                            <img src="assets/images/resources/brand-1-1-hover.png" alt="Visanet" class="client-carousel__hover__image">
+                            <img src="<?php echo $domain ?>/assets/images/resources/brand-1-1-hover.png" alt="Visanet" class="client-carousel__hover__image">
                         </div><!-- /.client-carousel__hover -->
                     </div><!-- /.owl-slide-item-->
                 </div><!-- /.client-carousel__carousel -->
@@ -886,19 +886,19 @@ include("./server/connection.php");
         </div><!-- /.client-carousel -->
 
         <section class="fly-one section-space-t">
-            <div class="fly-one__bg" style="background-image: url(assets/images/backgrounds/fly-bg.jpg);"></div>
+            <div class="fly-one__bg" style="background-image: url(<?php echo $domain ?>/assets/images/backgrounds/fly-bg.jpg);"></div>
             <div class="container">
                 <div class="fly-one__content">
                     <div class="fly-one__client">
                         <div class="fly-one__client__images">
                             <div class="fly-one__client__img">
-                                <img src="assets/images/resources/fly-client-1.png" alt="Trusted Customer">
+                                <img src="<?php echo $domain ?>/assets/images/resources/fly-client-1.png" alt="Trusted Customer">
                             </div>
                             <div class="fly-one__client__img">
-                                <img src="assets/images/resources/fly-client-2.png" alt="Trusted Customer">
+                                <img src="<?php echo $domain ?>/assets/images/resources/fly-client-2.png" alt="Trusted Customer">
                             </div>
                             <div class="fly-one__client__img">
-                                <img src="assets/images/resources/fly-client-3.png" alt="Trusted Customer">
+                                <img src="<?php echo $domain ?>/assets/images/resources/fly-client-3.png" alt="Trusted Customer">
                             </div>
                         </div>
                         <h3 class="fly-one__client__funfact count-box">
@@ -919,12 +919,12 @@ include("./server/connection.php");
                             </a><!-- /.visanet-btn -->
                         </div>
                         <div class="fly-one__card__image">
-                            <img src="assets/images/resources/fly-img.jpg" alt="fly image">
+                            <img src="<?php echo $domain ?>/assets/images/resources/fly-img.jpg" alt="fly image">
                         </div>
                     </div><!-- /.fly-one__card -->
                 </div><!-- /.fly-one__content -->
             </div><!-- /.container -->
-            <img src="assets/images/shapes/fly-shape-1-1.png" alt="fly shape" class="fly-one__shape-1 airplane-animated">
+            <img src="<?php echo $domain ?>/assets/images/shapes/fly-shape-1-1.png" alt="fly shape" class="fly-one__shape-1 airplane-animated">
             <div class="fly-one__shape-2"></div>
         </section><!-- /.fly-one -->
 
@@ -968,7 +968,7 @@ include("./server/connection.php");
                             <div class="work-process__content">
                                 <div class="work-process__image">
                                     <div class="work-process__image__main">
-                                        <img src="assets/images/resources/work-process-1-1.png" alt="">
+                                        <img src="<?php echo $domain ?>/assets/images/resources/work-process-1-1.png" alt="">
                                     </div>
                                     <span class="work-process__icon"><i class="icon-check"></i></span>
                                 </div><!-- /.work-process__image -->
@@ -989,7 +989,7 @@ include("./server/connection.php");
                             <div class="work-process__content">
                                 <div class="work-process__image">
                                     <div class="work-process__image__main">
-                                        <img src="assets/images/resources/work-process-1-2.png" alt="">
+                                        <img src="<?php echo $domain ?>/assets/images/resources/work-process-1-2.png" alt="">
                                     </div>
                                     <span class="work-process__icon"><i class="icon-check"></i></span>
                                 </div><!-- /.work-process__image -->
@@ -1010,7 +1010,7 @@ include("./server/connection.php");
                             <div class="work-process__content">
                                 <div class="work-process__image">
                                     <div class="work-process__image__main">
-                                        <img src="assets/images/resources/work-process-1-3.png" alt="">
+                                        <img src="<?php echo $domain ?>/assets/images/resources/work-process-1-3.png" alt="">
                                     </div>
                                     <span class="work-process__icon"><i class="icon-check"></i></span>
                                 </div><!-- /.work-process__image -->
@@ -1031,7 +1031,7 @@ include("./server/connection.php");
                             <div class="work-process__content">
                                 <div class="work-process__image">
                                     <div class="work-process__image__main">
-                                        <img src="assets/images/resources/work-process-1-4.png" alt="">
+                                        <img src="<?php echo $domain ?>/assets/images/resources/work-process-1-4.png" alt="">
                                     </div>
                                     <span class="work-process__icon"><i class="icon-check"></i></span>
                                 </div><!-- /.work-process__image -->
@@ -1056,155 +1056,155 @@ include("./server/connection.php");
                     <h1 class="slide-text__scroll slide-text__scroll--left">
                         <span class="slide-text__group">
                             <span class="slide-text__shape">
-                                <img src="assets/images/shapes/slide-text-shape.png" alt="shape">
-                                <img src="assets/images/shapes/slide-text-shape-hover.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape-hover.png" alt="shape">
                             </span>
                             Immigration
                         </span>
                         <span class="slide-text__group">
                             <span class="slide-text__shape">
-                                <img src="assets/images/shapes/slide-text-shape.png" alt="shape">
-                                <img src="assets/images/shapes/slide-text-shape-hover.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape-hover.png" alt="shape">
                             </span>
                             VISA PROCESSING
                         </span>
                         <span class="slide-text__group">
                             <span class="slide-text__shape">
-                                <img src="assets/images/shapes/slide-text-shape.png" alt="shape">
-                                <img src="assets/images/shapes/slide-text-shape-hover.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape-hover.png" alt="shape">
                             </span>
                             24/7 Support
                         </span>
                         <span class="slide-text__group">
                             <span class="slide-text__shape">
-                                <img src="assets/images/shapes/slide-text-shape.png" alt="shape">
-                                <img src="assets/images/shapes/slide-text-shape-hover.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape-hover.png" alt="shape">
                             </span>
                             VISA Consulting
                         </span>
                         <span class="slide-text__group">
                             <span class="slide-text__shape">
-                                <img src="assets/images/shapes/slide-text-shape.png" alt="shape">
-                                <img src="assets/images/shapes/slide-text-shape-hover.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape-hover.png" alt="shape">
                             </span>
                             Passport
                         </span>
                         <span class="slide-text__group">
                             <span class="slide-text__shape">
-                                <img src="assets/images/shapes/slide-text-shape.png" alt="shape">
-                                <img src="assets/images/shapes/slide-text-shape-hover.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape-hover.png" alt="shape">
                             </span>
                             Students visa
                         </span>
                         <span class="slide-text__group">
                             <span class="slide-text__shape">
-                                <img src="assets/images/shapes/slide-text-shape.png" alt="shape">
-                                <img src="assets/images/shapes/slide-text-shape-hover.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape-hover.png" alt="shape">
                             </span>
                             Family Visa
                         </span>
                         <span class="slide-text__group">
                             <span class="slide-text__shape">
-                                <img src="assets/images/shapes/slide-text-shape.png" alt="shape">
-                                <img src="assets/images/shapes/slide-text-shape-hover.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape-hover.png" alt="shape">
                             </span>
                             Business Visa
                         </span>
                         <span class="slide-text__group">
                             <span class="slide-text__shape">
-                                <img src="assets/images/shapes/slide-text-shape.png" alt="shape">
-                                <img src="assets/images/shapes/slide-text-shape-hover.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape-hover.png" alt="shape">
                             </span>
                             Travel Visa
                         </span>
                         <span class="slide-text__group">
                             <span class="slide-text__shape">
-                                <img src="assets/images/shapes/slide-text-shape.png" alt="shape">
-                                <img src="assets/images/shapes/slide-text-shape-hover.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape-hover.png" alt="shape">
                             </span>
                             Working Visa
                         </span>
                         <span class="slide-text__group">
                             <span class="slide-text__shape">
-                                <img src="assets/images/shapes/slide-text-shape.png" alt="shape">
-                                <img src="assets/images/shapes/slide-text-shape-hover.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape-hover.png" alt="shape">
                             </span>
                             Visa Management
                         </span>
                         <span class="slide-text__group">
                             <span class="slide-text__shape">
-                                <img src="assets/images/shapes/slide-text-shape.png" alt="shape">
-                                <img src="assets/images/shapes/slide-text-shape-hover.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape-hover.png" alt="shape">
                             </span>
                             Immigration
                         </span>
                         <span class="slide-text__group">
                             <span class="slide-text__shape">
-                                <img src="assets/images/shapes/slide-text-shape.png" alt="shape">
-                                <img src="assets/images/shapes/slide-text-shape-hover.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape-hover.png" alt="shape">
                             </span>
                             VISA PROCESSING
                         </span>
                         <span class="slide-text__group">
                             <span class="slide-text__shape">
-                                <img src="assets/images/shapes/slide-text-shape.png" alt="shape">
-                                <img src="assets/images/shapes/slide-text-shape-hover.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape-hover.png" alt="shape">
                             </span>
                             24/7 Support
                         </span>
                         <span class="slide-text__group">
                             <span class="slide-text__shape">
-                                <img src="assets/images/shapes/slide-text-shape.png" alt="shape">
-                                <img src="assets/images/shapes/slide-text-shape-hover.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape-hover.png" alt="shape">
                             </span>
                             VISA Consulting
                         </span>
                         <span class="slide-text__group">
                             <span class="slide-text__shape">
-                                <img src="assets/images/shapes/slide-text-shape.png" alt="shape">
-                                <img src="assets/images/shapes/slide-text-shape-hover.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape-hover.png" alt="shape">
                             </span>
                             Passport
                         </span>
                         <span class="slide-text__group">
                             <span class="slide-text__shape">
-                                <img src="assets/images/shapes/slide-text-shape.png" alt="shape">
-                                <img src="assets/images/shapes/slide-text-shape-hover.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape-hover.png" alt="shape">
                             </span>
                             Students visa
                         </span>
                         <span class="slide-text__group">
                             <span class="slide-text__shape">
-                                <img src="assets/images/shapes/slide-text-shape.png" alt="shape">
-                                <img src="assets/images/shapes/slide-text-shape-hover.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape-hover.png" alt="shape">
                             </span>
                             Family Visa
                         </span>
                         <span class="slide-text__group">
                             <span class="slide-text__shape">
-                                <img src="assets/images/shapes/slide-text-shape.png" alt="shape">
-                                <img src="assets/images/shapes/slide-text-shape-hover.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape-hover.png" alt="shape">
                             </span>
                             Business Visa
                         </span>
                         <span class="slide-text__group">
                             <span class="slide-text__shape">
-                                <img src="assets/images/shapes/slide-text-shape.png" alt="shape">
-                                <img src="assets/images/shapes/slide-text-shape-hover.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape-hover.png" alt="shape">
                             </span>
                             Travel Visa
                         </span>
                         <span class="slide-text__group">
                             <span class="slide-text__shape">
-                                <img src="assets/images/shapes/slide-text-shape.png" alt="shape">
-                                <img src="assets/images/shapes/slide-text-shape-hover.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape-hover.png" alt="shape">
                             </span>
                             Working Visa
                         </span>
                         <span class="slide-text__group">
                             <span class="slide-text__shape">
-                                <img src="assets/images/shapes/slide-text-shape.png" alt="shape">
-                                <img src="assets/images/shapes/slide-text-shape-hover.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape-hover.png" alt="shape">
                             </span>
                             Visa Management
                         </span>
@@ -1214,155 +1214,155 @@ include("./server/connection.php");
                     <h1 class="slide-text__scroll slide-text__scroll--right">
                         <span class="slide-text__group">
                             <span class="slide-text__shape">
-                                <img src="assets/images/shapes/slide-text-shape.png" alt="shape">
-                                <img src="assets/images/shapes/slide-text-shape-hover.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape-hover.png" alt="shape">
                             </span>
                             Immigration
                         </span>
                         <span class="slide-text__group">
                             <span class="slide-text__shape">
-                                <img src="assets/images/shapes/slide-text-shape.png" alt="shape">
-                                <img src="assets/images/shapes/slide-text-shape-hover.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape-hover.png" alt="shape">
                             </span>
                             VISA PROCESSING
                         </span>
                         <span class="slide-text__group">
                             <span class="slide-text__shape">
-                                <img src="assets/images/shapes/slide-text-shape.png" alt="shape">
-                                <img src="assets/images/shapes/slide-text-shape-hover.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape-hover.png" alt="shape">
                             </span>
                             24/7 Support
                         </span>
                         <span class="slide-text__group">
                             <span class="slide-text__shape">
-                                <img src="assets/images/shapes/slide-text-shape.png" alt="shape">
-                                <img src="assets/images/shapes/slide-text-shape-hover.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape-hover.png" alt="shape">
                             </span>
                             VISA Consulting
                         </span>
                         <span class="slide-text__group">
                             <span class="slide-text__shape">
-                                <img src="assets/images/shapes/slide-text-shape.png" alt="shape">
-                                <img src="assets/images/shapes/slide-text-shape-hover.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape-hover.png" alt="shape">
                             </span>
                             Passport
                         </span>
                         <span class="slide-text__group">
                             <span class="slide-text__shape">
-                                <img src="assets/images/shapes/slide-text-shape.png" alt="shape">
-                                <img src="assets/images/shapes/slide-text-shape-hover.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape-hover.png" alt="shape">
                             </span>
                             Students visa
                         </span>
                         <span class="slide-text__group">
                             <span class="slide-text__shape">
-                                <img src="assets/images/shapes/slide-text-shape.png" alt="shape">
-                                <img src="assets/images/shapes/slide-text-shape-hover.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape-hover.png" alt="shape">
                             </span>
                             Family Visa
                         </span>
                         <span class="slide-text__group">
                             <span class="slide-text__shape">
-                                <img src="assets/images/shapes/slide-text-shape.png" alt="shape">
-                                <img src="assets/images/shapes/slide-text-shape-hover.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape-hover.png" alt="shape">
                             </span>
                             Business Visa
                         </span>
                         <span class="slide-text__group">
                             <span class="slide-text__shape">
-                                <img src="assets/images/shapes/slide-text-shape.png" alt="shape">
-                                <img src="assets/images/shapes/slide-text-shape-hover.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape-hover.png" alt="shape">
                             </span>
                             Travel Visa
                         </span>
                         <span class="slide-text__group">
                             <span class="slide-text__shape">
-                                <img src="assets/images/shapes/slide-text-shape.png" alt="shape">
-                                <img src="assets/images/shapes/slide-text-shape-hover.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape-hover.png" alt="shape">
                             </span>
                             Working Visa
                         </span>
                         <span class="slide-text__group">
                             <span class="slide-text__shape">
-                                <img src="assets/images/shapes/slide-text-shape.png" alt="shape">
-                                <img src="assets/images/shapes/slide-text-shape-hover.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape-hover.png" alt="shape">
                             </span>
                             Visa Management
                         </span>
                         <span class="slide-text__group">
                             <span class="slide-text__shape">
-                                <img src="assets/images/shapes/slide-text-shape.png" alt="shape">
-                                <img src="assets/images/shapes/slide-text-shape-hover.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape-hover.png" alt="shape">
                             </span>
                             Immigration
                         </span>
                         <span class="slide-text__group">
                             <span class="slide-text__shape">
-                                <img src="assets/images/shapes/slide-text-shape.png" alt="shape">
-                                <img src="assets/images/shapes/slide-text-shape-hover.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape-hover.png" alt="shape">
                             </span>
                             VISA PROCESSING
                         </span>
                         <span class="slide-text__group">
                             <span class="slide-text__shape">
-                                <img src="assets/images/shapes/slide-text-shape.png" alt="shape">
-                                <img src="assets/images/shapes/slide-text-shape-hover.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape-hover.png" alt="shape">
                             </span>
                             24/7 Support
                         </span>
                         <span class="slide-text__group">
                             <span class="slide-text__shape">
-                                <img src="assets/images/shapes/slide-text-shape.png" alt="shape">
-                                <img src="assets/images/shapes/slide-text-shape-hover.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape-hover.png" alt="shape">
                             </span>
                             VISA Consulting
                         </span>
                         <span class="slide-text__group">
                             <span class="slide-text__shape">
-                                <img src="assets/images/shapes/slide-text-shape.png" alt="shape">
-                                <img src="assets/images/shapes/slide-text-shape-hover.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape-hover.png" alt="shape">
                             </span>
                             Passport
                         </span>
                         <span class="slide-text__group">
                             <span class="slide-text__shape">
-                                <img src="assets/images/shapes/slide-text-shape.png" alt="shape">
-                                <img src="assets/images/shapes/slide-text-shape-hover.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape-hover.png" alt="shape">
                             </span>
                             Students visa
                         </span>
                         <span class="slide-text__group">
                             <span class="slide-text__shape">
-                                <img src="assets/images/shapes/slide-text-shape.png" alt="shape">
-                                <img src="assets/images/shapes/slide-text-shape-hover.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape-hover.png" alt="shape">
                             </span>
                             Family Visa
                         </span>
                         <span class="slide-text__group">
                             <span class="slide-text__shape">
-                                <img src="assets/images/shapes/slide-text-shape.png" alt="shape">
-                                <img src="assets/images/shapes/slide-text-shape-hover.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape-hover.png" alt="shape">
                             </span>
                             Business Visa
                         </span>
                         <span class="slide-text__group">
                             <span class="slide-text__shape">
-                                <img src="assets/images/shapes/slide-text-shape.png" alt="shape">
-                                <img src="assets/images/shapes/slide-text-shape-hover.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape-hover.png" alt="shape">
                             </span>
                             Travel Visa
                         </span>
                         <span class="slide-text__group">
                             <span class="slide-text__shape">
-                                <img src="assets/images/shapes/slide-text-shape.png" alt="shape">
-                                <img src="assets/images/shapes/slide-text-shape-hover.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape-hover.png" alt="shape">
                             </span>
                             Working Visa
                         </span>
                         <span class="slide-text__group">
                             <span class="slide-text__shape">
-                                <img src="assets/images/shapes/slide-text-shape.png" alt="shape">
-                                <img src="assets/images/shapes/slide-text-shape-hover.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape.png" alt="shape">
+                                <img src="<?php echo $domain ?>/assets/images/shapes/slide-text-shape-hover.png" alt="shape">
                             </span>
                             Visa Management
                         </span>
@@ -1377,7 +1377,7 @@ include("./server/connection.php");
                     <div class="row gutter-y-50">
                         <div class="col-xl-7 col-lg-6">
                             <div class="online-visa__image">
-                                <img src="assets/images/resources/online-visa-1-1.png" alt="online visa">
+                                <img src="<?php echo $domain ?>/assets/images/resources/online-visa-1-1.png" alt="online visa">
                                 <div class="online-visa__image__shape"></div>
                             </div><!-- /.online-visa__image -->
                         </div><!-- /.col-xl-7 -->
@@ -1429,7 +1429,7 @@ include("./server/connection.php");
                     <div class="col-md-6" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="100">
                         <div class="blog-card-two">
                             <div class="blog-card-two__image">
-                                <img src="assets/images/blog/blog-2-1.jpg" alt="Member spotlight Blog This Best Events space.">
+                                <img src="<?php echo $domain ?>/assets/images/blog/blog-2-1.jpg" alt="Member spotlight Blog This Best Events space.">
                             </div><!-- /.blog-card-two__image -->
                             <div class="blog-card-two__content">
                                 <div class="blog-card-two__date">
@@ -1440,7 +1440,7 @@ include("./server/connection.php");
                                     <div class="blog-card-two__content__inner">
                                         <div class="blog-card-two__content__top">
                                             <a href="blog-details-right.php" class="blog-card-two__category">Immigration</a>
-                                            <img src="assets/images/blog/blog-admin-2-1.png" alt="Admin" class="blog-card-two__admin">
+                                            <img src="<?php echo $domain ?>/assets/images/blog/blog-admin-2-1.png" alt="Admin" class="blog-card-two__admin">
                                         </div><!-- /.blog-card-two__content__top -->
                                         <ul class="blog-card-two__meta list-unstyled">
                                             <li>
@@ -1464,7 +1464,7 @@ include("./server/connection.php");
                     <div class="col-md-6" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="200">
                         <div class="blog-card-two">
                             <div class="blog-card-two__image">
-                                <img src="assets/images/blog/blog-2-2.jpg" alt="Preparing for Your Firsts Blog Immigration Flight">
+                                <img src="<?php echo $domain ?>/assets/images/blog/blog-2-2.jpg" alt="Preparing for Your Firsts Blog Immigration Flight">
                             </div><!-- /.blog-card-two__image -->
                             <div class="blog-card-two__content">
                                 <div class="blog-card-two__date">
@@ -1475,7 +1475,7 @@ include("./server/connection.php");
                                     <div class="blog-card-two__content__inner">
                                         <div class="blog-card-two__content__top">
                                             <a href="blog-details-right.php" class="blog-card-two__category">Family Tour</a>
-                                            <img src="assets/images/blog/blog-admin-2-2.png" alt="Admin" class="blog-card-two__admin">
+                                            <img src="<?php echo $domain ?>/assets/images/blog/blog-admin-2-2.png" alt="Admin" class="blog-card-two__admin">
                                         </div><!-- /.blog-card-two__content__top -->
                                         <ul class="blog-card-two__meta list-unstyled">
                                             <li>
@@ -1533,7 +1533,7 @@ include("./server/connection.php");
             <span class="mobile-nav__close mobile-nav__toggler"><i class="icon-close"></i></span>
             <div class="logo-box">
                 <a href="index.php" aria-label="logo image">
-                    <img src="assets/images/logo-light.png" width="230" alt="<?php echo $sitename ?> HTML" />
+                    <img src="<?php echo $domain ?>/assets/images/logo-light.png" width="230" alt="<?php echo $sitename ?> HTML" />
                 </a>
             </div><!-- /.logo-box -->
             <div class="mobile-nav__container"></div><!-- /.mobile-nav__container -->
@@ -1592,32 +1592,32 @@ include("./server/connection.php");
         <span class="scroll-to-top__wrapper"><span class="scroll-to-top__inner"></span></span>
     </a>
 
-    <script src="assets/vendors/jquery/jquery-3.7.1.min.js"></script>
-    <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendors/bootstrap-select/bootstrap-select.min.js"></script>
-    <script src="assets/vendors/jarallax/jarallax.min.js"></script>
-    <script src="assets/vendors/jquery-ui/jquery-ui.js"></script>
-    <script src="assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
-    <script src="assets/vendors/jquery-appear/jquery.appear.min.js"></script>
-    <script src="assets/vendors/jquery-circle-progress/jquery.circle-progress.min.js"></script>
-    <script src="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
-    <script src="assets/vendors/jquery-validate/jquery.validate.min.js"></script>
-    <script src="assets/vendors/wnumb/wNumb.min.js"></script>
-    <script src="assets/vendors/owl-carousel/js/owl.carousel.min.js"></script>
-    <script src="assets/vendors/aos/js/aos.js"></script>
-    <script src="assets/vendors/imagesloaded/imagesloaded.min.js"></script>
-    <script src="assets/vendors/isotope/isotope.js"></script>
-    <script src="assets/vendors/slick/slick.min.js"></script>
-    <script src="assets/vendors/countdown/countdown.min.js"></script>
-    <script src="assets/vendors/daterangepicker-master/moment.min.js"></script>
-    <script src="assets/vendors/daterangepicker-master/daterangepicker.js"></script>
+    <script src="<?php echo $domain ?>/assets/vendors/jquery/jquery-3.7.1.min.js"></script>
+    <script src="<?php echo $domain ?>/assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?php echo $domain ?>/assets/vendors/bootstrap-select/bootstrap-select.min.js"></script>
+    <script src="<?php echo $domain ?>/assets/vendors/jarallax/jarallax.min.js"></script>
+    <script src="<?php echo $domain ?>/assets/vendors/jquery-ui/jquery-ui.js"></script>
+    <script src="<?php echo $domain ?>/assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
+    <script src="<?php echo $domain ?>/assets/vendors/jquery-appear/jquery.appear.min.js"></script>
+    <script src="<?php echo $domain ?>/assets/vendors/jquery-circle-progress/jquery.circle-progress.min.js"></script>
+    <script src="<?php echo $domain ?>/assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="<?php echo $domain ?>/assets/vendors/jquery-validate/jquery.validate.min.js"></script>
+    <script src="<?php echo $domain ?>/assets/vendors/wnumb/wNumb.min.js"></script>
+    <script src="<?php echo $domain ?>/assets/vendors/owl-carousel/js/owl.carousel.min.js"></script>
+    <script src="<?php echo $domain ?>/assets/vendors/aos/js/aos.js"></script>
+    <script src="<?php echo $domain ?>/assets/vendors/imagesloaded/imagesloaded.min.js"></script>
+    <script src="<?php echo $domain ?>/assets/vendors/isotope/isotope.js"></script>
+    <script src="<?php echo $domain ?>/assets/vendors/slick/slick.min.js"></script>
+    <script src="<?php echo $domain ?>/assets/vendors/countdown/countdown.min.js"></script>
+    <script src="<?php echo $domain ?>/assets/vendors/daterangepicker-master/moment.min.js"></script>
+    <script src="<?php echo $domain ?>/assets/vendors/daterangepicker-master/daterangepicker.js"></script>
     <!-- gsap js -->
-    <script src="assets/vendors/gsap/gsap.js"></script>
-    <script src="assets/vendors/gsap/scrolltrigger.min.js"></script>
-    <script src="assets/vendors/gsap/splittext.min.js"></script>
-    <script src="assets/vendors/gsap/visanet-split.js"></script>
+    <script src="<?php echo $domain ?>/assets/vendors/gsap/gsap.js"></script>
+    <script src="<?php echo $domain ?>/assets/vendors/gsap/scrolltrigger.min.js"></script>
+    <script src="<?php echo $domain ?>/assets/vendors/gsap/splittext.min.js"></script>
+    <script src="<?php echo $domain ?>/assets/vendors/gsap/visanet-split.js"></script>
     <!-- template js -->
-    <script src="assets/js/visanet.js"></script>
+    <script src="<?php echo $domain ?>/assets/js/visanet.js"></script>
 </body>
 
 </html>
