@@ -1,16 +1,17 @@
+<?php include "../server/connection.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Checkout || Visanet  </title>
+    <title>Checkout || <?php echo $sitename?>@gmail.com </title>
     <!-- favicons Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="<?php echo $domain ?>/assets/images/favicons/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="<?php echo $domain ?>/assets/images/favicons/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="<?php echo $domain ?>/assets/images/favicons/favicon-16x16.png" />
     <link rel="manifest" href="<?php echo $domain ?>/assets/images/favicons/site.webmanifest" />
-    <meta name="description" content="VisaNet is a Immigration and Visa Consulting HTML Template. Created especially designed for Immigration & Visa Consulting Agencies, Visa Agents, Study Abroad Consultants, Overseas Job Consultants, IELTS Coaching Centers, and Travel & Tourism Businesses. VisaNet Immigration and Visa Consulting Design and customizable features make it perfect for on various displays and resolutions website. All HTML files are with layers and groups, so they are very easy to modify & expand." />
+    <meta name="description" content="<?php echo $sitename?>@gmail.comis a Immigration and Visa Consulting HTML Template. Created especially designed for Immigration & Visa Consulting Agencies, Visa Agents, Study Abroad Consultants, Overseas Job Consultants, IELTS Coaching Centers, and Travel & Tourism Businesses. <?php echo $sitename?>@gmail.comImmigration and Visa Consulting Design and customizable features make it perfect for on various displays and resolutions website. All HTML files are with layers and groups, so they are very easy to modify & expand." />
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,152 +42,10 @@
     <div class="custom-cursor__cursor"></div>
     <div class="custom-cursor__cursor-two"></div>
 
-    <div class="preloader">
-        <div class="preloader__image" style="background-image: url(<?php echo $domain ?>/assets/images/loader.png);"></div>
-    </div>
-    <!-- /.preloader -->
-    <div class="page-wrapper">
-        <div class="topbar">
-            <div class="container">
-                <div class="topbar__inner">
-                    <div class="topbar__social">
-                        <p class="topbar__social__title">Follow us:</p>
-                        <div class="social-links">
-                            <a href="https://facebook.com">
-                                <span class="social-links__icon">
-                                    <i class="fab fa-facebook-f" aria-hidden="true"></i>
-                                    <span class="sr-only">Facebook</span>
-                                </span>
-                            </a>
-                            <a href="https://x.com">
-                                <span class="social-links__icon">
-                                    <i class="fab fa-twitter" aria-hidden="true"></i>
-                                    <span class="sr-only">X</span>
-                                </span>
-                            </a>
-                            <a href="https://linkedin.com">
-                                <span class="social-links__icon">
-                                    <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-                                    <span class="sr-only">Linkedin</span>
-                                </span>
-                            </a>
-                            <a href="https://instagram.com">
-                                <span class="social-links__icon">
-                                    <i class="fab fa-instagram" aria-hidden="true"></i>
-                                    <span class="sr-only">Instagram</span>
-                                </span>
-                            </a>
-                        </div><!-- /.social-links -->
-                    </div><!-- /.topbar__social -->
-                    <div class="topbar__right">
-                        <ul class="topbar__info list-unstyled">
-                            <li>
-                                <span class="topbar__info__icon"><i class="icon-email"></i></span>
-                                <span><a href="mailto:visanet@envato.com">visanet@envato.com</a></span>
-                            </li>
-                            <li>
-                                <span class="topbar__info__icon"><i class="icon-location"></i></span>
-                                <span><a href="https://www.google.com/maps">25/09 Mozilla Golden Street</a></span>
-                            </li>
-                        </ul><!-- /.topbar__info -->
-                        <div class="topbar__language">
-                            <img src="<?php echo $domain ?>/assets/images/shapes/flag-1-1.png" alt="flag">
-                            <label class="sr-only" for="language-select-header">select language</label>
-                            <select class="selectpicker" id="language-select-header">
-                                <option value="english">English</option>
-                                <option value="arabic">Arabic</option>
-                            </select>
-                        </div><!-- /.topbar__language -->
-                    </div><!-- /.topbar__right -->
-                </div><!-- /.topbar__inner -->
-            </div><!-- /.container -->
-        </div><!-- /.topbar -->
-         <header class="main-header main-header--two sticky-header sticky-header--one-page">
-            <div class="container main-header__container">
-                <div class="main-header__inner">
-                    <div class="main-header__left">
-                        <div class="main-header__logo logo-retina">
-                            <a href="index.php">
-                                <img src="<?php echo $domain ?>/assets/images/logo-light.png" alt="Visanet HTML" width="230">
-                            </a>
-                        </div><!-- /.main-header__logo -->
-                    </div><!-- /.main-header__left -->
-                    <div class="main-header__right">
-                        <div class="main-header__top">
-                            <div class="main-header__info">
-                                <span class="main-header__info__title">News:</span>
-                                <p class="main-header__info__text">I can’t browse the internet live, but this summary <span>reflects</span> the most recent .....</p>
-                            </div><!-- /.main-header__info -->
-                            <a href="contact.php" class="visanet-btn-two">
-                                Appointment <span class="visanet-btn-two__icon"><i class="icon-arrow-right-3"></i></span>
-                            </a><!-- /.visanet-btn-two -->
-                        </div><!-- /.main-header__top -->
-                        <div class="main-header__bottom">
-                            <nav class="main-header__nav main-menu">
-                                <ul class="main-menu__list one-page-scroll-menu">
-                                    <li class="  scrollToLink current">
-                                        <a href="index.php#home">Home</a>
-                                        <ul>
+       <?php include "../include/nav.php" ?>
 
-                                        
 
-                                        </ul>
-                                    </li>
-                                    <li class="scrollToLink"><a href="index.php#about">About</a></li>
-                                    <li class="scrollToLink"><a href="index.php#visa">Visa</a></li>
-                                    <li class="scrollToLink"><a href="countries.php">Countries</a></li>
-                                    <li class="scrollToLink"><a href="index.php#gallery">Gallery</a></li>
-                                    <li class="scrollToLink"><a href="contact.php">Contact us</a></li>
-                                    <li class="scrollToLink"><a href="index.php#blog">Blog</a></li>
-                                </ul>
-                            </nav><!-- /.main-header__nav -->
-                            
-                            <div class="main-header__right__right">
-                                <div class="mobile-nav__btn mobile-nav__toggler">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                </div><!-- /.mobile-nav__toggler -->
-                                <a href="index.php#" class="main-header__search search-toggler">
-                                    <i class="icon-search" aria-hidden="true"></i>
-                                    <span class="sr-only">Search</span>
-                                </a><!-- /.main-header__search -->
-                                <a href="cart.php" class="main-header__cart">
-                                    <i class="icon-trolley-cart" aria-hidden="true"></i>
-                                    <span class="sr-only">Trolley Cart</span>
-                                    <span class="main-header__cart__quantity">02</span>
-                                </a><!-- /.main-header__cart -->
-                                <div class="main-header__call">
-                                    <span class="main-header__call__icon">
-                                        <i class="icon-phone-call"></i>
-                                    </span><!-- /.main-header__call__icon -->
-                                    <div class="main-header__call__content">
-                                        <p class="main-header__call__title">Call Any Time</p>
-                                        <a href="tel:+55222555255" class="main-header__call__number">+55 222 555 255</a>
-                                    </div><!-- /.main-header__call__content -->
-                                </div><!-- /.main-header__call -->
-                            </div><!-- /.main-header__right__right -->
-                        </div><!-- /.main-header__bottom -->
-                    </div><!-- /.main-header__right -->
-                </div><!-- /.main-header__inner -->
-            </div><!-- /.container -->
-        </header><!-- /.main-header -->
-
-        <section class="page-header">
-            <div class="page-header__bg" style="background-image: url(<?php echo $domain ?>/assets/images/backgrounds/page-header-bg.jpg);"></div><!-- /.page-header__bg -->
-            <div class="page-header__shape page-header__shape--1"></div><!-- /.page-header__shape -->
-            <div class="page-header__shape page-header__shape--2"></div><!-- /.page-header__shape -->
-            <div class="container">
-                <div class="page-header__content">
-                    <h2 class="page-header__title" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300">Checkout</h2>
-                    <ul class="visanet-breadcrumb list-unstyled" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="200">
-                        <li><a href="index.php">Home</a></li>
-                        <li><span>Checkout</span></li>
-                    </ul><!-- /.visanet-breadcrumb list-unstyled -->
-                </div><!-- /.page-header__content -->
-            </div><!-- /.container -->
-        </section><!-- /.page-header -->
-
+       
         <section class="checkout-page section-space">
             <div class="container">
                 <div class="row">
@@ -367,178 +226,7 @@
             </div><!-- /.container -->
         </section><!-- /.checkout-page -->
 
-        <footer class="main-footer section-space-t">
-            <div class="main-footer__bg" style="background-image: url(<?php echo $domain ?>/assets/images/backgrounds/footer-bg.jpg);"></div>
-            <div class="main-footer__top">
-                <div class="contact-info">
-                    <div class="container">
-                        <div class="contact-info__carousel visanet-owl__carousel visanet-owl__carousel--basic-nav owl-carousel owl-theme" data-owl-options='{
-        "items": 1,
-        "margin": 30,
-        "loop": false,
-        "smartSpeed": 700,
-        "nav": true,
-        "dots": false,
-        "navText": ["<i class=\"icon-arrow-left\"></i>","<i class=\"icon-arrow-right\"></i>"],
-        "autoplay": true,
-        "responsive": {
-            "0": {
-                "items": 1
-            },
-            "768": {
-                "items": 2
-            },
-            "992": {
-                "items": 2
-            },
-            "1200": {
-                "items": 3
-            }
-        }
-    }'>
-                            <div class="item" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="100">
-                                <div class="contact-info__card">
-                                    <div class="contact-info__card__icon">
-                                        <i class="icon-phone-call"></i>
-                                    </div><!-- /.contact-info__card__icon -->
-                                    <div class="contact-info__card__content">
-                                        <h3 class="contact-info__card__title">Get Contact Phone</h3>
-                                        <a href="tel:+55222555255" class="contact-info__card__link">+55 222 555 255</a>
-                                    </div><!-- /.contact-info__card__content -->
-                                </div><!-- /.contact-info__card -->
-                            </div><!-- /.item -->
-                            <div class="item" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="200">
-                                <div class="contact-info__card">
-                                    <div class="contact-info__card__icon">
-                                        <i class="icon-email-2"></i>
-                                    </div><!-- /.contact-info__card__icon -->
-                                    <div class="contact-info__card__content">
-                                        <h3 class="contact-info__card__title">Your Email Address</h3>
-                                        <a href="mailto:visanet@envato.com" class="contact-info__card__link">visanet@envato.com</a>
-                                    </div><!-- /.contact-info__card__content -->
-                                </div><!-- /.contact-info__card -->
-                            </div><!-- /.item -->
-                            <div class="item" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="300">
-                                <div class="contact-info__card">
-                                    <div class="contact-info__card__icon">
-                                        <i class="icon-location-2"></i>
-                                    </div><!-- /.contact-info__card__icon -->
-                                    <div class="contact-info__card__content">
-                                        <h3 class="contact-info__card__title">Your Location</h3>
-                                        <a href="https://www.google.com/maps" class="contact-info__card__link">15/04 Street Australia</a>
-                                    </div><!-- /.contact-info__card__content -->
-                                </div><!-- /.contact-info__card -->
-                            </div><!-- /.item -->
-                        </div><!-- /.contact-info__carousel -->
-                    </div><!-- /.container -->
-                </div><!-- /.contact-info -->
-            </div><!-- /.main-footer__top -->
-            <div class="container">
-                <div class="row gutter-y-40">
-                    <div class="col-xl-3 col-lg-5 col-md-7" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="100">
-                        <div class="footer-widget footer-widget--about">
-                            <a href="index.php" class="footer-widget__logo logo-retina">
-                                <img src="<?php echo $domain ?>/assets/images/logo-light.png" width="230" alt="Visanet HTML Template">
-                            </a>
-                            <p class="footer-widget__text">
-                                VisaNet is a modern HTML template built for immigration and visa consulting agencies, study abroad consultants, visa agents, and travel or overseas job services.
-                            </p>
-                            <div class="social-links">
-                                <a href="https://facebook.com">
-                                    <span class="social-links__icon">
-                                        <i class="fab fa-facebook-f" aria-hidden="true"></i>
-                                        <span class="sr-only">Facebook</span>
-                                    </span>
-                                </a>
-                                <a href="https://x.com">
-                                    <span class="social-links__icon">
-                                        <i class="fab fa-twitter" aria-hidden="true"></i>
-                                        <span class="sr-only">X</span>
-                                    </span>
-                                </a>
-                                <a href="https://linkedin.com">
-                                    <span class="social-links__icon">
-                                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-                                        <span class="sr-only">Linkedin</span>
-                                    </span>
-                                </a>
-                                <a href="https://instagram.com">
-                                    <span class="social-links__icon">
-                                        <i class="fab fa-instagram" aria-hidden="true"></i>
-                                        <span class="sr-only">Instagram</span>
-                                    </span>
-                                </a>
-                            </div><!-- /.social-links -->
-                        </div><!-- /.footer-widget -->
-                    </div><!-- /.col-xl-3 -->
-                    <div class="col-lg-3 col-md-5 col-sm-6" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="200">
-                        <div class="footer-widget footer-widget--links">
-                            <h2 class="footer-widget__title">Quick Link</h2><!-- /.footer-widget__title -->
-                            <ul class="list-unstyled footer-widget__links">
-                                <li><a href="about.php">What We Do</a></li>
-                                <li><a href="about.php">About Company</a></li>
-                                <li><a href="team.php">Team Member</a></li>
-                                <li><a href="gallery.php">Our Gallery</a></li>
-                                <li><a href="about.php">Watch Video</a></li>
-                                <li><a href="blog-grid-right.php">Latest news</a></li>
-                            </ul><!-- /.footer-widget__links -->
-                        </div><!-- /.footer-widget -->
-                    </div><!-- /.col-lg-3 -->
-                    <div class="col-xl-3 col-lg-4 col-sm-6" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="300">
-                        <div class="footer-widget footer-widget--blog">
-                            <h2 class="footer-widget__title">Recent Blog</h2><!-- /.footer-widget__title -->
-                            <ul class="footer-widget__blog list-unstyled">
-                                <li>
-                                    <a href="blog-details-right.php" class="footer-widget__blog__image">
-                                        <img src="<?php echo $domain ?>/assets/images/blog/footer-blog-1-1.jpg" alt="blog">
-                                    </a>
-                                    <div class="footer-widget__blog__content">
-                                        <span class="footer-widget__blog__date"><span class="footer-widget__blog__icon"><i class="icon-calendar"></i></span> 10 May 2024</span>
-                                        <h3 class="footer-widget__blog__title"><a href="blog-details-right.php">This Specific Issue Network Security</a></h3>
-                                    </div>
-                                </li>
-                                <li>
-                                    <a href="blog-details-right.php" class="footer-widget__blog__image">
-                                        <img src="<?php echo $domain ?>/assets/images/blog/footer-blog-1-2.jpg" alt="blog">
-                                    </a>
-                                    <div class="footer-widget__blog__content">
-                                        <span class="footer-widget__blog__date"><span class="footer-widget__blog__icon"><i class="icon-calendar"></i></span> 23 February 2025</span>
-                                        <h3 class="footer-widget__blog__title"><a href="blog-details-right.php">In up So Discovery my Middleton</a></h3>
-                                    </div>
-                                </li>
-                            </ul><!-- /.footer-widget__blog -->
-                        </div><!-- /.footer-widget -->
-                    </div><!-- /.col-xl-3 -->
-                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="400">
-                        <div class="footer-widget footer-widget--schedule">
-                            <h2 class="footer-widget__title">Flight Schedule</h2><!-- /.footer-widget__title -->
-                            <ul class="list-unstyled footer-widget__schedule">
-                                <li><span>Sunday -------</span> <span>9.00AM – 8.00PM</span></li>
-                                <li><span>Monday ------</span> <span>8.30AM – 7.30PM</span></li>
-                                <li><span>Tuesday ------</span> <span>6.00AM – 5.00PM</span></li>
-                                <li><span>Wednesday ---</span> <span>2.00AM – 3.00PM</span></li>
-                                <li><span>Thursday -----</span> <span>4.00AM – 5.00PM</span></li>
-                            </ul><!-- /.footer-widget__links -->
-                        </div><!-- /.footer-widget -->
-                    </div><!-- /.col-xl-3 -->
-                </div><!-- /.row -->
-            </div><!-- /.container -->
-            <div class="main-footer__bottom">
-                <div class="container">
-                    <div class="main-footer__bottom__inner">
-                        <p class="main-footer__copyright">
-                            &copy; Copyright <span class="dynamic-year"></span> by Visanet HTML Template.
-                        </p>
-                        <ul class="main-footer__page list-unstyled">
-                            <li><a href="about.php">Privacy</a></li>
-                            <li><a href="about.php">Policy</a></li>
-                            <li><a href="contact.php">Contact Us</a></li>
-                        </ul><!-- /.main-footer__page -->
-                    </div><!-- /.main-footer__inner -->
-                </div><!-- /.container -->
-            </div><!-- /.main-footer__bottom -->
-        </footer><!-- /.main-footer -->
-
+      <?php include "../include/footer.php" ?>
     </div><!-- /.page-wrapper -->
 
     <div class="mobile-nav__wrapper">
@@ -547,7 +235,7 @@
             <span class="mobile-nav__close mobile-nav__toggler"><i class="icon-close"></i></span>
             <div class="logo-box">
                 <a href="index.php" aria-label="logo image">
-                    <img src="<?php echo $domain ?>/assets/images/logo-light.png" width="230" alt="Visanet HTML" />
+                    <img src="<?php echo $domain ?>/assets/images/logo-light.png" width="230" alt="<?php echo $sitename?>@gmail.comHTML" />
                 </a>
             </div><!-- /.logo-box -->
             <div class="mobile-nav__container"></div><!-- /.mobile-nav__container -->
@@ -606,12 +294,12 @@
             <span class="sidebar-three__close sidebar-btn__toggler"><i class="icon-close"></i></span>
             <div class="sidebar-three__logo sidebar-three__item logo-retina">
                 <a href="index.php" aria-label="logo image">
-                    <img src="<?php echo $domain ?>/assets/images/logo-dark.png" width="230" alt="Visanet HTML" />
+                    <img src="<?php echo $domain ?>/assets/images/logo-dark.png" width="230" alt="<?php echo $sitename?>@gmail.comHTML" />
                 </a>
             </div><!-- /.sidebar-three__logo -->
             <div class="sidebar-three__about sidebar-three__item">
                 <p class="sidebar-three__about__text">
-                    VisaNet is a modern HTML template built for immigration and visa consulting agencies, study abroad consultants, visa agents, and travel or overseas job services.
+                    <?php echo $sitename?>@gmail.comis a modern HTML template built for immigration and visa consulting agencies, study abroad consultants, visa agents, and travel or overseas job services.
                 </p>
             </div><!-- /.sidebar-three__about -->
             <div class="sidebar-three__info sidebar-three__item">

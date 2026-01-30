@@ -42,11 +42,11 @@
                         <div class="footer-widget footer-widget--links">
                             <h2 class="footer-widget__title">Quick Link</h2><!-- /.footer-widget__title -->
                             <ul class="list-unstyled footer-widget__links">
-                                <li><a href="<?php echo $domain?>/about.php">What We Do</a></li>
-                                <li><a href="<?php echo $domain?>/about.php">About Company</a></li>
+                                <li><a href="<?php echo $domain?>/about/">What We Do</a></li>
+                                <li><a href="<?php echo $domain?>/about/">About Company</a></li>
                                 <li><a href="<?php echo $domain?>/team.php">Team Member</a></li>
                                 <li><a href="<?php echo $domain?>/gallery.php">Our Gallery</a></li>
-                                <li><a href="<?php echo $domain?>/about.php">Watch Video</a></li>
+                                <li><a href="<?php echo $domain?>/about/">Watch Video</a></li>
                                 <li><a href="blog-grid-right.php">Latest news</a></li>
                             </ul><!-- /.footer-widget__links -->
                         </div><!-- /.footer-widget -->
@@ -97,9 +97,9 @@
                             &copy; Copyright <span class="dynamic-year"></span> by <?php echo $sitename ?>
                         </p>
                         <ul class="main-footer__page list-unstyled">
-                            <li><a href="<?php echo $domain?>/about.php">Privacy</a></li>
-                            <li><a href="<?php echo $domain?>/about.php">Policy</a></li>
-                            <li><a href="<?php echo $domain?>/contact.php">Contact Us</a></li>
+                            <li><a href="<?php echo $domain?>/about/">Privacy</a></li>
+                            <li><a href="<?php echo $domain?>/about/">Policy</a></li>
+                            <li><a href="<?php echo $domain?>/contact/">Contact Us</a></li>
                         </ul><!-- /.main-footer__page -->
                     </div><!-- /.main-footer__inner -->
                 </div><!-- /.container -->

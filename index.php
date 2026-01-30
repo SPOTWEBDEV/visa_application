@@ -9,7 +9,7 @@ include("./server/connection.php");
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home Two || <?php echo $sitename ?></title>
+    <title>Home || <?php echo $sitename ?></title>
     <!-- favicons Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="<?php echo $domain ?>/assets/images/favicons/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="<?php echo $domain ?>/assets/images/favicons/favicon-32x32.png" />
@@ -92,7 +92,7 @@ include("./server/connection.php");
                                         <p class="hero-slider-two__text">Business visa is a conditional permission provided by a region to <br> a foreigner to enter, stay in, or leave that country.</p>
                                     </div>
                                     <div class="hero-slider-two__button">
-                                        <a href="about.php" class="visanet-btn visanet-btn--black">
+                                        <a href="<?php echo $domain ?>/about/" class="visanet-btn visanet-btn--black">
                                             <span class="visanet-btn__icon-box">
                                                 <span class="visanet-btn__icon"><span><i class="icon-arrow-right-3"></i></span></span>
                                             </span>
@@ -129,7 +129,7 @@ include("./server/connection.php");
                                         <p class="hero-slider-two__text">There are many variations of passages of Lorem Ipsum available, but <br> majority have suffered alteration in some form, by.</p>
                                     </div>
                                     <div class="hero-slider-two__button">
-                                        <a href="about.php" class="visanet-btn visanet-btn--black">
+                                        <a href="<?php echo $domain ?>/about/" class="visanet-btn visanet-btn--black">
                                             <span class="visanet-btn__icon-box">
                                                 <span class="visanet-btn__icon"><span><i class="icon-arrow-right-3"></i></span></span>
                                             </span>
@@ -166,7 +166,7 @@ include("./server/connection.php");
                                         <p class="hero-slider-two__text">If you are going to use a passage of Lorem Ipsum. There are many <br> variations of passages of Lorem Ipsum available.</p>
                                     </div>
                                     <div class="hero-slider-two__button">
-                                        <a href="about.php" class="visanet-btn visanet-btn--black">
+                                        <a href="<?php echo $domain ?>/about/" class="visanet-btn visanet-btn--black">
                                             <span class="visanet-btn__icon-box">
                                                 <span class="visanet-btn__icon"><span><i class="icon-arrow-right-3"></i></span></span>
                                             </span>
@@ -194,9 +194,9 @@ include("./server/connection.php");
                                 <div class="features__icon-box">
                                     <span class="features__icon"><i class="icon-passport"></i></span>
                                 </div><!-- /.features__icon-box -->
-                                <h2 class="features__title"><a href="about.php">Passport Application</a></h2>
+                                <h2 class="features__title"><a href="<?php echo $domain ?>/about/">Passport Application</a></h2>
                                 <p class="features__text">Immigration tailored visa management this randomised words which do services solution sed do majority.</p>
-                                <a href="about.php" class="features__btn">
+                                <a href="<?php echo $domain ?>/about/" class="features__btn">
                                     Read More <span class="features__btn__icon"><i class="icon-arrow-right-up"></i></span>
                                 </a><!-- /.features__btn -->
                             </div><!-- /.features__content -->
@@ -212,9 +212,9 @@ include("./server/connection.php");
                                 <div class="features__icon-box">
                                     <span class="features__icon"><i class="icon-visa-processing"></i></span>
                                 </div><!-- /.features__icon-box -->
-                                <h2 class="features__title"><a href="about.php">Quick Visa Processing</a></h2>
+                                <h2 class="features__title"><a href="<?php echo $domain ?>/about/">Quick Visa Processing</a></h2>
                                 <p class="features__text">Immigration tailored visa management this randomised words which do services solution sed do majority.</p>
-                                <a href="about.php" class="features__btn">
+                                <a href="<?php echo $domain ?>/about/" class="features__btn">
                                     Read More <span class="features__btn__icon"><i class="icon-arrow-right-up"></i></span>
                                 </a><!-- /.features__btn -->
                             </div><!-- /.features__content -->
@@ -230,9 +230,9 @@ include("./server/connection.php");
                                 <div class="features__icon-box">
                                     <span class="features__icon"><i class="icon-support"></i></span>
                                 </div><!-- /.features__icon-box -->
-                                <h2 class="features__title"><a href="about.php">Support Team Solution</a></h2>
+                                <h2 class="features__title"><a href="<?php echo $domain ?>/about/">Support Team Solution</a></h2>
                                 <p class="features__text">Immigration tailored visa management this randomised words which do services solution sed do majority.</p>
-                                <a href="about.php" class="features__btn">
+                                <a href="<?php echo $domain ?>/about/" class="features__btn">
                                     Read More <span class="features__btn__icon"><i class="icon-arrow-right-up"></i></span>
                                 </a><!-- /.features__btn -->
                             </div><!-- /.features__content -->
@@ -310,7 +310,7 @@ include("./server/connection.php");
                                 </li>
                             </ul><!-- /.about-two__list -->
                             <div class="about-two__button" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300">
-                                <a href="about.php" class="visanet-btn">
+                                <a href="<?php echo $domain ?>/about/" class="visanet-btn">
                                     <span class="visanet-btn__icon-box">
                                         <span class="visanet-btn__icon"><span><i class="icon-arrow-right-3"></i></span></span>
                                     </span>
@@ -422,29 +422,29 @@ include("./server/connection.php");
                             <img src="<?php echo $domain ?>/assets/images/shapes/visa-shape-2-2.png" alt="shape" class="visa-two__item__shape">
                             <div class="visa-two__content">
                                 <div class="visa-two__icon"><i class="icon-family-visa"></i></div>
-                                <h3 class="visa-two__title"><a href="visa-d-family-visa.php">Family Visa</a></h3>
+                                <h3 class="visa-two__title"><a href="<?php echo $domain ?>/family_visa/">Family Visa</a></h3>
                                 <span class="visa-two__divider">/</span>
                                 <p class="visa-two__text">Reunite with loved ones abroad <br> through our simplified family visa.</p>
                             </div>
-                            <a href="visa-d-family-visa.php" class="visa-two__btn"><i class="icon-arrow-right-up"></i></a>
+                            <a href="<?= $domain ?>/family_visa/" class="visa-two__btn"><i class="icon-arrow-right-up"></i></a>
                         </div><!-- /.visa-two__item -->
                         <div class="visa-two__item" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300">
                             <div class="visa-two__item__overlay"></div>
                             <img src="<?php echo $domain ?>/assets/images/shapes/visa-shape-2-2.png" alt="shape" class="visa-two__item__shape">
                             <div class="visa-two__content">
                                 <div class="visa-two__icon"><i class="icon-students-visa"></i></div>
-                                <h3 class="visa-two__title"><a href="visa-d-students-visa.php">Students Visa</a></h3>
+                                <h3 class="visa-two__title"><a href="<?php echo $domain ?>/student_visa/">Students Visa</a></h3>
                                 <span class="visa-two__divider">/</span>
                                 <p class="visa-two__text">Secure your dream education <br> overseas with expert visa guidance.</p>
                             </div>
-                            <a href="visa-d-students-visa.php" class="visa-two__btn"><i class="icon-arrow-right-up"></i></a>
+                            <a href="<?= $domain ?>/student_visa/" class="visa-two__btn"><i class="icon-arrow-right-up"></i></a>
                         </div><!-- /.visa-two__item -->
                         <div class="visa-two__item" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300">
                             <div class="visa-two__item__overlay"></div>
                             <img src="<?php echo $domain ?>/assets/images/shapes/visa-shape-2-2.png" alt="shape" class="visa-two__item__shape">
                             <div class="visa-two__content">
                                 <div class="visa-two__icon"><i class="icon-business-visa"></i></div>
-                                <h3 class="visa-two__title"><a href="visa-d-business-visa.php">Business Visa</a></h3>
+                                <h3 class="visa-two__title"><a href="<?php echo $domain ?>/business_visa/">Business Visa</a></h3>
                                 <span class="visa-two__divider">/</span>
                                 <p class="visa-two__text">Expand your business internationally <br> with expert guidance.</p>
                             </div>
@@ -455,22 +455,22 @@ include("./server/connection.php");
                             <img src="<?php echo $domain ?>/assets/images/shapes/visa-shape-2-2.png" alt="shape" class="visa-two__item__shape">
                             <div class="visa-two__content">
                                 <div class="visa-two__icon"><i class="icon-travel-visa"></i></div>
-                                <h3 class="visa-two__title"><a href="visa-d-travel-visa.php">Travel Visa</a></h3>
+                                <h3 class="visa-two__title"><a href="<?php echo $domain ?>/travel-visa/">Travel Visa</a></h3>
                                 <span class="visa-two__divider">/</span>
                                 <p class="visa-two__text">Enjoy hassle-free travel experiences <br> with our reliable visa.</p>
                             </div>
-                            <a href="visa-d-travel-visa.php" class="visa-two__btn"><i class="icon-arrow-right-up"></i></a>
+                            <a href="<?= $domain ?>/travel_visa/" class="visa-two__btn"><i class="icon-arrow-right-up"></i></a>
                         </div><!-- /.visa-two__item -->
                         <div class="visa-two__item" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300">
                             <div class="visa-two__item__overlay"></div>
                             <img src="<?php echo $domain ?>/assets/images/shapes/visa-shape-2-2.png" alt="shape" class="visa-two__item__shape">
                             <div class="visa-two__content">
                                 <div class="visa-two__icon"><i class="icon-immigration-visa"></i></div>
-                                <h3 class="visa-two__title"><a href="visa-d-immigration-visa.php">Immigration Visa</a></h3>
+                                <h3 class="visa-two__title"><a href="<?php echo $domain ?>/immigration-visa/">Immigration Visa</a></h3>
                                 <span class="visa-two__divider">/</span>
                                 <p class="visa-two__text">Access trusted immigration <br> resources with complete guidance.</p>
                             </div>
-                            <a href="visa-d-immigration-visa.php" class="visa-two__btn"><i class="icon-arrow-right-up"></i></a>
+                            <a href="<?php echo $domain ?>/immigration_visa/" class="visa-two__btn"><i class="icon-arrow-right-up"></i></a>
                         </div><!-- /.visa-two__item -->
                     </div><!-- /.col-xl-7 -->
                 </div><!-- /.row -->
@@ -911,7 +911,7 @@ include("./server/connection.php");
                         <div class="fly-one__card__inner">
                             <h3 class="fly-one__card__title">Ready to fly with us your dream country.</h3>
                             <p class="fly-one__card__text">Immigration visa design support this services business agency elit, sed to do eiusmod tempor majority have humour visa solution.</p>
-                            <a href="about.php" class="visanet-btn">
+                            <a href="<?php echo $domain ?>/about/" class="visanet-btn">
                                 <span class="visanet-btn__icon-box">
                                     <span class="visanet-btn__icon"><span><i class="icon-arrow-right-3"></i></span></span>
                                 </span>
@@ -973,10 +973,10 @@ include("./server/connection.php");
                                     <span class="work-process__icon"><i class="icon-check"></i></span>
                                 </div><!-- /.work-process__image -->
                                 <div class="work-process__inner">
-                                    <h3 class="work-process__title"><a href="about.php">Initial Consultation</a></h3>
+                                    <h3 class="work-process__title"><a href="<?php echo $domain ?>/about/">Initial Consultation</a></h3>
                                     <p class="work-process__text">Immigration visa management this words which services.</p>
                                     <div class="work-process__button">
-                                        <a href="about.php" class="work-process__btn"><i class="icon-arrow-right-3"></i></a>
+                                        <a href="<?php echo $domain ?>/about/" class="work-process__btn"><i class="icon-arrow-right-3"></i></a>
                                     </div>
                                 </div><!-- /.work-process__inner -->
                                 <div class="work-process__bg"></div>
@@ -994,10 +994,10 @@ include("./server/connection.php");
                                     <span class="work-process__icon"><i class="icon-check"></i></span>
                                 </div><!-- /.work-process__image -->
                                 <div class="work-process__inner">
-                                    <h3 class="work-process__title"><a href="about.php">Document Evaluation</a></h3>
+                                    <h3 class="work-process__title"><a href="<?php echo $domain ?>/about/">Document Evaluation</a></h3>
                                     <p class="work-process__text">Immigration visa management this words which services.</p>
                                     <div class="work-process__button">
-                                        <a href="about.php" class="work-process__btn"><i class="icon-arrow-right-3"></i></a>
+                                        <a href="<?php echo $domain ?>/about/" class="work-process__btn"><i class="icon-arrow-right-3"></i></a>
                                     </div>
                                 </div><!-- /.work-process__inner -->
                                 <div class="work-process__bg"></div>
@@ -1015,10 +1015,10 @@ include("./server/connection.php");
                                     <span class="work-process__icon"><i class="icon-check"></i></span>
                                 </div><!-- /.work-process__image -->
                                 <div class="work-process__inner">
-                                    <h3 class="work-process__title"><a href="about.php">Visa Processing</a></h3>
+                                    <h3 class="work-process__title"><a href="<?php echo $domain ?>/about/">Visa Processing</a></h3>
                                     <p class="work-process__text">Immigration visa management this words which services.</p>
                                     <div class="work-process__button">
-                                        <a href="about.php" class="work-process__btn"><i class="icon-arrow-right-3"></i></a>
+                                        <a href="<?php echo $domain ?>/about/" class="work-process__btn"><i class="icon-arrow-right-3"></i></a>
                                     </div>
                                 </div><!-- /.work-process__inner -->
                                 <div class="work-process__bg"></div>
@@ -1036,10 +1036,10 @@ include("./server/connection.php");
                                     <span class="work-process__icon"><i class="icon-check"></i></span>
                                 </div><!-- /.work-process__image -->
                                 <div class="work-process__inner">
-                                    <h3 class="work-process__title"><a href="about.php">Complete Visa</a></h3>
+                                    <h3 class="work-process__title"><a href="<?php echo $domain ?>/about/">Complete Visa</a></h3>
                                     <p class="work-process__text">Immigration visa management this words which services.</p>
                                     <div class="work-process__button">
-                                        <a href="about.php" class="work-process__btn"><i class="icon-arrow-right-3"></i></a>
+                                        <a href="<?php echo $domain ?>/about/" class="work-process__btn"><i class="icon-arrow-right-3"></i></a>
                                     </div>
                                 </div><!-- /.work-process__inner -->
                                 <div class="work-process__bg"></div>
