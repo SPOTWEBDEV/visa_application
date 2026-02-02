@@ -13,7 +13,7 @@
 	if ($("#styleOptions").length) {
 		$("#styleOptions").styleSwitcher({
 			hasPreview: false,
-			fullPath: "assets/css/colors/",
+			fullPath: "<?php echo $domain ?>/assets/css/colors/",
 			cookie: {
 				expires: 999,
 				isManagingLoad: true
@@ -24,7 +24,7 @@
 	if ($("#colorMode").length) {
 		$("#colorMode").styleSwitcher({
 			hasPreview: false,
-			fullPath: "assets/css/modes/",
+			fullPath: "<?php echo $domain ?>/assets/css/modes/",
 			defaultThemeId: 'jssMode',
 			cookie: {
 				expires: 999,
@@ -36,7 +36,7 @@
 	if ($("#langMode").length) {
 		$("#langMode").styleSwitcher({
 			hasPreview: false,
-			fullPath: "assets/css/",
+			fullPath: "<?php echo $domain ?>/assets/css/",
 			defaultThemeId: 'langLtr',
 			cookie: {
 				expires: 999,

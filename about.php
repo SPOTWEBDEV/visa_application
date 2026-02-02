@@ -7,13 +7,13 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Page || Visanet  </title>
+    <title>About Page || <?php echo $domain ?> </title>
     <!-- favicons Icons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png" />
-    <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
-    <meta name="description" content="VisaNet is a Immigration and Visa Consulting HTML Template. Created especially designed for Immigration & Visa Consulting Agencies, Visa Agents, Study Abroad Consultants, Overseas Job Consultants, IELTS Coaching Centers, and Travel & Tourism Businesses. VisaNet Immigration and Visa Consulting Design and customizable features make it perfect for on various displays and resolutions website. All HTML files are with layers and groups, so they are very easy to modify & expand." />
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo $domain ?>/assets/images/favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo $domain ?>/assets/images/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo $domain ?>/assets/images/favicons/favicon-16x16.png" />
+    <link rel="manifest" href="<?php echo $domain ?>/assets/images/favicons/site.webmanifest" />
+    <meta name="description" content="<?php echo $domain ?>is a Immigration and Visa Consulting HTML Template. Created especially designed for Immigration & Visa Consulting Agencies, Visa Agents, Study Abroad Consultants, Overseas Job Consultants, IELTS Coaching Centers, and Travel & Tourism Businesses. <?php echo $domain ?>Immigration and Visa Consulting Design and customizable features make it perfect for on various displays and resolutions website. All HTML files are with layers and groups, so they are very easy to modify & expand." />
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,21 +22,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
 
-    <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/vendors/bootstrap-select/bootstrap-select.min.css" />
-    <link rel="stylesheet" href="assets/vendors/aos/css/aos.css" />
-    <link rel="stylesheet" href="assets/vendors/fontawesome/css/all.min.css" />
-    <link rel="stylesheet" href="assets/vendors/jquery-ui/jquery-ui.css" />
-    <link rel="stylesheet" href="assets/vendors/jarallax/jarallax.css" />
-    <link rel="stylesheet" href="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css" />
-    <link rel="stylesheet" href="assets/vendors/visanet-icons/style.css" />
-    <link rel="stylesheet" href="assets/vendors/daterangepicker-master/daterangepicker.css" />
-    <link rel="stylesheet" href="assets/vendors/slick/slick.css">
-    <link rel="stylesheet" href="assets/vendors/owl-carousel/css/owl.carousel.min.css" />
-    <link rel="stylesheet" href="assets/vendors/owl-carousel/css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="<?php echo $domain ?>/assets/vendors/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="<?php echo $domain ?>/assets/vendors/bootstrap-select/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="<?php echo $domain ?>/assets/vendors/aos/css/aos.css" />
+    <link rel="stylesheet" href="<?php echo $domain ?>/assets/vendors/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="<?php echo $domain ?>/assets/vendors/jquery-ui/jquery-ui.css" />
+    <link rel="stylesheet" href="<?php echo $domain ?>/assets/vendors/jarallax/jarallax.css" />
+    <link rel="stylesheet" href="<?php echo $domain ?>/assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css" />
+    <link rel="stylesheet" href="<?php echo $domain ?>/assets/vendors/visanet-icons/style.css" />
+    <link rel="stylesheet" href="<?php echo $domain ?>/assets/vendors/daterangepicker-master/daterangepicker.css" />
+    <link rel="stylesheet" href="<?php echo $domain ?>/assets/vendors/slick/slick.css">
+    <link rel="stylesheet" href="<?php echo $domain ?>/assets/vendors/owl-carousel/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="<?php echo $domain ?>/assets/vendors/owl-carousel/css/owl.theme.default.min.css" />
 
     <!-- template styles -->
-    <link rel="stylesheet" href="assets/css/visanet.css" />
+    <link rel="stylesheet" href="<?php echo $domain ?>/assets/css/visanet.css" />
 </head>
 
 <body class="custom-cursor">
@@ -44,9 +44,9 @@
     <div class="custom-cursor__cursor"></div>
     <div class="custom-cursor__cursor-two"></div>
 
-    <div class="preloader">
-        <div class="preloader__image" style="background-image: url(assets/images/loader.png);"></div>
-    </div>
+    <!-- <div class="preloader">
+        <div class="preloader__image" style="background-image: url(<?php echo $domain ?>/assets/images/loader.png);"></div>
+    </div> -->
     <!-- /.preloader -->
 
     <div class="mobile-nav__wrapper">
@@ -55,7 +55,7 @@
             <span class="mobile-nav__close mobile-nav__toggler"><i class="icon-close"></i></span>
             <div class="logo-box">
                 <a href="index.php" aria-label="logo image">
-                    <img src="assets/images/logo-light.png" width="230" alt="Visanet HTML" />
+                    <img src="<?php echo $domain ?>/assets/images/logo-light.png" width="230" alt="<?php echo $domain ?>HTML" />
                 </a>
             </div><!-- /.logo-box -->
             <div class="mobile-nav__container"></div><!-- /.mobile-nav__container -->
@@ -114,12 +114,12 @@
             <span class="sidebar-three__close sidebar-btn__toggler"><i class="icon-close"></i></span>
             <div class="sidebar-three__logo sidebar-three__item logo-retina">
                 <a href="index.php" aria-label="logo image">
-                    <img src="assets/images/logo-dark.png" width="230" alt="Visanet HTML" />
+                    <img src="<?php echo $domain ?>/assets/images/logo-dark.png" width="230" alt="<?php echo $domain ?>HTML" />
                 </a>
             </div><!-- /.sidebar-three__logo -->
             <div class="sidebar-three__about sidebar-three__item">
                 <p class="sidebar-three__about__text">
-                    VisaNet is a modern HTML template built for immigration and visa consulting agencies, study abroad consultants, visa agents, and travel or overseas job services.
+                    <?php echo $domain ?>is a modern HTML template built for immigration and visa consulting agencies, study abroad consultants, visa agents, and travel or overseas job services.
                 </p>
             </div><!-- /.sidebar-three__about -->
             <div class="sidebar-three__info sidebar-three__item">
@@ -188,32 +188,32 @@
         <span class="scroll-to-top__wrapper"><span class="scroll-to-top__inner"></span></span>
     </a>
 
-    <script src="assets/vendors/jquery/jquery-3.7.1.min.js"></script>
-    <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendors/bootstrap-select/bootstrap-select.min.js"></script>
-    <script src="assets/vendors/jarallax/jarallax.min.js"></script>
-    <script src="assets/vendors/jquery-ui/jquery-ui.js"></script>
-    <script src="assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
-    <script src="assets/vendors/jquery-appear/jquery.appear.min.js"></script>
-    <script src="assets/vendors/jquery-circle-progress/jquery.circle-progress.min.js"></script>
-    <script src="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
-    <script src="assets/vendors/jquery-validate/jquery.validate.min.js"></script>
-    <script src="assets/vendors/wnumb/wNumb.min.js"></script>
-    <script src="assets/vendors/owl-carousel/js/owl.carousel.min.js"></script>
-    <script src="assets/vendors/aos/js/aos.js"></script>
-    <script src="assets/vendors/imagesloaded/imagesloaded.min.js"></script>
-    <script src="assets/vendors/isotope/isotope.js"></script>
-    <script src="assets/vendors/slick/slick.min.js"></script>
-    <script src="assets/vendors/countdown/countdown.min.js"></script>
-    <script src="assets/vendors/daterangepicker-master/moment.min.js"></script>
-    <script src="assets/vendors/daterangepicker-master/daterangepicker.js"></script>
+    <script src="<?php echo $domain ?>/assets/vendors/jquery/jquery-3.7.1.min.js"></script>
+    <script src="<?php echo $domain ?>/assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?php echo $domain ?>/assets/vendors/bootstrap-select/bootstrap-select.min.js"></script>
+    <script src="<?php echo $domain ?>/assets/vendors/jarallax/jarallax.min.js"></script>
+    <script src="<?php echo $domain ?>/assets/vendors/jquery-ui/jquery-ui.js"></script>
+    <script src="<?php echo $domain ?>/assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
+    <script src="<?php echo $domain ?>/assets/vendors/jquery-appear/jquery.appear.min.js"></script>
+    <script src="<?php echo $domain ?>/assets/vendors/jquery-circle-progress/jquery.circle-progress.min.js"></script>
+    <script src="<?php echo $domain ?>/assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="<?php echo $domain ?>/assets/vendors/jquery-validate/jquery.validate.min.js"></script>
+    <script src="<?php echo $domain ?>/assets/vendors/wnumb/wNumb.min.js"></script>
+    <script src="<?php echo $domain ?>/assets/vendors/owl-carousel/js/owl.carousel.min.js"></script>
+    <script src="<?php echo $domain ?>/assets/vendors/aos/js/aos.js"></script>
+    <script src="<?php echo $domain ?>/assets/vendors/imagesloaded/imagesloaded.min.js"></script>
+    <script src="<?php echo $domain ?>/assets/vendors/isotope/isotope.js"></script>
+    <script src="<?php echo $domain ?>/assets/vendors/slick/slick.min.js"></script>
+    <script src="<?php echo $domain ?>/assets/vendors/countdown/countdown.min.js"></script>
+    <script src="<?php echo $domain ?>/assets/vendors/daterangepicker-master/moment.min.js"></script>
+    <script src="<?php echo $domain ?>/assets/vendors/daterangepicker-master/daterangepicker.js"></script>
     <!-- gsap js -->
-    <script src="assets/vendors/gsap/gsap.js"></script>
-    <script src="assets/vendors/gsap/scrolltrigger.min.js"></script>
-    <script src="assets/vendors/gsap/splittext.min.js"></script>
-    <script src="assets/vendors/gsap/visanet-split.js"></script>
+    <script src="<?php echo $domain ?>/assets/vendors/gsap/gsap.js"></script>
+    <script src="<?php echo $domain ?>/assets/vendors/gsap/scrolltrigger.min.js"></script>
+    <script src="<?php echo $domain ?>/assets/vendors/gsap/splittext.min.js"></script>
+    <script src="<?php echo $domain ?>/assets/vendors/gsap/visanet-split.js"></script>
     <!-- template js -->
-    <script src="assets/js/visanet.js"></script>
+    <script src="<?php echo $domain ?>/assets/js/visanet.js"></script>
 </body>
 
 </html>

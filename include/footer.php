@@ -1,11 +1,11 @@
   <footer class="main-footer main-footer--two">
-            <div class="main-footer__bg" style="background-image: url(assets/images/shapes/footer-bg-2.png);"></div>
+            <div class="main-footer__bg" style="background-image: url(<?php echo $domain ?>/assets/images/shapes/footer-bg-2.png);"></div>
             <div class="container">
                 <div class="row gutter-y-40">
                     <div class="col-xl-3 col-lg-5 col-md-7" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="100">
                         <div class="footer-widget footer-widget--about">
                             <a href="index.php" class="footer-widget__logo logo-retina">
-                                <img src="assets/images/logo-light.png" width="230" alt="<?php echo $sitename ?> ">
+                                <img src="<?php echo $domain ?>/assets/images/logo-light.png" width="230" alt="<?php echo $sitename ?> ">
                             </a>
                             <p class="footer-widget__text">
                                 <?php echo $sitename ?> built for immigration and visa consulting agencies, study abroad consultants, visa agents, and travel or overseas job services.
@@ -57,7 +57,7 @@
                             <ul class="footer-widget__blog list-unstyled">
                                 <li>
                                     <a href="blog-details-right.php" class="footer-widget__blog__image">
-                                        <img src="assets/images/blog/footer-blog-1-1.jpg" alt="blog">
+                                        <img src="<?php echo $domain ?>/assets/images/blog/footer-blog-1-1.jpg" alt="blog">
                                     </a>
                                     <div class="footer-widget__blog__content">
                                         <span class="footer-widget__blog__date"><span class="footer-widget__blog__icon"><i class="icon-calendar"></i></span> 10 May 2024</span>
@@ -66,7 +66,7 @@
                                 </li>
                                 <li>
                                     <a href="blog-details-right.php" class="footer-widget__blog__image">
-                                        <img src="assets/images/blog/footer-blog-1-2.jpg" alt="blog">
+                                        <img src="<?php echo $domain ?>/assets/images/blog/footer-blog-1-2.jpg" alt="blog">
                                     </a>
                                     <div class="footer-widget__blog__content">
                                         <span class="footer-widget__blog__date"><span class="footer-widget__blog__icon"><i class="icon-calendar"></i></span> 23 February 2025</span>
