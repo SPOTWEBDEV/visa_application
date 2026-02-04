@@ -21,7 +21,6 @@ include "../server/connection.php";
     <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-
     <link rel="stylesheet" href="<?php echo $domain ?>/assets/vendors/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="<?php echo $domain ?>/assets/vendors/bootstrap-select/bootstrap-select.min.css" />
     <link rel="stylesheet" href="<?php echo $domain ?>/assets/vendors/aos/css/aos.css" />
@@ -44,140 +43,160 @@ include "../server/connection.php";
     <div class="custom-cursor__cursor"></div>
     <div class="custom-cursor__cursor-two"></div>
 
-   <?php include("../include/nav.php") ?>
+    <?php include("../include/nav.php") ?>
 
-        <section class="page-header">
-            <div class="page-header__bg" style="background-image: url(<?php echo $domain ?>/assets/images/backgrounds/page-header-bg.jpg);"></div><!-- /.page-header__bg -->
-            <div class="page-header__shape page-header__shape--1"></div><!-- /.page-header__shape -->
-            <div class="page-header__shape page-header__shape--2"></div><!-- /.page-header__shape -->
-            <div class="container">
-                <div class="page-header__content">
-                    <ul class="visanet-breadcrumb list-unstyled" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="200">
-                        <li><a href="index.php">Home</a></li>
-                        <li><span>Visa Grid</span></li>
-                    </ul><!-- /.visanet-breadcrumb list-unstyled -->
-                </div><!-- /.page-header__content -->
-            </div><!-- /.container -->
-        </section><!-- /.page-header -->
+    <section class="page-header">
+        <div class="page-header__bg" style="background-image: url(<?php echo $domain ?>/assets/images/backgrounds/page-header-bg.jpg);"></div><!-- /.page-header__bg -->
+        <div class="page-header__shape page-header__shape--1"></div><!-- /.page-header__shape -->
+        <div class="page-header__shape page-header__shape--2"></div><!-- /.page-header__shape -->
+        <div class="container">
+            <div class="page-header__content">
+                <ul class="visanet-breadcrumb list-unstyled" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="200">
+                    <li><a href="index.php">Home</a></li>
+                    <li><span>Visa Application</span></li>
+                </ul><!-- /.visanet-breadcrumb list-unstyled -->
+            </div><!-- /.page-header__content -->
+        </div><!-- /.container -->
+    </section><!-- /.page-header -->
 
-        <section class="visa-page section-space">
-            <div class="container">
-                <div class="sec-title sec-title--center">
-                    <div class="sec-title__top" data-aos="fade-down" data-aos-anchor-placement="top-bottom" data-aos-duration="1500">
-                        <span class="sec-title__icon sec-title__icon--left"><i class="icon-airplane"></i></span>
-                        <p class="sec-title__tagline">Varieties of visa</p>
-                        <span class="sec-title__icon sec-title__icon--right"><i class="icon-airplane-2"></i></span>
-                    </div><!-- /.sec-title__top -->
-                    <h2 class="sec-title__title bw-split-in-right">Immigration Systems Are Increasingly <br> Dream Of Citizenship.</h2><!-- /.sec-title__title -->
-                </div><!-- /.sec-title -->
-                <div class="row gutter-y-30">
-                    <div class="col-xl-4 col-lg-4 col-md-6" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="100">
-                        <div class="visa-card">
-                            <div class="visa-card__image bw-img-anim-left">
-                                <img src="<?php echo $domain ?>/assets/images/visa/visa-1-1.jpg" alt="Business Visa">
-                                <div class="visa-card__icon-box">
-                                    <span class="visa-card__icon"><i class="icon-business-visa"></i></span>
-                                </div><!-- /.visa-card__icon-box -->
-                            </div><!-- /.visa-card__image -->
-                            <div class="visa-card__content">
-                                <h2 class="visa-card__title"><a href="visa-d-business-visa.php">Business Visa</a></h2>
-                                <p class="visa-card__text">Expand your business internationally with expert guidance, helping entrepreneurs establish and achieve success abroad.</p>
-                            </div><!-- /.visa-card__content -->
-                            <a href="visa-d-business-visa.php" class="visa-card__btn">
-                                Read More <span class="visa-card__btn__icon"><i class="icon-arrow-right-up"></i></span>
-                            </a><!-- /.visa-card__btn -->
-                        </div><!-- /.visa-card -->
-                    </div><!-- /.col-xl-4 -->
-                    <div class="col-xl-4 col-lg-4 col-md-6" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="200">
-                        <div class="visa-card">
-                            <div class="visa-card__image bw-img-anim-left">
-                                <img src="<?php echo $domain ?>/assets/images/visa/visa-1-2.jpg" alt="Quick Visa Processing">
-                                <div class="visa-card__icon-box">
-                                    <span class="visa-card__icon"><i class="icon-visa-processing"></i></span>
-                                </div><!-- /.visa-card__icon-box -->
-                            </div><!-- /.visa-card__image -->
-                            <div class="visa-card__content">
-                                <h2 class="visa-card__title"><a href="visa-d-visa-processing.php">Quick Visa Processing</a></h2>
-                                <p class="visa-card__text">Experience faster approval with our efficient visa processing service designed to simplify documentation and deliver results quickly.</p>
-                            </div><!-- /.visa-card__content -->
-                            <a href="visa-d-visa-processing.php" class="visa-card__btn">
-                                Read More <span class="visa-card__btn__icon"><i class="icon-arrow-right-up"></i></span>
-                            </a><!-- /.visa-card__btn -->
-                        </div><!-- /.visa-card -->
-                    </div><!-- /.col-xl-4 -->
-                    <div class="col-xl-4 col-lg-4 col-md-6" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="300">
-                        <div class="visa-card">
-                            <div class="visa-card__image bw-img-anim-left">
-                                <img src="<?php echo $domain ?>/assets/images/visa/visa-1-3.jpg" alt="Immigration Visa">
-                                <div class="visa-card__icon-box">
-                                    <span class="visa-card__icon"><i class="icon-immigration-visa"></i></span>
-                                </div><!-- /.visa-card__icon-box -->
-                            </div><!-- /.visa-card__image -->
-                            <div class="visa-card__content">
-                                <h2 class="visa-card__title"><a href="visa-d-immigration-visa.php">Immigration Visa</a></h2>
-                                <p class="visa-card__text">Access trusted immigration resources with complete guidance, reliable information, and assistance for your relocation journey.</p>
-                            </div><!-- /.visa-card__content -->
-                            <a href="visa-d-immigration-visa.php" class="visa-card__btn">
-                                Read More <span class="visa-card__btn__icon"><i class="icon-arrow-right-up"></i></span>
-                            </a><!-- /.visa-card__btn -->
-                        </div><!-- /.visa-card -->
-                    </div><!-- /.col-xl-4 -->
-                    <div class="col-xl-4 col-lg-4 col-md-6" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="100">
-                        <div class="visa-card">
-                            <div class="visa-card__image bw-img-anim-left">
-                                <img src="<?php echo $domain ?>/assets/images/visa/visa-1-4.jpg" alt="Family Visa">
-                                <div class="visa-card__icon-box">
-                                    <span class="visa-card__icon"><i class="icon-family-visa"></i></span>
-                                </div><!-- /.visa-card__icon-box -->
-                            </div><!-- /.visa-card__image -->
-                            <div class="visa-card__content">
-                                <h2 class="visa-card__title"><a href="<?= $domain ?>/family_visa/">Family Visa</a></h2>
-                                <p class="visa-card__text">Reunite with loved ones abroad through our simplified family visa process ensuring smooth documentation and stress-free.</p>
-                            </div><!-- /.visa-card__content -->
-                            <a href="<?= $domain ?>/family_visa/" class="visa-card__btn">
-                                Read More <span class="visa-card__btn__icon"><i class="icon-arrow-right-up"></i></span>
-                            </a><!-- /.visa-card__btn -->
-                        </div><!-- /.visa-card -->
-                    </div><!-- /.col-xl-4 -->
-                    <div class="col-xl-4 col-lg-4 col-md-6" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="200">
-                        <div class="visa-card">
-                            <div class="visa-card__image bw-img-anim-left">
-                                <img src="<?php echo $domain ?>/assets/images/visa/visa-1-5.jpg" alt="Students Visa">
-                                <div class="visa-card__icon-box">
-                                    <span class="visa-card__icon"><i class="icon-students-visa"></i></span>
-                                </div><!-- /.visa-card__icon-box -->
-                            </div><!-- /.visa-card__image -->
-                            <div class="visa-card__content">
-                                <h2 class="visa-card__title"><a href="<?= $domain ?>/student_visa/">Students Visa</a></h2>
-                                <p class="visa-card__text">Secure your dream education overseas with expert visa guidance, university support, and documentation for global study success.</p>
-                            </div><!-- /.visa-card__content -->
-                            <a href="<?= $domain ?>/student_visa/" class="visa-card__btn">
-                                Read More <span class="visa-card__btn__icon"><i class="icon-arrow-right-up"></i></span>
-                            </a><!-- /.visa-card__btn -->
-                        </div><!-- /.visa-card -->
-                    </div><!-- /.col-xl-4 -->
-                    <div class="col-xl-4 col-lg-4 col-md-6" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="300">
-                        <div class="visa-card">
-                            <div class="visa-card__image bw-img-anim-left">
-                                <img src="<?php echo $domain ?>/assets/images/visa/visa-1-6.jpg" alt="Travel Visa">
-                                <div class="visa-card__icon-box">
-                                    <span class="visa-card__icon"><i class="icon-travel-visa"></i></span>
-                                </div><!-- /.visa-card__icon-box -->
-                            </div><!-- /.visa-card__image -->
-                            <div class="visa-card__content">
-                                <h2 class="visa-card__title"><a href="<?= $domain ?>/travel_visa/">Travel Visa</a></h2>
-                                <p class="visa-card__text">Enjoy hassle-free travel experiences with our reliable visa services ensuring smooth applications, approvals, and journeys.</p>
-                            </div><!-- /.visa-card__content -->
-                            <a href="<?= $domain ?>/travel_visa/" class="visa-card__btn">
-                                Read More <span class="visa-card__btn__icon"><i class="icon-arrow-right-up"></i></span>
-                            </a><!-- /.visa-card__btn -->
-                        </div><!-- /.visa-card -->
-                    </div><!-- /.col-xl-4 -->
-                </div><!-- /.row -->
-            </div><!-- /.container -->
-        </section><!-- /.visa-page -->
+    <section class="visa-page section-space">
+        <div class="container">
+            <div class="sec-title sec-title--center">
+                <div class="sec-title__top" data-aos="fade-down" data-aos-anchor-placement="top-bottom" data-aos-duration="1500">
+                    <span class="sec-title__icon sec-title__icon--left"><i class="icon-airplane"></i></span>
+                    <p class="sec-title__tagline">Varieties of visa</p>
+                    <span class="sec-title__icon sec-title__icon--right"><i class="icon-airplane-2"></i></span>
+                </div><!-- /.sec-title__top -->
+                <h2 class="sec-title__title bw-split-in-right">Immigration Systems Are Increasingly <br> Dream Of Citizenship.</h2><!-- /.sec-title__title -->
+            </div><!-- /.sec-title -->
 
-        <?php include "../include/footer.php" ?>
+            <div class="row gutter-y-30">
+
+                <!-- BUSINESS -->
+                <div class="col-xl-4 col-lg-4 col-md-6" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="100">
+                    <div class="visa-card">
+                        <div class="visa-card__image bw-img-anim-left">
+                            <img src="<?php echo $domain ?>/assets/images/visa/visa-1-1.jpg" alt="Business Visa">
+                            <div class="visa-card__icon-box">
+                                <span class="visa-card__icon"><i class="icon-business-visa"></i></span>
+                            </div><!-- /.visa-card__icon-box -->
+                        </div><!-- /.visa-card__image -->
+                        <div class="visa-card__content">
+                            <h2 class="visa-card__title"><a href="visa-d-business-visa.php">Business Visa</a></h2>
+                            <p class="visa-card__text">Expand your business internationally with expert guidance, helping entrepreneurs establish and achieve success abroad.</p>
+                        </div><!-- /.visa-card__content -->
+
+                        <a href="<?= $domain ?>/apply_now/?from=visa_page&visa_type=business" class="visa-card__btn">
+                            Appointment <span class="visa-card__btn__icon"><i class="icon-arrow-right-up"></i></span>
+                        </a><!-- /.visa-card__btn -->
+                    </div><!-- /.visa-card -->
+                </div><!-- /.col-xl-4 -->
+
+                <!-- QUICK PROCESSING (not a visa type - but kept as requested) -->
+                <div class="col-xl-4 col-lg-4 col-md-6" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="200">
+                    <div class="visa-card">
+                        <div class="visa-card__image bw-img-anim-left">
+                            <img src="<?php echo $domain ?>/assets/images/visa/visa-1-2.jpg" alt="Quick Visa Processing">
+                            <div class="visa-card__icon-box">
+                                <span class="visa-card__icon"><i class="icon-visa-processing"></i></span>
+                            </div><!-- /.visa-card__icon-box -->
+                        </div><!-- /.visa-card__image -->
+                        <div class="visa-card__content">
+                            <h2 class="visa-card__title"><a href="visa-d-visa-processing.php">Quick Visa Processing</a></h2>
+                            <p class="visa-card__text">Experience faster approval with our efficient visa processing service designed to simplify documentation and deliver results quickly.</p>
+                        </div><!-- /.visa-card__content -->
+
+                        <a href="<?= $domain ?>/apply_now/?from=visa_page&visa_type=processing" class="visa-card__btn">
+                            Appointment <span class="visa-card__btn__icon"><i class="icon-arrow-right-up"></i></span>
+                        </a><!-- /.visa-card__btn -->
+                    </div><!-- /.visa-card -->
+                </div><!-- /.col-xl-4 -->
+
+                <!-- IMMIGRATION -->
+                <div class="col-xl-4 col-lg-4 col-md-6" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="300">
+                    <div class="visa-card">
+                        <div class="visa-card__image bw-img-anim-left">
+                            <img src="<?php echo $domain ?>/assets/images/visa/visa-1-3.jpg" alt="Immigration Visa">
+                            <div class="visa-card__icon-box">
+                                <span class="visa-card__icon"><i class="icon-immigration-visa"></i></span>
+                            </div><!-- /.visa-card__icon-box -->
+                        </div><!-- /.visa-card__image -->
+                        <div class="visa-card__content">
+                            <h2 class="visa-card__title"><a href="visa-d-immigration-visa.php">Immigration Visa</a></h2>
+                            <p class="visa-card__text">Access trusted immigration resources with complete guidance, reliable information, and assistance for your relocation journey.</p>
+                        </div><!-- /.visa-card__content -->
+
+                        <a href="<?= $domain ?>/apply_now/?from=visa_page&visa_type=immigration" class="visa-card__btn">
+                            Appointment <span class="visa-card__btn__icon"><i class="icon-arrow-right-up"></i></span>
+                        </a><!-- /.visa-card__btn -->
+                    </div><!-- /.visa-card -->
+                </div><!-- /.col-xl-4 -->
+
+                <!-- FAMILY -->
+                <div class="col-xl-4 col-lg-4 col-md-6" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="100">
+                    <div class="visa-card">
+                        <div class="visa-card__image bw-img-anim-left">
+                            <img src="<?php echo $domain ?>/assets/images/visa/visa-1-4.jpg" alt="Family Visa">
+                            <div class="visa-card__icon-box">
+                                <span class="visa-card__icon"><i class="icon-family-visa"></i></span>
+                            </div><!-- /.visa-card__icon-box -->
+                        </div><!-- /.visa-card__image -->
+                        <div class="visa-card__content">
+                            <h2 class="visa-card__title"><a href="<?= $domain ?>/family_visa/">Family Visa</a></h2>
+                            <p class="visa-card__text">Reunite with loved ones abroad through our simplified family visa process ensuring smooth documentation and stress-free.</p>
+                        </div><!-- /.visa-card__content -->
+
+                        <a href="<?= $domain ?>/apply_now/?from=visa_page&visa_type=family" class="visa-card__btn">
+                            Appointment <span class="visa-card__btn__icon"><i class="icon-arrow-right-up"></i></span>
+                        </a><!-- /.visa-card__btn -->
+                    </div><!-- /.visa-card -->
+                </div><!-- /.col-xl-4 -->
+
+                <!-- STUDENT -->
+                <div class="col-xl-4 col-lg-4 col-md-6" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="200">
+                    <div class="visa-card">
+                        <div class="visa-card__image bw-img-anim-left">
+                            <img src="<?php echo $domain ?>/assets/images/visa/visa-1-5.jpg" alt="Students Visa">
+                            <div class="visa-card__icon-box">
+                                <span class="visa-card__icon"><i class="icon-students-visa"></i></span>
+                            </div><!-- /.visa-card__icon-box -->
+                        </div><!-- /.visa-card__image -->
+                        <div class="visa-card__content">
+                            <h2 class="visa-card__title"><a href="<?= $domain ?>/student_visa/">Students Visa</a></h2>
+                            <p class="visa-card__text">Secure your dream education overseas with expert visa guidance, university support, and documentation for global study success.</p>
+                        </div><!-- /.visa-card__content -->
+
+                        <a href="<?= $domain ?>/apply_now/?from=visa_page&visa_type=student" class="visa-card__btn">
+                            Appointment <span class="visa-card__btn__icon"><i class="icon-arrow-right-up"></i></span>
+                        </a><!-- /.visa-card__btn -->
+                    </div><!-- /.visa-card -->
+                </div><!-- /.col-xl-4 -->
+
+                <!-- TRAVEL -->
+                <div class="col-xl-4 col-lg-4 col-md-6" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="300">
+                    <div class="visa-card">
+                        <div class="visa-card__image bw-img-anim-left">
+                            <img src="<?php echo $domain ?>/assets/images/visa/visa-1-6.jpg" alt="Travel Visa">
+                            <div class="visa-card__icon-box">
+                                <span class="visa-card__icon"><i class="icon-travel-visa"></i></span>
+                            </div><!-- /.visa-card__icon-box -->
+                        </div><!-- /.visa-card__image -->
+                        <div class="visa-card__content">
+                            <h2 class="visa-card__title"><a href="<?= $domain ?>/travel_visa/">Travel Visa</a></h2>
+                            <p class="visa-card__text">Enjoy hassle-free travel experiences with our reliable visa services ensuring smooth applications, approvals, and journeys.</p>
+                        </div><!-- /.visa-card__content -->
+
+                        <a href="<?= $domain ?>/apply_now/?from=visa_page&visa_type=travel" class="visa-card__btn">
+                            Appointment <span class="visa-card__btn__icon"><i class="icon-arrow-right-up"></i></span>
+                        </a><!-- /.visa-card__btn -->
+                    </div><!-- /.visa-card -->
+                </div><!-- /.col-xl-4 -->
+
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.visa-page -->
+
+    <?php include "../include/footer.php" ?>
 
     </div><!-- /.page-wrapper -->
 
@@ -229,6 +248,7 @@ include "../server/connection.php";
             </div><!-- /.social-links -->
         </div><!-- /.mobile-nav__content -->
     </div><!-- /.mobile-nav__wrapper -->
+
     <div class="search-popup">
         <div class="search-popup__overlay search-toggler"></div>
         <div class="search-popup__content">
@@ -240,6 +260,7 @@ include "../server/connection.php";
             </form>
         </div><!-- /.search-popup__content -->
     </div><!-- /.search-popup -->
+
     <aside class="sidebar-three">
         <div class="sidebar-three__overlay sidebar-btn__toggler"></div><!-- /.siderbar-ovarlay -->
         <div class="sidebar-three__content">

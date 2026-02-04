@@ -422,29 +422,29 @@ include("./server/connection.php");
                             <img src="<?php echo $domain ?>/assets/images/shapes/visa-shape-2-2.png" alt="shape" class="visa-two__item__shape">
                             <div class="visa-two__content">
                                 <div class="visa-two__icon"><i class="icon-family-visa"></i></div>
-                                <h3 class="visa-two__title"><a href="<?php echo $domain ?>/family_visa/">Family Visa</a></h3>
+                                <h3 class="visa-two__title"><a href="<?php echo $domain ?>/visa/">Family Visa</a></h3>
                                 <span class="visa-two__divider">/</span>
                                 <p class="visa-two__text">Reunite with loved ones abroad <br> through our simplified family visa.</p>
                             </div>
-                            <a href="<?= $domain ?>/family_visa/" class="visa-two__btn"><i class="icon-arrow-right-up"></i></a>
+                            <a href="<?= $domain ?>/visa/" class="visa-two__btn"><i class="icon-arrow-right-up"></i></a>
                         </div><!-- /.visa-two__item -->
                         <div class="visa-two__item" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300">
                             <div class="visa-two__item__overlay"></div>
                             <img src="<?php echo $domain ?>/assets/images/shapes/visa-shape-2-2.png" alt="shape" class="visa-two__item__shape">
                             <div class="visa-two__content">
                                 <div class="visa-two__icon"><i class="icon-students-visa"></i></div>
-                                <h3 class="visa-two__title"><a href="<?php echo $domain ?>/student_visa/">Students Visa</a></h3>
+                                <h3 class="visa-two__title"><a href="<?php echo $domain ?>/visa/">Students Visa</a></h3>
                                 <span class="visa-two__divider">/</span>
                                 <p class="visa-two__text">Secure your dream education <br> overseas with expert visa guidance.</p>
                             </div>
-                            <a href="<?= $domain ?>/student_visa/" class="visa-two__btn"><i class="icon-arrow-right-up"></i></a>
+                            <a href="<?= $domain ?>/visa/" class="visa-two__btn"><i class="icon-arrow-right-up"></i></a>
                         </div><!-- /.visa-two__item -->
                         <div class="visa-two__item" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300">
                             <div class="visa-two__item__overlay"></div>
                             <img src="<?php echo $domain ?>/assets/images/shapes/visa-shape-2-2.png" alt="shape" class="visa-two__item__shape">
                             <div class="visa-two__content">
                                 <div class="visa-two__icon"><i class="icon-business-visa"></i></div>
-                                <h3 class="visa-two__title"><a href="<?php echo $domain ?>/business_visa/">Business Visa</a></h3>
+                                <h3 class="visa-two__title"><a href="<?php echo $domain ?>/visa/">Business Visa</a></h3>
                                 <span class="visa-two__divider">/</span>
                                 <p class="visa-two__text">Expand your business internationally <br> with expert guidance.</p>
                             </div>
@@ -459,14 +459,14 @@ include("./server/connection.php");
                                 <span class="visa-two__divider">/</span>
                                 <p class="visa-two__text">Enjoy hassle-free travel experiences <br> with our reliable visa.</p>
                             </div>
-                            <a href="<?= $domain ?>/travel_visa/" class="visa-two__btn"><i class="icon-arrow-right-up"></i></a>
+                            <a href="<?= $domain ?>/visa/" class="visa-two__btn"><i class="icon-arrow-right-up"></i></a>
                         </div><!-- /.visa-two__item -->
                         <div class="visa-two__item" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300">
                             <div class="visa-two__item__overlay"></div>
                             <img src="<?php echo $domain ?>/assets/images/shapes/visa-shape-2-2.png" alt="shape" class="visa-two__item__shape">
                             <div class="visa-two__content">
                                 <div class="visa-two__icon"><i class="icon-immigration-visa"></i></div>
-                                <h3 class="visa-two__title"><a href="<?php echo $domain ?>/immigration-visa/">Immigration Visa</a></h3>
+                                <h3 class="visa-two__title"><a href="<?php echo $domain ?>/visa/">Immigration Visa</a></h3>
                                 <span class="visa-two__divider">/</span>
                                 <p class="visa-two__text">Access trusted immigration <br> resources with complete guidance.</p>
                             </div>

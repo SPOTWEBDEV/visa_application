@@ -162,7 +162,7 @@
                                 event.preventDefault();
                                 let formData = new FormData(form);
 
-                                fetch('../server/api/admin/login.php', {
+                                fetch('../auth/api/admin/login.php', {
                                     method: 'POST',
                                     body: formData
                                 })
@@ -180,7 +180,7 @@
                                     if (data.status == 'success') {
                                         toastr.success(data.message);
                                         setTimeout(() => {
-                                             location.href = '<?php echo $domain; ?>admin/dashboard/';
+                                             location.href = '<?php echo $domain; ?>/admin/dashboard/';
                                         }, 3000);
 
                                     }
