@@ -1,16 +1,18 @@
+<?php include "../server/connection.php" ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Us || Visanet  </title>
+    <title>Contact Us || <?php echo $sitename?>@gmail.com </title>
     <!-- favicons Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="<?php echo $domain ?>/assets/images/favicons/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="<?php echo $domain ?>/assets/images/favicons/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="<?php echo $domain ?>/assets/images/favicons/favicon-16x16.png" />
     <link rel="manifest" href="<?php echo $domain ?>/assets/images/favicons/site.webmanifest" />
-    <meta name="description" content="VisaNet is a Immigration and Visa Consulting HTML Template. Created especially designed for Immigration & Visa Consulting Agencies, Visa Agents, Study Abroad Consultants, Overseas Job Consultants, IELTS Coaching Centers, and Travel & Tourism Businesses. VisaNet Immigration and Visa Consulting Design and customizable features make it perfect for on various displays and resolutions website. All HTML files are with layers and groups, so they are very easy to modify & expand." />
+    <meta name="description" content="<?php echo $sitename?>@gmail.comis a Immigration and Visa Consulting HTML Template. Created especially designed for Immigration & Visa Consulting Agencies, Visa Agents, Study Abroad Consultants, Overseas Job Consultants, IELTS Coaching Centers, and Travel & Tourism Businesses. <?php echo $sitename?>@gmail.comImmigration and Visa Consulting Design and customizable features make it perfect for on various displays and resolutions website. All HTML files are with layers and groups, so they are very easy to modify & expand." />
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,68 +43,8 @@
     <div class="custom-cursor__cursor"></div>
     <div class="custom-cursor__cursor-two"></div>
 
-    <div class="preloader">
-        <div class="preloader__image" style="background-image: url(<?php echo $domain ?>/assets/images/loader.png);"></div>
-    </div>
-    <!-- /.preloader -->
-    <div class="page-wrapper">
-        <div class="topbar">
-            <div class="container">
-                <div class="topbar__inner">
-                    <div class="topbar__social">
-                        <p class="topbar__social__title">Follow us:</p>
-                        <div class="social-links">
-                            <a href="https://facebook.com">
-                                <span class="social-links__icon">
-                                    <i class="fab fa-facebook-f" aria-hidden="true"></i>
-                                    <span class="sr-only">Facebook</span>
-                                </span>
-                            </a>
-                            <a href="https://x.com">
-                                <span class="social-links__icon">
-                                    <i class="fab fa-twitter" aria-hidden="true"></i>
-                                    <span class="sr-only">X</span>
-                                </span>
-                            </a>
-                            <a href="https://linkedin.com">
-                                <span class="social-links__icon">
-                                    <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-                                    <span class="sr-only">Linkedin</span>
-                                </span>
-                            </a>
-                            <a href="https://instagram.com">
-                                <span class="social-links__icon">
-                                    <i class="fab fa-instagram" aria-hidden="true"></i>
-                                    <span class="sr-only">Instagram</span>
-                                </span>
-                            </a>
-                        </div><!-- /.social-links -->
-                    </div><!-- /.topbar__social -->
-                    <div class="topbar__right">
-                        <ul class="topbar__info list-unstyled">
-                            <li>
-                                <span class="topbar__info__icon"><i class="icon-email"></i></span>
-                                <span><a href="mailto:visanet@envato.com">visanet@envato.com</a></span>
-                            </li>
-                            <li>
-                                <span class="topbar__info__icon"><i class="icon-location"></i></span>
-                                <span><a href="https://www.google.com/maps">25/09 Mozilla Golden Street</a></span>
-                            </li>
-                        </ul><!-- /.topbar__info -->
-                        <div class="topbar__language">
-                            <img src="<?php echo $domain ?>/assets/images/shapes/flag-1-1.png" alt="flag">
-                            <label class="sr-only" for="language-select-header">select language</label>
-                            <select class="selectpicker" id="language-select-header">
-                                <option value="english">English</option>
-                                <option value="arabic">Arabic</option>
-                            </select>
-                        </div><!-- /.topbar__language -->
-                    </div><!-- /.topbar__right -->
-                </div><!-- /.topbar__inner -->
-            </div><!-- /.container -->
-        </div><!-- /.topbar -->
              <!-- header started -->
-     <?php include("./include/nav.php")?>
+     <?php include("../include/nav.php")?>
 
        <!-- header ended -->
 
@@ -260,10 +202,10 @@
                     <div class="col-xl-3 col-lg-5 col-md-7" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="100">
                         <div class="footer-widget footer-widget--about">
                             <a href="index.php" class="footer-widget__logo logo-retina">
-                                <img src="<?php echo $domain ?>/assets/images/logo-light.png" width="230" alt="Visanet HTML Template">
+                                <img src="<?php echo $domain ?>/assets/images/logo-light.png" width="230" alt="<?php echo $sitename?>@gmail.com">
                             </a>
                             <p class="footer-widget__text">
-                                VisaNet is a modern HTML template built for immigration and visa consulting agencies, study abroad consultants, visa agents, and travel or overseas job services.
+                                <?php echo $sitename?>@gmail.comis a modern HTML template built for immigration and visa consulting agencies, study abroad consultants, visa agents, and travel or overseas job services.
                             </p>
                             <div class="social-links">
                                 <a href="https://facebook.com">
@@ -349,7 +291,7 @@
                 <div class="container">
                     <div class="main-footer__bottom__inner">
                         <p class="main-footer__copyright">
-                            &copy; Copyright <span class="dynamic-year"></span> by Visanet HTML Template.
+                            &copy; Copyright <span class="dynamic-year"></span> by <?php echo $sitename?>@gmail.comHTML Template.
                         </p>
                         <ul class="main-footer__page list-unstyled">
                             <li><a href="about.php">Privacy</a></li>
@@ -369,7 +311,7 @@
             <span class="mobile-nav__close mobile-nav__toggler"><i class="icon-close"></i></span>
             <div class="logo-box">
                 <a href="index.php" aria-label="logo image">
-                    <img src="<?php echo $domain ?>/assets/images/logo-light.png" width="230" alt="Visanet HTML" />
+                    <img src="<?php echo $domain ?>/assets/images/logo-light.png" width="230" alt="<?php echo $sitename?>@gmail.comHTML" />
                 </a>
             </div><!-- /.logo-box -->
             <div class="mobile-nav__container"></div><!-- /.mobile-nav__container -->

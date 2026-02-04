@@ -1,16 +1,17 @@
+<?php  include "../server/connection.php"?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quick Visa Processing || Visanet  </title>
+    <title>Family Visa || <?php echo $sitename?> </title>
     <!-- favicons Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="<?php echo $domain ?>/assets/images/favicons/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="<?php echo $domain ?>/assets/images/favicons/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="<?php echo $domain ?>/assets/images/favicons/favicon-16x16.png" />
     <link rel="manifest" href="<?php echo $domain ?>/assets/images/favicons/site.webmanifest" />
-    <meta name="description" content="VisaNet is a Immigration and Visa Consulting HTML Template. Created especially designed for Immigration & Visa Consulting Agencies, Visa Agents, Study Abroad Consultants, Overseas Job Consultants, IELTS Coaching Centers, and Travel & Tourism Businesses. VisaNet Immigration and Visa Consulting Design and customizable features make it perfect for on various displays and resolutions website. All HTML files are with layers and groups, so they are very easy to modify & expand." />
+    <meta name="description" content="<?php echo $sitename?>is a Immigration and Visa Consulting HTML Template. Created especially designed for Immigration & Visa Consulting Agencies, Visa Agents, Study Abroad Consultants, Overseas Job Consultants, IELTS Coaching Centers, and Travel & Tourism Businesses. <?php echo $sitename?>Immigration and Visa Consulting Design and customizable features make it perfect for on various displays and resolutions website. All HTML files are with layers and groups, so they are very easy to modify & expand." />
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,136 +42,10 @@
     <div class="custom-cursor__cursor"></div>
     <div class="custom-cursor__cursor-two"></div>
 
-    <div class="preloader">
-        <div class="preloader__image" style="background-image: url(<?php echo $domain ?>/assets/images/loader.png);"></div>
-    </div>
-    <!-- /.preloader -->
-    <div class="page-wrapper">
-        <div class="topbar">
-            <div class="container">
-                <div class="topbar__inner">
-                    <div class="topbar__social">
-                        <p class="topbar__social__title">Follow us:</p>
-                        <div class="social-links">
-                            <a href="https://facebook.com">
-                                <span class="social-links__icon">
-                                    <i class="fab fa-facebook-f" aria-hidden="true"></i>
-                                    <span class="sr-only">Facebook</span>
-                                </span>
-                            </a>
-                            <a href="https://x.com">
-                                <span class="social-links__icon">
-                                    <i class="fab fa-twitter" aria-hidden="true"></i>
-                                    <span class="sr-only">X</span>
-                                </span>
-                            </a>
-                            <a href="https://linkedin.com">
-                                <span class="social-links__icon">
-                                    <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-                                    <span class="sr-only">Linkedin</span>
-                                </span>
-                            </a>
-                            <a href="https://instagram.com">
-                                <span class="social-links__icon">
-                                    <i class="fab fa-instagram" aria-hidden="true"></i>
-                                    <span class="sr-only">Instagram</span>
-                                </span>
-                            </a>
-                        </div><!-- /.social-links -->
-                    </div><!-- /.topbar__social -->
-                    <div class="topbar__right">
-                        <ul class="topbar__info list-unstyled">
-                            <li>
-                                <span class="topbar__info__icon"><i class="icon-email"></i></span>
-                                <span><a href="mailto:visanet@envato.com">visanet@envato.com</a></span>
-                            </li>
-                            <li>
-                                <span class="topbar__info__icon"><i class="icon-location"></i></span>
-                                <span><a href="https://www.google.com/maps">25/09 Mozilla Golden Street</a></span>
-                            </li>
-                        </ul><!-- /.topbar__info -->
-                        <div class="topbar__language">
-                            <img src="<?php echo $domain ?>/assets/images/shapes/flag-1-1.png" alt="flag">
-                            <label class="sr-only" for="language-select-header">select language</label>
-                            <select class="selectpicker" id="language-select-header">
-                                <option value="english">English</option>
-                                <option value="arabic">Arabic</option>
-                            </select>
-                        </div><!-- /.topbar__language -->
-                    </div><!-- /.topbar__right -->
-                </div><!-- /.topbar__inner -->
-            </div><!-- /.container -->
-        </div><!-- /.topbar -->
-          <header class="main-header main-header--two sticky-header sticky-header--one-page">
-            <div class="container main-header__container">
-                <div class="main-header__inner">
-                    <div class="main-header__left">
-                        <div class="main-header__logo logo-retina">
-                            <a href="index.html">
-                                <img src="<?php echo $domain ?>/assets/images/logo-light.png" alt="Visanet HTML" width="230">
-                            </a>
-                        </div><!-- /.main-header__logo -->
-                    </div><!-- /.main-header__left -->
-                    <div class="main-header__right">
-                        <div class="main-header__top">
-                            <div class="main-header__info">
-                                <span class="main-header__info__title">News:</span>
-                                <p class="main-header__info__text">I can’t browse the internet live, but this summary <span>reflects</span> the most recent .....</p>
-                            </div><!-- /.main-header__info -->
-                            <a href="contact.html" class="visanet-btn-two">
-                                Appointment <span class="visanet-btn-two__icon"><i class="icon-arrow-right-3"></i></span>
-                            </a><!-- /.visanet-btn-two -->
-                        </div><!-- /.main-header__top -->
-                        <div class="main-header__bottom">
-                            <nav class="main-header__nav main-menu">
-                                <ul class="main-menu__list one-page-scroll-menu">
-                                    <li class="  scrollToLink current">
-                                        <a href="index.html#home">Home</a>
-                                        <ul>
+             <!-- header started -->
+     <?php include("../include/nav.php")?>
 
-                                        
-
-                                        </ul>
-                                    </li>
-                                    <li class="scrollToLink"><a href="index.html#about">About</a></li>
-                                    <li class="scrollToLink"><a href="index.html#visa">Visa</a></li>
-                                    <li class="scrollToLink"><a href="countries.html">Countries</a></li>
-                                    <li class="scrollToLink"><a href="index.html#gallery">Gallery</a></li>
-                                    <li class="scrollToLink"><a href="contact.html">Contact us</a></li>
-                                    <li class="scrollToLink"><a href="index.html#blog">Blog</a></li>
-                                </ul>
-                            </nav><!-- /.main-header__nav -->
-                            
-                            <div class="main-header__right__right">
-                                <div class="mobile-nav__btn mobile-nav__toggler">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                </div><!-- /.mobile-nav__toggler -->
-                                <a href="index.html#" class="main-header__search search-toggler">
-                                    <i class="icon-search" aria-hidden="true"></i>
-                                    <span class="sr-only">Search</span>
-                                </a><!-- /.main-header__search -->
-                                <a href="cart.html" class="main-header__cart">
-                                    <i class="icon-trolley-cart" aria-hidden="true"></i>
-                                    <span class="sr-only">Trolley Cart</span>
-                                    <span class="main-header__cart__quantity">02</span>
-                                </a><!-- /.main-header__cart -->
-                                <div class="main-header__call">
-                                    <span class="main-header__call__icon">
-                                        <i class="icon-phone-call"></i>
-                                    </span><!-- /.main-header__call__icon -->
-                                    <div class="main-header__call__content">
-                                        <p class="main-header__call__title">Call Any Time</p>
-                                        <a href="tel:+55222555255" class="main-header__call__number">+55 222 555 255</a>
-                                    </div><!-- /.main-header__call__content -->
-                                </div><!-- /.main-header__call -->
-                            </div><!-- /.main-header__right__right -->
-                        </div><!-- /.main-header__bottom -->
-                    </div><!-- /.main-header__right -->
-                </div><!-- /.main-header__inner -->
-            </div><!-- /.container -->
-        </header><!-- /.main-header -->
+       <!-- header ended -->
 
         <section class="page-header">
             <div class="page-header__bg" style="background-image: url(<?php echo $domain ?>/assets/images/backgrounds/page-header-bg.jpg);"></div><!-- /.page-header__bg -->
@@ -178,11 +53,11 @@
             <div class="page-header__shape page-header__shape--2"></div><!-- /.page-header__shape -->
             <div class="container">
                 <div class="page-header__content">
-                    <h2 class="page-header__title" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300">Quick Visa Processing</h2>
+                    <h2 class="page-header__title" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300">Family Visa</h2>
                     <ul class="visanet-breadcrumb list-unstyled" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="200">
                         <li><a href="index.html">Home</a></li>
                         <li><span>Visa</span></li>
-                        <li><span>Quick Visa Processing</span></li>
+                        <li><span>Family Visa</span></li>
                     </ul><!-- /.visanet-breadcrumb list-unstyled -->
                 </div><!-- /.page-header__content -->
             </div><!-- /.container -->
@@ -195,27 +70,24 @@
                         <div class="visa-details__pages">
                             <h3 class="visa-details__pages__title">Visa Details:</h3>
                             <ul class="list-unstyled visa-details__nav">
-                                <li><a href="visa-d-business-visa.html">Quick Visa Processing
+                                <li><a href="<?php echo $domain ?>/business_visa/">Family Visa
                                         <span class="visa-details__nav__icon"><i class="icon-arrow-right-2"></i></span>
                                     </a>
                                 </li>
-                                <li><a href="visa-d-visa-processing.html">Quick Visa Processing
+                                <!--  -->
+                                <li><a href="<?php echo $domain ?>/immigration_visa/">Immigration Visa
                                         <span class="visa-details__nav__icon"><i class="icon-arrow-right-2"></i></span>
                                     </a>
                                 </li>
-                                <li><a href="visa-d-immigration-visa.html">Immigration Visa
+                                <li><a href="<?php echo $domain ?>/family_visa/">Family Visa
                                         <span class="visa-details__nav__icon"><i class="icon-arrow-right-2"></i></span>
                                     </a>
                                 </li>
-                                <li><a href="visa-d-family-visa.html">Family Visa
+                                <li><a href="<?php echo $domain ?>/student_visa/">Students Visa
                                         <span class="visa-details__nav__icon"><i class="icon-arrow-right-2"></i></span>
                                     </a>
                                 </li>
-                                <li><a href="visa-d-students-visa.html">Students Visa
-                                        <span class="visa-details__nav__icon"><i class="icon-arrow-right-2"></i></span>
-                                    </a>
-                                </li>
-                                <li><a href="visa-d-travel-visa.html">Travel Visa
+                                <li><a href="<?php echo $domain ?>/travel_visa/">Travel Visa
                                         <span class="visa-details__nav__icon"><i class="icon-arrow-right-2"></i></span>
                                     </a>
                                 </li>
@@ -224,13 +96,13 @@
                     </div><!-- /.col-xl-4 -->
                     <div class="col-xl-8 col-lg-7" data-aos="fade-left" data-aos-anchor-placement="top-bottom" data-aos-duration="1300">
                         <div class="visa-details__image">
-                            <img src="<?php echo $domain ?>/assets/images/visa/visa-d-2.jpg" alt="visa details">
+                            <img src="<?php echo $domain ?>/assets/images/visa/visa-d-4.jpg" alt="visa details">
                         </div><!-- /.visa-details__image -->
                     </div><!-- /.col-xl-8 -->
                 </div><!-- /.row -->
                 <div class="visa-details__content">
                     <div class="visa-details__box">
-                        <h3 class="visa-details__title" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300">Quick Visa Processing</h3><!-- /.visa-details__title -->
+                        <h3 class="visa-details__title" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300">Family Visa</h3><!-- /.visa-details__title -->
                         <p class="visa-details__text" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300">
                             Business tailored design, management & support visa Business  free text available in the market lasting relationships with our clients based on trust and mutual success. Whether you’re a startup looking to establish your brand, a growing company seeking to scale operations solution being able to do what but the majority time you put aside to be in our office. Lorem ipsum dolor sit amet, consectet of to lorem ipsum dolor busness planing solution this best business agency elit, sed do eiusmod tempor  majority have this best we are solution toil & pain can procure him some great.
                         </p><!-- /.visa-details__text -->
@@ -366,10 +238,10 @@
                     <div class="col-xl-3 col-lg-5 col-md-7" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="100">
                         <div class="footer-widget footer-widget--about">
                             <a href="index.html" class="footer-widget__logo logo-retina">
-                                <img src="<?php echo $domain ?>/assets/images/logo-light.png" width="230" alt="Visanet HTML Template">
+                                <img src="<?php echo $domain ?>/assets/images/logo-light.png" width="230" alt="<?php echo $sitename?>HTML Template">
                             </a>
                             <p class="footer-widget__text">
-                                VisaNet is a modern HTML template built for immigration and visa consulting agencies, study abroad consultants, visa agents, and travel or overseas job services.
+                                <?php echo $sitename?>is a modern HTML template built for immigration and visa consulting agencies, study abroad consultants, visa agents, and travel or overseas job services.
                             </p>
                             <div class="social-links">
                                 <a href="https://facebook.com">
@@ -455,7 +327,7 @@
                 <div class="container">
                     <div class="main-footer__bottom__inner">
                         <p class="main-footer__copyright">
-                            &copy; Copyright <span class="dynamic-year"></span> by Visanet HTML Template.
+                            &copy; Copyright <span class="dynamic-year"></span> by <?php echo $sitename?>HTML Template.
                         </p>
                         <ul class="main-footer__page list-unstyled">
                             <li><a href="about.html">Privacy</a></li>
@@ -475,7 +347,7 @@
             <span class="mobile-nav__close mobile-nav__toggler"><i class="icon-close"></i></span>
             <div class="logo-box">
                 <a href="index.html" aria-label="logo image">
-                    <img src="<?php echo $domain ?>/assets/images/logo-light.png" width="230" alt="Visanet HTML" />
+                    <img src="<?php echo $domain ?>/assets/images/logo-light.png" width="230" alt="<?php echo $sitename?>HTML" />
                 </a>
             </div><!-- /.logo-box -->
             <div class="mobile-nav__container"></div><!-- /.mobile-nav__container -->
@@ -520,7 +392,7 @@
     <div class="search-popup">
         <div class="search-popup__overlay search-toggler"></div>
         <div class="search-popup__content">
-            <form role="search" method="get" class="search-popup__form" action="visa-d-visa-processing.html#">
+            <form role="search" method="get" class="search-popup__form" action="visa-d-family-visa.html#">
                 <input type="text" id="search" placeholder="Search Here..." />
                 <button type="submit" aria-label="search submit">
                     <i class="icon-search"></i>
@@ -534,12 +406,12 @@
             <span class="sidebar-three__close sidebar-btn__toggler"><i class="icon-close"></i></span>
             <div class="sidebar-three__logo sidebar-three__item logo-retina">
                 <a href="index.html" aria-label="logo image">
-                    <img src="<?php echo $domain ?>/assets/images/logo-dark.png" width="230" alt="Visanet HTML" />
+                    <img src="<?php echo $domain ?>/assets/images/logo-dark.png" width="230" alt="<?php echo $sitename?>HTML" />
                 </a>
             </div><!-- /.sidebar-three__logo -->
             <div class="sidebar-three__about sidebar-three__item">
                 <p class="sidebar-three__about__text">
-                    VisaNet is a modern HTML template built for immigration and visa consulting agencies, study abroad consultants, visa agents, and travel or overseas job services.
+                    <?php echo $sitename?>is a modern HTML template built for immigration and visa consulting agencies, study abroad consultants, visa agents, and travel or overseas job services.
                 </p>
             </div><!-- /.sidebar-three__about -->
             <div class="sidebar-three__info sidebar-three__item">
@@ -594,7 +466,7 @@
             </div><!-- /.sidebar-three__social -->
             <div class="sidebar-three__newsletter sidebar-three__item">
                 <label class="sidebar-three__title" for="sidebar-three-email">Newsletter</label>
-                <form action="visa-d-visa-processing.html#" class="sidebar-three__newsletter__inner mc-form" data-url="MAILCHIMP_FORM_URL">
+                <form action="visa-d-family-visa.html#" class="sidebar-three__newsletter__inner mc-form" data-url="MAILCHIMP_FORM_URL">
                     <input type="email" name="EMAIL" id="sidebar-three-email" class="sidebar-three__newsletter__input" placeholder="Email Address">
                     <button type="submit" class="sidebar-three__newsletter__btn"><span class="far fa-envelope" aria-hidden="true"></span></button>
                 </form>
@@ -603,7 +475,7 @@
         </div><!-- /.sidebar-three__content -->
     </aside><!-- /.sidebar-three -->
 
-    <a href="visa-d-visa-processing.html#" data-target="html" class="scroll-to-target scroll-to-top">
+    <a href="visa-d-family-visa.html#" data-target="html" class="scroll-to-target scroll-to-top">
         <span class="scroll-to-top__text">back top</span>
         <span class="scroll-to-top__wrapper"><span class="scroll-to-top__inner"></span></span>
     </a>
