@@ -1,4 +1,4 @@
-<?php include "../server/connection.php"; ?>
+<?php include "../server/connection.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,7 +27,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <style>
-        /* keep select/date matching your theme */
+        /* Make select and date look like your input */
         select.form-one__input,
         input[type="date"].form-one__input {
             height: 60px;
@@ -74,97 +74,92 @@
             margin: 0 0 12px 0;
         }
 
-        /* ===========================================
-           ✅ FORCE TWO COLUMNS ON SYSTEM (DESKTOP)
-           ✅ MOBILE ONE COLUMN
-           (High specificity + !important to override theme)
-           =========================================== */
-        .checkout-page__form .form-one .form-one__group {
-            display: flex !important;
-            flex-wrap: wrap !important;
-            gap: 30px !important;
-        }
-
-        .checkout-page__form .form-one .form-one__group>.form-one__control {
-            flex: 0 0 calc(50% - 15px) !important;
-            max-width: calc(50% - 15px) !important;
-            width: calc(50% - 15px) !important;
-        }
-
-        .checkout-page__form .form-one .form-one__group>.form-one__control.form-one__control--full {
-            flex: 0 0 100% !important;
-            max-width: 100% !important;
-            width: 100% !important;
-        }
-
-        @media (max-width: 768px) {
-            .checkout-page__form .form-one .form-one__group>.form-one__control {
-                flex: 0 0 100% !important;
-                max-width: 100% !important;
-                width: 100% !important;
-            }
-        }
-
-        /* =========================
-           ✅ FILE INPUT (ONE ONLY)
-           - Full width only
-           ========================= */
-        .file-field {
-            position: relative;
-        }
-
-        .file-field__label {
-            display: block;
-            font-size: 13px;
-            margin-bottom: 6px;
-        }
-
-        .file-field input[type="file"] {
-            position: absolute;
-            inset: 0;
-            opacity: 0;
-            cursor: pointer;
-            width: 100%;
+        /* ✅ BEAUTIFUL FILE UPLOAD (aligned like other fields) */
+        .upload-box {
+            border: 1px dashed #dcdcdc;
+            border-radius: 12px;
             height: 60px;
-        }
-
-        .file-field__fake {
-            height: 60px;
-            width: 100%;
-            border-radius: 10px;
-            border: 1px solid #e6e6e6;
-            padding: 0 16px;
-            background: #fff;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            padding: 0 14px;
+            background: #fff;
+            cursor: pointer;
+            transition: .2s ease;
+        }
+
+        .upload-box:hover {
+            border-color: #cfcfcf;
+        }
+
+        .upload-box__left {
+            display: inline-flex;
+            align-items: center;
             gap: 10px;
+            min-width: 0;
         }
 
-        .file-field__fake span {
-            font-size: 14px;
-            color: #555;
-            overflow: hidden;
+        .upload-box__icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            border: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 auto;
+        }
+
+        .upload-box__text {
+            min-width: 0;
+        }
+
+        .upload-box__title {
+            font-size: 13px;
+            margin: 0;
+            line-height: 1.1;
+        }
+
+        .upload-box__file {
+            font-size: 12px;
+            opacity: 0.75;
+            margin: 0;
             white-space: nowrap;
+            overflow: hidden;
             text-overflow: ellipsis;
+            max-width: 280px;
         }
 
-        .file-field__btn {
+        .upload-box__btn {
+            height: 40px;
+            padding: 0 14px;
+            border-radius: 10px;
+            border: 1px solid #eee;
+            background: #fafafa;
+            font-size: 13px;
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 10px 14px;
-            border-radius: 10px;
-            border: 1px solid #e6e6e6;
-            background: #f7f7f7;
-            font-size: 14px;
-            color: #333;
-            flex-shrink: 0;
+        }
+
+        .upload-hidden-input {
+            position: absolute;
+            left: -9999px;
+            width: 1px;
+            height: 1px;
+            opacity: 0;
+        }
+
+        .upload-note {
+            font-size: 12px;
+            opacity: .7;
+            margin-top: 6px;
         }
     </style>
 </head>
 
 <body class="custom-cursor">
+
     <div class="custom-cursor__cursor"></div>
     <div class="custom-cursor__cursor-two"></div>
 
@@ -174,19 +169,23 @@
         <div class="container">
 
             <form id="visaWizardForm" class="checkout-page__form" enctype="multipart/form-data" novalidate>
+                <!-- keep visa type & country -->
                 <input type="hidden" id="visa_type" name="visa_type" value="">
                 <input type="hidden" id="selected_country" name="selected_country" value="">
                 <input type="hidden" id="entry_source" name="entry_source" value="">
 
+                <!-- Progress -->
                 <div class="checkout-page__your-order" style="margin-bottom:20px;">
                     <h2 class="checkout-page__title">Visa Application Form</h2>
+
                     <div id="selectedPreview" style="margin:8px 0 0 0;"></div>
+
                     <p id="wizardStatus" style="margin:10px 0 0 0;">
                         Step <span id="stepNumber">1</span> of <span id="stepTotal">4</span>
                     </p>
                 </div>
 
-                <!-- STEP 0 -->
+                <!-- STEP 0: ENTRY STEP -->
                 <div class="visa-step" data-step="0" style="display:none;">
                     <h2 class="checkout-page__title">Start Application</h2>
 
@@ -230,7 +229,7 @@
 
                 <!-- STEP 1 -->
                 <div class="visa-step" data-step="1">
-                    <h2 class="checkout-page__title"> Applicant Personal Information</h2>
+                    <h2 class="checkout-page__title">1️⃣ Applicant Personal Information</h2>
 
                     <div class="form-one">
                         <div class="form-one__group">
@@ -294,7 +293,7 @@
 
                 <!-- STEP 2 -->
                 <div class="visa-step" data-step="2" style="display:none;">
-                    <h2 class="checkout-page__title"> Passport Information</h2>
+                    <h2 class="checkout-page__title">2️⃣ Passport Information</h2>
 
                     <div class="form-one">
                         <div class="form-one__group">
@@ -311,13 +310,11 @@
                                 <input type="text" name="passport_number" placeholder="Passport Number" class="form-one__input" required>
                             </div>
 
-                            <!-- ✅ issuing_country should be HALF -->
                             <div class="form-one__control">
                                 <input type="text" name="issuing_country" placeholder="Issuing Country" class="form-one__input" required>
                             </div>
 
-                            <!-- ✅ issuing_authority should be HALF (NOT full) -->
-                            <div class="form-one__control">
+                            <div class="form-one__control form-one__control--full">
                                 <input type="text" name="issuing_authority" placeholder="Issuing Authority" class="form-one__input" required>
                             </div>
 
@@ -335,6 +332,7 @@
                                 <input type="text" name="previous_passport_number" placeholder="Previous Passport Number (optional)" class="form-one__input">
                             </div>
 
+                            <!-- ✅ FIXED: name MUST be has_another_valid_passport -->
                             <div class="form-one__control">
                                 <select class="form-one__input" name="has_another_valid_passport" required>
                                     <option value="" selected>Do you have another valid passport?</option>
@@ -343,19 +341,38 @@
                                 </select>
                             </div>
 
-                            <!-- ✅ ONLY THIS UPLOAD IS FULL WIDTH -->
-                            <div class="form-one__control form-one__control--full file-field">
-                                <label class="file-field__label">Upload Passport (Bio-data page)</label>
+                            <!-- ✅ NICE FILE UPLOAD (NOT tattered) -->
+                            <div class="form-one__control form-one__control--full" style="position:relative;">
+                                <label style="display:block;font-size:13px;margin-bottom:5px;">Upload Passport (Bio-data page)</label>
 
-                                <div class="file-field__fake">
-                                    <span id="passportBioName">No file selected</span>
-                                    <span class="file-field__btn">
-                                        <i class="fa-solid fa-upload"></i> Choose File
-                                    </span>
+                                <!-- hidden real input -->
+                                <input
+                                    type="file"
+                                    id="passport_biodata"
+                                    name="passport_biodata"
+                                    class="upload-hidden-input"
+                                    accept=".jpg,.jpeg,.png,.webp,.pdf"
+                                    required
+                                >
+
+                                <!-- pretty UI -->
+                                <div class="upload-box" id="passportUploadBox" role="button" tabindex="0">
+                                    <div class="upload-box__left">
+                                        <div class="upload-box__icon">
+                                            <i class="fas fa-cloud-upload-alt"></i>
+                                        </div>
+                                        <div class="upload-box__text">
+                                            <p class="upload-box__title">Choose passport file</p>
+                                            <p class="upload-box__file" id="passportFileName">No file selected</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="upload-box__btn">
+                                        <i class="fas fa-folder-open"></i> Browse
+                                    </div>
                                 </div>
 
-                                <input type="file" name="passport_biodata" id="passport_biodata"
-                                    accept=".jpg,.jpeg,.png,.webp,.pdf" required>
+                                <div class="upload-note">Allowed: JPG, PNG, WEBP, PDF (Max 8MB)</div>
                             </div>
 
                         </div>
@@ -364,7 +381,7 @@
 
                 <!-- STEP 3 -->
                 <div class="visa-step" data-step="3" style="display:none;">
-                    <h2 class="checkout-page__title">Contact & Address Information</h2>
+                    <h2 class="checkout-page__title">3️⃣ Contact & Address Information</h2>
 
                     <div class="form-one">
                         <div class="form-one__group">
@@ -403,10 +420,11 @@
                     </div>
                 </div>
 
-                <!-- STEP 4 -->
+                <!-- STEP 4 (VISA TYPE DETAILS) -->
                 <div class="visa-step" data-step="4" style="display:none;">
-                    <h2 class="checkout-page__title">Visa Type Details</h2>
+                    <h2 class="checkout-page__title">4️⃣ Visa Type Details</h2>
 
+                    <!-- STUDENT -->
                     <div class="visa-type-box visa-type-section" data-visa="student" style="display:none;">
                         <h4>Student Visa Details</h4>
                         <div class="form-one">
@@ -421,6 +439,7 @@
                         </div>
                     </div>
 
+                    <!-- BUSINESS -->
                     <div class="visa-type-box visa-type-section" data-visa="business" style="display:none;">
                         <h4>Business Visa Details</h4>
                         <div class="form-one">
@@ -435,6 +454,7 @@
                         </div>
                     </div>
 
+                    <!-- FAMILY -->
                     <div class="visa-type-box visa-type-section" data-visa="family" style="display:none;">
                         <h4>Family Visa Details</h4>
                         <div class="form-one">
@@ -449,6 +469,7 @@
                         </div>
                     </div>
 
+                    <!-- TRAVEL -->
                     <div class="visa-type-box visa-type-section" data-visa="travel" style="display:none;">
                         <h4>Travel Visa Details</h4>
                         <div class="form-one">
@@ -465,6 +486,7 @@
                         </div>
                     </div>
 
+                    <!-- IMMIGRATION -->
                     <div class="visa-type-box visa-type-section" data-visa="immigration" style="display:none;">
                         <h4>Immigration Visa Details</h4>
                         <div class="form-one">
@@ -476,12 +498,15 @@
                         </div>
                     </div>
 
+                    <!-- PROCESSING -->
                     <div class="visa-type-box visa-type-section" data-visa="processing" style="display:none;">
                         <h4>Quick Visa Processing</h4>
                         <p style="margin:0;">No extra information is required for this step.</p>
                     </div>
+
                 </div>
 
+                <!-- Buttons -->
                 <div style="display:flex;gap:10px;margin-top:20px;">
                     <button type="button" id="prevBtn" class="visanet-btn-two" style="display:none;">
                         <span class="visanet-btn-two__icon"><i class="icon-arrow-right" style="transform:rotate(180deg);display:inline-block;"></i></span>
@@ -496,12 +521,14 @@
                         Submit <span class="visanet-btn-two__icon"><i class="icon-arrow-right"></i></span>
                     </button>
                 </div>
+
             </form>
 
         </div>
     </section>
 
     <?php include "../include/footer.php" ?>
+    </div>
 
     <script>
         (function() {
@@ -510,14 +537,40 @@
             const $ = (sel, root = document) => root.querySelector(sel);
             const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
+            // ✅ file upload UI handler
+            function initPassportUploadUI() {
+                const input = $("#passport_biodata");
+                const box = $("#passportUploadBox");
+                const nameEl = $("#passportFileName");
+                if (!input || !box || !nameEl) return;
+
+                const openPicker = () => input.click();
+
+                box.addEventListener("click", openPicker);
+                box.addEventListener("keydown", (e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        openPicker();
+                    }
+                });
+
+                input.addEventListener("change", () => {
+                    const f = input.files && input.files[0];
+                    nameEl.textContent = f ? f.name : "No file selected";
+                });
+            }
+
             function getQueryParam(name) {
                 const url = new URL(window.location.href);
                 return url.searchParams.get(name);
             }
 
             function loadState() {
-                try { return JSON.parse(localStorage.getItem(LS_KEY)) || {}; }
-                catch (e) { return {}; }
+                try {
+                    return JSON.parse(localStorage.getItem(LS_KEY)) || {};
+                } catch (e) {
+                    return {};
+                }
             }
 
             function saveState(state) {
@@ -528,7 +581,7 @@
                 const data = {};
                 const fd = new FormData(formEl);
                 for (const [key, value] of fd.entries()) {
-                    if (value instanceof File) continue;
+                    if (value instanceof File) continue; // don't store files in localStorage
                     data[key] = value;
                 }
                 return data;
@@ -540,7 +593,9 @@
                     const el = formEl.elements.namedItem(name);
                     if (!el) return;
                     if (el instanceof RadioNodeList) {
-                        Array.from(el).forEach(r => { if (r.value === data[name]) r.checked = true; });
+                        Array.from(el).forEach(r => {
+                            if (r.value === data[name]) r.checked = true;
+                        });
                     } else if (el.type === "checkbox") {
                         el.checked = data[name] === "on" || data[name] === "1" || data[name] === true;
                     } else {
@@ -580,7 +635,7 @@
                     if (el.hasAttribute("data-required")) el.required = false;
                 });
 
-                const active = document.querySelector(`.visa-type-section[data-visa="${v}"]`);
+                const active = $(`.visa-type-section[data-visa="${v}"]`);
                 if (active) {
                     active.style.display = "block";
                     $$("input, select, textarea", active).forEach(el => {
@@ -591,7 +646,7 @@
 
             function showStep(step, totalSteps) {
                 $$(".visa-step").forEach(s => s.style.display = "none");
-                const active = document.querySelector(`.visa-step[data-step="${step}"]`);
+                const active = $(`.visa-step[data-step="${step}"]`);
                 if (active) active.style.display = "block";
 
                 $("#stepNumber").textContent = step;
@@ -618,7 +673,7 @@
             }
 
             function validateStepWithSwal(step) {
-                const stepEl = document.querySelector(`.visa-step[data-step="${step}"]`);
+                const stepEl = $(`.visa-step[data-step="${step}"]`);
                 if (!stepEl) return true;
 
                 const fields = $$("input, select, textarea", stepEl)
@@ -658,15 +713,7 @@
                 const form = $("#visaWizardForm");
                 if (!form) return;
 
-                // ✅ show chosen passport file name
-                const bioInput = $("#passport_biodata");
-                const bioName = $("#passportBioName");
-                if (bioInput && bioName) {
-                    bioInput.addEventListener("change", () => {
-                        const f = bioInput.files && bioInput.files[0];
-                        bioName.textContent = f ? f.name : "No file selected";
-                    });
-                }
+                initPassportUploadUI();
 
                 const state = loadState();
 
@@ -674,8 +721,19 @@
                 const countryFromUrl = getQueryParam("country");
                 const entrySourceFromUrl = getQueryParam("from");
 
-                $("#visa_type").value = visaTypeFromUrl || state.visa_type || "";
-                $("#selected_country").value = countryFromUrl || state.selected_country || "";
+                // ✅ Force user to reselect depending on entry source
+                // From visa page => always ask country
+                // From country page => always ask visa type
+                if (entrySourceFromUrl === "visa_page") {
+                    $("#selected_country").value = ""; // force
+                }
+                if (entrySourceFromUrl === "country_page") {
+                    $("#visa_type").value = ""; // force
+                }
+
+                // load from URL or state AFTER forcing rules above
+                $("#visa_type").value = (entrySourceFromUrl === "country_page") ? "" : (visaTypeFromUrl || state.visa_type || "");
+                $("#selected_country").value = (entrySourceFromUrl === "visa_page") ? "" : (countryFromUrl || state.selected_country || "");
                 $("#entry_source").value = entrySourceFromUrl || state.entry_source || "";
 
                 if (state.form_data) setFormValues(form, state.form_data);
@@ -685,9 +743,10 @@
                 applyVisaTypeVisibility();
                 renderPreview();
 
+                // ✅ entry logic (now forced always)
                 const entrySource = $("#entry_source").value;
-                const needsCountry = (entrySource === "visa_page" && !$("#selected_country").value);
-                const needsVisaType = (entrySource === "country_page" && !$("#visa_type").value);
+                const needsCountry = (entrySource === "visa_page");      // always true for visa_page
+                const needsVisaType = (entrySource === "country_page");  // always true for country_page
 
                 if (needsCountry) {
                     $("#entryCountryBlock").style.display = "block";
@@ -735,28 +794,32 @@
                     applyVisaTypeVisibility();
                     renderPreview();
 
-                    saveState({
+                    const newState = {
                         visa_type: $("#visa_type").value,
                         selected_country: $("#selected_country").value,
                         entry_source: $("#entry_source").value || "unknown",
                         current_step: 1,
                         form_data: getFormDataObject(form)
-                    });
+                    };
+                    saveState(newState);
 
                     showStep(1, TOTAL);
                 });
 
                 $("#nextBtn").addEventListener("click", () => {
                     const step = parseInt($("#stepNumber").textContent, 10);
+                    if (step === 4) applyVisaTypeVisibility();
+
                     if (!validateStepWithSwal(step)) return;
 
-                    saveState({
+                    const newState = {
                         visa_type: $("#visa_type").value,
                         selected_country: $("#selected_country").value,
                         entry_source: $("#entry_source").value,
                         current_step: step + 1,
                         form_data: getFormDataObject(form)
-                    });
+                    };
+                    saveState(newState);
 
                     showStep(step + 1, TOTAL);
                 });
@@ -765,13 +828,14 @@
                     const step = parseInt($("#stepNumber").textContent, 10);
                     const prev = Math.max(1, step - 1);
 
-                    saveState({
+                    const newState = {
                         visa_type: $("#visa_type").value,
                         selected_country: $("#selected_country").value,
                         entry_source: $("#entry_source").value,
                         current_step: prev,
                         form_data: getFormDataObject(form)
-                    });
+                    };
+                    saveState(newState);
 
                     showStep(prev, TOTAL);
                 });
@@ -818,35 +882,38 @@
                         try { data = JSON.parse(raw); }
                         catch (e) { throw new Error("Server did not return JSON. First 200 chars: " + raw.slice(0, 200)); }
 
-                        if (!res.ok) throw new Error(data.message || (" Error " + res.statusText));
+                        if (!res.ok) throw new Error(data.message || ("HTTP Error " + res.status));
                         if (!data || data.ok !== true) throw new Error(data.message || "Submission failed.");
 
+                        //clear local storage after success
                         localStorage.removeItem(LS_KEY);
 
                         await Swal.fire({
                             icon: "success",
                             title: "Submitted Successfully!",
                             text: data.message || "Your visa application has been submitted."
-                        });
+                        })
 
                         setTimeout(() => {
-                            window.location.href = "../"
-                        }, 1000);
+                            location.href = "../"
+                        }, 1500);
 
+
+
+                        
                     } catch (err) {
                         Swal.fire({
                             icon: "error",
                             title: "Submission Failed",
-                            text: "Something went wrong. Please try again."
+                            text: err.message || "Something went wrong. Please try again."
                         });
                     }
                 });
-            
-            
             });
         })();
     </script>
 
+    <!-- Keep template scripts (template uses them) -->
     <script src="<?php echo $domain ?>/assets/vendors/jquery/jquery-3.7.1.min.js"></script>
     <script src="<?php echo $domain ?>/assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="<?php echo $domain ?>/assets/vendors/aos/js/aos.js"></script>
@@ -855,7 +922,8 @@
     <script src="<?php echo $domain ?>/assets/vendors/gsap/splittext.min.js"></script>
     <script src="<?php echo $domain ?>/assets/vendors/gsap/visanet-split.js"></script>
 
+    <!-- visanet.js must load AFTER jQuery -->
     <script src="<?php echo $domain ?>/assets/js/visanet.js"></script>
-</body>
 
+</body>
 </html>

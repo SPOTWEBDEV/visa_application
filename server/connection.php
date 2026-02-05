@@ -22,7 +22,7 @@ define("HOST", "localhost");
 if ($request === 'https') {
     $sitename = "PAIX VISA AND TOURIST SERVICE";
     $domain = "https://paix-vts.com/";
-    $site_email = "paix-vts";
+    $site_email = "support@paid-vts.com";
     define("USER", "");
     define("PASSWORD", "");
     define("DATABASE", "");
@@ -36,7 +36,7 @@ if ($request === 'https') {
 } elseif ($request === 'http') {
     $sitename = "PAIX VISA AND TOURIST Service";
     $domain = "http://localhost/visa_application";
-    $site_email = "paix-vts";
+    $site_email = "support@paid-vts.com";
     define("USER", "root");
     define("PASSWORD", "");
     define("DATABASE", "visa_application");
@@ -50,7 +50,7 @@ if ($request === 'https') {
 } else {
     $sitename = "PAIX VISA AND TOURIST SERVIC";
     $domain = "http://localhost/visa_application";
-    $site_email = "paix-vts";
+    $site_email = "support@paid-vts.com";
     define("USER", "root");
     define("PASSWORD", "");
     define("DATABASE", "visa_application");
