@@ -35,7 +35,7 @@
                            <ul class="topbar__info list-unstyled">
                                <li>
                                    <span class="topbar__info__icon"><i class="icon-email"></i></span>
-                                   <span><a href="mailto:<?php echo $sitename ?>@gmail.com"><?php echo $sitename ?>@gmail.com</a></span>
+                                   <span><a href="mailto:<?php echo $site_email ?>@gmail.com"><?php echo $site_email ?>@gmail.com</a></span>
                                </li>
                                <li>
                                    <span class="topbar__info__icon"><i class="icon-location"></i></span>
@@ -62,7 +62,7 @@
                        <div class="main-header__left">
                            <div class="main-header__logo logo-retina">
                                <a href="<?php echo $domain ?>/visa/">
-                                   <img src="<?php echo $domain ?>/assets/images/logo-light.png" alt="Visanet HTML" width="230">
+                                   <img height=100" src="<?php echo $domain ?>/assets/images/logo-light.png" alt="Visanet HTML" width="170">
                                </a>
                            </div><!-- /.main-header__logo -->
                        </div><!-- /.main-header__left -->
@@ -114,7 +114,7 @@
                                            class="btn btn-danger fw-semibold rounded-3 shadow-sm
           px-3 px-md-4 py-2
           d-none d-md-inline-flex align-items-center">
-                                           Checkout
+                                          Appointment
                                        </a>
 
 

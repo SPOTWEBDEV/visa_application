@@ -1,4 +1,6 @@
-<?php include "../server/connection.php" ?>
+<?php include "../server/connection.php"; 
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,7 +8,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Countries  || <?php echo $sitename?></title>
+    <title>Countries  || <?php echo $sitename ;?></title>
     <!-- favicons Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="<?php echo $domain ?>/assets/images/favicons/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="<?php echo $domain ?>/assets/images/favicons/favicon-32x32.png" />
@@ -68,12 +70,16 @@
                 <div class="sec-title sec-title--center">
                     <div class="sec-title__top" data-aos="fade-down" data-aos-anchor-placement="top-bottom" data-aos-duration="1500">
                         <span class="sec-title__icon sec-title__icon--left"><i class="icon-airplane"></i></span>
-                        <p class="sec-title__tagline">Countries We Offer</p>
+                        <p class="sec-title__tagline">Countries We Offer </p>
                         <span class="sec-title__icon sec-title__icon--right"><i class="icon-airplane-2"></i></span>
                     </div><!-- /.sec-title__top -->
                     <h2 class="sec-title__title bw-split-in-right">We Provide Expert Immigration And <br> Visa Consulting Destinations.</h2><!-- /.sec-title__title -->
                 </div><!-- /.sec-title -->
                 <div class="row gutter-y-30">
+
+                    <!-- ===================== -->
+                    <!-- UNITED STATES -->
+                    <!-- ===================== -->
                     <div class="col-12" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300">
                         <div class="countries-two__card">
                             <div class="row gutter-y-25 align-items-center">
@@ -83,7 +89,9 @@
                                             <img src="<?php echo $domain ?>/assets/images/countries/us.png" alt="US Flag" class="countries-two__flag">
                                             <p class="countries-two__label">Immigrate <br> To</p>
                                         </div><!-- /.countries-two__left__left -->
-                                        <h3 class="countries-two__name"><a href="countries_details/">United States</a></h3>
+                                        <h3 class="countries-two__name">
+                                            <a href="<?= $domain ?>/apply_now/?from=country_page&country=<?= urlencode('United States') ?>">United States</a>
+                                        </h3>
                                     </div><!-- /.countries-two__left -->
                                 </div><!-- /.col-lg-5 -->
                                 <div class="col-lg-7">
@@ -95,11 +103,11 @@
                                             <li><span class="countries-two__feature__icon"><i class="icon-checked"></i></span> 24/7 Support</li>
                                         </ul><!-- /.countries-two__feature -->
                                         <div class="countries-two__button">
-                                            <a href="countries_details/" class="visanet-btn visanet-btn--black">
+                                            <a href="<?= $domain ?>/apply_now/?from=country_page&country=<?= urlencode('United States') ?>" class="visanet-btn visanet-btn--black">
                                                 <span class="visanet-btn__icon-box">
                                                     <span class="visanet-btn__icon"><span><i class="icon-arrow-right-3"></i></span></span>
                                                 </span>
-                                                <span class="visanet-btn__text">See More</span>
+                                                <span class="visanet-btn__text">Appointment</span>
                                             </a><!-- /.visanet-btn -->
                                         </div><!-- /.countries-two__button -->
                                     </div><!-- /.countries-two__right -->
@@ -107,6 +115,10 @@
                             </div><!-- /.row -->
                         </div><!-- /.countries-two__card -->
                     </div><!-- /.col-12 -->
+
+                    <!-- ===================== -->
+                    <!-- UNITED KINGDOM -->
+                    <!-- ===================== -->
                     <div class="col-12" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300">
                         <div class="countries-two__card">
                             <div class="row gutter-y-25 align-items-center">
@@ -116,7 +128,9 @@
                                             <img src="<?php echo $domain ?>/assets/images/countries/uk.png" alt="UK Flag" class="countries-two__flag">
                                             <p class="countries-two__label">Immigrate <br> To</p>
                                         </div><!-- /.countries-two__left__left -->
-                                        <h3 class="countries-two__name"><a href="countries_details/">United Kingdom</a></h3>
+                                        <h3 class="countries-two__name">
+                                            <a href="<?= $domain ?>/apply_now/?from=country_page&country=<?= urlencode('United Kingdom') ?>">United Kingdom</a>
+                                        </h3>
                                     </div><!-- /.countries-two__left -->
                                 </div><!-- /.col-lg-5 -->
                                 <div class="col-lg-7">
@@ -128,11 +142,11 @@
                                             <li><span class="countries-two__feature__icon"><i class="icon-checked"></i></span> 24/7 Support</li>
                                         </ul><!-- /.countries-two__feature -->
                                         <div class="countries-two__button">
-                                            <a href="countries_details/" class="visanet-btn visanet-btn--black">
+                                            <a href="<?= $domain ?>/apply_now/?from=country_page&country=<?= urlencode('United Kingdom') ?>" class="visanet-btn visanet-btn--black">
                                                 <span class="visanet-btn__icon-box">
                                                     <span class="visanet-btn__icon"><span><i class="icon-arrow-right-3"></i></span></span>
                                                 </span>
-                                                <span class="visanet-btn__text">See More</span>
+                                                <span class="visanet-btn__text">Appointment</span>
                                             </a><!-- /.visanet-btn -->
                                         </div><!-- /.countries-two__button -->
                                     </div><!-- /.countries-two__right -->
@@ -140,6 +154,10 @@
                             </div><!-- /.row -->
                         </div><!-- /.countries-two__card -->
                     </div><!-- /.col-12 -->
+
+                    <!-- ===================== -->
+                    <!-- GERMANY -->
+                    <!-- ===================== -->
                     <div class="col-12" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300">
                         <div class="countries-two__card">
                             <div class="row gutter-y-25 align-items-center">
@@ -149,7 +167,9 @@
                                             <img src="<?php echo $domain ?>/assets/images/countries/germany.png" alt="Germany Flag" class="countries-two__flag">
                                             <p class="countries-two__label">Immigrate <br> To</p>
                                         </div><!-- /.countries-two__left__left -->
-                                        <h3 class="countries-two__name"><a href="countries_details/">Germany</a></h3>
+                                        <h3 class="countries-two__name">
+                                            <a href="<?= $domain ?>/apply_now/?from=country_page&country=<?= urlencode('Germany') ?>">Germany</a>
+                                        </h3>
                                     </div><!-- /.countries-two__left -->
                                 </div><!-- /.col-lg-5 -->
                                 <div class="col-lg-7">
@@ -161,11 +181,11 @@
                                             <li><span class="countries-two__feature__icon"><i class="icon-checked"></i></span> 24/7 Support</li>
                                         </ul><!-- /.countries-two__feature -->
                                         <div class="countries-two__button">
-                                            <a href="countries_details/" class="visanet-btn visanet-btn--black">
+                                            <a href="<?= $domain ?>/apply_now/?from=country_page&country=<?= urlencode('Germany') ?>" class="visanet-btn visanet-btn--black">
                                                 <span class="visanet-btn__icon-box">
                                                     <span class="visanet-btn__icon"><span><i class="icon-arrow-right-3"></i></span></span>
                                                 </span>
-                                                <span class="visanet-btn__text">See More</span>
+                                                <span class="visanet-btn__text">Appointment</span>
                                             </a><!-- /.visanet-btn -->
                                         </div><!-- /.countries-two__button -->
                                     </div><!-- /.countries-two__right -->
@@ -173,6 +193,10 @@
                             </div><!-- /.row -->
                         </div><!-- /.countries-two__card -->
                     </div><!-- /.col-12 -->
+
+                    <!-- ===================== -->
+                    <!-- PORTUGAL -->
+                    <!-- ===================== -->
                     <div class="col-12" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300">
                         <div class="countries-two__card">
                             <div class="row gutter-y-25 align-items-center">
@@ -182,7 +206,9 @@
                                             <img src="<?php echo $domain ?>/assets/images/countries/portugal.png" alt="Portugal Flag" class="countries-two__flag">
                                             <p class="countries-two__label">Immigrate <br> To</p>
                                         </div><!-- /.countries-two__left__left -->
-                                        <h3 class="countries-two__name"><a href="countries_details/">Portugal</a></h3>
+                                        <h3 class="countries-two__name">
+                                            <a href="<?= $domain ?>/apply_now/?from=country_page&country=<?= urlencode('Portugal') ?>">Portugal</a>
+                                        </h3>
                                     </div><!-- /.countries-two__left -->
                                 </div><!-- /.col-lg-5 -->
                                 <div class="col-lg-7">
@@ -194,11 +220,11 @@
                                             <li><span class="countries-two__feature__icon"><i class="icon-checked"></i></span> 24/7 Support</li>
                                         </ul><!-- /.countries-two__feature -->
                                         <div class="countries-two__button">
-                                            <a href="countries_details/" class="visanet-btn visanet-btn--black">
+                                            <a href="<?= $domain ?>/apply_now/?from=country_page&country=<?= urlencode('Portugal') ?>" class="visanet-btn visanet-btn--black">
                                                 <span class="visanet-btn__icon-box">
                                                     <span class="visanet-btn__icon"><span><i class="icon-arrow-right-3"></i></span></span>
                                                 </span>
-                                                <span class="visanet-btn__text">See More</span>
+                                                <span class="visanet-btn__text">Appointment</span>
                                             </a><!-- /.visanet-btn -->
                                         </div><!-- /.countries-two__button -->
                                     </div><!-- /.countries-two__right -->
@@ -206,6 +232,10 @@
                             </div><!-- /.row -->
                         </div><!-- /.countries-two__card -->
                     </div><!-- /.col-12 -->
+
+                    <!-- ===================== -->
+                    <!-- ARGENTINA -->
+                    <!-- ===================== -->
                     <div class="col-12" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300">
                         <div class="countries-two__card">
                             <div class="row gutter-y-25 align-items-center">
@@ -215,7 +245,9 @@
                                             <img src="<?php echo $domain ?>/assets/images/countries/argentina.png" alt="Argentina Flag" class="countries-two__flag">
                                             <p class="countries-two__label">Immigrate <br> To</p>
                                         </div><!-- /.countries-two__left__left -->
-                                        <h3 class="countries-two__name"><a href="countries_details/">Argentina</a></h3>
+                                        <h3 class="countries-two__name">
+                                            <a href="<?= $domain ?>/apply_now/?from=country_page&country=<?= urlencode('Argentina') ?>">Argentina</a>
+                                        </h3>
                                     </div><!-- /.countries-two__left -->
                                 </div><!-- /.col-lg-5 -->
                                 <div class="col-lg-7">
@@ -227,11 +259,11 @@
                                             <li><span class="countries-two__feature__icon"><i class="icon-checked"></i></span> 24/7 Support</li>
                                         </ul><!-- /.countries-two__feature -->
                                         <div class="countries-two__button">
-                                            <a href="countries_details/" class="visanet-btn visanet-btn--black">
+                                            <a href="<?= $domain ?>/apply_now/?from=country_page&country=<?= urlencode('Argentina') ?>" class="visanet-btn visanet-btn--black">
                                                 <span class="visanet-btn__icon-box">
                                                     <span class="visanet-btn__icon"><span><i class="icon-arrow-right-3"></i></span></span>
                                                 </span>
-                                                <span class="visanet-btn__text">See More</span>
+                                                <span class="visanet-btn__text">Appointment</span>
                                             </a><!-- /.visanet-btn -->
                                         </div><!-- /.countries-two__button -->
                                     </div><!-- /.countries-two__right -->
@@ -239,6 +271,7 @@
                             </div><!-- /.row -->
                         </div><!-- /.countries-two__card -->
                     </div><!-- /.col-12 -->
+
                 </div><!-- /.row -->
             </div><!-- /.container -->
         </section><!-- /.countries-two -->
@@ -585,3 +618,4 @@
 </body>
 
 </html>
+

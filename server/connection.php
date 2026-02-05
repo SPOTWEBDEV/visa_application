@@ -16,12 +16,13 @@ $currentUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" 
 
 
 $request = checkUrlProtocol($currentUrl);
-
 define("HOST", "localhost");
 
+
 if ($request === 'https') {
-    $sitename = "PAIX VISA AND TOURIST SERVIC";
-    $domain = "https://zentrapb.com";
+    $sitename = "PAIX VISA AND TOURIST SERVICE";
+    $domain = "https://paix-vts.com/";
+    $site_email = "paix-vts";
     define("USER", "");
     define("PASSWORD", "");
     define("DATABASE", "");
@@ -35,6 +36,7 @@ if ($request === 'https') {
 } elseif ($request === 'http') {
     $sitename = "PAIX VISA AND TOURIST Service";
     $domain = "http://localhost/visa_application";
+    $site_email = "paix-vts";
     define("USER", "root");
     define("PASSWORD", "");
     define("DATABASE", "visa_application");
@@ -48,6 +50,7 @@ if ($request === 'https') {
 } else {
     $sitename = "PAIX VISA AND TOURIST SERVIC";
     $domain = "http://localhost/visa_application";
+    $site_email = "paix-vts";
     define("USER", "root");
     define("PASSWORD", "");
     define("DATABASE", "visa_application");
