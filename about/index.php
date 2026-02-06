@@ -804,7 +804,7 @@
 
       
 
-        <?php include ".../include/footer.php" ?>
+        <?php include "../include/footer.php" ?>
     </div><!-- /.page-wrapper -->
 
     <div class="mobile-nav__wrapper">
