@@ -23,9 +23,9 @@ if ($request === 'https') {
     $sitename = "PAIX VISA AND TOURIST SERVICE";
     $domain = "https://paix-vts.com/";
     $site_email = "support@paid-vts.com";
-    define("USER", "");
-    define("PASSWORD", "");
-    define("DATABASE", "");
+    define("USER", "paixvtsc_paix_vts_visa");
+    define("PASSWORD", "paixvtsc_paix_vts_visa");
+    define("DATABASE", "paixvtsc_paix_vts_visa");
 
 
     $connection = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
