@@ -23,7 +23,7 @@ if ($request === 'https') {
     $sitename = "PAIX VISA AND TOURIST SERVICE";
     $domain = "https://paix-vts.com/";
     $site_email = "support@paid-vts.com";
-    define("USER", "paixvtsc_paix_vts_visa");
+    define("USER", "paixvtsc_paixvtsc_paix_vts_visa");
     define("PASSWORD", "paixvtsc_paix_vts_visa");
     define("DATABASE", "paixvtsc_paix_vts_visa");
 
