@@ -515,9 +515,9 @@
                             </div>
                         </div>
                         <div class="countries-three__content">
-                            <h3 class="countries-three__name"><a href="countries_details/">United States</a></h3>
+                            <h3 class="countries-three__name"><a href="<?= $domain ?>/countries/">United States</a></h3>
                             <p class="countries-three__text">Most Trusted Immigration and Visa Consultant locations.</p>
-                            <a href="countries_details/" class="countries-three__link">READ MORE <span class="countries-three__link__icon"><i class="icon-arrow-right-up"></i></span></a>
+                            <a href="<?= $domain ?>/countries/" class="countries-three__link">READ MORE <span class="countries-three__link__icon"><i class="icon-arrow-right-up"></i></span></a>
                         </div>
                     </div><!-- /.countries-three__card -->
                     <div class="countries-three__card" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="200">
@@ -528,9 +528,9 @@
                             </div>
                         </div>
                         <div class="countries-three__content">
-                            <h3 class="countries-three__name"><a href="countries_details/">Germany</a></h3>
+                            <h3 class="countries-three__name"><a href="<?= $domain ?>/countries/">Germany</a></h3>
                             <p class="countries-three__text">Most Trusted Immigration and Visa Consultant locations.</p>
-                            <a href="countries_details/" class="countries-three__link">READ MORE <span class="countries-three__link__icon"><i class="icon-arrow-right-up"></i></span></a>
+                            <a href="<?= $domain ?>/countries/" class="countries-three__link">READ MORE <span class="countries-three__link__icon"><i class="icon-arrow-right-up"></i></span></a>
                         </div>
                     </div><!-- /.countries-three__card -->
                     <div class="countries-three__card" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="300">
@@ -541,9 +541,9 @@
                             </div>
                         </div>
                         <div class="countries-three__content">
-                            <h3 class="countries-three__name"><a href="countries_details/">Portugal</a></h3>
+                            <h3 class="countries-three__name"><a href="<?= $domain ?>/countries/">Portugal</a></h3>
                             <p class="countries-three__text">Most Trusted Immigration and Visa Consultant locations.</p>
-                            <a href="countries_details/" class="countries-three__link">READ MORE <span class="countries-three__link__icon"><i class="icon-arrow-right-up"></i></span></a>
+                            <a href="<?= $domain ?>/countries/" class="countries-three__link">READ MORE <span class="countries-three__link__icon"><i class="icon-arrow-right-up"></i></span></a>
                         </div>
                     </div><!-- /.countries-three__card -->
                     <div class="countries-three__card" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="400">
@@ -554,9 +554,9 @@
                             </div>
                         </div>
                         <div class="countries-three__content">
-                            <h3 class="countries-three__name"><a href="countries_details/">Argentina</a></h3>
+                            <h3 class="countries-three__name"><a href="<?= $domain ?>/countries/">Argentina</a></h3>
                             <p class="countries-three__text">Most Trusted Immigration and Visa Consultant locations.</p>
-                            <a href="countries_details/" class="countries-three__link">READ MORE <span class="countries-three__link__icon"><i class="icon-arrow-right-up"></i></span></a>
+                            <a href="<?= $domain ?>/countries/" class="countries-three__link">READ MORE <span class="countries-three__link__icon"><i class="icon-arrow-right-up"></i></span></a>
                         </div>
                     </div><!-- /.countries-three__card -->
                     <div class="countries-three__card" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="500">
@@ -567,9 +567,9 @@
                             </div>
                         </div>
                         <div class="countries-three__content">
-                            <h3 class="countries-three__name"><a href="countries_details/">United Kingdom</a></h3>
+                            <h3 class="countries-three__name"><a href="<?= $domain ?>/countries/">United Kingdom</a></h3>
                             <p class="countries-three__text">Most Trusted Immigration and Visa Consultant locations.</p>
-                            <a href="countries_details/" class="countries-three__link">READ MORE <span class="countries-three__link__icon"><i class="icon-arrow-right-up"></i></span></a>
+                            <a href="<?= $domain ?>/countries/" class="countries-three__link">READ MORE <span class="countries-three__link__icon"><i class="icon-arrow-right-up"></i></span></a>
                         </div>
                     </div><!-- /.countries-three__card -->
                     <div class="countries-three__card" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="100">
@@ -580,9 +580,9 @@
                             </div>
                         </div>
                         <div class="countries-three__content">
-                            <h3 class="countries-three__name"><a href="countries_details/">United States</a></h3>
+                            <h3 class="countries-three__name"><a href="<?= $domain ?>/countries/">United States</a></h3>
                             <p class="countries-three__text">Most Trusted Immigration and Visa Consultant locations.</p>
-                            <a href="countries_details/" class="countries-three__link">READ MORE <span class="countries-three__link__icon"><i class="icon-arrow-right-up"></i></span></a>
+                            <a href="<?= $domain ?>/countries/" class="countries-three__link">READ MORE <span class="countries-three__link__icon"><i class="icon-arrow-right-up"></i></span></a>
                         </div>
                     </div><!-- /.countries-three__card -->
                     <div class="countries-three__card" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="200">
@@ -593,9 +593,9 @@
                             </div>
                         </div>
                         <div class="countries-three__content">
-                            <h3 class="countries-three__name"><a href="countries_details/">Germany</a></h3>
+                            <h3 class="countries-three__name"><a href="<?= $domain ?>/countries/">Germany</a></h3>
                             <p class="countries-three__text">Most Trusted Immigration and Visa Consultant locations.</p>
-                            <a href="countries_details/" class="countries-three__link">READ MORE <span class="countries-three__link__icon"><i class="icon-arrow-right-up"></i></span></a>
+                            <a href="<?= $domain ?>/countries/" class="countries-three__link">READ MORE <span class="countries-three__link__icon"><i class="icon-arrow-right-up"></i></span></a>
                         </div>
                     </div><!-- /.countries-three__card -->
                     <div class="countries-three__card" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="300">
@@ -606,9 +606,9 @@
                             </div>
                         </div>
                         <div class="countries-three__content">
-                            <h3 class="countries-three__name"><a href="countries_details/">Portugal</a></h3>
+                            <h3 class="countries-three__name"><a href="<?= $domain ?>/countries/">Portugal</a></h3>
                             <p class="countries-three__text">Most Trusted Immigration and Visa Consultant locations.</p>
-                            <a href="countries_details/" class="countries-three__link">READ MORE <span class="countries-three__link__icon"><i class="icon-arrow-right-up"></i></span></a>
+                            <a href="<?= $domain ?>/countries/" class="countries-three__link">READ MORE <span class="countries-three__link__icon"><i class="icon-arrow-right-up"></i></span></a>
                         </div>
                     </div><!-- /.countries-three__card -->
                     <div class="countries-three__card" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="400">
@@ -619,9 +619,9 @@
                             </div>
                         </div>
                         <div class="countries-three__content">
-                            <h3 class="countries-three__name"><a href="countries_details/">Argentina</a></h3>
+                            <h3 class="countries-three__name"><a href="<?= $domain ?>/countries/">Argentina</a></h3>
                             <p class="countries-three__text">Most Trusted Immigration and Visa Consultant locations.</p>
-                            <a href="countries_details/" class="countries-three__link">READ MORE <span class="countries-three__link__icon"><i class="icon-arrow-right-up"></i></span></a>
+                            <a href="<?= $domain ?>/countries/" class="countries-three__link">READ MORE <span class="countries-three__link__icon"><i class="icon-arrow-right-up"></i></span></a>
                         </div>
                     </div><!-- /.countries-three__card -->
                     <div class="countries-three__card" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="500">
@@ -632,9 +632,9 @@
                             </div>
                         </div>
                         <div class="countries-three__content">
-                            <h3 class="countries-three__name"><a href="countries_details/">United Kingdom</a></h3>
+                            <h3 class="countries-three__name"><a href="<?= $domain ?>/countries/">United Kingdom</a></h3>
                             <p class="countries-three__text">Most Trusted Immigration and Visa Consultant locations.</p>
-                            <a href="countries_details/" class="countries-three__link">READ MORE <span class="countries-three__link__icon"><i class="icon-arrow-right-up"></i></span></a>
+                            <a href="<?= $domain ?>/countries/" class="countries-three__link">READ MORE <span class="countries-three__link__icon"><i class="icon-arrow-right-up"></i></span></a>
                         </div>
                     </div><!-- /.countries-three__card -->
                 </div><!-- /.countries-three__carousel -->
@@ -820,11 +820,11 @@
             <ul class="mobile-nav__contact list-unstyled">
                 <li>
                     <span class="mobile-nav__contact__icon"><i class="fa fa-envelope"></i></span>
-                    <a href="mailto:findox@envato.com">visanet@envato.com</a>
+                    <a href="mailto:findox@envato.com"><?= $site_email ?></a>
                 </li>
                 <li>
                     <span class="mobile-nav__contact__icon"><i class="fa fa-phone-alt"></i></span>
-                    <a href="tel:+9156980036420">+91 5698 0036 420</a>
+                    <a href="tel:+9156980036420">  </a>
                 </li>
             </ul><!-- /.mobile-nav__contact -->
             <div class="social-links">
@@ -894,7 +894,7 @@
                         <span class="sidebar-three__info__icon">
                             <i class="icon-email"></i>
                         </span>
-                        <a href="mailto:visanet@envato.com">visanet@envato.com</a>
+                        <a href="mailto:<?= $site_email ?>"><?= $site_email ?></a>
                     </li>
                     <li>
                         <span class="sidebar-three__info__icon">

@@ -5,7 +5,7 @@
                     <div class="col-xl-3 col-lg-5 col-md-7" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300" data-aos-delay="100">
                         <div class="footer-widget footer-widget--about">
                             <a href="index.php" class="footer-widget__logo logo-retina">
-                                <img src="<?php echo $domain ?>/assets/images/logo-light.png"   alt="<?php echo $sitename ?> ">
+                                <img src="<?php echo $domain ?>/assets/images/logo-light.png" height="60"    alt="<?php echo $sitename ?> ">
                             </a>
                             <p class="footer-widget__text">
                                 <?php echo $sitename ?> built for immigration and visa consulting agencies, study abroad consultants, visa agents, and travel or overseas job services.

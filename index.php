@@ -1544,7 +1544,7 @@ include("./server/connection.php");
                 </li>
                 <li>
                     <span class="mobile-nav__contact__icon"><i class="fa fa-phone-alt"></i></span>
-                    <a href="tel:+9156980036420">+91 5698 0036 420</a>
+                    <a href="tel:+9156980036420">  </a>
                 </li>
             </ul><!-- /.mobile-nav__contact -->
             <div class="social-links">
