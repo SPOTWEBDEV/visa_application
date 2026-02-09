@@ -7,9 +7,29 @@ if (session_status() === PHP_SESSION_NONE) {
 
 if (!isset($_SESSION['admin_id'])) {
     header("location: ../");
+    exit;
 }
-// include('../../server/authorization/admin/index.php');
 
+
+function countVisa($connection, $table) {
+    $count = 0;
+    $sql = "SELECT COUNT(*) AS total FROM {$table}";
+    $res = mysqli_query($connection, $sql);
+    if ($res) {
+        $row = mysqli_fetch_assoc($res);
+        $count = (int)($row['total'] ?? 0);
+        mysqli_free_result($res);
+    }
+    return $count;
+}
+
+$business_count    = countVisa($connection, "business_visa_applications");
+$family_count      = countVisa($connection, "family_visa_applications");
+$immigration_count = countVisa($connection, "immigration_visa_applications");
+$student_count     = countVisa($connection, "student_visa_applications");
+$travel_count      = countVisa($connection, "travel_visa_applications");
+
+$total_applications = $business_count + $family_count + $immigration_count + $student_count + $travel_count;
 ?>
 
 <!DOCTYPE html>
@@ -79,10 +99,6 @@ if (!isset($_SESSION['admin_id'])) {
         <?php include("../includes/sidebar.php")  ?>
         <!--  END SIDEBAR  -->
 
-
-
-
-
         <!--  BEGIN CONTENT AREA  -->
         <div id="content" class="main-content">
             <div class="layout-px-spacing">
@@ -93,33 +109,20 @@ if (!isset($_SESSION['admin_id'])) {
                     </div>
                 </div>
 
-
-
                 <div class="row layout-top-spacing">
 
                     <div class="col-xl-5 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
                         <div class="widget widget-one">
                             <div class="widget-heading">
-                                <h6 class="">Users Statistics</h6>
+                                <h6 class="">Visa Statistics</h6>
                             </div>
 
-
-                            <?php
-                            // $sql = "SELECT COUNT(*) AS total_users FROM users";
-                            // $statement = $connection->prepare($sql);
-                            // $statement->execute();
-                            // $user = $statement->fetch();
-
-
-
-
-                            ?>
-
+                           
                             <div class="w-chart">
                                 <div class="w-chart-section">
                                     <div class="w-detail">
-                                        <p class="w-title">Total Users</p>
-                                        <p class="w-stats">0000</p>
+                                        <p class="w-title">Business visa</p>
+                                        <p class="w-stats"><?php echo number_format($business_count);?></p>
                                     </div>
                                     <div class="w-chart-render-one">
                                         <div id="total-users"></div>
@@ -127,19 +130,20 @@ if (!isset($_SESSION['admin_id'])) {
                                 </div>
 
 
-                                <?php
-                            //    $pending_withdrawals = $connection->prepare("SELECT COUNT(*) AS pending_withdrawals FROM withdrawals WHERE status = 'pending' ");
-                            //   $pending_withdrawals->execute();
-                            //    $pending_count =  $pending_withdrawals->fetch();
-
-
-
-                                ?>
-
-                                <div class="w-chart-section">
+                                <div  class="w-chart-section">
                                     <div class="w-detail">
-                                        <p class="w-title">Total Pending withdrawal</p>
-                                        <p class="w-stats">00 </p>
+                                        <p class="w-title">Family Visa</p>
+                                        <p class="w-stats"><?php echo number_format($family_count);?></p>
+                                    </div>
+                                    <div class="w-chart-render-one">
+                                        <div id="paid-visits"></div>
+                                    </div>
+                                </div>
+
+                                <div  class="w-chart-section">
+                                    <div class="w-detail">
+                                        <p class="w-title">Immigration Visa</p>
+                                        <p class="w-stats"><?php echo number_format($immigration_count);?></p>
                                     </div>
                                     <div class="w-chart-render-one">
                                         <div id="paid-visits"></div>
@@ -149,29 +153,13 @@ if (!isset($_SESSION['admin_id'])) {
                         </div>
                     </div>
 
-                    <?php
-                    // $active_investment = "SELECT COUNT(*) active_investment FROM user_investments";
-                    // $stm1 = $connection->prepare($active_investment);
-                    // $stm1->execute();
-                    // $active_Miners = $stm1->fetch();
-
-                    // $total_pending_deposits = $connection->prepare(
-                    //     "SELECT COUNT(*) AS pending_deposits FROM deposits WHERE status = 'pending'"
-                    // );
-                    // $total_pending_deposits->execute();
-                    // $pending = $total_pending_deposits->fetch();
-
-
-
-                    ?>
-
                     <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12 layout-spacing">
                         <div class="widget widget-account-invoice-two">
                             <div class="widget-content">
                                 <div class="account-box">
                                     <div class="info">
-                                        <h5 class="">Total Pending Deposit</h5>
-                                        <p class="inv-balance">0000</p>
+                                        <h5 class="">Student Visa</h5>
+                                        <p class="inv-balance"><?php echo number_format($student_count);?></p>
                                     </div>
 
                                 </div>
@@ -184,8 +172,8 @@ if (!isset($_SESSION['admin_id'])) {
                             <div class="widget-content">
                                 <div class="w-content">
                                     <div class="w-info">
-                                        <h6 class="value">000</h6>
-                                        <p class="">Total active investment </p>
+                                        <h6 class="value">Travel Visa</h6>
+                                        <p class=""><?php echo number_format($travel_count);?></p>
                                     </div>
                                     <div class="">
                                         <div class="w-icon">
@@ -208,6 +196,7 @@ if (!isset($_SESSION['admin_id'])) {
                         </div>
                     </div>
 
+                 
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
                         <div class="widget widget-chart-three">
                             <div class="widget-heading">
@@ -241,14 +230,12 @@ if (!isset($_SESSION['admin_id'])) {
                             </div>
                         </div>
                     </div>
-                    <!--  END CONTENT AREA  -->
-
 
                 </div>
 
                 <div class="footer-wrapper">
                     <div class="footer-section f-section-1">
-                        <p class="">Copyright © <script>document.write(new Date().getFullYear())</script><a  href="/"><?php echo  $sitename ?></a>, All rights
+                        <p class="">Copyright © <script>document.write(new Date().getFullYear())</script><a href="/"><?php echo  $sitename ?></a>, All rights
                             reserved.</p>
                     </div>
                     <div class="footer-section f-section-2">
@@ -262,145 +249,140 @@ if (!isset($_SESSION['admin_id'])) {
                     </div>
                 </div>
             </div>
-            <!--  END CONTENT AREA  -->
-
-
         </div>
-        <!-- END MAIN CONTAINER -->
+        <!--  END CONTENT AREA  -->
 
-        <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
-        <script src="../source/bootstrap/js/popper.min.js"></script>
-        <script src="../source/bootstrap/js/bootstrap.min.js"></script>
-        <script src="../source/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-        <script src="../source/assets/js/app.js"></script>
-        <script>
-            $(document).ready(function() {
-                App.init();
-            });
-        </script>
-        <script src="../source/assets/js/custom.js"></script>
-        <!-- END GLOBAL MANDATORY SCRIPTS -->
+    </div>
+    <!-- END MAIN CONTAINER -->
 
-        <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
-        <script src="../source/plugins/apex/apexcharts.min.js"></script>
-        <script src="../source/assets/js/dashboard/dash_1.js"></script>
-        <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
+    <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
+    <script src="../source/bootstrap/js/popper.min.js"></script>
+    <script src="../source/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../source/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="../source/assets/js/app.js"></script>
+    <script>
+        $(document).ready(function() {
+            App.init();
+        });
+    </script>
+    <script src="../source/assets/js/custom.js"></script>
+    <!-- END GLOBAL MANDATORY SCRIPTS -->
 
-        <script src="../source/plugins/dropify/dropify.min.js"></script>
-        <script src="../source/plugins/blockui/jquery.blockUI.min.js"></script>
-        <!-- <script src="plugins/tagInput/tags-input.js"></script> -->
-        <script src="../source/assets/js/users/account-settings.js"></script>
+    <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
+    <script src="../source/plugins/apex/apexcharts.min.js"></script>
+    <script src="../source/assets/js/dashboard/dash_1.js"></script>
+    <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
 
-        <!-- BEGIN PAGE LEVEL SCRIPTS -->
-        <script src="../source/plugins/highlight/highlight.pack.js"></script>
-        <script src="../source/plugins/table/datatable/datatables.js"></script>
-        <script src="../source/plugins/select2/select2.min.js"></script>
-        <script src="../source/plugins/select2/custom-select2.js"></script>
+    <script src="../source/plugins/dropify/dropify.min.js"></script>
+    <script src="../source/plugins/blockui/jquery.blockUI.min.js"></script>
+    <script src="../source/assets/js/users/account-settings.js"></script>
 
-        <script src="../source/plugins/sweetalerts/sweetalert2.min.js"></script>
-        <script src="../source/plugins/sweetalerts/custom-sweetalert.js"></script>
-        <script>
-            var ss = $(".basic").select2({
-                tags: true,
-            });
-        </script>
+    <!-- BEGIN PAGE LEVEL SCRIPTS -->
+    <script src="../source/plugins/highlight/highlight.pack.js"></script>
+    <script src="../source/plugins/table/datatable/datatables.js"></script>
+    <script src="../source/plugins/select2/select2.min.js"></script>
+    <script src="../source/plugins/select2/custom-select2.js"></script>
 
-        <script>
-            $('input').attr('autocomplete', 'off');
-        </script>
-        <script>
-            $('#default-ordering').DataTable({
-                "oLanguage": {
-                    "oPaginate": {
-                        "sPrevious": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>',
-                        "sNext": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>'
-                    },
-                    "sInfo": "Showing page _PAGE_ of _PAGES_",
-                    "sSearch": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>',
-                    "sSearchPlaceholder": "Search...",
-                    "sLengthMenu": "Results :  _MENU_",
+    <script src="../source/plugins/sweetalerts/sweetalert2.min.js"></script>
+    <script src="../source/plugins/sweetalerts/custom-sweetalert.js"></script>
+    <script>
+        var ss = $(".basic").select2({
+            tags: true,
+        });
+    </script>
+
+    <script>
+        $('input').attr('autocomplete', 'off');
+    </script>
+    <script>
+        $('#default-ordering').DataTable({
+            "oLanguage": {
+                "oPaginate": {
+                    "sPrevious": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>',
+                    "sNext": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>'
                 },
-                // "order": [[ 3, "desc" ]],
-                "stripeClasses": [],
-                "lengthMenu": [7, 10, 20, 50],
-                "pageLength": 7,
-                drawCallback: function() {
-                    $('.dataTables_paginate > .pagination').addClass(' pagination-style-13 pagination-bordered mb-5');
-                }
-            });
-        </script>
-
-        <script>
-            $(".edit-crypto").click(function(e) {
-                e.preventDefault();
-                $("#crypto_name").val($(this).data('name'));
-                $("#wallet_address").val($(this).data('wallet-address'));
-                $("#crypto_id").val($(this).data('id'));
-                $(".show-modal").click();
-            });
-        </script>
-
-        <script>
-            function toast(msg, type) {
-                return swal({
-                    type: type,
-                    title: type,
-                    text: msg,
-                    padding: "2em"
-                });
+                "sInfo": "Showing page _PAGE_ of _PAGES_",
+                "sSearch": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>',
+                "sSearchPlaceholder": "Search...",
+                "sLengthMenu": "Results :  _MENU_",
+            },
+            "stripeClasses": [],
+            "lengthMenu": [7, 10, 20, 50],
+            "pageLength": 7,
+            drawCallback: function() {
+                $('.dataTables_paginate > .pagination').addClass(' pagination-style-13 pagination-bordered mb-5');
             }
+        });
+    </script>
 
-            $(".delete-crypto-currency").on('click', function(e) {
-                e.preventDefault();
-                let crypto_id = $(this).data('id');
+    <script>
+        $(".edit-crypto").click(function(e) {
+            e.preventDefault();
+            $("#crypto_name").val($(this).data('name'));
+            $("#wallet_address").val($(this).data('wallet-address'));
+            $("#crypto_id").val($(this).data('id'));
+            $(".show-modal").click();
+        });
+    </script>
 
-                swal({
-                    title: 'Are you sure?',
-                    text: "You won't be able to revert this!",
-                    type: 'warning',
-                    showCancelButton: true,
-                    confirmButtonText: 'Delete',
-                    padding: '2em'
-                }).then(function(result) {
-                    if (result.value) {
-
-                        $.ajax({
-                            url: 'https://santaaccessfinance.netadmin/crypto-currrency.php',
-                            type: 'post',
-                            dataType: 'json',
-                            data: {
-                                'delete_crypto_currency': '',
-                                'crypto_currency_id': crypto_id
-                            },
-                            timeout: 45000,
-                            success: function(data) {
-                                console.log(data);
-
-
-                                if (data.error == 1) {
-                                    toast(data.msg, 'success');
-                                } else {
-                                    toast(data.msg, 'error');
-                                }
-
-                                setTimeout(function() {
-                                    window.location.href = 'https://santaaccessfinance.netadmin/crypto-currrency.php';
-                                }, 1000)
-                            },
-                            error: function(er) {
-                                // console.log(er.responseText);
-                                toast('error network', 'error');
-                            }
-                        });
-
-                    }
-                })
-
+    <script>
+        function toast(msg, type) {
+            return swal({
+                type: type,
+                title: type,
+                text: msg,
+                padding: "2em"
             });
-        </script>
+        }
 
+        $(".delete-crypto-currency").on('click', function(e) {
+            e.preventDefault();
+            let crypto_id = $(this).data('id');
 
-        <!-- END PAGE LEVEL SCRIPTS -->
+            swal({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Delete',
+                padding: '2em'
+            }).then(function(result) {
+                if (result.value) {
+
+                    $.ajax({
+                        url: 'https://santaaccessfinance.netadmin/crypto-currrency.php',
+                        type: 'post',
+                        dataType: 'json',
+                        data: {
+                            'delete_crypto_currency': '',
+                            'crypto_currency_id': crypto_id
+                        },
+                        timeout: 45000,
+                        success: function(data) {
+                            console.log(data);
+
+                            if (data.error == 1) {
+                                toast(data.msg, 'success');
+                            } else {
+                                toast(data.msg, 'error');
+                            }
+
+                            setTimeout(function() {
+                                window.location.href = 'https://santaaccessfinance.netadmin/crypto-currrency.php';
+                            }, 1000)
+                        },
+                        error: function(er) {
+                            toast('error network', 'error');
+                        }
+                    });
+
+                }
+            })
+
+        });
+    </script>
+
+    <!-- END PAGE LEVEL SCRIPTS -->
 
 </body>
 
