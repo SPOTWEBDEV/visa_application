@@ -1,4 +1,4 @@
-<?php include("../../server/connection.php") ?>
+<?php include("../server/connection.php") ?>
 
 
 <!DOCTYPE html>
