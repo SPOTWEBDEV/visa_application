@@ -83,7 +83,7 @@ if ($app && $app["found"]) {
     SELECT id, title, description, icon, event_date, is_payment, status
     FROM visa_application_timeline
     WHERE application_ref = ?
-    ORDER BY id ASC
+    ORDER BY created_at DESC
 ";
 
     $timeline_stmt = mysqli_prepare($connection, $timeline_sql);
@@ -98,7 +98,7 @@ if ($app && $app["found"]) {
 
             $event_date = $trow["event_date"]
                 ? date("d-m-Y", strtotime($trow["event_date"]))
-                : "Pending";
+                : "Not Set";
 
             $timeline[] = [
                 "date" => $event_date,
@@ -518,7 +518,7 @@ if ($app && $app["found"]) {
                                             <h4><?php echo h($t["title"]) ?></h4>
                                             <p><?php echo h($t["text"]) ?></p>
 
-                                            <?php if (!empty($t["is_payment"]) && $t["date"] === "Pending"): ?>
+                                            <?php if (!empty($t["is_payment"]) && $t["status"] === "pending"): ?>
                                                 <div class="pay-row">
                                                     <a class="pay-btn" href="<?php echo h($pay_url) ?>">
                                                         <i class="bi bi-shield-lock-fill"></i>

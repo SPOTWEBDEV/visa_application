@@ -1,13 +1,12 @@
 <?php
+
 include('../../server/connection.php');
 session_start();
 
-
-
-if (!isset($_SESSION['admin_id']) && $_SESSION['admin_id'] != true) echo "<script> window.location.href = '../' </script>";
-
-
-
+if (!isset($_SESSION['admin_id']) && $_SESSION['admin_id'] != true) {
+    echo "<script> window.location.href = '../' </script>";
+    exit;
+}
 
 if (!isset($_GET['ref'], $_GET['type'])) {
     die("Invalid request");
@@ -15,42 +14,126 @@ if (!isset($_GET['ref'], $_GET['type'])) {
 
 $ref = trim($_GET['ref']);
 $type = trim($_GET['type']);
-$table = trim($_GET['table'] ?? ''); // optional, for extra security
+$table = trim($_GET['table'] ?? '');
 
-// Whitelist allowed tables (VERY IMPORTANT)
 $allowedTables = ['business', 'tourist', 'family', 'student', 'work', 'vacation'];
 
 if (!in_array($type, $allowedTables)) {
     die("Invalid visa type");
 }
 
+/* ================= FETCH APPLICATION ================= */
 
-$sql = "SELECT * FROM `$table` WHERE application_ref = ?";
-$stmt = $connection->prepare($sql);
+$stmt = $connection->prepare("SELECT * FROM `$table` WHERE application_ref=?");
 $stmt->bind_param("s", $ref);
 $stmt->execute();
+
 $result = $stmt->get_result();
 
-if ($result->num_rows === 0) {
-    die("Application not found");
-}
+if ($result->num_rows === 0) die("Application not found");
 
 $fetch = $result->fetch_assoc();
 
+/* ================= FETCH TIMELINE ================= */
 
-function badgeColor($status)
-{
-    $map = [
-        'draft' => '#6c757d',
-        'submitted' => '#0d6efd',
-        'under_review' => '#ffc107',
-        'additional_documents_required' => '#fd7e14',
-        'approved' => '#198754',
-        'rejected' => '#dc3545',
-        'visa_issued' => '#20c997',
-    ];
-    return $map[$status] ?? '#6c757d';
+$timeline_stmt = $connection->prepare("
+SELECT *
+FROM visa_application_timeline
+WHERE application_ref=?
+ORDER BY created_at DESC
+");
+
+$timeline_stmt->bind_param("s", $fetch['application_ref']);
+$timeline_stmt->execute();
+
+$timeline_rows = $timeline_stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+
+/* ================= POST UPDATE ================= */
+
+if (isset($_POST['update_application'])) {
+
+    $ref = $_POST['application_ref'];
+
+    $arrival = $_POST['arrival_date'] ?? null;
+    $departure = $_POST['departure_date'] ?? null;
+    $cost = $_POST['estimated_travel_cost'] ?? null;
+
+    $visa_table = $fetch['visa_table'] ?? $table;
+
+    /* ✅ Update Application Table */
+
+    $stmt = $connection->prepare("
+        UPDATE {$visa_table}
+        SET arrival_date=?, departure_date=?, estimated_travel_cost=?
+        WHERE application_ref=?
+    ");
+
+    $stmt->bind_param("ssds", $arrival, $departure, $cost, $ref);
+    $stmt->execute();
+    $stmt->close();
+
+    /* ================= UPDATE TIMELINE ================= */
+
+    if (!empty($_POST['timeline_id'])) {
+
+        $ids = $_POST['timeline_id'];
+        $titles = $_POST['timeline_title'];
+        $descriptions = $_POST['timeline_description'];
+        $dates = $_POST['timeline_date'];
+        $statuses = $_POST['timeline_status'];
+
+        $count = count($ids);
+
+        for ($i = 0; $i < $count; $i++) {
+
+            $stmt = $connection->prepare("
+                UPDATE visa_application_timeline
+                SET title=?, description=?, event_date=?, status=?
+                WHERE id=? AND application_ref=?
+            ");
+
+            $event_date = !empty($dates[$i])
+                ? date("Y-m-d", strtotime($dates[$i]))
+                : null;
+
+            $stmt->bind_param(
+                "ssssss",
+                $titles[$i],
+                $descriptions[$i],
+                $event_date,
+                $statuses[$i],
+                $ids[$i],
+                $ref
+            );
+
+            $stmt->execute();
+            $stmt->close();
+        }
+    }
+
+    echo "<script>
+alert('Application Updated Successfully');
+window.location.href = window.location.href;
+</script>";
+
+    exit;
 }
+
+
+
+function safeValue($array, $key, $prefix = '', $suffix = '')
+{
+    if (!is_array($array)) return 'N/A';
+
+    if (array_key_exists($key, $array) && $array[$key] !== null && $array[$key] !== '') {
+        return $prefix . htmlspecialchars($array[$key]) . $suffix;
+    }
+
+    return 'N/A';
+}
+
+
+
 
 
 ?>
@@ -171,137 +254,311 @@ function badgeColor($status)
 
 
 
-                                            <div class="card mb-4">
-                                                <div class="card-header">
-                                                    <h5 class="mb-0">Personal Information</h5>
+                                            <div class="card shadow-sm mb-4">
+                                                <div class="card-header bg-dark text-white">
+                                                    <h5 class="mb-0">Visa Application Details</h5>
                                                 </div>
+
                                                 <div class="card-body">
 
+                                                    <!-- ================= PERSONAL INFO ================= -->
+                                                    <hr>
+                                                    <h6 class="mb-3 text-primary">Applicant Personal Information</h6>
+
                                                     <div class="row">
+
                                                         <div class="col-md-4 mb-3">
-                                                            <label class="form-label">First Name</label>
-                                                            <input type="text" class="form-control text-black" value="<?php echo htmlspecialchars($fetch['first_name']); ?>" readonly>
+                                                            <label>Status</label>
+                                                            <input class="form-control" value="<?= safeValue($fetch, 'status') ?>" readonly>
                                                         </div>
 
                                                         <div class="col-md-4 mb-3">
-                                                            <label class="form-label">Middle Name</label>
-                                                            <input type="text" class="form-control text-black" value="<?php echo htmlspecialchars($fetch['middle_name']); ?>" readonly>
+                                                            <label>First Name</label>
+                                                            <input class="form-control" value="<?= safeValue($fetch, 'first_name') ?>" readonly>
                                                         </div>
 
                                                         <div class="col-md-4 mb-3">
-                                                            <label class="form-label">Last Name</label>
-                                                            <input type="text" class="form-control text-black" value="<?php echo htmlspecialchars($fetch['last_name']); ?>" readonly>
+                                                            <label>Middle Name</label>
+                                                            <input class="form-control" value="<?= safeValue($fetch, 'middle_name') ?>" readonly>
                                                         </div>
 
                                                         <div class="col-md-4 mb-3">
-                                                            <label class="form-label">Gender</label>
-                                                            <input type="text" class="form-control text-black" value="<?php echo htmlspecialchars($fetch['gender']); ?>" readonly>
+                                                            <label>Last Name</label>
+                                                            <input class="form-control" value="<?= safeValue($fetch, 'last_name') ?>" readonly>
                                                         </div>
 
                                                         <div class="col-md-4 mb-3">
-                                                            <label class="form-label">Date of Birth</label>
-                                                            <input type="text" class="form-control text-black" value="<?php echo htmlspecialchars($fetch['date_of_birth']); ?>" readonly>
+                                                            <label>Gender</label>
+                                                            <input class="form-control" value="<?= safeValue($fetch, 'gender') ?>" readonly>
                                                         </div>
 
                                                         <div class="col-md-4 mb-3">
-                                                            <label class="form-label">Nationality</label>
-                                                            <input type="text" class="form-control text-black" value="<?php echo htmlspecialchars($fetch['nationality']); ?>" readonly>
+                                                            <label>Date of Birth</label>
+                                                            <input class="form-control" value="<?= safeValue($fetch, 'date_of_birth') ?>" readonly>
                                                         </div>
+
+                                                        <div class="col-md-4 mb-3">
+                                                            <label>Birth City</label>
+                                                            <input class="form-control" value="<?= safeValue($fetch, 'birth_city') ?>" readonly>
+                                                        </div>
+
+                                                        <div class="col-md-4 mb-3">
+                                                            <label>Birth Country</label>
+                                                            <input class="form-control" value="<?= safeValue($fetch, 'birth_country') ?>" readonly>
+                                                        </div>
+
+                                                        <div class="col-md-4 mb-3">
+                                                            <label>Nationality</label>
+                                                            <input class="form-control" value="<?= safeValue($fetch, 'nationality') ?>" readonly>
+                                                        </div>
+
+                                                        <div class="col-md-4 mb-3">
+                                                            <label>Residence Country</label>
+                                                            <input class="form-control" value="<?= safeValue($fetch, 'current_residence_country') ?>" readonly>
+                                                        </div>
+
+                                                        <div class="col-md-4 mb-3">
+                                                            <label>Marital Status</label>
+                                                            <input class="form-control" value="<?= safeValue($fetch, 'marital_status') ?>" readonly>
+                                                        </div>
+
+                                                        <div class="col-md-4 mb-3">
+                                                            <label>Passport Type</label>
+                                                            <input class="form-control" value="<?= safeValue($fetch, 'passport_type') ?>" readonly>
+                                                        </div>
+
+                                                        <div class="col-md-4 mb-3">
+                                                            <label>Passport Number</label>
+                                                            <input class="form-control" value="<?= safeValue($fetch, 'passport_number') ?>" readonly>
+                                                        </div>
+
+                                                        <div class="col-md-4 mb-3">
+                                                            <label>Issuing Country</label>
+                                                            <input class="form-control" value="<?= safeValue($fetch, 'issuing_country') ?>" readonly>
+                                                        </div>
+
+                                                        <div class="col-md-4 mb-3">
+                                                            <label>Issuing Authority</label>
+                                                            <input class="form-control" value="<?= safeValue($fetch, 'issuing_authority') ?>" readonly>
+                                                        </div>
+
                                                     </div>
 
-                                                </div>
-                                            </div>
-                                            <div class="card mb-4">
-                                                <div class="card-header">
-                                                    <h5 class="mb-0">Passport Information</h5>
-                                                </div>
-                                                <div class="card-body">
+
+                                                    <!-- ================= TRAVEL INFO ================= -->
+                                                    <hr>
+                                                    <h6 class="mb-3 text-primary">Travel Information</h6>
                                                     <div class="row">
-
-                                                        <div class="col-md-4 mb-3">
-                                                            <label class="form-label">Passport Number</label>
-                                                            <input type="text" class="form-control text-black" value="<?php echo htmlspecialchars($fetch['passport_number']); ?>" readonly>
-                                                        </div>
-
-                                                        <div class="col-md-4 mb-3">
-                                                            <label class="form-label">Issuing Country</label>
-                                                            <input type="text" class="form-control text-black" value="<?php echo htmlspecialchars($fetch['issuing_country']); ?>" readonly>
-                                                        </div>
-
-                                                        <div class="col-md-4 mb-3">
-                                                            <label class="form-label">Expiry Date</label>
-                                                            <input type="text" class="form-control text-black" value="<?php echo htmlspecialchars($fetch['expiry_date']); ?>" disabled>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card mb-4">
-                                                <div class="card-header">
-                                                    <h5 class="mb-0">Travel Information</h5>
-                                                </div>
-                                                <div class="card-body">
-                                                    <div class="row">
-
-                                                        <div class="col-md-4 mb-3">
-                                                            <label class="form-label">Destination Country</label>
-                                                            <input type="text" class="form-control text-black" value="<?php echo htmlspecialchars($fetch['destination_country']); ?>" readonly>
-                                                        </div>
 
                                                         <div class="col-md-4 mb-3">
                                                             <label class="form-label">Arrival Date</label>
-                                                            <input type="text" class="form-control text-black" value="<?php echo htmlspecialchars($fetch['arrival_date']); ?>" readonly>
+                                                            <input type="text" class="form-control text-black"
+                                                                value="<?php echo safeValue($fetch, 'arrival_date'); ?>" readonly>
                                                         </div>
 
                                                         <div class="col-md-4 mb-3">
                                                             <label class="form-label">Departure Date</label>
-                                                            <input type="text" class="form-control text-black" value="<?php echo htmlspecialchars($fetch['departure_date']); ?>" readonly>
+                                                            <input type="text" class="form-control text-black"
+                                                                value="<?php echo safeValue($fetch, 'departure_date'); ?>" readonly>
+                                                        </div>
+
+                                                        <div class="col-md-4 mb-3">
+                                                            <label class="form-label">Duration (Days)</label>
+                                                            <input type="text" class="form-control text-black"
+                                                                value="<?php echo safeValue($fetch, 'duration_days', '', ' days'); ?>" readonly>
                                                         </div>
 
                                                         <div class="col-md-4 mb-3">
                                                             <label class="form-label">Number of Entries</label>
-                                                            <input type="text" class="form-control text-black" value="<?php echo htmlspecialchars($fetch['number_of_entries']); ?>" readonly>
+                                                            <input type="text" class="form-control text-black"
+                                                                value="<?php echo safeValue($fetch, 'number_of_entries'); ?>" readonly>
+                                                        </div>
+
+                                                        <div class="col-md-8 mb-3">
+                                                            <label class="form-label">Purpose of Travel</label>
+                                                            <textarea class="form-control text-black" rows="2" readonly><?php
+                                                                                                                        echo safeValue($fetch, 'purpose_of_travel');
+                                                                                                                        ?></textarea>
                                                         </div>
 
                                                     </div>
-                                                </div>
-                                            </div>
 
-                                            <div class="card mb-4">
-                                                <div class="card-header">
-                                                    <h5 class="mb-0">Financial Information</h5>
-                                                </div>
-                                                <div class="card-body">
+
+                                                    <!-- ================= FINANCIAL INFO ================= -->
+                                                    <hr>
+                                                    <h6 class="mb-3 text-primary">Financial Information</h6>
                                                     <div class="row">
 
                                                         <div class="col-md-4 mb-3">
                                                             <label class="form-label">Estimated Travel Cost</label>
-                                                            <input type="text" class="form-control text-black" value="$<?php echo htmlspecialchars($fetch['estimated_travel_cost']); ?>" readonly>
+                                                            <input type="text" class="form-control text-black"
+                                                                value="<?php echo safeValue($fetch, 'estimated_travel_cost', '$'); ?>" readonly>
                                                         </div>
 
                                                         <div class="col-md-4 mb-3">
                                                             <label class="form-label">Available Funds</label>
-                                                            <input type="text" class="form-control text-black" value="$<?php echo htmlspecialchars($fetch['available_funds_amount']); ?>" readonly>
+                                                            <input type="text" class="form-control text-black"
+                                                                value="<?php echo safeValue($fetch, 'available_funds_amount', '$'); ?>" readonly>
                                                         </div>
 
                                                         <div class="col-md-4 mb-3">
                                                             <label class="form-label">Bank Name</label>
-                                                            <input type="text" class="form-control text-black" value="<?php echo htmlspecialchars($fetch['bank_name']); ?>" readonly>
+                                                            <input type="text" class="form-control text-black"
+                                                                value="<?php echo safeValue($fetch, 'bank_name'); ?>" readonly>
                                                         </div>
 
                                                     </div>
-                                                </div>
-                                            </div>
 
-                                            <div class="card mb-4">
-                                                <div class="card-header">
-                                                    <h5 class="mb-0">Uploaded Documents</h5>
-                                                </div>
-                                                <div class="card-body">
 
-                                                    <a href="../uploads/<?php echo htmlspecialchars($fetch['doc_passport_biodata']); ?>" target="_blank" class="btn btn-sm btn-outline-primary">Passport Biodata</a>
+                                                    <!-- ================= DOCUMENTS ================= -->
+                                                    <hr>
+                                                    <h6 class="mb-3 text-primary">Uploaded Documents</h6>
+                                                    <div class="row">
 
-                                                    <a href="../uploads/<?php echo htmlspecialchars($fetch['doc_bank_statement']); ?>" target="_blank" class="btn btn-sm btn-outline-success">Bank Statement</a>
+                                                        <div class="col-md-3 mb-3">
+                                                            <label class="form-label">Passport Copy</label><br>
+                                                            <?php if (!empty($fetch['doc_passport'])): ?>
+                                                                <a href="../uploads/<?php echo htmlspecialchars($fetch['doc_passport']); ?>"
+                                                                    target="_blank"
+                                                                    class="btn btn-sm btn-outline-success">View</a>
+                                                            <?php else: ?>
+                                                                <span class="text-muted">N/A</span>
+                                                            <?php endif; ?>
+                                                        </div>
+
+                                                        <div class="col-md-3 mb-3">
+                                                            <label class="form-label">Bank Statement</label><br>
+                                                            <?php if (!empty($fetch['doc_bank_statement'])): ?>
+                                                                <a href="../uploads/<?php echo htmlspecialchars($fetch['doc_bank_statement']); ?>"
+                                                                    target="_blank"
+                                                                    class="btn btn-sm btn-outline-success">View</a>
+                                                            <?php else: ?>
+                                                                <span class="text-muted">N/A</span>
+                                                            <?php endif; ?>
+                                                        </div>
+
+                                                        <div class="col-md-3 mb-3">
+                                                            <label class="form-label">Flight Ticket</label><br>
+                                                            <?php if (!empty($fetch['doc_flight_ticket'])): ?>
+                                                                <a href="../uploads/<?php echo htmlspecialchars($fetch['doc_flight_ticket']); ?>"
+                                                                    target="_blank"
+                                                                    class="btn btn-sm btn-outline-success">View</a>
+                                                            <?php else: ?>
+                                                                <span class="text-muted">N/A</span>
+                                                            <?php endif; ?>
+                                                        </div>
+
+                                                        <div class="col-md-3 mb-3">
+                                                            <label class="form-label">Hotel Reservation</label><br>
+                                                            <?php if (!empty($fetch['doc_hotel_reservation'])): ?>
+                                                                <a href="../uploads/<?php echo htmlspecialchars($fetch['doc_hotel_reservation']); ?>"
+                                                                    target="_blank"
+                                                                    class="btn btn-sm btn-outline-success">View</a>
+                                                            <?php else: ?>
+                                                                <span class="text-muted">N/A</span>
+                                                            <?php endif; ?>
+                                                        </div>
+
+                                                    </div>
+
+
+                                                    <hr>
+                                                    <form method="POST">
+
+                                                        <input type="hidden" name="application_ref"
+                                                            value="<?= htmlspecialchars($fetch['application_ref']) ?>">
+
+
+                                                        <h5 class="text-danger">Application Management</h5>
+
+                                                        <div class="row">
+
+                                                            <div class="col-md-3">
+                                                                <label>Arrival Date</label>
+                                                                <input type="date" name="arrival_date" class="form-control"
+                                                                    value="<?= $fetch['arrival_date'] ?? '' ?>">
+                                                            </div>
+
+                                                            <div class="col-md-3">
+                                                                <label>Departure Date</label>
+                                                                <input type="date" name="departure_date" class="form-control"
+                                                                    value="<?= $fetch['departure_date'] ?? '' ?>">
+                                                            </div>
+
+                                                            <div class="col-md-3">
+                                                                <label>Travel Cost</label>
+                                                                <input type="number" step="0.01"
+                                                                    name="estimated_travel_cost"
+                                                                    class="form-control"
+                                                                    value="<?= $fetch['estimated_travel_cost'] ?? '' ?>">
+                                                            </div>
+
+                                                        </div>
+
+                                                        <hr>
+
+                                                        <h5 class="text-danger">Timeline Management</h5>
+
+                                                        <table class="table table-bordered">
+
+                                                            <thead class="table-dark">
+                                                                <tr>
+                                                                    <th>Title</th>
+                                                                    <th>Description</th>
+                                                                    <th>Date</th>
+                                                                    <th>Status</th>
+                                                                    <th>Action</th>
+                                                                </tr>
+                                                            </thead>
+
+                                                            <tbody>
+
+                                                                <?php foreach ($timeline_rows as $t): ?>
+
+                                                                    <tr>
+
+                                                                        <td>
+                                                                            <input type="hidden" name="timeline_id[]" value="<?= $t['id'] ?>">
+
+                                                                            <input name="timeline_title[]" class="form-control"
+                                                                                value="<?= htmlspecialchars($t['title']) ?>">
+                                                                        </td>
+
+                                                                        <td>
+                                                                            <textarea name="timeline_description[]" class="form-control">
+<?= htmlspecialchars($t['description']) ?>
+</textarea>
+                                                                        </td>
+
+                                                                        <td>
+                                                                            <input type="date" name="timeline_date[]" class="form-control"
+                                                                                value="<?= !empty($t['event_date']) ? date('Y-m-d', strtotime($t['event_date'])) : '' ?>">
+                                                                        </td>
+
+                                                                        <td>
+                                                                            <input name="timeline_status[]" class="form-control"
+                                                                                value="<?= htmlspecialchars($t['status']) ?>">
+                                                                        </td>
+
+                                                                        <td>
+                                                                            <button type="button" class="btn btn-success btn-sm"
+                                                                                onclick="duplicateRow(this)">
+                                                                                Duplicate
+                                                                            </button>
+                                                                        </td>
+
+                                                                    </tr>
+
+                                                                <?php endforeach; ?>
+
+                                                            </tbody>
+                                                        </table>
+
+                                                        <button class="btn btn-primary" name="update_application">
+                                                            Update Application
+                                                        </button>
+
+                                                    </form>
 
                                                 </div>
                                             </div>
@@ -336,90 +593,6 @@ function badgeColor($status)
                             };
                             return map[status] || '#6c757d';
                         }
-
-                        // ✅ EVENT DELEGATION (works with DataTables redraw)
-                        document.addEventListener('click', async function(e) {
-                            const button = e.target.closest('.js-action');
-                            if (!button) return;
-
-                            e.preventDefault();
-                            if (button.disabled) return;
-
-                            console.log("Clicked:", button.dataset);
-
-                            try {
-                                const action = button.dataset.action; // approve | decline
-                                const visaType = button.dataset.visaType; // business/family/...
-                                const ref = button.dataset.ref;
-
-                                const confirmBox = await Swal.fire({
-                                    icon: "question",
-                                    title: action === "approve" ? "Approve Application?" : "Decline Application?",
-                                    text: "This will update the application status.",
-                                    showCancelButton: true,
-                                    confirmButtonText: "Yes, Continue",
-                                    cancelButtonText: "Cancel"
-                                });
-
-                                if (!confirmBox.isConfirmed) return;
-
-                                Swal.fire({
-                                    title: "Please wait...",
-                                    allowOutsideClick: false,
-                                    didOpen: () => Swal.showLoading()
-                                });
-
-                                // ✅ same folder
-                                const url = "./update_application_status.php?action=" +
-                                    encodeURIComponent(action) +
-                                    "&visa_type=" + encodeURIComponent(visaType) +
-                                    "&application_ref=" + encodeURIComponent(ref);
-
-                                console.log("Fetching:", url); // ✅ confirm the URL
-
-                                const response = await fetch(url, {
-                                    method: "GET"
-                                });
-                                const data = await response.json();
-
-                                if (!response.ok) {
-                                    throw new Error(data?.message || ("Request failed: " + response.status));
-                                }
-                                if (data.status !== "success") {
-                                    throw new Error(data.message || "Failed");
-                                }
-
-                                const newStatus = data.new_status || (action === "approve" ? "approved" : "rejected");
-
-                                // ✅ Update UI instantly
-                                const tr = button.closest('tr');
-                                if (tr) {
-                                    // update status badge text + color
-                                    const badge = tr.querySelector('td:nth-child(8) .status-badge');
-                                    if (badge) {
-                                        badge.style.background = badgeColor(newStatus);
-                                        badge.textContent = newStatus.replaceAll('_', ' ');
-                                    }
-
-                                    // replace action buttons with final badge
-                                    const actionCell = tr.querySelector('.action-cell');
-                                    if (actionCell) {
-                                        if (newStatus === "approved") {
-                                            actionCell.innerHTML = '<span class="status-badge" style="background:#198754;">Approved</span>';
-                                        } else if (newStatus === "rejected") {
-                                            actionCell.innerHTML = '<span class="status-badge" style="background:#dc3545;">Declined</span>';
-                                        }
-                                    }
-                                }
-
-                                Swal.close();
-                                sweatAlert("success", "Tips", data.message);
-
-                            } catch (err) {
-                                Swal.close();
-                                sweatAlert("error", "Tips", err.message);
-                            }
-                        });
                     </script>
 
 
@@ -482,6 +655,34 @@ function badgeColor($status)
 
         <script>
             $('input').attr('autocomplete', 'off');
+        </script>
+        <script>
+            function toggleVisaIssueBox() {
+
+                let status = document.querySelector("[name='status']").value;
+                let box = document.getElementById("visa_issue_box");
+
+                if (status === "visa_issues") {
+                    box.style.display = "block";
+                } else {
+                    box.style.display = "none";
+                }
+
+            }
+
+            function duplicateRow(btn) {
+
+                let row = btn.closest("tr");
+                let clone = row.cloneNode(true);
+
+                row.parentNode.appendChild(clone);
+            }
+
+            document.addEventListener("DOMContentLoaded", () => {
+                toggleVisaIssueBox();
+                document.querySelector("[name='status']")
+                    .addEventListener("change", toggleVisaIssueBox);
+            });
         </script>
 
         <script>
