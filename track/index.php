@@ -113,7 +113,7 @@ if ($app && $app["found"]) {
         mysqli_stmt_close($timeline_stmt);
     }
 
-    $pay_url = $domain . "/pay/?ref=" . urlencode($application_ref);
+    $pay_url = $domain . "/payment/?ref=" . urlencode($application_ref);
 }
 ?>
 <!DOCTYPE html>
@@ -518,7 +518,7 @@ if ($app && $app["found"]) {
                                             <h4><?php echo h($t["title"]) ?></h4>
                                             <p><?php echo h($t["text"]) ?></p>
 
-                                            <?php if (!empty($t["is_payment"]) && $t["status"] === "pending"): ?>
+                                            <?php if (!empty($t["is_payment"]) && $t["status"] === "set_by_admin"): ?>
                                                 <div class="pay-row">
                                                     <a class="pay-btn" href="<?php echo h($pay_url) ?>">
                                                         <i class="bi bi-shield-lock-fill"></i>
@@ -530,9 +530,9 @@ if ($app && $app["found"]) {
                                                 </div>
                                             <?php endif; ?>
                                         </div>
-                                        <p>
-                                            <i class="<?php echo h($t["icon"]) ?>"></i>
-                                        </p>
+                                        <div class="bg-white " style="height: 50px; width:50px; display:grid; place-items:center; border-radius:50%;">
+                                            <i class="<?php echo ($t["status"] == "approved") ? "bi bi-check-circle-fill text-success" : "bi bi-x-circle-fill text-muted" ?>"></i>
+                                        </div>
                                     </div>
 
                                 </div>

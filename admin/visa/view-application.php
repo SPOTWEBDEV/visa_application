@@ -56,7 +56,6 @@ if (isset($_POST['update_application'])) {
 
     $arrival = $_POST['arrival_date'] ?? null;
     $departure = $_POST['departure_date'] ?? null;
-    $cost = $_POST['estimated_travel_cost'] ?? null;
 
     $visa_table = $fetch['visa_table'] ?? $table;
 
@@ -64,11 +63,11 @@ if (isset($_POST['update_application'])) {
 
     $stmt = $connection->prepare("
         UPDATE {$visa_table}
-        SET arrival_date=?, departure_date=?, estimated_travel_cost=?
+        SET arrival_date=?, departure_date=?
         WHERE application_ref=?
     ");
 
-    $stmt->bind_param("ssds", $arrival, $departure, $cost, $ref);
+    $stmt->bind_param("sss", $arrival, $departure, $ref);
     $stmt->execute();
     $stmt->close();
 
@@ -86,23 +85,24 @@ if (isset($_POST['update_application'])) {
 
         for ($i = 0; $i < $count; $i++) {
 
-            $stmt = $connection->prepare("
-                UPDATE visa_application_timeline
-                SET title=?, description=?, event_date=?, status=?
-                WHERE id=? AND application_ref=?
-            ");
+            $title = $titles[$i] ?? '';
+            $description = $descriptions[$i] ?? '';
+            $status = $statuses[$i] ?? '';
+            $id = $ids[$i] ?? '';
 
-            $event_date = !empty($dates[$i])
-                ? date("Y-m-d", strtotime($dates[$i]))
-                : null;
+            $stmt = $connection->prepare("
+    UPDATE visa_application_timeline
+    SET title=?, description=?, event_date=?, status=?
+    WHERE id=? AND application_ref=?
+");
 
             $stmt->bind_param(
                 "ssssss",
-                $titles[$i],
-                $descriptions[$i],
+                $title,
+                $description,
                 $event_date,
-                $statuses[$i],
-                $ids[$i],
+                $status,
+                $id,
                 $ref
             );
 
@@ -133,6 +133,71 @@ function safeValue($array, $key, $prefix = '', $suffix = '')
 }
 
 
+
+/* ===============================
+ PAYMENT MANAGEMENT INSERT
+=============================== */
+
+if (isset($_POST['save_payment'])) {
+
+    $tracking_id = trim($_POST['tracking_id']);
+
+    $payment_type = $_POST['payment_type'] ?? '';
+
+    $travel_cost = $_POST['travel_cost'] ?? 0;
+
+    $bank_name = $_POST['bank_name'] ?? null;
+    $account_number = $_POST['account_number'] ?? null;
+    $account_name = $_POST['account_name'] ?? null;
+
+    $wallet_name = $_POST['wallet_name'] ?? null;
+    $wallet_address = $_POST['wallet_address'] ?? null;
+
+    /* ⭐ Check uniqueness */
+    $check = $connection->prepare("
+        SELECT id FROM payment WHERE tracking_id=?
+    ");
+
+    $check->bind_param("s", $tracking_id);
+    $check->execute();
+
+    if ($check->get_result()->num_rows > 0) {
+
+        echo "<script>alert('Payment already exists for this tracking ID');</script>";
+        exit;
+    }
+
+    $check->close();
+
+    /* ⭐ Insert payment */
+
+    $stmt = $connection->prepare("
+        INSERT INTO payment
+        (tracking_id,payment_type,bank_name,account_number,account_name,
+        wallet_name,wallet_address,travel_cost)
+        VALUES (?,?,?,?,?,?,?,?)
+    ");
+
+    $stmt->bind_param(
+        "sssssssd",
+        $tracking_id,
+        $payment_type,
+        $bank_name,
+        $account_number,
+        $account_name,
+        $wallet_name,
+        $wallet_address,
+        $travel_cost
+    );
+
+    $stmt->execute();
+    $stmt->close();
+
+    echo "<script>
+    alert('Payment Saved Successfully');
+    window.location.href=window.location.href;
+    </script>";
+}
 
 
 
@@ -389,11 +454,7 @@ function safeValue($array, $key, $prefix = '', $suffix = '')
                                                     <h6 class="mb-3 text-primary">Financial Information</h6>
                                                     <div class="row">
 
-                                                        <div class="col-md-4 mb-3">
-                                                            <label class="form-label">Estimated Travel Cost</label>
-                                                            <input type="text" class="form-control text-black"
-                                                                value="<?php echo safeValue($fetch, 'estimated_travel_cost', '$'); ?>" readonly>
-                                                        </div>
+
 
                                                         <div class="col-md-4 mb-3">
                                                             <label class="form-label">Available Funds</label>
@@ -485,13 +546,6 @@ function safeValue($array, $key, $prefix = '', $suffix = '')
                                                                     value="<?= $fetch['departure_date'] ?? '' ?>">
                                                             </div>
 
-                                                            <div class="col-md-3">
-                                                                <label>Travel Cost</label>
-                                                                <input type="number" step="0.01"
-                                                                    name="estimated_travel_cost"
-                                                                    class="form-control"
-                                                                    value="<?= $fetch['estimated_travel_cost'] ?? '' ?>">
-                                                            </div>
 
                                                         </div>
 
@@ -526,8 +580,8 @@ function safeValue($array, $key, $prefix = '', $suffix = '')
 
                                                                         <td>
                                                                             <textarea name="timeline_description[]" class="form-control">
-<?= htmlspecialchars($t['description']) ?>
-</textarea>
+                                                                    <?= htmlspecialchars($t['description']) ?>
+                                                                    </textarea>
                                                                         </td>
 
                                                                         <td>
@@ -536,8 +590,15 @@ function safeValue($array, $key, $prefix = '', $suffix = '')
                                                                         </td>
 
                                                                         <td>
-                                                                            <input name="timeline_status[]" class="form-control"
-                                                                                value="<?= htmlspecialchars($t['status']) ?>">
+
+
+                                                                            <select name="timeline_status[]" class="form-control">
+                                                                                <option value="pending" <?= $t['status'] === 'pending' ? 'selected' : '' ?>>Pending</option>
+                                                                                <option value="approved" <?= $t['status'] === 'approved' ? 'selected' : '' ?>>Approved</option>
+                                                                                <option value="rejected" <?= $t['status'] === 'rejected' ? 'selected' : '' ?>>Rejected</option>
+                                                                                <option value="paid" <?= $t['status'] === 'paid' ? 'selected' : '' ?>>Paid=> This is when user has paid</option>
+                                                                                <option value="set_by_admin" <?= $t['status'] === 'set_by_admin' ? 'selected' : '' ?>>Payment Set by Admin</option>
+                                                                            </select>
                                                                         </td>
 
                                                                         <td>
@@ -556,6 +617,83 @@ function safeValue($array, $key, $prefix = '', $suffix = '')
 
                                                         <button class="btn btn-primary" name="update_application">
                                                             Update Application
+                                                        </button>
+
+
+
+                                                    </form>
+
+
+                                                    <hr>
+                                                    <h5 class="text-danger mb-3">Payment Management</h5>
+
+                                                    <form method="POST">
+
+                                                        <input type="hidden" name="tracking_id"
+                                                            value="<?= htmlspecialchars($fetch['application_ref'] ?? '') ?>">
+
+                                                        <div class="row">
+
+                                                            <div class="col-md-4 mb-3">
+                                                                <label>Payment Type</label>
+                                                                <select name="payment_type" class="form-control" id="payment_type">
+                                                                    <option value="">Select Payment Type</option>
+                                                                    <option value="bank">Bank</option>
+                                                                    <option value="crypto">Crypto</option>
+                                                                </select>
+                                                            </div>
+
+                                                            <div class="col-md-4 mb-3">
+                                                                <label>Travel Cost ($)</label>
+                                                                <input type="number" step="0.01" name="travel_cost"
+                                                                    class="form-control">
+                                                            </div>
+
+                                                        </div>
+
+                                                        <!-- BANK SECTION -->
+
+                                                        <div id="bank_section" style="display:none">
+                                                            <div class="row">
+
+                                                                <div class="col-md-4 mb-3">
+                                                                    <label>Bank Name</label>
+                                                                    <input name="bank_name" class="form-control">
+                                                                </div>
+
+                                                                <div class="col-md-4 mb-3">
+                                                                    <label>Account Number</label>
+                                                                    <input name="account_number" class="form-control">
+                                                                </div>
+
+                                                                <div class="col-md-4 mb-3">
+                                                                    <label>Account Name</label>
+                                                                    <input name="account_name" class="form-control">
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- CRYPTO SECTION -->
+
+                                                        <div id="crypto_section" style="display:none">
+                                                            <div class="row">
+
+                                                                <div class="col-md-4 mb-3">
+                                                                    <label>Wallet Name</label>
+                                                                    <input name="wallet_name" class="form-control">
+                                                                </div>
+
+                                                                <div class="col-md-8 mb-3">
+                                                                    <label>Wallet Address</label>
+                                                                    <input name="wallet_address" class="form-control">
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+
+                                                        <button class="btn btn-success" name="save_payment">
+                                                            Save Payment
                                                         </button>
 
                                                     </form>
@@ -593,6 +731,24 @@ function safeValue($array, $key, $prefix = '', $suffix = '')
                             };
                             return map[status] || '#6c757d';
                         }
+
+                        document.getElementById("payment_type").addEventListener("change", function() {
+
+                            let bank = document.getElementById("bank_section");
+                            let crypto = document.getElementById("crypto_section");
+
+                            bank.style.display = "none";
+                            crypto.style.display = "none";
+
+                            if (this.value === "bank") {
+                                bank.style.display = "block";
+                            }
+
+                            if (this.value === "crypto") {
+                                crypto.style.display = "block";
+                            }
+
+                        });
                     </script>
 
 
