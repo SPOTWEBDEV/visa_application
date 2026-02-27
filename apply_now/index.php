@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>APPLY  || <?php echo $sitename ?></title>
+    <title>APPLY || <?php echo $sitename ?></title>
 
     <link rel="apple-touch-icon" sizes="180x180" href="<?php echo $domain ?>/assets/images/favicons/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="<?php echo $domain ?>/assets/images/favicons/favicon-32x32.png" />
@@ -352,8 +352,7 @@
                                     name="passport_biodata"
                                     class="upload-hidden-input"
                                     accept=".jpg,.jpeg,.png,.webp,.pdf"
-                                    required
-                                >
+                                    required>
 
                                 <!-- pretty UI -->
                                 <div class="upload-box" id="passportUploadBox" role="button" tabindex="0">
@@ -629,7 +628,9 @@
             function applyVisaTypeVisibility() {
                 const v = ($("#visa_type").value || "").trim();
 
-                $$(".visa-type-section").forEach(sec => { sec.style.display = "none"; });
+                $$(".visa-type-section").forEach(sec => {
+                    sec.style.display = "none";
+                });
 
                 $$(".visa-type-section input, .visa-type-section select, .visa-type-section textarea").forEach(el => {
                     if (el.hasAttribute("data-required")) el.required = false;
@@ -693,9 +694,9 @@
 
                 for (const field of fields) {
                     if (!field.checkValidity()) {
-                        const label = field.previousElementSibling && field.previousElementSibling.tagName === "LABEL"
-                            ? field.previousElementSibling.textContent.trim()
-                            : (field.getAttribute("placeholder") || field.name || "This field");
+                        const label = field.previousElementSibling && field.previousElementSibling.tagName === "LABEL" ?
+                            field.previousElementSibling.textContent.trim() :
+                            (field.getAttribute("placeholder") || field.name || "This field");
 
                         Swal.fire({
                             icon: "error",
@@ -721,15 +722,16 @@
                 const countryFromUrl = getQueryParam("country");
                 const entrySourceFromUrl = getQueryParam("from");
 
-                // ✅ Force user to reselect depending on entry source
-                // From visa page => always ask country
-                // From country page => always ask visa type
+                // Only force clear for true visa_page or country_page
                 if (entrySourceFromUrl === "visa_page") {
-                    $("#selected_country").value = ""; // force
+                    $("#selected_country").value = "";
                 }
+
                 if (entrySourceFromUrl === "country_page") {
-                    $("#visa_type").value = ""; // force
+                    $("#visa_type").value = "";
                 }
+
+                // For vacation_page → do nothing (auto fill everything)
 
                 // load from URL or state AFTER forcing rules above
                 $("#visa_type").value = (entrySourceFromUrl === "country_page") ? "" : (visaTypeFromUrl || state.visa_type || "");
@@ -745,10 +747,15 @@
 
                 // ✅ entry logic (now forced always)
                 const entrySource = $("#entry_source").value;
-                const needsCountry = (entrySource === "visa_page");      // always true for visa_page
-                const needsVisaType = (entrySource === "country_page");  // always true for country_page
+                const needsCountry = (entrySource === "visa_page");
+                const needsVisaType = (entrySource === "country_page");
 
-                if (needsCountry) {
+                // vacation_page should skip step 0 entirely
+                const skipEntry = (entrySource === "vacation_page");
+
+                if (skipEntry) {
+                    showStep(1, TOTAL);
+                } else if (needsCountry) {
                     $("#entryCountryBlock").style.display = "block";
                     $("#entryVisaTypeBlock").style.display = "none";
                     showStep(0, TOTAL);
@@ -776,7 +783,11 @@
                     if (countryBlockVisible) {
                         const c = $("#start_country").value.trim();
                         if (!c) {
-                            Swal.fire({ icon: "warning", title: "Select Country", text: "Please choose a country to continue." });
+                            Swal.fire({
+                                icon: "warning",
+                                title: "Select Country",
+                                text: "Please choose a country to continue."
+                            });
                             return;
                         }
                         $("#selected_country").value = c;
@@ -785,7 +796,11 @@
                     if (visaBlockVisible) {
                         const v = $("#start_visa_type").value.trim();
                         if (!v) {
-                            Swal.fire({ icon: "warning", title: "Select Visa Type", text: "Please choose a visa type to continue." });
+                            Swal.fire({
+                                icon: "warning",
+                                title: "Select Visa Type",
+                                text: "Please choose a visa type to continue."
+                            });
                             return;
                         }
                         $("#visa_type").value = v;
@@ -849,7 +864,11 @@
                     if (!validateStepWithSwal(step)) return;
 
                     if (!$("#visa_type").value || !$("#selected_country").value) {
-                        Swal.fire({ icon: "warning", title: "Missing Info", text: "Please select Visa Type and Country before submitting." });
+                        Swal.fire({
+                            icon: "warning",
+                            title: "Missing Info",
+                            text: "Please select Visa Type and Country before submitting."
+                        });
                         showStep(0, TOTAL);
                         return;
                     }
@@ -875,12 +894,18 @@
                         const fd = new FormData(form);
                         const API_URL = "../auth/api/submit_application.php";
 
-                        const res = await fetch(API_URL, { method: "POST", body: fd });
+                        const res = await fetch(API_URL, {
+                            method: "POST",
+                            body: fd
+                        });
 
                         const raw = await res.text();
                         let data;
-                        try { data = JSON.parse(raw); }
-                        catch (e) { throw new Error("Server did not return JSON. First 200 chars: " + raw.slice(0, 200)); }
+                        try {
+                            data = JSON.parse(raw);
+                        } catch (e) {
+                            throw new Error("Server did not return JSON. First 200 chars: " + raw.slice(0, 200));
+                        }
 
                         if (!res.ok) throw new Error(data.message || ("HTTP Error " + res.status));
                         if (!data || data.ok !== true) throw new Error(data.message || "Submission failed.");
@@ -900,7 +925,7 @@
 
 
 
-                        
+
                     } catch (err) {
                         Swal.fire({
                             icon: "error",
@@ -926,4 +951,5 @@
     <script src="<?php echo $domain ?>/assets/js/visanet.js"></script>
 
 </body>
+
 </html>

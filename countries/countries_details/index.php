@@ -223,7 +223,7 @@
                 </li>
                 <li>
                     <span class="mobile-nav__contact__icon"><i class="fa fa-phone-alt"></i></span>
-                    <a href="tel:+9156980036420">+91 5698 0036 420</a>
+                    <a href="tel:+9156980036420">  </a>
                 </li>
             </ul><!-- /.mobile-nav__contact -->
             <div class="social-links">
@@ -293,7 +293,7 @@
                         <span class="sidebar-three__info__icon">
                             <i class="icon-email"></i>
                         </span>
-                        <a href="mailto:visanet@envato.com">visanet@envato.com</a>
+                        <a href="mailto:<?= $site_email ?>"><?= $site_email ?></a>
                     </li>
                     <li>
                         <span class="sidebar-three__info__icon">

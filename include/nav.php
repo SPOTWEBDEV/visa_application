@@ -39,7 +39,7 @@
                        <div class="main-header__left">
                            <div class="main-header__logo logo-retina">
                                <a href="<?php echo $domain ?>/visa/">
-                                   <img height="90" src="<?php echo $domain ?>/assets/images/paix_navbar.png"  alt="">
+                                   <img  src="<?php echo $domain ?>/assets/images/logo-light.png"  alt="">
                                </a>
                            </div><!-- /.main-header__logo -->
                        </div><!-- /.main-header__left -->

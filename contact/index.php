@@ -107,7 +107,7 @@
                             </div><!-- /.contact-info__card__icon -->
                             <div class="contact-info__card__content">
                                 <h3 class="contact-info__card__title">Your Email Address</h3>
-                                <a href="mailto:visanet@envato.com" class="contact-info__card__link">visanet@envato.com</a>
+                                <a href="mailto:<?= $site_email ?>" class="contact-info__card__link"><?= $site_email ?></a>
                             </div><!-- /.contact-info__card__content -->
                         </div><!-- /.contact-info__card -->
                     </div><!-- /.item -->
@@ -318,11 +318,11 @@
             <ul class="mobile-nav__contact list-unstyled">
                 <li>
                     <span class="mobile-nav__contact__icon"><i class="fa fa-envelope"></i></span>
-                    <a href="mailto:findox@envato.com">visanet@envato.com</a>
+                    <a href="mailto:findox@envato.com"><?= $site_email ?></a>
                 </li>
                 <li>
                     <span class="mobile-nav__contact__icon"><i class="fa fa-phone-alt"></i></span>
-                    <a href="tel:+9156980036420">+91 5698 0036 420</a>
+                    <a href="tel:+9156980036420">  </a>
                 </li>
             </ul><!-- /.mobile-nav__contact -->
             <div class="social-links">

@@ -20,12 +20,11 @@ define("HOST", "localhost");
 
 
 if ($request === 'https') {
-    $sitename = "PAIX VISA AND TOURIST SERVICE";
-    $domain = "https://paix-vts.com/";
-    $site_email = "support@paid-vts.com";
-    define("USER", "");
-    define("PASSWORD", "");
-    define("DATABASE", "");
+    $domain = "https://paix-vts.com";
+    
+    define("USER", "paixvtsc_paixvtsc_paix_vts_visa");
+    define("PASSWORD", "paixvtsc_paix_vts_visa");
+    define("DATABASE", "paixvtsc_paix_vts_visa");
 
 
     $connection = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
@@ -34,9 +33,7 @@ if ($request === 'https') {
         die("Connection failed: " . mysqli_connect_error());
     }
 } elseif ($request === 'http') {
-    $sitename = "PAIX VISA AND TOURIST Service";
     $domain = "http://localhost/visa_application";
-    $site_email = "support@paid-vts.com";
     define("USER", "root");
     define("PASSWORD", "");
     define("DATABASE", "visa_application");
@@ -50,7 +47,6 @@ if ($request === 'https') {
 } else {
     $sitename = "PAIX VISA AND TOURIST SERVIC";
     $domain = "http://localhost/visa_application";
-    $site_email = "support@paid-vts.com";
     define("USER", "root");
     define("PASSWORD", "");
     define("DATABASE", "visa_application");
@@ -64,3 +60,7 @@ if ($request === 'https') {
 };
 
 // session_start();
+$site_email = "support@paid-vts.com";
+$sitename = "PAIX VISA AND TOURIST Service";
+$siteemailpassword = "support@paid-vts.com";
+$emailhost = "mail.support@paid-vts.com";

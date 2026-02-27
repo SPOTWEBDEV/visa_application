@@ -1,6 +1,7 @@
 <?php
 header("Content-Type: application/json");
 include "../../server/connection.php";
+include "../../server/mailer.php";
 
 function respond($ok, $message, $extra = [])
 {
@@ -97,7 +98,7 @@ $selected_country = require_field("selected_country");
 $entry_source     = post_val("entry_source", "");
 
 /* visa types */
-$allowed_types = ["business", "immigration", "travel", "family", "student", "processing"];
+$allowed_types = ["business", "immigration", "travel", "family", "student", "processing", "vacation"];
 if (!in_array($visa_type, $allowed_types, true)) {
   respond(false, "Invalid visa type.");
 }
@@ -195,6 +196,10 @@ switch ($visa_type) {
     $table_name = "travel_visa_applications";
     $application_ref = "PRO" . date("YmdHis") . mt_rand(100, 999);
     $visa_type = "travel"; // Override for table compatibility
+  case "vacation":
+    $table_name = "vacation_visa_applications";
+    $application_ref = "VAC" . date("YmdHis") . mt_rand(100, 999);
+
     break;
   default:
     respond(false, "Unsupported visa type.");
@@ -235,7 +240,7 @@ if (!$stmt) {
 $params = [
   $application_ref,                    // 1
   $entry_source,                       // 2
-  
+
   $first_name,                         // 3
   $middle_name,                        // 4
   $last_name,                          // 5
@@ -247,7 +252,7 @@ $params = [
   $current_residence_country,          // 11
   $marital_status,                     // 12
   $national_id_number,                 // 13
-  
+
   $passport_type,                      // 14
   $passport_number,                    // 15
   $issuing_country,                    // 16
@@ -256,7 +261,7 @@ $params = [
   $expiry_date,                        // 19
   $previous_passport_number,           // 20
   $has_another,                        // 21
-  
+
   $residential_address,                // 22
   $city,                               // 23
   $state_province,                     // 24
@@ -265,7 +270,7 @@ $params = [
   $mobile_phone,                       // 27
   $alt_phone,                          // 28
   $email,                              // 29
-  
+
   $selected_country                    // 30 - destination_country
 ];
 
@@ -276,13 +281,36 @@ if (count($params) !== $expected_count) {
     "params" => $params,
     "param_count" => count($params),
     "param_names" => [
-      "application_ref", "entry_source", "first_name", "middle_name", "last_name",
-      "gender", "date_of_birth", "birth_city", "birth_country", "nationality",
-      "current_residence_country", "marital_status", "national_id_number",
-      "passport_type", "passport_number", "issuing_country", "issuing_authority",
-      "date_of_issue", "expiry_date", "previous_passport_number", "has_another",
-      "residential_address", "city", "state_province", "postal_code", "country",
-      "mobile_phone", "alt_phone", "email", "destination_country"
+      "application_ref",
+      "entry_source",
+      "first_name",
+      "middle_name",
+      "last_name",
+      "gender",
+      "date_of_birth",
+      "birth_city",
+      "birth_country",
+      "nationality",
+      "current_residence_country",
+      "marital_status",
+      "national_id_number",
+      "passport_type",
+      "passport_number",
+      "issuing_country",
+      "issuing_authority",
+      "date_of_issue",
+      "expiry_date",
+      "previous_passport_number",
+      "has_another",
+      "residential_address",
+      "city",
+      "state_province",
+      "postal_code",
+      "country",
+      "mobile_phone",
+      "alt_phone",
+      "email",
+      "destination_country"
     ]
   ]);
 }
@@ -365,13 +393,13 @@ try {
   $update_file_sql = "UPDATE $table_name SET doc_passport_biodata = ?";
   $file_params = [$passport_biodata_path];
   $file_types = "s";
-  
+
   if ($passport_photo_path) {
     $update_file_sql .= ", doc_passport_photo = ?";
     $file_params[] = $passport_photo_path;
     $file_types .= "s";
   }
-  
+
   // Upload optional files based on visa type
   if ($visa_type === "student" || $visa_type === "business") {
     $field_name = $visa_type === "student" ? "student_letter" : "business_letter";
@@ -431,11 +459,11 @@ try {
       $file_types .= "s";
     }
   }
-  
+
   $update_file_sql .= " WHERE id = ?";
   $file_params[] = $app_id;
   $file_types .= "i";
-  
+
   $update_file_stmt = mysqli_prepare($connection, $update_file_sql);
   if ($update_file_stmt) {
     // Prepare bind parameters for file update
@@ -448,7 +476,7 @@ try {
         $file_refs[$key] = &$bind_file_params[$key];
       }
     }
-    
+
     if (!call_user_func_array('mysqli_stmt_bind_param', $file_refs)) {
       throw new Exception("Failed to bind file parameters: " . mysqli_stmt_error($update_file_stmt));
     }
@@ -459,7 +487,6 @@ try {
   } else {
     throw new Exception("Failed to prepare file update statement: " . mysqli_error($connection));
   }
-
 } catch (Exception $e) {
   // If there's a file upload error, the application is already saved
   // So we return success but with a warning
@@ -471,9 +498,91 @@ try {
   ]);
 }
 
+/* --------- SEND CONFIRMATION EMAIL --------- */
+
+$track_link = $domain . "track/?ref=" . urlencode($application_ref);
+
+$email_subject = "Visa Application Submitted - Ref: " . $application_ref;
+
+$email_body = "
+<h2 style='margin-bottom:20px;'>Visa Application Confirmation</h2>
+
+<p>Dear {$first_name} {$last_name},</p>
+
+<p>Your visa application has been successfully submitted. Below are your details:</p>
+
+<hr>
+
+<h3>Personal Information</h3>
+<p><strong>Application Reference:</strong><br>{$application_ref}</p>
+<p><strong>Visa Type:</strong><br>" . ucfirst($visa_type) . "</p>
+<p><strong>Destination Country:</strong><br>{$selected_country}</p>
+
+<p><strong>Full Name:</strong><br>{$first_name} {$middle_name} {$last_name}</p>
+<p><strong>Gender:</strong><br>{$gender}</p>
+<p><strong>Date of Birth:</strong><br>{$date_of_birth}</p>
+<p><strong>Birth City:</strong><br>{$birth_city}</p>
+<p><strong>Birth Country:</strong><br>{$birth_country}</p>
+<p><strong>Nationality:</strong><br>{$nationality}</p>
+<p><strong>Marital Status:</strong><br>{$marital_status}</p>
+
+<hr>
+
+<h3>Passport Information</h3>
+<p><strong>Passport Type:</strong><br>{$passport_type}</p>
+<p><strong>Passport Number:</strong><br>{$passport_number}</p>
+<p><strong>Issuing Country:</strong><br>{$issuing_country}</p>
+<p><strong>Issuing Authority:</strong><br>{$issuing_authority}</p>
+<p><strong>Date of Issue:</strong><br>{$date_of_issue}</p>
+<p><strong>Expiry Date:</strong><br>{$expiry_date}</p>
+
+<hr>
+
+<h3>Contact Information</h3>
+<p><strong>Residential Address:</strong><br>{$residential_address}</p>
+<p><strong>City:</strong><br>{$city}</p>
+<p><strong>State/Province:</strong><br>{$state_province}</p>
+<p><strong>Postal Code:</strong><br>{$postal_code}</p>
+<p><strong>Country:</strong><br>{$country}</p>
+<p><strong>Mobile Phone:</strong><br>{$mobile_phone}</p>
+<p><strong>Email:</strong><br>{$email}</p>
+
+<hr>
+
+<h3>Track Your Application</h3>
+<p>You can track your application status using the link below:</p>
+
+<p>
+<a href='{$track_link}' style='
+    display:inline-block;
+    padding:10px 20px;
+    background:#007bff;
+    color:#fff;
+    text-decoration:none;
+    border-radius:5px;
+'>
+Track Application
+</a>
+</p>
+
+<p>Or copy and paste this link into your browser:<br>
+{$track_link}</p>
+
+<br>
+<p>Thank you.</p>
+";
+
+// SEND EMAIL
+$mail_sent = smtpmailer($email, $email_subject, $email_body);
+
 respond(true, "Application submitted successfully!", [
   "application_id" => $app_id,
   "application_ref" => $application_ref,
   "visa_type" => $visa_type
 ]);
 
+respond(true, "Application submitted successfully!", [
+  "application_id" => $app_id,
+  "application_ref" => $application_ref,
+  "visa_type" => $visa_type
+]);
