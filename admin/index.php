@@ -1,13 +1,11 @@
-<?php include("../server/connection.php") ?>
+<?php include("../server/connection.php");
+
+
+?>
 
 
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- Mirrored from santaaccessfinance.net/login.php by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 05 Jul 2025 22:31:22 GMT -->
-<!-- Added by HTTrack -->
-<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -152,10 +150,6 @@
                                 "timeOut": "2000" // milliseconds before toast disappears
                             }
 
-                            // toastr.success('Login successful!');
-                            // toastr.error('Invalid username or password.');
-                            // toastr.info('Please enter your details.');
-                            // toastr.warning('Your session will expire soon.');
 
                             let form = document.getElementById('form');
                             form.addEventListener('submit', (event) => {
@@ -243,7 +237,5 @@
 
 
 </body>
-
-<!-- Mirrored from santaaccessfinance.net/login.php by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 05 Jul 2025 22:32:17 GMT -->
 
 </html>

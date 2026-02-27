@@ -1,29 +1,12 @@
 <?php
 include "../server/connection.php";
 
-/**
- * TRACKING PAGE FLOW (as you requested)
- * 1) Show input form first (tracking ref)
- * 2) When user submits ref, search across visa tables by application_ref
- * 3) If found -> show timeline UI (like your screenshot)
- * 4) Third row = Payment row with a Pay button
- */
-
-/* ---------------- helpers ---------------- */
 function h($v)
 {
     return htmlspecialchars((string)$v, ENT_QUOTES, 'UTF-8');
 }
 
-/**
- * Find application by ref across tables (because your ref prefix decides table)
- * Tables from your submit script:
- * - business_visa_applications
- * - student_visa_applications
- * - family_visa_applications
- * - travel_visa_applications
- * - immigration_visa_applications
- */
+
 function find_application_by_ref(mysqli $connection, string $ref): array
 {
     $tables = [
@@ -31,7 +14,8 @@ function find_application_by_ref(mysqli $connection, string $ref): array
         "student_visa_applications",
         "family_visa_applications",
         "travel_visa_applications",
-        "immigration_visa_applications"
+        "immigration_visa_applications",
+        "vacation_visa_applications"
     ];
 
     foreach ($tables as $table) {
@@ -91,37 +75,43 @@ if ($app && $app["found"]) {
     $current_step = (int)($row["current_step"] ?? 0);
     $created_at = $row["created_at"] ?? "";
 
-    // date label for UI (you can change)
-    $date_label = $created_at ? date("d-m-Y", strtotime($created_at)) : date("d-m-Y");
+    /* ---------------- fetch timeline from DB ---------------- */
 
-    // Use Bootstrap Icons classes (bi bi-...)
-    $timeline = [
-        [
-            "date" => $date_label,
-            "title" => "Application Submitted",
-            "text" => "We have received your application. Your tracking ID has been created successfully.",
-            "icon" => "bi bi-send-fill"
-        ],
-        [
-            "date" => $date_label,
-            "title" => "Under Review",
-            "text" => "Our team is currently reviewing your details and documents. Status: " . strtoupper($status),
-            "icon" => "bi bi-search"
-        ],
-        [
-            "date" => $date_label,
-            "title" => "Payment Required",
-            "text" => "To continue processing your application, please complete your payment.",
-            "icon" => "bi bi-credit-card-2-front-fill",
-            "is_payment" => true
-        ],
-        [
-            "date" => $date_label,
-            "title" => "Next Updates",
-            "text" => "Once payment is confirmed, we will continue processing and notify you of the next steps.",
-            "icon" => "bi bi-check-circle-fill"
-        ],
-    ];
+    $timeline = [];
+
+    $timeline_sql = "
+    SELECT id, title, description, icon, event_date, is_payment, status
+    FROM visa_application_timeline
+    WHERE application_ref = ?
+    ORDER BY id ASC
+";
+
+    $timeline_stmt = mysqli_prepare($connection, $timeline_sql);
+
+    if ($timeline_stmt) {
+
+        mysqli_stmt_bind_param($timeline_stmt, "s", $application_ref);
+        mysqli_stmt_execute($timeline_stmt);
+        $timeline_result = mysqli_stmt_get_result($timeline_stmt);
+
+        while ($trow = mysqli_fetch_assoc($timeline_result)) {
+
+            $event_date = $trow["event_date"]
+                ? date("d-m-Y", strtotime($trow["event_date"]))
+                : "Pending";
+
+            $timeline[] = [
+                "date" => $event_date,
+                "title" => $trow["title"],
+                "text" => $trow["description"],
+                "icon" => $trow["icon"] ?: "bi bi-circle",
+                "is_payment" => (int)$trow["is_payment"],
+                "status" => $trow["status"] ?? ""
+            ];
+        }
+
+        mysqli_stmt_close($timeline_stmt);
+    }
 
     $pay_url = $domain . "/pay/?ref=" . urlencode($application_ref);
 }
@@ -321,6 +311,8 @@ if ($app && $app["found"]) {
         }
 
         .timeline-body {
+            display: flex;
+            justify-content: space-between;
             padding: 16px 18px;
         }
 
@@ -428,6 +420,14 @@ if ($app && $app["found"]) {
                 background: rgba(0, 0, 0, .02);
             }
         }
+
+        .timeline-item.completed .timeline-date {
+            background: #14a44d !important;
+        }
+
+        .timeline-item.completed .timeline-icon {
+            background: #14a44d !important;
+        }
     </style>
 </head>
 
@@ -505,10 +505,8 @@ if ($app && $app["found"]) {
 
                     <div class="timeline-rail" data-aos="fade-up" data-aos-duration="1300" data-aos-delay="150">
                         <?php foreach ($timeline as $t): ?>
-                            <div class="timeline-item">
-                                <div class="timeline-icon">
-                                    <i class="<?php echo h($t["icon"]) ?>"></i>
-                                </div>
+                            <div class="timeline-item <?php echo !empty($t["status"]) ? 'completed' : '' ?>">
+
 
                                 <div class="timeline-card">
                                     <div class="timeline-date">
@@ -516,21 +514,27 @@ if ($app && $app["found"]) {
                                     </div>
 
                                     <div class="timeline-body">
-                                        <h4><?php echo h($t["title"]) ?></h4>
-                                        <p><?php echo h($t["text"]) ?></p>
+                                        <div>
+                                            <h4><?php echo h($t["title"]) ?></h4>
+                                            <p><?php echo h($t["text"]) ?></p>
 
-                                        <?php if (!empty($t["is_payment"])): ?>
-                                            <div class="pay-row">
-                                                <a class="pay-btn" href="<?php echo h($pay_url) ?>">
-                                                    <i class="bi bi-shield-lock-fill"></i>
-                                                    Pay Now
-                                                </a>
-                                                <span style="color:rgba(0,0,0,.55); font-weight:700;">
-                                                    Secure payment for ref: <?php echo h($application_ref) ?>
-                                                </span>
-                                            </div>
-                                        <?php endif; ?>
+                                            <?php if (!empty($t["is_payment"]) && $t["date"] === "Pending"): ?>
+                                                <div class="pay-row">
+                                                    <a class="pay-btn" href="<?php echo h($pay_url) ?>">
+                                                        <i class="bi bi-shield-lock-fill"></i>
+                                                        Pay Now
+                                                    </a>
+                                                    <span style="color:rgba(0,0,0,.55); font-weight:700;">
+                                                        Secure payment for ref: <?php echo h($application_ref) ?>
+                                                    </span>
+                                                </div>
+                                            <?php endif; ?>
+                                        </div>
+                                        <p>
+                                            <i class="<?php echo h($t["icon"]) ?>"></i>
+                                        </p>
                                     </div>
+
                                 </div>
                             </div>
                         <?php endforeach; ?>

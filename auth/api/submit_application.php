@@ -9,19 +9,13 @@ function respond($ok, $message, $extra = [])
   exit;
 }
 
-/**
- * Return POST value (trimmed string) OR $default if not set.
- * Note: This returns "0" correctly when posted.
- */
 function post_val($key, $default = null)
 {
   if (!isset($_POST[$key])) return $default;
   return trim((string)$_POST[$key]);
 }
 
-/**
- * Required field checker that does NOT reject "0"
- */
+
 function require_field($key, $label = null)
 {
   $label = $label ?: $key;
@@ -575,11 +569,77 @@ Track Application
 // SEND EMAIL
 $mail_sent = smtpmailer($email, $email_subject, $email_body);
 
-respond(true, "Application submitted successfully!", [
-  "application_id" => $app_id,
-  "application_ref" => $application_ref,
-  "visa_type" => $visa_type
-]);
+
+
+/* --------- CREATE TIMELINE HISTORY --------- */
+
+$submitted_date = date("Y-m-d H:i:s"); // now
+$under_review_date = date("Y-m-d H:i:s", strtotime("+72 hours"));
+
+$timeline_events = [
+    [
+        "title" => "Application Submitted",
+        "text"  => "We have received your application. Your tracking ID has been created successfully.",
+        "icon"  => "bi bi-send-fill",
+        "event_date" => $submitted_date,
+        "is_payment" => 0
+    ],
+    [
+        "title" => "Under Review",
+        "text"  => "Our team is currently reviewing your details and documents. Status: SUBMITTED",
+        "icon"  => "bi bi-search",
+        "event_date" => $under_review_date,
+        "is_payment" => 0
+    ],
+    [
+        "title" => "Payment Required",
+        "text"  => "To continue processing your application, please complete your payment.",
+        "icon"  => "bi bi-credit-card-2-front-fill",
+        "event_date" => null,
+        "is_payment" => 1
+    ],
+    [
+        "title" => "Next Updates",
+        "text"  => "Once payment is confirmed, we will continue processing and notify you of the next steps.",
+        "icon"  => "bi bi-check-circle-fill",
+        "event_date" => null,
+        "is_payment" => 0
+    ],
+    [
+        "title" => "Visa Approved",
+        "text"  => "Your visa application has been approved.",
+        "icon"  => "bi bi-check-circle-fill",
+        "event_date" => null,
+        "is_payment" => 0
+    ]
+];
+
+foreach ($timeline_events as $event) {
+
+    $timeline_sql = "INSERT INTO visa_application_timeline 
+        (application_ref, visa_type, title, description, icon, event_date, is_payment)
+        VALUES (?, ?, ?, ?, ?, ?, ?)";
+
+    $timeline_stmt = mysqli_prepare($connection, $timeline_sql);
+
+    if ($timeline_stmt) {
+
+        mysqli_stmt_bind_param(
+            $timeline_stmt,
+            "ssssssi",
+            $application_ref,
+            $visa_type,
+            $event["title"],
+            $event["text"],
+            $event["icon"],
+            $event["event_date"],
+            $event["is_payment"]
+        );
+
+        mysqli_stmt_execute($timeline_stmt);
+        mysqli_stmt_close($timeline_stmt);
+    }
+}
 
 respond(true, "Application submitted successfully!", [
   "application_id" => $app_id,

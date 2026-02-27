@@ -63,6 +63,7 @@
                                        <!-- <li class="scrollToLink"><a href="<?php echo $domain ?>/about/">About</a></li> -->
                                        <li class="scrollToLink"><a href="<?php echo $domain ?>/visa/">Visa</a></li>
                                        <li class="scrollToLink"><a href="<?php echo $domain ?>/countries/">Countries</a></li>
+                                       <li class="scrollToLink"><a href="<?php echo $domain ?>/vacations/">Vacation</a></li>
                                        <li class="scrollToLink"><a href="<?php echo $domain ?>/gallery/">Gallery</a></li>
                                        <li class="scrollToLink"><a href="<?php echo $domain ?>/contact/">Contact us</a></li>
 

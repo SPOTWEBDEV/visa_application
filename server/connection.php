@@ -36,7 +36,7 @@ if ($request === 'https') {
     $domain = "http://localhost/visa_application";
     define("USER", "root");
     define("PASSWORD", "");
-    define("DATABASE", "visa_application");
+    define("DATABASE", "visa");
 
 
     $connection = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
@@ -45,22 +45,11 @@ if ($request === 'https') {
         die("Connection failed: " . mysqli_connect_error());
     }
 } else {
-    $sitename = "PAIX VISA AND TOURIST SERVIC";
-    $domain = "http://localhost/visa_application";
-    define("USER", "root");
-    define("PASSWORD", "");
-    define("DATABASE", "visa_application");
-
-
-    $connection = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
-
-    if (!$connection) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
-};
+    die("Invalid URL protocol. Please use either HTTP or HTTPS.");
+}
 
 // session_start();
 $site_email = "support@paid-vts.com";
 $sitename = "PAIX VISA AND TOURIST Service";
 $siteemailpassword = "support@paid-vts.com";
-$emailhost = "mail.support@paid-vts.com";
+$emailhost = "mail@paid-vts.com";
