@@ -531,7 +531,7 @@ if ($app && $app["found"]) {
                                             <?php endif; ?>
                                         </div>
                                         <div class="bg-white " style="height: 50px; width:50px; display:grid; place-items:center; border-radius:50%;">
-                                            <i class="<?php echo ($t["status"] == "approved") ? "bi bi-check-circle-fill text-success" : "bi bi-x-circle-fill text-muted" ?>"></i>
+                                            <i class="<?php echo ($t["status"] == "approved" || $t["status"] == "paid") ? "bi bi-check-circle-fill text-success" : "bi bi-x-circle-fill text-muted" ?>"></i>
                                         </div>
                                     </div>
 

@@ -561,7 +561,7 @@ if (isset($_POST['save_payment'])) {
                                                                     <th>Description</th>
                                                                     <th>Date</th>
                                                                     <th>Status</th>
-                                                                    <th>Action</th>
+                                                                    
                                                                 </tr>
                                                             </thead>
 
@@ -601,12 +601,7 @@ if (isset($_POST['save_payment'])) {
                                                                             </select>
                                                                         </td>
 
-                                                                        <td>
-                                                                            <button type="button" class="btn btn-success btn-sm"
-                                                                                onclick="duplicateRow(this)">
-                                                                                Duplicate
-                                                                            </button>
-                                                                        </td>
+                                                                        
 
                                                                     </tr>
 
