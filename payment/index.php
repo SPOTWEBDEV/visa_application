@@ -137,8 +137,7 @@ if ($app && $app["found"]) {
 </head>
 
 <body class="custom-cursor">
-    <div class="custom-cursor__cursor"></div>
-    <div class="custom-cursor__cursor-two"></div>
+    
 
     <?php include("../include/nav.php") ?>
 

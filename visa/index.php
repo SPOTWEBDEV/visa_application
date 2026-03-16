@@ -1,4 +1,4 @@
-<?php  
+<?php
 include "../server/connection.php";
 ?>
 <!DOCTYPE html>
@@ -7,7 +7,7 @@ include "../server/connection.php";
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Visa Grid || <?php echo $sitename?></title>
+    <title>Visa Grid || <?php echo $sitename ?></title>
     <!-- favicons Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="<?php echo $domain ?>/assets/images/favicons/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="<?php echo $domain ?>/assets/images/favicons/favicon-32x32.png" />
@@ -40,8 +40,7 @@ include "../server/connection.php";
 
 <body class="custom-cursor">
 
-    <div class="custom-cursor__cursor"></div>
-    <div class="custom-cursor__cursor-two"></div>
+
 
     <?php include("../include/nav.php") ?>
 
@@ -213,11 +212,15 @@ include "../server/connection.php";
             <ul class="mobile-nav__contact list-unstyled">
                 <li>
                     <span class="mobile-nav__contact__icon"><i class="fa fa-envelope"></i></span>
-                    <a href="mailto:findox@envato.com"><?= $site_email ?></a>
+                    <a href="mailto:findox@envato.com"><?= $site_email ?>suu</a>
                 </li>
                 <li>
-                    <span class="mobile-nav__contact__icon"><i class="fa fa-phone-alt"></i></span>
-                    <a href="tel:+9156980036420">  </a>
+                    <span class="mobile-nav__contact__icon">
+                        <i class="fa fa-phone-alt"></i>
+                    </span>
+                    <a href="https://wa.me/<?php echo $sitephone; ?>" target="_blank">
+                        Whatsapp Number : <?php echo $sitephone; ?>
+                    </a>
                 </li>
             </ul><!-- /.mobile-nav__contact -->
             <div class="social-links">
@@ -289,14 +292,16 @@ include "../server/connection.php";
                         <span class="sidebar-three__info__icon">
                             <i class="icon-email"></i>
                         </span>
-                        <a href="mailto:<?= $site_email ?>"><?= $site_email ?></a>
+                        <a href="mailto:<?= $site_email ?>"><?= $site_email ?>ss</a>
                     </li>
                     <li>
-                        <span class="sidebar-three__info__icon">
-                            <i class="icon-phone-call"></i>
-                        </span>
-                        <a href="tel:+9156980036420">+9156980036420</a>
-                    </li>
+                    <span class="mobile-nav__contact__icon">
+                        <i class="fa fa-phone-alt"></i>
+                    </span>
+                    <a href="https://wa.me/<?php echo $sitephone; ?>" target="_blank">
+                        Whatsapp Number : <?php echo $sitephone; ?>
+                    </a>
+                </li>
                 </ul><!-- /.sidebar-three__info__list -->
             </div><!-- /.sidebar-three__info -->
             <div class="sidebar-three__social social-links sidebar-three__item">

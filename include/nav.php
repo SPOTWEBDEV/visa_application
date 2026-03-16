@@ -12,7 +12,11 @@
                            <ul class="topbar__info list-unstyled">
                                <li>
                                    <span class="topbar__info__icon"><i class="icon-email"></i></span>
-                                   <span><a href="mailto:<?php echo $site_email ?>"><?php echo $site_email ?></a></span>
+                                   <span><a href="https://wa.me/<?php echo $sitephone; ?>" target="_blank"><?php echo $site_email ?></a></span>
+                               </li>
+                               <li>
+                                   <span class="topbar__info__icon"><i class="icon-email"></i></span>
+                                   <span><a href="https://wa.me/+17163287873">Whatsapp Number : <?php echo $sitephone; ?></a></span>
                                </li>
                                <li>
                                    <span class="topbar__info__icon"><i class="icon-location"></i></span>
@@ -39,7 +43,7 @@
                        <div class="main-header__left">
                            <div class="main-header__logo logo-retina">
                                <a href="<?php echo $domain ?>/visa/">
-                                   <img  src="<?php echo $domain ?>/assets/images/logo-light.png"  alt="">
+                                   <img src="<?php echo $domain ?>/assets/images/logo-light.png" alt="">
                                </a>
                            </div><!-- /.main-header__logo -->
                        </div><!-- /.main-header__left -->

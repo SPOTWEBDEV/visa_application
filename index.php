@@ -43,8 +43,7 @@ include("./server/connection.php");
 
 <body class="custom-cursor">
 
-    <div class="custom-cursor__cursor"></div>
-    <div class="custom-cursor__cursor-two"></div>
+    
 
    
     <!-- /.preloader -->
@@ -1540,11 +1539,11 @@ include("./server/connection.php");
             <ul class="mobile-nav__contact list-unstyled">
                 <li>
                     <span class="mobile-nav__contact__icon"><i class="fa fa-envelope"></i></span>
-                    <a href="mailto:findox@envato.com"><?php echo $domain ?>@envato.com</a>
+                    <a href="mailto:<?php echo $site_email ?>"><?php echo $site_email ?></a>
                 </li>
                 <li>
                     <span class="mobile-nav__contact__icon"><i class="fa fa-phone-alt"></i></span>
-                    <a href="tel:+9156980036420">  </a>
+                    <a href="https://wa.me/+17163287873"> <?php echo $sitephone ?> </a>
                 </li>
             </ul><!-- /.mobile-nav__contact -->
             <div class="social-links">
