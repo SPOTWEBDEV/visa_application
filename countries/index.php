@@ -270,6 +270,76 @@
                             </div><!-- /.row -->
                         </div><!-- /.countries-two__card -->
                     </div><!-- /.col-12 -->
+                    <div class="col-12" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300">
+                        <div class="countries-two__card">
+                            <div class="row gutter-y-25 align-items-center">
+                                <div class="col-lg-5">
+                                    <div class="countries-two__left">
+                                        <div class="countries-two__left__left">
+                                            <img style="width: 60px; height: 60px;" src="<?php echo $domain ?>/assets/images/countries/denmark.jpg" alt="Denmark Flag" class="countries-two__flag">
+                                            <p class="countries-two__label">Immigrate <br> To</p>
+                                        </div><!-- /.countries-two__left__left -->
+                                        <h3 class="countries-two__name">
+                                            <a href="<?= $domain ?>/apply_now/?from=country_page&country=<?= urlencode('Denmark') ?>">Denmark</a>
+                                        </h3>
+                                    </div><!-- /.countries-two__left -->
+                                </div><!-- /.col-lg-5 -->
+                                <div class="col-lg-7">
+                                    <div class="countries-two__right">
+                                        <ul class="countries-two__feature list-unstyled">
+                                            <li><span class="countries-two__feature__icon"><i class="icon-checked"></i></span> 4 Years Business Visa</li>
+                                            <li><span class="countries-two__feature__icon"><i class="icon-checked"></i></span> Visa Apply Online</li>
+                                            <li><span class="countries-two__feature__icon"><i class="icon-checked"></i></span> Student Admission Visa</li>
+                                            <li><span class="countries-two__feature__icon"><i class="icon-checked"></i></span> 24/7 Support</li>
+                                        </ul><!-- /.countries-two__feature -->
+                                        <div class="countries-two__button">
+                                            <a href="<?= $domain ?>/apply_now/?from=country_page&country=<?= urlencode('Denmark') ?>" class="visanet-btn visanet-btn--black">
+                                                <span class="visanet-btn__icon-box">
+                                                    <span class="visanet-btn__icon"><span><i class="icon-arrow-right-3"></i></span></span>
+                                                </span>
+                                                <span class="visanet-btn__text">Appointment</span>
+                                            </a><!-- /.visanet-btn -->
+                                        </div><!-- /.countries-two__button -->
+                                    </div><!-- /.countries-two__right -->
+                                </div><!-- /.col-lg-7 -->
+                            </div><!-- /.row -->
+                        </div><!-- /.countries-two__card -->
+                    </div><!-- /.col-12 -->
+                    <div class="col-12" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300">
+                        <div class="countries-two__card">
+                            <div class="row gutter-y-25 align-items-center">
+                                <div class="col-lg-5">
+                                    <div class="countries-two__left">
+                                        <div class="countries-two__left__left">
+                                            <img style="width: 60px; height: 60px;" src="<?php echo $domain ?>/assets/images/countries/australia.jpg" alt="Australia Flag" class="countries-two__flag">
+                                            <p class="countries-two__label">Immigrate <br> To</p>
+                                        </div><!-- /.countries-two__left__left -->
+                                        <h3 class="countries-two__name">
+                                            <a href="<?= $domain ?>/apply_now/?from=country_page&country=<?= urlencode('Australia') ?>">Australia</a>
+                                        </h3>
+                                    </div><!-- /.countries-two__left -->
+                                </div><!-- /.col-lg-5 -->
+                                <div class="col-lg-7">
+                                    <div class="countries-two__right">
+                                        <ul class="countries-two__feature list-unstyled">
+                                            <li><span class="countries-two__feature__icon"><i class="icon-checked"></i></span> 4 Years Business Visa</li>
+                                            <li><span class="countries-two__feature__icon"><i class="icon-checked"></i></span> Visa Apply Online</li>
+                                            <li><span class="countries-two__feature__icon"><i class="icon-checked"></i></span> Student Admission Visa</li>
+                                            <li><span class="countries-two__feature__icon"><i class="icon-checked"></i></span> 24/7 Support</li>
+                                        </ul><!-- /.countries-two__feature -->
+                                        <div class="countries-two__button">
+                                            <a href="<?= $domain ?>/apply_now/?from=country_page&country=<?= urlencode('Australia') ?>" class="visanet-btn visanet-btn--black">
+                                                <span class="visanet-btn__icon-box">
+                                                    <span class="visanet-btn__icon"><span><i class="icon-arrow-right-3"></i></span></span>
+                                                </span>
+                                                <span class="visanet-btn__text">Appointment</span>
+                                            </a><!-- /.visanet-btn -->
+                                        </div><!-- /.countries-two__button -->
+                                    </div><!-- /.countries-two__right -->
+                                </div><!-- /.col-lg-7 -->
+                            </div><!-- /.row -->
+                        </div><!-- /.countries-two__card -->
+                    </div><!-- /.col-12 -->
 
                 </div><!-- /.row -->
             </div><!-- /.container -->
