@@ -1,4 +1,4 @@
-       <?php include("./components/trans.php") ?>
+     <?php include __DIR__ . "/../components/trans.php"; ?>
        <div class="page-wrapper">
            <div class="topbar">
                <div class="container">
