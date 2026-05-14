@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 include("./server/connection.php");
 ?>
@@ -43,15 +43,15 @@ include("./server/connection.php");
 
 <body class="custom-cursor">
 
-    
 
-   
+
+
     <!-- /.preloader -->
     <div class="page-wrapper">
-       <!-- header started -->
-     <?php include("./include/nav.php")?>
+        <!-- header started -->
+        <?php include("./include/nav.php") ?>
 
-       <!-- header ended -->
+        <!-- header ended -->
 
         <section class="hero-slider-two" id='home'>
             <div class="hero-slider-two__carousel visanet-owl__carousel visanet-owl__carousel--basic-nav owl-carousel owl-theme" data-owl-options='{
@@ -1523,7 +1523,7 @@ include("./server/connection.php");
             </div><!-- /.container -->
         </section><!-- /.newsletter-one -->
 
-      <?php include("./include/footer.php") ?>
+        <?php include("./include/footer.php") ?>
     </div><!-- /.page-wrapper -->
 
     <div class="mobile-nav__wrapper">
@@ -1537,6 +1537,7 @@ include("./server/connection.php");
             </div><!-- /.logo-box -->
             <div class="mobile-nav__container"></div><!-- /.mobile-nav__container -->
             <ul class="mobile-nav__contact list-unstyled">
+                
                 <li>
                     <span class="mobile-nav__contact__icon"><i class="fa fa-envelope"></i></span>
                     <a href="mailto:<?php echo $site_email ?>"><?php echo $site_email ?></a>

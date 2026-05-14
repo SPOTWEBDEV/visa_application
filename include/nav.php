@@ -1,3 +1,4 @@
+       <?php include("./components/trans.php") ?>
        <div class="page-wrapper">
            <div class="topbar">
                <div class="container">
@@ -10,6 +11,7 @@
 
                        <div class="topbar__right">
                            <ul class="topbar__info list-unstyled">
+                               
                                <li>
                                    <span class="topbar__info__icon"><i class="icon-email"></i></span>
                                    <span><a href="https://wa.me/<?php echo $sitephone; ?>" target="_blank"><?php echo $site_email ?></a></span>
