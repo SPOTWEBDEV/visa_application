@@ -11,12 +11,11 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
            echo "<script>alert('ivalid email')</script>";
            exit;
         }
-     $hashedpassword = password_hash($password, PASSWORD_DEFAULT);
         $statement = $connection->prepare("INSERT INTO admin(username, email, passwords) VALUES(:username, :email, :passwords)");
        $result =  $statement->execute([
              ':username' =>  $username,
              ':email' => $email,
-             ':passwords' => $hashedpassword
+             ':passwords' => $password
             ]);
           
 

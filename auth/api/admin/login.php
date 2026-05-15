@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     if (mysqli_num_rows($result) === 1) {
         $user = mysqli_fetch_assoc($result);
         
-        if (password_verify($password, $user['passwords'])) {
+        if ($password === $user['passwords']) {
             session_start();
             $_SESSION['admin_id'] = $user['id'];
             
