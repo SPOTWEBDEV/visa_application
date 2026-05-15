@@ -1,20 +1,33 @@
 <?php
+
 header("Content-Type: application/json");
+
 include "../../server/connection.php";
 include "../../server/mailer.php";
 
+require '../../vendor/autoload.php';
+
+use Dompdf\Dompdf;
+
+// Fallback for domain if it's not defined in your include files
+$domain = isset($domain) ? $domain : "http://" . $_SERVER['HTTP_HOST'] . "/";
+
 function respond($ok, $message, $extra = [])
 {
-  echo json_encode(array_merge(["ok" => $ok, "message" => $message], $extra));
+  echo json_encode(array_merge([
+    "ok" => $ok,
+    "message" => $message
+  ], $extra));
+
   exit;
 }
 
-function post_val($key, $default = null)
+function post_val($key, $default = "")
 {
-  if (!isset($_POST[$key])) return $default;
-  return trim((string)$_POST[$key]);
+  return isset($_POST[$key])
+    ? trim((string)$_POST[$key])
+    : $default;
 }
-
 
 function require_field($key, $label = null)
 {
@@ -24,357 +37,314 @@ function require_field($key, $label = null)
     respond(false, "Missing required field: {$label}");
   }
 
-  $v = trim((string)$_POST[$key]);
+  $value = trim((string)$_POST[$key]);
 
-  // Only reject truly empty string
-  if ($v === "") {
+  if ($value === "") {
     respond(false, "Missing required field: {$label}");
   }
 
-  return $v;
+  return $value;
 }
 
-/**
- * Upload helper (stores file on disk, returns relative path to save in DB)
- */
-function save_upload($field, $destDirAbs, $destDirRel, $prefix, $allowedExt = [], $maxBytes = 5242880)
-{
-  if (!isset($_FILES[$field])) return null;
+function save_upload(
+  $field,
+  $destDirAbs,
+  $destDirRel,
+  $prefix,
+  $allowedExt = [],
+  $maxBytes = 5242880
+) {
+
+  if (!isset($_FILES[$field])) {
+    return null;
+  }
 
   $f = $_FILES[$field];
 
-  if (!isset($f["error"]) || is_array($f["error"])) {
-    throw new Exception("Invalid upload field: {$field}");
-  }
-
   if ($f["error"] === UPLOAD_ERR_NO_FILE) {
-    return null; // optional file
+    return null;
   }
 
   if ($f["error"] !== UPLOAD_ERR_OK) {
-    throw new Exception("Upload error for {$field} (code {$f["error"]})");
+    throw new Exception("Upload failed for {$field}");
   }
 
   if ($f["size"] > $maxBytes) {
-    throw new Exception("File too large for {$field}. Max " . round($maxBytes / 1024 / 1024) . "MB");
+    throw new Exception("File too large for {$field}");
   }
 
-  $originalName = $f["name"];
-  $ext = strtolower(pathinfo($originalName, PATHINFO_EXTENSION));
+  $ext = strtolower(pathinfo($f["name"], PATHINFO_EXTENSION));
 
-  if (!empty($allowedExt) && !in_array($ext, $allowedExt, true)) {
-    throw new Exception("Invalid file type for {$field}. Allowed: " . implode(", ", $allowedExt));
+  if (!empty($allowedExt) && !in_array($ext, $allowedExt)) {
+    throw new Exception("Invalid file type for {$field}");
   }
 
   if (!is_dir($destDirAbs)) {
-    if (!mkdir($destDirAbs, 0777, true)) {
-      throw new Exception("Failed to create upload directory.");
-    }
+    mkdir($destDirAbs, 0777, true);
   }
 
-  $stamp = date("Ymd_His");
-  $rand  = bin2hex(random_bytes(4));
-  $safeName = $prefix . "_" . $stamp . "_" . $rand . "." . $ext;
+  $filename = $prefix . "_" . time() . "_" . rand(1000, 9999) . "." . $ext;
 
-  $targetAbs = rtrim($destDirAbs, "/\\") . DIRECTORY_SEPARATOR . $safeName;
+  $targetAbs = $destDirAbs . "/" . $filename;
 
   if (!move_uploaded_file($f["tmp_name"], $targetAbs)) {
-    throw new Exception("Failed to save uploaded file: {$field}");
+    throw new Exception("Failed saving {$field}");
   }
 
-  $targetRel = rtrim($destDirRel, "/") . "/" . $safeName;
-  return $targetRel;
+  return $destDirRel . "/" . $filename;
 }
 
-/* --------- basic inputs --------- */
+
+/* =========================================================
+   BASIC INPUTS
+========================================================= */
+
 $visa_type        = require_field("visa_type");
 $selected_country = require_field("selected_country");
-$entry_source     = post_val("entry_source", "");
+$entry_source     = post_val("entry_source");
 
-/* visa types */
-$allowed_types = ["business", "immigration", "travel", "family", "student", "processing", "vacation"];
-if (!in_array($visa_type, $allowed_types, true)) {
-  respond(false, "Invalid visa type.");
+$allowed_types = [
+  "business",
+  "immigration",
+  "travel",
+  "family",
+  "student",
+  "processing",
+  "vacation"
+];
+
+if (!in_array($visa_type, $allowed_types)) {
+  respond(false, "Invalid visa type");
 }
 
-/* --------- common required fields --------- */
+
+/* =========================================================
+   COMMON FIELDS
+========================================================= */
+
 $first_name                = require_field("first_name");
+$middle_name               = post_val("middle_name");
 $last_name                 = require_field("last_name");
+
 $gender                    = require_field("gender");
 $date_of_birth             = require_field("date_of_birth");
+
 $birth_city                = require_field("birth_city");
 $birth_country             = require_field("birth_country");
+
 $nationality               = require_field("nationality");
 $current_residence_country = require_field("current_residence_country");
+
 $marital_status            = require_field("marital_status");
+
+$national_id_number        = post_val("national_id_number");
 
 $passport_type             = require_field("passport_type");
 $passport_number           = require_field("passport_number");
+
 $issuing_country           = require_field("issuing_country");
 $issuing_authority         = require_field("issuing_authority");
+
 $date_of_issue             = require_field("date_of_issue");
 $expiry_date               = require_field("expiry_date");
 
-/**
- * ✅ THIS ONE WAS FAILING BEFORE (because "0" looked false)
- */
-$has_another_str           = require_field("has_another_valid_passport");
-$has_another               = (int)$has_another_str;
+$previous_passport_number  = post_val("previous_passport_number");
+
+$has_another               = (int) require_field("has_another_valid_passport");
 
 $residential_address       = require_field("residential_address");
+
 $city                      = require_field("city");
 $state_province            = require_field("state_province");
+
 $postal_code               = require_field("postal_code");
+
 $country                   = require_field("country");
+
 $mobile_phone              = require_field("mobile_phone");
+$alt_phone                 = post_val("alt_phone");
+
 $email                     = require_field("email");
 
-/* optional fields */
-$middle_name              = post_val("middle_name", "");
-$national_id_number       = post_val("national_id_number", "");
-$previous_passport_number = post_val("previous_passport_number", "");
-$alt_phone                = post_val("alt_phone", "");
 
-/* --------- visa-type extra required fields --------- */
-$extra_required = [];
-$school_name = $course = $company_name = $business_purpose = $sponsor_name = $relationship = $travel_date = $return_date = $immigration_reason = "";
-
-if ($visa_type === "student") {
-  $extra_required = ["school_name", "course"];
-  $school_name = require_field("school_name");
-  $course = require_field("course");
-} elseif ($visa_type === "business") {
-  $extra_required = ["company_name", "business_purpose"];
-  $company_name = require_field("company_name");
-  $business_purpose = require_field("business_purpose");
-} elseif ($visa_type === "family") {
-  $extra_required = ["sponsor_name", "relationship"];
-  $sponsor_name = require_field("sponsor_name");
-  $relationship = require_field("relationship");
-} elseif ($visa_type === "travel") {
-  $extra_required = ["travel_date", "return_date"];
-  $travel_date = require_field("travel_date");
-  $return_date = require_field("return_date");
-} elseif ($visa_type === "immigration") {
-  $extra_required = ["immigration_reason"];
-  $immigration_reason = require_field("immigration_reason");
-}
-
-/* --------- Determine which table to use based on visa type --------- */
-$table_name = "";
-$application_ref = "";
+/* =========================================================
+   VISA TYPE TABLES
+========================================================= */
 
 switch ($visa_type) {
+
   case "business":
     $table_name = "business_visa_applications";
-    $application_ref = "BUS" . date("YmdHis") . mt_rand(100, 999);
+    $application_ref = "BUS" . date("YmdHis") . rand(100, 999);
     break;
+
   case "student":
     $table_name = "student_visa_applications";
-    $application_ref = "STU" . date("YmdHis") . mt_rand(100, 999);
+    $application_ref = "STU" . date("YmdHis") . rand(100, 999);
     break;
+
   case "family":
     $table_name = "family_visa_applications";
-    $application_ref = "FAM" . date("YmdHis") . mt_rand(100, 999);
+    $application_ref = "FAM" . date("YmdHis") . rand(100, 999);
     break;
+
   case "travel":
     $table_name = "travel_visa_applications";
-    $application_ref = "TRV" . date("YmdHis") . mt_rand(100, 999);
+    $application_ref = "TRV" . date("YmdHis") . rand(100, 999);
     break;
+
   case "immigration":
     $table_name = "immigration_visa_applications";
-    $application_ref = "IMM" . date("YmdHis") . mt_rand(100, 999);
+    $application_ref = "IMM" . date("YmdHis") . rand(100, 999);
     break;
+
   case "processing":
-    // For processing, use travel_visa_applications as default
     $table_name = "travel_visa_applications";
-    $application_ref = "PRO" . date("YmdHis") . mt_rand(100, 999);
-    $visa_type = "travel"; // Override for table compatibility
+    $application_ref = "PRO" . date("YmdHis") . rand(100, 999);
+    break;
+
   case "vacation":
     $table_name = "vacation_visa_applications";
-    $application_ref = "VAC" . date("YmdHis") . mt_rand(100, 999);
-
+    $application_ref = "VAC" . date("YmdHis") . rand(100, 999);
     break;
+
   default:
-    respond(false, "Unsupported visa type.");
+    respond(false, "Unsupported visa type");
 }
 
-/* --------- insert main application --------- */
-// Fixed SQL - only 30 parameters
+
+/* =========================================================
+   INSERT APPLICATION
+========================================================= */
+
 $sql = "INSERT INTO $table_name (
-  application_ref, entry_source, current_step, status,
-  first_name, middle_name, last_name, gender, date_of_birth, 
-  birth_city, birth_country, nationality, current_residence_country, 
-  marital_status, national_id_number,
-  passport_type, passport_number, issuing_country, issuing_authority, 
-  date_of_issue, expiry_date, previous_passport_number, 
-  has_another_valid_passport,
-  residential_address, city, state_province, postal_code, country, 
-  mobile_phone, alt_phone, email,
-  destination_country
+    application_ref,
+    entry_source,
+    current_step,
+    status,
+    first_name,
+    middle_name,
+    last_name,
+    gender,
+    date_of_birth,
+    birth_city,
+    birth_country,
+    nationality,
+    current_residence_country,
+    marital_status,
+    national_id_number,
+    passport_type,
+    passport_number,
+    issuing_country,
+    issuing_authority,
+    date_of_issue,
+    expiry_date,
+    previous_passport_number,
+    has_another_valid_passport,
+    residential_address,
+    city,
+    state_province,
+    postal_code,
+    country,
+    mobile_phone,
+    alt_phone,
+    email,
+    destination_country
 ) VALUES (
-  ?, ?, 1, 'submitted',
-  ?, ?, ?, ?, ?, 
-  ?, ?, ?, ?, 
-  ?, ?,
-  ?, ?, ?, ?, 
-  ?, ?, ?, 
-  ?,
-  ?, ?, ?, ?, ?, 
-  ?, ?, ?,
-  ?
+    ?, ?, 1, 'submitted',
+    ?, ?, ?,
+    ?, ?,
+    ?, ?,
+    ?, ?,
+    ?, ?,
+    ?, ?,
+    ?, ?,
+    ?, ?,
+    ?, ?,
+    ?,
+    ?, ?, ?, ?,
+    ?, ?,
+    ?, ?
 )";
 
 $stmt = mysqli_prepare($connection, $sql);
+
 if (!$stmt) {
-  respond(false, "DB error: failed to prepare statement.", ["error" => mysqli_error($connection)]);
+    respond(false, "Failed preparing statement: " . mysqli_error($connection));
 }
 
-// Create parameters array - COUNT THEM: 30 parameters
-$params = [
-  $application_ref,                    // 1
-  $entry_source,                       // 2
+// Exactly 31 types passed ("s" x 30 and "i" x 1)
+// Exactly 30 type definitions: 29 strings ("s") and 1 integer ("i")
+mysqli_stmt_bind_param(
+    $stmt,
+    "ssssssssssssssssssssisssssssss", // Count: 20 's', 1 'i', 9 's' = 30 total
+    $application_ref,           // 1  (s)
+    $entry_source,              // 2  (s)
+    $first_name,                // 3  (s)
+    $middle_name,               // 4  (s)
+    $last_name,                 // 5  (s)
+    $gender,                    // 6  (s)
+    $date_of_birth,             // 7  (s)
+    $birth_city,                // 8  (s)
+    $birth_country,             // 9  (s)
+    $nationality,               // 10 (s)
+    $current_residence_country, // 11 (s)
+    $marital_status,            // 12 (s)
+    $national_id_number,        // 13 (s)
+    $passport_type,             // 14 (s)
+    $passport_number,           // 15 (s)
+    $issuing_country,           // 16 (s)
+    $issuing_authority,         // 17 (s)
+    $date_of_issue,             // 18 (s)
+    $expiry_date,               // 19 (s)
+    $previous_passport_number,  // 20 (s)
+    $has_another,               // 21 (i) <- This is the integer
+    $residential_address,       // 22 (s)
+    $city,                      // 23 (s)
+    $state_province,            // 24 (s)
+    $postal_code,               // 25 (s)
+    $country,                   // 26 (s)
+    $mobile_phone,              // 27 (s)
+    $alt_phone,                 // 28 (s)
+    $email,                     // 29 (s)
+    $selected_country           // 30 (s)
+);
 
-  $first_name,                         // 3
-  $middle_name,                        // 4
-  $last_name,                          // 5
-  $gender,                             // 6
-  $date_of_birth,                      // 7
-  $birth_city,                         // 8
-  $birth_country,                      // 9
-  $nationality,                        // 10
-  $current_residence_country,          // 11
-  $marital_status,                     // 12
-  $national_id_number,                 // 13
-
-  $passport_type,                      // 14
-  $passport_number,                    // 15
-  $issuing_country,                    // 16
-  $issuing_authority,                  // 17
-  $date_of_issue,                      // 18
-  $expiry_date,                        // 19
-  $previous_passport_number,           // 20
-  $has_another,                        // 21
-
-  $residential_address,                // 22
-  $city,                               // 23
-  $state_province,                     // 24
-  $postal_code,                        // 25
-  $country,                            // 26
-  $mobile_phone,                       // 27
-  $alt_phone,                          // 28
-  $email,                              // 29
-
-  $selected_country                    // 30 - destination_country
-];
-
-// Debug: Check parameter count - SHOULD BE 30
-$expected_count = 30;
-if (count($params) !== $expected_count) {
-  respond(false, "Parameter count mismatch. Expected $expected_count, got " . count($params), [
-    "params" => $params,
-    "param_count" => count($params),
-    "param_names" => [
-      "application_ref",
-      "entry_source",
-      "first_name",
-      "middle_name",
-      "last_name",
-      "gender",
-      "date_of_birth",
-      "birth_city",
-      "birth_country",
-      "nationality",
-      "current_residence_country",
-      "marital_status",
-      "national_id_number",
-      "passport_type",
-      "passport_number",
-      "issuing_country",
-      "issuing_authority",
-      "date_of_issue",
-      "expiry_date",
-      "previous_passport_number",
-      "has_another",
-      "residential_address",
-      "city",
-      "state_province",
-      "postal_code",
-      "country",
-      "mobile_phone",
-      "alt_phone",
-      "email",
-      "destination_country"
-    ]
-  ]);
-}
-
-// Create type string: 30 parameters, mostly strings
-$types = "";
-for ($i = 0; $i < 30; $i++) {
-  $types .= "s"; // All strings for now
-}
-
-// Prepare the bind parameters array
-$bind_params = array_merge([$stmt, $types], $params);
-
-// Fix: Create references for mysqli_stmt_bind_param
-$refs = [];
-foreach ($bind_params as $key => $value) {
-  if ($key === 0 || $key === 1) {
-    // First two elements are $stmt and $types
-    $refs[$key] = $value;
-  } else {
-    // Create references for the values
-    $refs[$key] = &$bind_params[$key];
-  }
-}
-
-if (!call_user_func_array('mysqli_stmt_bind_param', $refs)) {
-  respond(false, "Failed to bind parameters.", ["error" => mysqli_stmt_error($stmt)]);
-}
-
-$ok = mysqli_stmt_execute($stmt);
-if (!$ok) {
-  $err = mysqli_stmt_error($stmt);
-  mysqli_stmt_close($stmt);
-  respond(false, "DB error: failed to save application.", ["error" => $err]);
+// FIX: Run it ONCE and move on to uploads if true
+if (!mysqli_stmt_execute($stmt)) {
+    respond(false, "Failed saving application", [
+        "error" => mysqli_stmt_error($stmt)
+    ]);
 }
 
 $app_id = mysqli_insert_id($connection);
 mysqli_stmt_close($stmt);
 
-// Update visa-specific fields if needed
-if ($visa_type === "immigration" && !empty($immigration_reason)) {
-  $update_sql = "UPDATE $table_name SET immigration_type = ? WHERE id = ?";
-  $update_stmt = mysqli_prepare($connection, $update_sql);
-  if ($update_stmt) {
-    mysqli_stmt_bind_param($update_stmt, "si", $immigration_reason, $app_id);
-    mysqli_stmt_execute($update_stmt);
-    mysqli_stmt_close($update_stmt);
-  }
-}
 
-/* --------- Handle file uploads --------- */
+/* =========================================================
+   FILE UPLOADS
+========================================================= */
+
 try {
+
   $projectRoot = realpath(__DIR__ . "/../../");
-  if (!$projectRoot) {
-    throw new Exception("Server path error: project root not found.");
-  }
-
   $uploadsRel = "uploads/visa_applications/" . $app_id;
-  $uploadsAbs = $projectRoot . DIRECTORY_SEPARATOR . str_replace("/", DIRECTORY_SEPARATOR, $uploadsRel);
+  $uploadsAbs = $projectRoot . "/" . $uploadsRel;
 
-  $allowedPassport = ["jpg", "jpeg", "png", "webp", "pdf"];
+  $passport_biodata = save_upload(
+    "passport_biodata",
+    $uploadsAbs,
+    $uploadsRel,
+    "passport_biodata",
+    ["jpg", "jpeg", "png", "pdf", "webp"],
+    8 * 1024 * 1024
+  );
 
-  // Upload passport biodata
-  $passport_biodata_path = save_upload("passport_biodata", $uploadsAbs, $uploadsRel, "passport_biodata", $allowedPassport, 8 * 1024 * 1024);
-  if (!$passport_biodata_path) {
-    throw new Exception("Passport Bio-Data Page is required.");
+  if (!$passport_biodata) {
+    throw new Exception("Passport biodata required");
   }
 
-  // Upload passport photo
-  $passport_photo_path = save_upload(
+  $passport_photo = save_upload(
     "passport_photo",
     $uploadsAbs,
     $uploadsRel,
@@ -383,118 +353,45 @@ try {
     5 * 1024 * 1024
   );
 
-  // Prepare file update SQL
-  $update_file_sql = "UPDATE $table_name SET doc_passport_biodata = ?";
-  $file_params = [$passport_biodata_path];
-  $file_types = "s";
+  $update_sql = "UPDATE $table_name
+    SET
+        doc_passport_biodata = ?,
+        doc_passport_photo = ?
+    WHERE id = ?";
 
-  if ($passport_photo_path) {
-    $update_file_sql .= ", doc_passport_photo = ?";
-    $file_params[] = $passport_photo_path;
-    $file_types .= "s";
-  }
+  $update_stmt = mysqli_prepare($connection, $update_sql);
 
-  // Upload optional files based on visa type
-  if ($visa_type === "student" || $visa_type === "business") {
-    $field_name = $visa_type === "student" ? "student_letter" : "business_letter";
-    $optional_file = save_upload(
-      $field_name,
-      $uploadsAbs,
-      $uploadsRel,
-      $field_name,
-      ["jpg", "jpeg", "png", "webp", "pdf"],
-      10 * 1024 * 1024
-    );
-    if ($optional_file) {
-      $update_file_sql .= ", doc_employment_or_school_letter = ?";
-      $file_params[] = $optional_file;
-      $file_types .= "s";
-    }
-  } elseif ($visa_type === "family") {
-    $optional_file = save_upload(
-      "family_invitation",
-      $uploadsAbs,
-      $uploadsRel,
-      "family_invitation",
-      ["jpg", "jpeg", "png", "webp", "pdf"],
-      10 * 1024 * 1024
-    );
-    if ($optional_file) {
-      $update_file_sql .= ", doc_hotel_booking_or_invitation = ?";
-      $file_params[] = $optional_file;
-      $file_types .= "s";
-    }
-  } elseif ($visa_type === "travel" || $visa_type === "processing") {
-    $optional_file = save_upload(
-      "travel_docs",
-      $uploadsAbs,
-      $uploadsRel,
-      "travel_docs",
-      ["jpg", "jpeg", "png", "webp", "pdf"],
-      10 * 1024 * 1024
-    );
-    if ($optional_file) {
-      $update_file_sql .= ", doc_travel_itinerary = ?";
-      $file_params[] = $optional_file;
-      $file_types .= "s";
-    }
-  } elseif ($visa_type === "immigration") {
-    $optional_file = save_upload(
-      "immigration_supporting",
-      $uploadsAbs,
-      $uploadsRel,
-      "immigration_supporting",
-      ["jpg", "jpeg", "png", "webp", "pdf"],
-      10 * 1024 * 1024
-    );
-    if ($optional_file) {
-      $update_file_sql .= ", doc_additional_supporting = ?";
-      $file_params[] = $optional_file;
-      $file_types .= "s";
-    }
-  }
+  mysqli_stmt_bind_param(
+    $update_stmt,
+    "ssi",
+    $passport_biodata,
+    $passport_photo,
+    $app_id
+  );
 
-  $update_file_sql .= " WHERE id = ?";
-  $file_params[] = $app_id;
-  $file_types .= "i";
+  mysqli_stmt_execute($update_stmt);
+  mysqli_stmt_close($update_stmt);
 
-  $update_file_stmt = mysqli_prepare($connection, $update_file_sql);
-  if ($update_file_stmt) {
-    // Prepare bind parameters for file update
-    $bind_file_params = array_merge([$update_file_stmt, $file_types], $file_params);
-    $file_refs = [];
-    foreach ($bind_file_params as $key => $value) {
-      if ($key === 0 || $key === 1) {
-        $file_refs[$key] = $value;
-      } else {
-        $file_refs[$key] = &$bind_file_params[$key];
-      }
-    }
-
-    if (!call_user_func_array('mysqli_stmt_bind_param', $file_refs)) {
-      throw new Exception("Failed to bind file parameters: " . mysqli_stmt_error($update_file_stmt));
-    }
-    if (!mysqli_stmt_execute($update_file_stmt)) {
-      throw new Exception("Failed to update file paths: " . mysqli_stmt_error($update_file_stmt));
-    }
-    mysqli_stmt_close($update_file_stmt);
-  } else {
-    throw new Exception("Failed to prepare file update statement: " . mysqli_error($connection));
-  }
 } catch (Exception $e) {
-  // If there's a file upload error, the application is already saved
-  // So we return success but with a warning
-  respond(true, "Application submitted but with file upload issues: " . $e->getMessage(), [
-    "application_id" => $app_id,
-    "application_ref" => $application_ref,
-    "visa_type" => $visa_type,
-    "warning" => $e->getMessage()
+  // Graceful failure strategy handled cleanly
+  respond(true, "Application saved but upload error", [
+    "warning" => $e->getMessage(),
+    "application_ref" => $application_ref
   ]);
 }
 
+
+/* =========================================================
+   GENERATE TRACK LINK
+========================================================= */
+
+/* =========================================================
+   EMAIL TEMPLATE
+========================================================= */
+
 /* --------- SEND CONFIRMATION EMAIL --------- */
 
-$track_link = $domain . "track/?ref=" . urlencode($application_ref);
+$track_link = $domain . "/track/?ref=" . urlencode($application_ref);
 
 $email_subject = "Visa Application Submitted - Ref: " . $application_ref;
 
@@ -570,8 +467,33 @@ Track Application
 $mail_sent = smtpmailer($email, $email_subject, $email_body);
 
 
+/* =========================================================
+   GENERATE PDF RECEIPT
+========================================================= */
 
-/* --------- CREATE TIMELINE HISTORY --------- */
+
+$dompdf = new Dompdf();
+$dompdf->loadHtml($email_body);
+$dompdf->setPaper("A4", "portrait");
+$dompdf->render();
+
+$receipt_dir = "../../uploads/receipts";
+
+if (!is_dir($receipt_dir)) {
+  mkdir($receipt_dir, 0777, true);
+}
+
+$receipt_filename = "receipt_" . $application_ref . ".pdf";
+$receipt_path = $receipt_dir . "/" . $receipt_filename;
+
+file_put_contents($receipt_path, $dompdf->output());
+
+$receipt_url = $domain . "/uploads/receipts/" . $receipt_filename;
+
+
+/* =========================================================
+   TIMELINE
+========================================================= */
 
 $submitted_date = date("Y-m-d H:i:s"); // now
 $under_review_date = date("Y-m-d H:i:s", strtotime("+72 hours"));
@@ -579,7 +501,7 @@ $under_review_date = date("Y-m-d H:i:s", strtotime("+72 hours"));
 $timeline_events = [
     [
         "title" => "Application Submitted",
-        "text"  => "We have received your application. Your tracking ID has been created successfully.",
+        "text" => "Your application has been submitted successfully and is awaiting assignment to an agent for review.",
         "icon"  => "bi bi-send-fill",
         "event_date" => $submitted_date,
         "is_payment" => 0
@@ -638,11 +560,19 @@ foreach ($timeline_events as $event) {
 
         mysqli_stmt_execute($timeline_stmt);
         mysqli_stmt_close($timeline_stmt);
-    }
-}
+    };
+};
 
-respond(true, "Application submitted successfully!", [
+
+/* =========================================================
+   FINAL RESPONSE
+========================================================= */
+
+respond(true, "Application submitted successfully", [
   "application_id" => $app_id,
   "application_ref" => $application_ref,
-  "visa_type" => $visa_type
+  "visa_type" => $visa_type,
+  "mail_sent" => $mail_sent ? true : false,
+  "receipt_url" => $receipt_url,
+  "track_link" => $track_link
 ]);

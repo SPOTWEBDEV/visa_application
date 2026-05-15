@@ -49,8 +49,8 @@ $ref_input = "";
 $error_msg = "";
 $app = null;
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $ref_input = trim((string)($_POST["tracking_ref"] ?? ""));
+if ($_SERVER["REQUEST_METHOD"] === "POST" || isset($_GET["ref"])) {
+    $ref_input = trim((string)($_POST["tracking_ref"] ?? $_GET["ref"]));
     if ($ref_input === "") {
         $error_msg = "Please enter your Tracking ID.";
     } else {

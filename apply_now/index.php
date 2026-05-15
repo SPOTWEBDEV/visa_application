@@ -160,8 +160,6 @@
 
 <body class="custom-cursor">
 
-    
-
     <?php include "../include/nav.php" ?>
 
     <section class="checkout-page section-space">
@@ -524,6 +522,55 @@
 
         </div>
     </section>
+
+    <div class="mobile-nav__wrapper">
+        <div class="mobile-nav__overlay mobile-nav__toggler"></div><!-- /.mobile-nav__overlay -->
+        <div class="mobile-nav__content">
+            <span class="mobile-nav__close mobile-nav__toggler"><i class="icon-close"></i></span>
+            <div class="logo-box">
+                <a href="index.php" aria-label="logo image">
+                    <img src="<?php echo $domain ?>/assets/images/logo-light.png" width="230" alt="<?php echo $sitename ?>HTML" />
+                </a>
+            </div><!-- /.logo-box -->
+            <div class="mobile-nav__container"></div><!-- /.mobile-nav__container -->
+            <ul class="mobile-nav__contact list-unstyled">
+                <li>
+                    <span class="mobile-nav__contact__icon"><i class="fa fa-envelope"></i></span>
+                    <a href="mailto:findox@envato.com"><?= $site_email ?></a>
+                </li>
+                <li>
+                    <span class="mobile-nav__contact__icon"><i class="fa fa-phone-alt"></i></span>
+                    <a href="tel:+9156980036420"> </a>
+                </li>
+            </ul><!-- /.mobile-nav__contact -->
+            <div class="social-links">
+                <a href="https://facebook.com">
+                    <span class="social-links__icon">
+                        <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                        <span class="sr-only">Facebook</span>
+                    </span>
+                </a>
+                <a href="https://x.com">
+                    <span class="social-links__icon">
+                        <i class="fab fa-twitter" aria-hidden="true"></i>
+                        <span class="sr-only">X</span>
+                    </span>
+                </a>
+                <a href="https://linkedin.com">
+                    <span class="social-links__icon">
+                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                        <span class="sr-only">Linkedin</span>
+                    </span>
+                </a>
+                <a href="https://instagram.com">
+                    <span class="social-links__icon">
+                        <i class="fab fa-instagram" aria-hidden="true"></i>
+                        <span class="sr-only">Instagram</span>
+                    </span>
+                </a>
+            </div><!-- /.social-links -->
+        </div><!-- /.mobile-nav__content -->
+    </div><!-- /.mobile-nav__wrapper -->
 
     <?php include "../include/footer.php" ?>
     </div>
@@ -909,21 +956,42 @@
                         if (!res.ok) throw new Error(data.message || ("HTTP Error " + res.status));
                         if (!data || data.ok !== true) throw new Error(data.message || "Submission failed.");
 
-                        //clear local storage after success
-                        localStorage.removeItem(LS_KEY);
+                        // Clear local storage after success
+                        // localStorage.removeItem(LS_KEY);
 
+                        console.log("Submission response:", data);
+                        console.log("Receipt URL:", data.receipt_url);
+
+                        // =========================================================
+                        // FORCE AUTO-DOWNLOAD PDF RECEIPT
+                        // =========================================================
+                        if (data.receipt_url) {
+                            const downloadLink = document.createElement("a");
+                            downloadLink.href = data.receipt_url;
+
+                            // Extracts a neat filename or defaults to a standardized format
+                            const filename = data.application_ref ? `receipt_${data.application_ref}.pdf` : "visa_application_receipt.pdf";
+                            downloadLink.setAttribute("download", filename);
+
+                            // Set styles so it stays invisible on screen during runtime execution
+                            downloadLink.style.display = "none";
+                            document.body.appendChild(downloadLink);
+
+                            downloadLink.click(); // Trigger download window
+                            document.body.removeChild(downloadLink); // DOM clean up
+                        }
+
+                        // Display success alert to the user
                         await Swal.fire({
                             icon: "success",
                             title: "Submitted Successfully!",
-                            text: data.message || "Your visa application has been submitted."
-                        })
+                            text: data.message || "Your visa application has been submitted and your receipt is downloading."
+                        });
 
+                        // Redirect safely after giving the download thread space to initialize
                         setTimeout(() => {
-                            location.href = "../"
-                        }, 1500);
-
-
-
+                            location.href = data.track_link;
+                        }, 2000);
 
                     } catch (err) {
                         Swal.fire({

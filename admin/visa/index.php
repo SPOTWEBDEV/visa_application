@@ -259,11 +259,7 @@ function badgeColor($status)
                                                         <th>VISA TYPE</th>
                                                         <th>TRACKING ID</th>
                                                         <th>APPLICANT</th>
-                                                        <th>EMAIL</th>
-                                                        <th>PASSPORT NO</th>
                                                         <th>DESTINATION</th>
-                                                        <th>ENTRY SOURCE</th>
-                                                        <th>STATUS</th>
                                                         <th>CREATED</th>
                                                         <th>ACTION</th>
                                                     </tr>
@@ -295,18 +291,10 @@ function badgeColor($status)
 
                                                                 <td><span class="type-badge"><?php echo $visaType; ?></span></td>
                                                                 <td><?php echo $refRaw; ?></td>
-                                                                <td><?php echo $fullName; ?></td>
-                                                                <td><?php echo $email; ?></td>
-                                                                <td><?php echo $passport; ?></td>
+                                                                <td><?php echo $fullName . '<br>' . $email; ?></td>
+                                                                
+                                                               
                                                                 <td><?php echo $dest; ?></td>
-                                                                <td><?php echo $entry; ?></td>
-
-                                                                <td>
-                                                                    <span class="status-badge" style="background:<?php echo badgeColor($r['status']); ?>">
-                                                                        <?php echo $statusText; ?>
-                                                                    </span>
-                                                                </td>
-
                                                                 <td><?php echo $created; ?></td>
 
                                                                 <td class="action-cell">
