@@ -78,7 +78,7 @@
                                     <span class="sec-title__icon sec-title__icon--left"><i class="icon-airplane"></i></span>
                                     <p class="sec-title__tagline">Our About Company</p>
                                 </div><!-- /.sec-title__top -->
-                                <h2 class="sec-title__title bw-split-in-right">We Are about Expert visa Solution Trusted Immigration Company.</h2><!-- /.sec-title__title -->
+                                <h2 class="sec-title__title bw-split-in-right">We are an expert visa solution trusted immigration company.</h2><!-- /.sec-title__title -->
                             </div><!-- /.sec-title -->
                             <p class="about-one__text" data-aos="fade-left" data-aos-anchor-placement="top-bottom" data-aos-duration="1300">Immigration visa tailored design, management & support services building business agency elit, sed do eiusmod tempor majority have this best in some we form, by injected humour solution.</p>
                         </div><!-- /.about-one__content -->
