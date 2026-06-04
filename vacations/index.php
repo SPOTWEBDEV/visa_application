@@ -210,10 +210,10 @@ $features = [
                     <span class="mobile-nav__contact__icon"><i class="fa fa-envelope"></i></span>
                     <a href="mailto:findox@envato.com"><?php echo $domain ?>@envato.com</a>
                 </li>
-                <li>
+                <!-- <li>
                     <span class="mobile-nav__contact__icon"><i class="fa fa-phone-alt"></i></span>
                     <a href="tel:+9156980036420"> </a>
-                </li>
+                </li> -->
             </ul><!-- /.mobile-nav__contact -->
             <div class="social-links">
                 <a href="https://facebook.com">
