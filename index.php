@@ -313,7 +313,7 @@ include("./server/connection.php");
                                     <span class="visanet-btn__icon-box">
                                         <span class="visanet-btn__icon"><span><i class="icon-arrow-right-3"></i></span></span>
                                     </span>
-                                    <span class="visanet-btn__text">Aout More</span>
+                                    <span class="visanet-btn__text">About More</span>
                                 </a><!-- /.visanet-btn -->
                             </div><!-- /.about-two__button -->
                         </div><!-- /.about-two__content -->
