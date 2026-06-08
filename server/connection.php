@@ -49,8 +49,8 @@ if ($request === 'https') {
 }
 
 // session_start();
-$site_email = "support@paid-vts.com";
+$site_email = "support@paix-vts.com";
 $sitename = "PAIX VISA AND TOURIST Service";
-$siteemailpassword = "support@paid-vts.com";
-$emailhost = "mail@paid-vts.com";
+$siteemailpassword = "support@paix-vts.com";
+$emailhost = "mail@paix-vts.com";
 // $sitephone = "+1 (716) 328‑7873";

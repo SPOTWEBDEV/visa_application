@@ -93,7 +93,7 @@
                             <div class="about-one__feature__bg"></div>
                             <div class="about-one__feature__icon-box"><span class="about-one__feature__icon"><i class="icon-passport"></i></span></div>
                             <div class="about-one__feature__content">
-                                <h3 class="about-one__feature__title"><a href="about.php">Immigration Resources Visa</a></h3>
+                                <h3 class="about-one__feature__title"><a href="./">Immigration Resources Visa</a></h3>
                                 <p class="about-one__feature__text">Immigration visa tailored design, management services building sed do majority.</p>
                             </div>
                         </div><!-- /.about-one__feature__item -->
@@ -101,7 +101,7 @@
                             <div class="about-one__feature__bg"></div>
                             <div class="about-one__feature__icon-box"><span class="about-one__feature__icon"><i class="icon-luggage"></i></span></div>
                             <div class="about-one__feature__content">
-                                <h3 class="about-one__feature__title"><a href="about.php">luggage bag handle location</a></h3>
+                                <h3 class="about-one__feature__title"><a href="./">luggage bag handle location</a></h3>
                                 <p class="about-one__feature__text">Immigration visa tailored design, management services building sed do majority.</p>
                             </div>
                         </div><!-- /.about-one__feature__item -->
@@ -109,7 +109,7 @@
                             <div class="about-one__feature__bg"></div>
                             <div class="about-one__feature__icon-box"><span class="about-one__feature__icon"><i class="icon-support"></i></span></div>
                             <div class="about-one__feature__content">
-                                <h3 class="about-one__feature__title"><a href="about.php">24/7 Support Team Solution</a></h3>
+                                <h3 class="about-one__feature__title"><a href="./">24/7 Support Team Solution</a></h3>
                                 <p class="about-one__feature__text">Immigration visa tailored design, management services building sed do majority.</p>
                             </div>
                         </div><!-- /.about-one__feature__item -->
@@ -402,7 +402,7 @@
                             </div><!-- /.why-choose__list -->
                             <p class="why-choose__text why-choose__text--2" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300">The majority have suffered alteration in some form, <span>by injected this humour,</span> or randomised words visa.</p>
                             <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1300">
-                                <a href="about.php" class="visanet-btn">
+                                <a href="./" class="visanet-btn">
                                     <span class="visanet-btn__icon-box">
                                         <span class="visanet-btn__icon"><span><i class="icon-arrow-right-3"></i></span></span>
                                     </span>
@@ -411,6 +411,7 @@
                             </div>
                         </div><!-- /.why-choose__content -->
                     </div><!-- /.col-xl-6 -->
+                
                     <div class="col-xl-6">
                         <div class="why-choose__image">
                             <div class="why-choose__image__inner bw-img-anim-right" style="background-image: url(<?php echo $domain ?>/assets/images/resources/why-choose-1-1.jpg);"></div>
@@ -452,7 +453,7 @@
                         <div class="fly-one__card__inner">
                             <h3 class="fly-one__card__title">Ready to fly with us your dream country.</h3>
                             <p class="fly-one__card__text">Immigration visa design support this services business agency elit, sed to do eiusmod tempor majority have humour visa solution.</p>
-                            <a href="about.php" class="visanet-btn">
+                            <a href="./" class="visanet-btn">
                                 <span class="visanet-btn__icon-box">
                                     <span class="visanet-btn__icon"><span><i class="icon-arrow-right-3"></i></span></span>
                                 </span>
@@ -857,7 +858,7 @@
     <div class="search-popup">
         <div class="search-popup__overlay search-toggler"></div>
         <div class="search-popup__content">
-            <form role="search" method="get" class="search-popup__form" action="about.php#">
+            <form role="search" method="get" class="search-popup__form" action="./#">
                 <input type="text" id="search" placeholder="Search Here..." />
                 <button type="submit" aria-label="search submit">
                     <i class="icon-search"></i>
@@ -931,7 +932,7 @@
             </div><!-- /.sidebar-three__social -->
             <div class="sidebar-three__newsletter sidebar-three__item">
                 <label class="sidebar-three__title" for="sidebar-three-email">Newsletter</label>
-                <form action="about.php#" class="sidebar-three__newsletter__inner mc-form" data-url="MAILCHIMP_FORM_URL">
+                <form action="./#" class="sidebar-three__newsletter__inner mc-form" data-url="MAILCHIMP_FORM_URL">
                     <input type="email" name="EMAIL" id="sidebar-three-email" class="sidebar-three__newsletter__input" placeholder="Email Address">
                     <button type="submit" class="sidebar-three__newsletter__btn"><span class="far fa-envelope" aria-hidden="true"></span></button>
                 </form>
@@ -940,7 +941,7 @@
         </div><!-- /.sidebar-three__content -->
     </aside><!-- /.sidebar-three -->
 
-    <a href="about.php#" data-target="html" class="scroll-to-target scroll-to-top">
+    <a href="./#" data-target="html" class="scroll-to-target scroll-to-top">
         <span class="scroll-to-top__text">back top</span>
         <span class="scroll-to-top__wrapper"><span class="scroll-to-top__inner"></span></span>
     </a>
