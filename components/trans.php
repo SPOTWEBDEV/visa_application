@@ -4,13 +4,12 @@
     function googleTranslateElementInit() {
         new google.translate.TranslateElement({
             pageLanguage: 'en',
-            includedLanguages: 'en,fr,es,de,it,pt,ru,zh-CN,ja,ko,ar,hi,bn,tr,ur,vi,th,pl,nl,id',
+            includedLanguages: 'am,ar,bg,bn,cs,da,de,el,en,es,et,fa,fi,fr,gu,ha,he,hi,hr,hu,id,ig,it,ja,ko,lt,lv,mr,ms,nl,no,pcm,pl,pt,ro,ru,sk,sl,sr,sv,sw,ta,te,th,tr,uk,ur,vi,yo,zh-CN,zh-TW',
             layout: google.translate.TranslateElement.InlineLayout.SIMPLE
         }, 'google_translate_element');
     }
 </script>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
 
 
 <style>
