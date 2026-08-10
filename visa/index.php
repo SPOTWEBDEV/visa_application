@@ -214,14 +214,14 @@ include "../server/connection.php";
                     <span class="mobile-nav__contact__icon"><i class="fa fa-envelope"></i></span>
                     <a href="mailto:findox@envato.com"><?= $site_email ?></a>
                 </li>
-                <!-- <li>
+                <li>
                     <span class="mobile-nav__contact__icon">
                         <i class="fa fa-phone-alt"></i>
                     </span>
                     <a href="https://wa.me/<?php echo $sitephone; ?>" target="_blank">
                         Whatsapp Number : <?php echo $sitephone; ?>
                     </a>
-                </li> -->
+                </li>
             </ul><!-- /.mobile-nav__contact -->
             <div class="social-links">
                 <a href="https://facebook.com">
@@ -298,9 +298,9 @@ include "../server/connection.php";
                     <span class="mobile-nav__contact__icon">
                         <i class="fa fa-phone-alt"></i>
                     </span>
-                    <!-- <a href="https://wa.me/<?php echo $sitephone; ?>" target="_blank">
+                    <a href="https://wa.me/<?php echo $sitephone; ?>" target="_blank">
                         Whatsapp Number : <?php echo $sitephone; ?>
-                    </a> -->
+                    </a>
                 </li>
                 </ul><!-- /.sidebar-three__info__list -->
             </div><!-- /.sidebar-three__info -->

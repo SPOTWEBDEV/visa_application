@@ -53,4 +53,4 @@ $site_email = "support@paix-vts.com";
 $sitename = "PAIX VISA AND TOURIST Service";
 $siteemailpassword = "support@paix-vts.com";
 $emailhost = "mail@paix-vts.com";
-// $sitephone = "+1 (716) 328‑7873";
+$sitephone = "+1 (681) 295‑3323";

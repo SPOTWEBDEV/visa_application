@@ -1542,10 +1542,10 @@ include("./server/connection.php");
                     <span class="mobile-nav__contact__icon"><i class="fa fa-envelope"></i></span>
                     <a href="mailto:<?php echo $site_email ?>"><?php echo $site_email ?></a>
                 </li>
-                <!-- <li>
+                <li>
                     <span class="mobile-nav__contact__icon"><i class="fa fa-phone-alt"></i></span>
-                    <a href="https://wa.me/+17163287873"> <?php echo $sitephone ?> </a>
-                </li> -->
+                    <a href="https://wa.me/<?php echo $sitephone ?>"> <?php echo $sitephone ?> </a>
+                </li>
             </ul><!-- /.mobile-nav__contact -->
             <div class="social-links">
                 <a href="https://facebook.com">
